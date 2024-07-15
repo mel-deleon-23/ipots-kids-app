@@ -5,7 +5,7 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8888/ipots/server.php");
+        const response = await fetch("http://localhost:8888/ipots-server/server.php");
         const data = await response.json();
         setMessage(data.message);
       } catch (error) {

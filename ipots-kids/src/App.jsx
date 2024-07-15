@@ -15,7 +15,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/ipotskids" element={<iPOTSKIDS/>} />
-            <Route path="iaccess" element={<iAccess/>}/>
+            <Route path="/iaccess" element={<iAccess/>}/>
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>

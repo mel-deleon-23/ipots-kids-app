@@ -5,7 +5,7 @@ const iPOTSKIDS = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8888/ipots/ipotskids.php");
+        const response = await fetch("http://localhost:8888/ipots-server/ipotskids.php");
         const data = await response.json();
         setMessage(data.message);
       } catch (error) {
