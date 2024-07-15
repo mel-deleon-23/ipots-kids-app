@@ -1,8 +1,8 @@
 import Navbar from "./components/navbar";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import iAccess from "./pages/iAccess";
-import iPOTSKIDS from "./pages/iPOTSKIDS";
+import IAccess from "./pages/iAccess";
+import IPOTSKIDS from "./pages/iPotskids";
 import Contact from "./pages/Contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -14,8 +14,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/ipotskids" element={<iPOTSKIDS/>} />
-            <Route path="/iaccess" element={<iAccess/>}/>
+            <Route path="/ipotskids" element={<IPOTSKIDS/>} />
+            <Route path="/iaccess" element={<IAccess/>}/>
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
