@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 import React, { useEffect, useState } from "react";
 
 const Home = () => {
@@ -5,7 +6,8 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:8888/ipots-kids-app/ipots-server/server.php");
+        const response = await fetch("http://localhost/ipots-kids-webApp/ipots-server/server.php");
+
         const data = await response.json();
         setMessage(data.message);
       } catch (error) {
