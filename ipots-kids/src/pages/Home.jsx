@@ -7,6 +7,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const response = await fetch("http://localhost/ipots-kids-webApp/ipots-server/server.php");
+
         const data = await response.json();
         setMessage(data.message);
       } catch (error) {
