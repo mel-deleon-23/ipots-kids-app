@@ -1,0 +1,338 @@
+/* TRIVIA QUESTIONS */
+.trivia-question-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  max-width: 100%;
+  padding: 20px 575px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.trivia-question-card {
+  border: none;
+  width: 100%;
+  max-width: 800px; 
+  padding: 20px;
+  text-align: center; 
+}
+
+.stats-header {
+  box-shadow: 8px 8px 9.9px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 16px;
+  width: 100%; 
+  max-width: 475px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.gems {
+  display: flex;
+  align-items: center;
+  padding-bottom: 18px;
+}
+.streak {
+  display: flex;
+  align-items: center;
+  padding-bottom: 18px;
+  margin-right: 12em;
+}
+
+.sound {
+  display: flex;
+  align-items: center;
+  padding-bottom: 18px;
+}
+
+.icon-gems {
+  /* Adjust the icon size if necessary */
+  width: 30px;
+  height: 30px;
+  /* Add some spacing between icon and text */
+  margin: 0;
+}
+.icon-streak {
+  /* Adjust the icon size if necessary */
+  width: 30px;
+  height: 30px;
+  /* Add some spacing between icon and text */
+  margin: 0 2px;
+}
+.icon-sound {
+  /* Adjust the icon size if necessary */
+  width: 30px;
+  height: 30px;
+  /* Add some spacing between icon and text */
+  margin-right: 1em; 
+}
+
+.stats-text-gems {
+  font-size: 20px; /* Adjust the font size for the text under icons */
+  margin-left: -2.5em;
+  text-align: center;
+  margin-top: 3.45em;
+}
+.stats-text-streak {
+  font-size: 20px; 
+  margin-left: -3.4em;
+  text-align: center;
+  margin-top: 3.45em;
+}
+.stats-text-sound {
+  font-size: 20px; 
+  margin-left: -3.25em;
+  text-align: center;
+  margin-top: 3.45em;
+}
+
+.gems span, .streak span {
+  font-size: 30px; /* Adjust the font size for the numbers */
+  font-weight: 500; 
+  margin-right: 5px; /* Add some spacing between number and icon */
+}
+
+.streak span {
+  margin-left: 0; /* Adjust this to align the "x" properly */
+}
+
+.streak p {
+  margin-left: 5px; /* Add spacing for the text "streak" */
+}
+
+.sound p {
+  margin-left: 5px; /* Add spacing for the text "sound" */
+}
+
+.progress-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  background-color: #D9D9D9;
+  width: 100%;
+  max-width: 460px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.progress-dot {
+  width: 22px;
+  height: 22px;
+  background-color: #848484;
+  border-radius: 50%;
+  margin: 0 5px;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+
+.progress-dot.active {
+  background-color: #0FC0FC;
+}
+
+.question-title {
+  font-size: 1.5rem;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.options {
+  text-align: center;
+}
+
+.option-button {
+  width: 100%;
+  max-width: 358px;
+  padding: 15px;
+  font-size: 24px;
+  color: #000;
+  border: 2px solid #0FC0FC;
+  background-color: #fff;
+  margin: 0 auto 10px; /* Center the options and add margin */
+}
+
+.option-button.btn-light {
+  border-color: #0FC0FC;
+  background-color: #fff;
+}
+.option-button:hover {
+  background-color: #0FC0FC;
+  font-weight: 700;
+}
+
+.option-button.btn-success {
+  border-color: #0CCA63;
+  background-color: #0CCA63;
+  color: #000;
+  font-weight: 700;
+}
+
+.option-button.btn-danger {
+  border-color: #CA0C17;
+  background-color: #CA0C17;
+  color: #fff;
+  font-weight: 700;
+}
+
+.explanation {
+  background-color: #0FC0FC;
+  padding: 25px;
+  border-radius: 8px;
+  text-align: left;
+  width: 100%;
+  max-width: 358px; /* Add a max-width */
+  margin: 0 auto 10px; /* Add margin for spacing */
+}
+
+.explanation h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.explanation p {
+  font-size: 1rem;
+  color: #000;
+}
+
+.read-story-button,
+.try-again-button,
+.next-question-button,
+.finish-button {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+  max-width: 307px; /* Add a max-width */
+  height: 61px;
+  background-color: #0FC0FC;
+  color: #000;
+}
+
+.read-story-button:hover,
+.try-again-button:hover,
+.next-question-button:hover,
+.finish-button:hover {
+  background-color: #87D6F2;
+  border-color: #87D6F2;
+  color: #000;
+  font-weight: 700;
+}
+
+
+/* DESKTOP */
+@media (max-width: 1280px) {
+  .trivia-question-container {
+    padding: 20px 435px; 
+  }
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .trivia-question-container {
+    padding: 20px 150px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .trivia-question-container {
+    padding: 20px 250px;
+  }
+
+  .icon-gems {
+    margin: 0;
+  }
+}
+
+/* MOBILE VERSION */
+@media (max-width: 480px) {
+  .trivia-question-container {
+    padding: 10px;
+    height: auto;
+  }
+
+  .stats-header {
+    width: 100%;
+    /* height: auto; */
+  }
+
+  .icon-gems {
+    width: 23px; /* Adjust the icon size if necessary */
+    height: 23px; /* Adjust the icon size if necessary */
+    margin: 0;
+  }
+
+  .icon-streak {
+    width: 23px; 
+    height: 23px; 
+    margin: 0 5px;
+  }
+
+  .icon-sound {
+    width: 23px; 
+    height: 23px; 
+    margin-right: 1em;
+  }
+
+  .stats-text {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .stats-text-gems {
+    font-size: 18px; /* Adjust the font size for the text under icons */
+    margin-left: -2.5em;
+    text-align: center;
+    margin-top: 3.7em;
+  }
+  .stats-text-streak {
+    font-size: 18px; 
+    margin-left: -3.4em;
+    text-align: center;
+    margin-top: 3.7em;
+  }
+  .stats-text-sound {
+    font-size: 18px; 
+    margin-left: -3.25em;
+    text-align: center;
+    margin-top: 3.7em;
+  }
+
+  .gems span, .streak span {
+    font-size: 20px; /* Adjust the font size for the numbers */
+    font-weight: 500;
+    /* margin-right: 2px; */
+  }
+
+  .progress-bar-container {
+    width: 97%;
+  }
+
+  .progress-dot {
+    width: 20px;
+    height: 20px;
+  }
+
+  .trivia-question-card {
+    width: 100%; /* Make the card take the full width on mobile */
+    padding: 10px; /* Add padding for spacing */
+  }
+
+  .option-button {
+    font-size: 20px; /* Adjust font size for better readability on mobile */
+  }
+}
