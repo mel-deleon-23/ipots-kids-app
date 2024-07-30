@@ -1,12 +1,15 @@
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 /* eslint-disable no-irregular-whitespace */
 import Navbar from "./components/navbar/navbar";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
-//import iAccess from "./pages/iAccess";
-//import iPOTSKIDS from "./pages/iPOTSKIDS";
 
 import Contact from "./pages/Contact";
+import TriviaMenu from "./components/TriviaMenu";
+import TriviaQuestion from './components/TriviaQuestion';
+import TriviaSummary from "./components/TriviaSummary";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Benefits from "./pages/Benefits/Benefits";
 
@@ -17,6 +20,10 @@ function App() {
         <Navbar />
         <main id="main">
           <Routes>
+
+            <Route path="/trivia" element={<TriviaMenu />} />
+            <Route path="/question/level/:level" element={<TriviaQuestion />} />
+            <Route path="/summary" element={<TriviaSummary />} />
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/ipotskids" element={<iPOTSKIDS/>} />

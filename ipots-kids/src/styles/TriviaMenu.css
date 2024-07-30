@@ -1,0 +1,80 @@
+/* TRIVIA MENU */
+.trivia-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .trivia-menu-card {
+    border: 5px solid #00aaff;
+    border-radius: 16px;
+    padding: 10px;
+    background-color: #fff;
+    position: relative;
+  }
+  
+  .level-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000;
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    z-index: 1;
+  }
+  
+  .trivia-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+    padding-top: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    margin: 10px 0 5px;
+  }
+  
+  .card-text {
+    font-size: 24px;
+    color: #000;
+    margin: 5px 0;
+  }
+  
+  .play-button {
+    display: inline-block;
+    padding: 5px 40px;
+    font-size: 24px;
+    color: #000;
+    background-color: #0FC0FC;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    align-self: flex-end;
+  }
+  
+  .play-button:hover {
+    background-color: #0088cc;
+  }
+
+/* MOBILE VERSION */
+@media (max-width: 480px) {
+  .trivia-menu {
+    padding: 10px;
+    height: auto;
+  }
+
+  .trivia-menu-card {
+    padding: 8px;
+  }
+}

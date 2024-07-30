@@ -1,0 +1,120 @@
+/* TRIVIA SUMMARY */
+.trivia-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding: 50px; */
+    max-width: 100%;
+    padding: 20px 650px;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.summary-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.score {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.results {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.correct, .incorrect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #28a745; /* green color for correct */
+}
+
+.correct .number {
+    color: #0CCA63;
+}
+
+.incorrect .number {
+    color: #CA0C17; /* red color for incorrect */
+}
+
+.label {
+    font-size: 14px;
+    color: #888888;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.action-button, .home-button {
+    display: block;
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+    background-color: #0FC0FC;
+    color: #000;
+    border: none;
+    border-radius: 16px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.home-button {
+    background-color: #0FC0FC;
+    color: #000;
+    padding-top: 10px;
+}
+
+.action-button:hover, .home-button:hover {
+    background-color: #87D6F2;
+    color: #000;
+    font-weight: 700;
+}
+
+.home-button:hover {
+    background-color: #87D6F2;
+}
+
+
+/* DESKTOP */
+@media (min-width: 1024px) and (max-width: 1280px) {
+    .trivia-summary {
+        padding: 20px 330px;
+    }
+}
+
+/* TABLET */
+@media (min-width: 481px) and (max-width: 768px) {
+    .trivia-summary {
+        padding: 20px 100px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    .trivia-summary {
+        padding: 10px 90px;
+        height: auto;
+    }
+}
