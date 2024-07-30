@@ -1,0 +1,32 @@
+.hero{
+    text-align: center;
+    margin-top: 50px;
+}
+.benefit-header{
+    font-weight: bolder;
+    margin-top: 40px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.img-fluid {
+  width: 572px;
+  height: 450px;
+}
+.card-text {
+  font-size: 20px;
+  padding-right: 80px;
+  text-wrap: wrap;
+}
+.card-body {
+  margin-top: 60px;
+  padding-top: 20px;
+  text-align: justify;
+  width: 633px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.card-title {
+  font-size: 40px;
+  /* font-family: 'Plus Jakarta Sans', sans-serif; */
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
