@@ -1,5 +1,5 @@
 import "./footer.css";
-
+import Review from "../Review/Review";
 const footer = () => {
     return (
         <footer className="footer">
@@ -13,7 +13,7 @@ const footer = () => {
                     <h3> CONTACT | INSTAGRAM | X | LINKEDIN </h3>
                     <p>© {new Date().getFullYear()} by iPOTS, improving POTS, IPOTS KIDS, iAccess, All Rights Reserved</p>
                 </div>
-                
+                <Review />
             </div>
         </footer>
     );
