@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/TriviaSummary.css';
+import '../Trivia/styles/TriviaSummary.css';
 
 const TriviaSummary = () => {
   const location = useLocation();
