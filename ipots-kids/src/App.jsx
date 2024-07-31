@@ -7,9 +7,9 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 
 import Contact from "./pages/Contact";
-import TriviaMenu from "./components/TriviaMenu";
-import TriviaQuestion from './components/TriviaQuestion';
-import TriviaSummary from "./components/TriviaSummary";
+import TriviaMenu from "./components/Trivia/TriviaMenu";
+import TriviaQuestion from './components/Trivia/TriviaQuestion';
+import TriviaSummary from "./components/Trivia/TriviaSummary";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Benefits from "./pages/Benefits/Benefits";
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import TriviaSummary from "./TriviaSummary"; 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/TriviaQuestion.css';
+import '../Trivia/styles/TriviaQuestion.css';
 
 const TriviaQuestion = () => {
   const { level } = useParams();
