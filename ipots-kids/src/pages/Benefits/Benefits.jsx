@@ -2,7 +2,7 @@ import "./Benefits.css";
 import img1 from "../../assets/Education & Awareness.png";
 import img2 from "../../assets/Community Building 1.png";
 import img3 from "../../assets/Emotional Intelligence 1.png"
-import Review from "../../components/Review/Review";
+import Testimonial from "../../components/Testimonial/Testimonial";
 
 const Benefits = () => {
     return (
@@ -48,7 +48,7 @@ const Benefits = () => {
             </div>
 
             <h1 className='benefit-header'>Testimonials</h1>
-            <Review />
+            <Testimonial />
         </section>  
     );
 };
