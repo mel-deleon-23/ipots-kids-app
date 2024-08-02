@@ -4,31 +4,31 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* height: 100vh; */
-  max-width: 100%;
-  padding: 20px 575px;
-  margin: 0;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
 .trivia-question-card {
   border: none;
   width: 100%;
-  max-width: 800px; 
-  padding: 20px;
-  text-align: center; 
+  max-width: 800px;
+  text-align: center;
+  margin: 0;
 }
 
 .stats-header {
   box-shadow: 8px 8px 9.9px 0px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
-  width: 100%; 
+  width: 100%;
   max-width: 475px;
   height: 75px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .stats {
@@ -69,14 +69,14 @@
   width: 30px;
   height: 30px;
   /* Add some spacing between icon and text */
-  margin: 0 2px;
+  margin-left: 1.25em;
 }
 .icon-sound {
   /* Adjust the icon size if necessary */
   width: 30px;
   height: 30px;
   /* Add some spacing between icon and text */
-  margin-right: 1em; 
+  margin-left: 3.5em; 
 }
 
 .stats-text-gems {
@@ -85,17 +85,25 @@
   text-align: center;
   margin-top: 3.45em;
 }
+
+.streak-text {
+  margin-left: -4.25em;
+}
 .stats-text-streak {
   font-size: 20px; 
   margin-left: -3.4em;
   text-align: center;
   margin-top: 3.45em;
 }
+
 .stats-text-sound {
   font-size: 20px; 
   margin-left: -3.25em;
   text-align: center;
   margin-top: 3.45em;
+}
+.sound-text {
+  margin-left: -3.15em;
 }
 
 .gems span, .streak span {
@@ -109,11 +117,11 @@
 }
 
 .streak p {
-  margin-left: 5px; /* Add spacing for the text "streak" */
+  margin-left: 5px; 
 }
 
 .sound p {
-  margin-left: 5px; /* Add spacing for the text "sound" */
+  margin-left: 5px; 
 }
 
 .progress-bar-container {
@@ -126,6 +134,7 @@
   max-width: 460px;
   border-radius: 10px;
   margin-bottom: 20px;
+  /* margin: 0 auto; */
 }
 
 .progress-dot {
@@ -140,6 +149,10 @@
 
 .progress-dot.active {
   background-color: #0FC0FC;
+}
+
+.trivia-card-body {
+  margin-top: 1.2em;
 }
 
 .question-title {
@@ -161,7 +174,7 @@
   color: #000;
   border: 2px solid #0FC0FC;
   background-color: #fff;
-  margin: 0 auto 10px; /* Center the options and add margin */
+  margin: 10px auto; /* Center the options and add margin */
 }
 
 .option-button.btn-light {
@@ -242,97 +255,140 @@
 }
 
 /* TABLET */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .trivia-question-container {
     padding: 20px 150px;
   }
+  .streak {
+    margin-right: 12em;
+  }
+  .icon-streak {
+    margin-left: 0.5em;
+  }
+  .icon-sound {
+    margin-left: 1em;
+  }
+  .stats-text-gems {
+    margin-left: -2.7em;
+  }
+  .stats-text-streak {
+    margin-left: -3.4em;
+  }
+  .stats-text-sound {
+    margin-left: -2em;
+  }
+  .streak-text {
+    margin-left: -4.4em;
+  }
+  .sound-text {
+    margin-left: -3.25em;
+  }
 }
 
-@media (min-width: 769px) and (max-width: 1023px) {
+/* MOBILE */
+@media (max-width: 768px) {
   .trivia-question-container {
-    padding: 20px 250px;
+    padding: 10px;
   }
-
-  .icon-gems {
-    margin: 0;
+  .streak {
+    margin-right: 16em;
+  }
+  .icon-gems, .icon-streak, .icon-sound {
+    width: 23px;
+    height: 23px;
+  }
+  .icon-streak {
+    margin-left: 0.5em;
+  }
+  .icon-sound {
+    margin-left: 0.5em;
+  }
+  .stats-text-gems, .stats-text-streak, .stats-text-sound {
+    font-size: 18px;
+    margin-top: 3.45em;
+  }
+  .stats-text-gems {
+    margin-left: -2.5em;
+  }
+  .stats-text-streak {
+    margin-left: -1.75em;
+  }
+  .stats-text-sound {
+    margin-left: -2em;
+  }
+  .streak-text {
+    margin-left: -3.7em;
+  }
+  .sound-text {
+    margin-left: -2.8em;
+  }
+  .gems span, .streak span {
+    font-size: 20px;
+  }
+  .progress-bar-container {
+    width: 97%;
+  }
+  .progress-dot {
+    width: 20px;
+    height: 20px;
+  }
+  .trivia-question-card {
+    padding: 10px;
+  }
+  .option-button {
+    font-size: 20px;
   }
 }
 
 /* MOBILE VERSION */
 @media (max-width: 480px) {
   .trivia-question-container {
-    padding: 10px;
-    height: auto;
-  }
-
-  .stats-header {
-    width: 100%;
+    padding: 5px;
     /* height: auto; */
   }
 
-  .icon-gems {
-    width: 23px; /* Adjust the icon size if necessary */
-    height: 23px; /* Adjust the icon size if necessary */
-    margin: 0;
-  }
-
-  .icon-streak {
-    width: 23px; 
-    height: 23px; 
-    margin: 0 5px;
-  }
-
-  .icon-sound {
-    width: 23px; 
-    height: 23px; 
+  .streak {
     margin-right: 1em;
   }
-
-  .stats-text {
-    font-size: 13px;
-    text-align: center;
+  .icon-streak {
+    margin-left: 0.25em;
   }
-
+  .icon-sound {
+    margin-left: 0.25em;
+  }
+  .stats-text-gems, .stats-text-streak, .stats-text-sound {
+    font-size: 16px;
+    margin-top: 3.45em;
+  }
   .stats-text-gems {
-    font-size: 18px; /* Adjust the font size for the text under icons */
-    margin-left: -2.5em;
-    text-align: center;
-    margin-top: 3.7em;
+    margin-left: -1em;
   }
   .stats-text-streak {
-    font-size: 18px; 
-    margin-left: -3.4em;
-    text-align: center;
-    margin-top: 3.7em;
+    margin-left: -1.25em;
   }
   .stats-text-sound {
-    font-size: 18px; 
-    margin-left: -3.25em;
-    text-align: center;
-    margin-top: 3.7em;
+    margin-left: -1.5em;
   }
-
+  .streak-text {
+    margin-left: -1.75em;
+  }
+  .sound-text {
+    margin-left: -1.5em;
+  }
   .gems span, .streak span {
-    font-size: 20px; /* Adjust the font size for the numbers */
-    font-weight: 500;
-    /* margin-right: 2px; */
+    font-size: 18px;
   }
-
   .progress-bar-container {
-    width: 97%;
+    width: 95%;
   }
-
   .progress-dot {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
-
   .trivia-question-card {
-    width: 100%; /* Make the card take the full width on mobile */
-    padding: 10px; /* Add padding for spacing */
+    padding: 5px;
   }
-
   .option-button {
-    font-size: 20px; /* Adjust font size for better readability on mobile */
+    font-size: 18px;
   }
 }
