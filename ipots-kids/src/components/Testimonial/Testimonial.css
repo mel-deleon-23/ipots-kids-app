@@ -1,0 +1,10 @@
+.testimonial{
+ width: 50%;
+ height: 18rem;
+ background-color: #0FC0FC;
+}
+
+.testimonial-thumbnail{
+  width: 150px;
+  height: auto;
+}
