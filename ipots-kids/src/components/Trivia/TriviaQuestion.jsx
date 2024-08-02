@@ -93,21 +93,21 @@ const TriviaQuestion = () => {
           <div className="gems">
             <span role="img" aria-label="gems">{gems}</span>
             <img src="/images/trivia-question/system-uicons_diamond.png" className="icon-gems" alt="gems" />
-            <div className="stats-text-gems">
-              <p>gems</p>
+            <div>
+              <p className="stats-text-gems">gems</p>
             </div>
           </div>
           <div className="streak">
             <img src="/images/trivia-question/ph_fire.png" className="icon-streak" alt="streak" />
             <span role="img" aria-label="streak">x{streak}</span>
-            <div className="stats-text-streak">
-              <p>streak</p>
+            <div className="streak-text">
+              <p className="stats-text-streak">streak</p>
             </div>
           </div>
           <div className="sound">
             <img src="/images/trivia-question/Vector-sound.png" className="icon-sound" alt="sound" />
-            <div className="stats-text-sound">
-              <p>sound</p>
+            <div className="sound-text">
+              <p className="stats-text-sound">sound</p>
             </div>
           </div>
         </div>
@@ -120,7 +120,7 @@ const TriviaQuestion = () => {
       </div>
 
       <div className="trivia-question-card">
-        <div className="card-body">
+        <div className="trivia-card-body">
           <h2 className="question-title text-center">{currentQuestion.question}</h2>
           <ul className="options list-unstyled">
             {currentQuestion.options.map((option, index) => (
