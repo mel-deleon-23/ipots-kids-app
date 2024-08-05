@@ -29,17 +29,17 @@ const Testimonial = () => {
     ];
 
     return (
-        <Carousel controls={false} className='border rounded testimonial mx-auto'>
-            {testimonials.map((item,index) =>
-            <Carousel.Item id={`reviewitem${index}`}>
-                <div className='d-flex mx-auto align-items-center p-3 fs-5'>
-                    <img src={`${item.img}`} className='testimonial-thumbnail' />
-                    <div className='d-flex flex-column'>
-                       <strong className='mb-3'>{item.name}</strong>
-                       <span className='text-start'>{item.description}</span>
+        <Carousel controls={false} className='border rounded-5 testimonial mx-auto'>
+            {testimonials.map((item, index) =>
+                <Carousel.Item id={`reviewitem${index}`}>
+                    <div className='d-flex flex-column mx-auto align-items-center p-3 fs-5'>
+                        <strong className='mb-3 fs-3 mx-auto'>{item.name}</strong>
+                        <div className='d-flex'>
+                            <img src={`${item.img}`} className='testimonial-thumbnail' />
+                            <span className='text-start testimonial-text'>"{item.description}"</span>
+                        </div>
                     </div>
-                </div>
-            </Carousel.Item>
+                </Carousel.Item>
             )}
         </Carousel>
     );
