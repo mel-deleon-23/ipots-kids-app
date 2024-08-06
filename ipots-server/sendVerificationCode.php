@@ -31,9 +31,10 @@ $code = rand(100000, 999999); // Generate a 6-digit code
 $sql = "INSERT INTO verification_code (email, code) VALUES ('$email', '$code')";
 mysqli_query($connect, $sql);
 
+$emailAu = $_ENV['email'];
 // Send verification email
 $emailContent = new Mail();
-$emailContent->setFrom("hathaonhin@gmail.com", "iPOTS Team");
+$emailContent->setFrom($emailAu, "iPOTS Team");
 $emailContent->setSubject("Confirm your iPOTS registration");
 $emailContent->addTo($email);
 $emailContent->addContent("text/html", "
