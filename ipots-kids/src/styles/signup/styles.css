@@ -17,17 +17,22 @@
   border: none;
   background-color: #0fc0fc;
   margin-bottom: 8px;
+  color: #000;
 }
 
 .buttonEmpty {
   border: 5px solid #0fc0fc;
   margin-bottom: 8px;
+  color: #000;
+  background-color: #fff;
 }
 
 .buttonGoogle {
   font-size: 24px;
   border: 3px solid black;
   margin-bottom: 24px;
+  color: #000;
+  background-color: #fff;
 }
 
 .google {
