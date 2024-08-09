@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
 /* TRIVIA SUMMARY */
 .trivia-summary {
     display: flex;
@@ -98,20 +100,27 @@
 
 
 /* DESKTOP */
-@media (min-width: 1024px) and (max-width: 1280px) {
+@media (max-width: 1280px) {
     .trivia-summary {
         padding: 20px 330px;
     }
 }
 
 /* TABLET */
-@media (min-width: 481px) and (max-width: 768px) {
+@media (max-width: 1024px) {
     .trivia-summary {
         padding: 20px 100px;
     }
 }
 
 /* MOBILE */
+@media (max-width: 768px) {
+    .trivia-summary {
+        padding: 20px 100px;
+    }
+}
+
+/* SMALLER MOBILE SCREENS */
 @media (max-width: 480px) {
     .trivia-summary {
         padding: 10px 90px;

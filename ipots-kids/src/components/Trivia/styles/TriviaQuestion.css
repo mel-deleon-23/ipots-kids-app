@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
 /* TRIVIA QUESTIONS */
 .trivia-question-container {
   display: flex;
@@ -166,34 +168,35 @@
   text-align: center;
 }
 
-.option-button {
+.option-trivia-button {
   width: 100%;
-  max-width: 358px;
+  max-width: 458px;
   padding: 15px;
   font-size: 24px;
+  border-radius: 16px;
   color: #000;
   border: 2px solid #0FC0FC;
   background-color: #fff;
   margin: 10px auto; /* Center the options and add margin */
 }
 
-.option-button.btn-light {
+.option-trivia-button.btn-light {
   border-color: #0FC0FC;
   background-color: #fff;
 }
-.option-button:hover {
+.option-trivia-button:hover {
   background-color: #0FC0FC;
   font-weight: 700;
 }
 
-.option-button.btn-success {
+.option-trivia-button.btn-success {
   border-color: #0CCA63;
   background-color: #0CCA63;
   color: #000;
   font-weight: 700;
 }
 
-.option-button.btn-danger {
+.option-trivia-button.btn-danger {
   border-color: #CA0C17;
   background-color: #CA0C17;
   color: #fff;
@@ -206,7 +209,8 @@
   border-radius: 8px;
   text-align: left;
   width: 100%;
-  max-width: 358px; /* Add a max-width */
+  border-radius: 16px;
+  max-width: 458px; /* Add a max-width */
   margin: 0 auto 10px; /* Add margin for spacing */
 }
 
@@ -232,6 +236,7 @@
   width: 100%;
   max-width: 307px; /* Add a max-width */
   height: 61px;
+  border-radius: 16px;
   background-color: #0FC0FC;
   color: #000;
 }
@@ -250,7 +255,8 @@
 /* DESKTOP */
 @media (max-width: 1280px) {
   .trivia-question-container {
-    padding: 20px 435px; 
+    /* padding: 20px 435px;  */
+    width: 100%;
   }
 }
 
@@ -329,8 +335,8 @@
     width: 97%;
   }
   .progress-dot {
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
   }
   .trivia-question-card {
     padding: 10px;
@@ -344,24 +350,25 @@
 @media (max-width: 480px) {
   .trivia-question-container {
     padding: 5px;
+    width: 95%;
     /* height: auto; */
   }
 
   .streak {
-    margin-right: 1em;
+    margin-right: 13.5em;
   }
   .icon-streak {
     margin-left: 0.25em;
   }
   .icon-sound {
-    margin-left: 0.25em;
+    margin-left: 1.25em;
   }
   .stats-text-gems, .stats-text-streak, .stats-text-sound {
     font-size: 16px;
     margin-top: 3.45em;
   }
   .stats-text-gems {
-    margin-left: -1em;
+    margin-left: -2.5em;
   }
   .stats-text-streak {
     margin-left: -1.25em;
@@ -370,10 +377,10 @@
     margin-left: -1.5em;
   }
   .streak-text {
-    margin-left: -1.75em;
+    margin-left: -3.3em;
   }
   .sound-text {
-    margin-left: -1.5em;
+    margin-left: -2.5em;
   }
   .gems span, .streak span {
     font-size: 18px;
@@ -382,8 +389,8 @@
     width: 95%;
   }
   .progress-dot {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
   }
   .trivia-question-card {
     padding: 5px;

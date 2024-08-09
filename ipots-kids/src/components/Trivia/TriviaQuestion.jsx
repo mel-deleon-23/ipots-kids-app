@@ -126,7 +126,7 @@ const TriviaQuestion = () => {
             {currentQuestion.options.map((option, index) => (
               <li 
                 key={index} 
-                className={`option-button btn ${selectedOption === option ? (isCorrect ? 'btn-success' : 'btn-danger') : 'btn-light'} my-2`} 
+                className={`option-trivia-button btn ${selectedOption === option ? (isCorrect ? 'btn-success' : 'btn-danger') : 'btn-light'} my-2`} 
                 onClick={() => handleOptionClick(option)}
                 style={{ display: selectedOption && isCorrect && option !== questions[currentQuestionIndex].correctAnswer ? 'none' : 'block' }}
               >
@@ -141,7 +141,8 @@ const TriviaQuestion = () => {
             </div>
           )}
           {selectedOption && !isCorrect && (
-            <button className="try-again-button btn btn-info mt-3" onClick={handleTryAgain}>Try Again</button>
+            <button className="try-again-button btn btn-info mt-3" onClick={handleTryAgain}>
+              <img src="/images/trivia-question/try-again.png" alt="try-again" className="play-button-icon" /> Try Again</button>
           )}
           <button className="read-story-button btn btn-info mt-3"><img src="/images/trivia-question/read-icon.png" alt="book" />  Read Story</button>
           {selectedOption && isCorrect && (

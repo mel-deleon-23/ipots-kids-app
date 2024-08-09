@@ -8,6 +8,7 @@ import Contact from "./pages/Contact";
 import TriviaMenu from "./components/Trivia/TriviaMenu";
 import TriviaQuestion from "./components/Trivia/TriviaQuestion";
 import TriviaSummary from "./components/Trivia/TriviaSummary";
+import ReadStoryMenu from "./pages/ReadStory/ReadStoryMenu";
 import HomePage from "./pages/HomePage";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
@@ -34,6 +35,7 @@ function App() {
             <Route path="/trivia" element={<TriviaMenu />} />
             <Route path="/question/level/:level" element={<TriviaQuestion />} />
             <Route path="/summary" element={<TriviaSummary />} />
+            <Route path="/readstory" element={<ReadStoryMenu />} />
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/ipotskids" element={<iPOTSKIDS />} />
