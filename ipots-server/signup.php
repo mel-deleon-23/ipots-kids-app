@@ -3,6 +3,13 @@ include('include/config.php');
 include('include/database.php');
 include('include/functions.php');
 
+require 'vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+use \Firebase\JWT\JWT;
+
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: access");
 header("Access-Control-Allow-Methods: POST");
@@ -28,35 +35,37 @@ $accept = $data->accept;
 $birthday = $data->dateOfBirth;
 $parental = $data->parental ?? 0;
 $image = $data->imageId;
+$imageName = $data->imageName;
 
+$key = $_ENV['key'];
+$algorithm = 'HS256'; // or any other algorithm you're using
+// //Compare date of birth and the condition
+// $birthDay = new DateTime($birthday);
+// $today = new DateTime();
+// $age = $today -> diff($birthDay)->y;
 
-//Compare date of birth and the condition
-$birthDay = new DateTime($birthday);
-$today = new DateTime();
-$age = $today -> diff($birthDay)->y;
-
-// age validation
-$valid = false;
-$ageError = "Invalid age for the selected role";
+// // age validation
+// $valid = false;
+// $ageError = "Invalid age for the selected role";
 
 // Determine the table based on the action
 $table = "";
 switch ($action) {
     case "kids":
         $table = "kids";
-        $valid = ($age < 13);
+        // $valid = ($age < 13);
         break;
     case "teachers":
         $table = "teachers";
-        $valid = ($age >= 19);
+        // $valid = ($age >= 19);
         break;
     case "parents":
         $table = "parents";
-        $valid = ($age >= 19);
+        // $valid = ($age >= 19);
         break;
-    case "iAccess":
+    case "iaccess":
         $table = "iaccess";
-        $valid = ($age >= 13);
+        // $valid = ($age >= 13);
         break;
     default:
         echo json_encode(array("status" => "error", "message" => "Invalid action"));
@@ -77,7 +86,26 @@ $sql = "INSERT INTO $table ($columns) VALUES ($values)";
 
 
 if (mysqli_query($connect, $sql)) {
-    echo json_encode(array("status" => "success", "message" => "User registered successfully"));
+    // Generate JWT token
+    $issuedAt = time();
+    $expirationTime = $issuedAt + 10800;  // jwt valid for 3 hours (10800 seconds)
+    $payload = array(
+        'iat' => $issuedAt,
+        'exp' => $expirationTime,
+        'data' => array(
+            'email' => $email,
+            'username' => $username,
+            'action' => $action,
+            // 'password'=>$password,
+            // 'image'=>$imageName,
+        )
+    );
+
+    $jwt = JWT::encode($payload, $key , $algorithm);
+
+    setcookie("token", $jwt, $expirationTime, "/", "", false, true);
+
+    echo json_encode(array("status" => "success", "token" => $jwt));
 } else {
     echo json_encode(array("status" => "error", "message" => "Error: " . $sql . "<br>" . mysqli_error($connect)));
 }

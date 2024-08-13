@@ -1,31 +1,19 @@
 // SignUp.jsx
 import "../styles/signup/styles.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 
-export default function SignUp() {
+export default function ChangePassword() {
   const navigate = useNavigate();
   const location = useLocation();
-  const action = location.state?.action || "kids";
-  const accept = location.state?.accept;
-  const username = location.state?.username;
-  const { firstname, lastname } = location.state || {};
-
-  useEffect(() => {
-    if (accept !== 1) {
-      navigate("/ineligible");
-    }
-  }, [accept, navigate]);
+  const { email, username, action, imageName } = location.state || {};
 
   const [formData, setFormData] = useState({
-    email: "",
-    password: "",
+    currentPass: "",
+    newPass: "",
     confirmPassword: "",
   });
-
-  // const [error, setError] = useState("");
-  //   const [success, setSuccess] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -38,17 +26,21 @@ export default function SignUp() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
+    if (formData.newPass !== formData.confirmPassword) {
       alert("Passwords do not match");
       return;
     }
     const sendData = {
-      email: formData.email,
+      currentPass: formData.currentPass,
+      newPass: formData.newPass,
+      email: email,
+      username: username,
+      action: action,
     };
 
     axios
       .post(
-        "http://localhost/ipots-kids-app/ipots-server/sendVerificationCode.php",
+        "http://localhost/ipots-kids-app/ipots-server/change_password.php",
         JSON.stringify(sendData),
         {
           headers: {
@@ -59,21 +51,24 @@ export default function SignUp() {
       .then((result) => {
         // console.log("Response:", result.data);
         if (result.data && result.data.status === "success") {
-          navigate("/confirmation", {
+          alert("Password is changed successfully");
+          // If the password update is successful
+          const profileRoute = `/${action}-profile`;
+          navigate(profileRoute, {
             state: {
-              email: formData.email,
+              email,
               username,
               action,
-              accept,
-              password: formData.password,
-              firstname,
-              lastname,
+              imageName,
+              password: formData.newPass,
             },
           });
         } else {
+          // If there is an error, display the message
           const errorMessage =
             result.data?.message || "An unexpected error occurred.";
-          alert("Failed to send verification code: " + errorMessage);
+          //   console.error("Error Message from Server:", errorMessage);
+          alert(errorMessage);
         }
       })
       .catch((error) => {
@@ -91,30 +86,30 @@ export default function SignUp() {
           <form onSubmit={handleSubmit}>
             <div className="input-container">
               <label htmlFor="email" className="form-label input-label">
-                Email <span className="required">*</span>
+                Current Password <span className="required">*</span>
               </label>
               <input
-                type="email"
+                type="password"
                 className="form-control form-box input-placeholder"
-                id="email"
-                placeholder="Enter your Email"
-                name="email"
-                value={formData.email}
+                id="currentPass"
+                placeholder="Enter your Current Password"
+                name="currentPass"
+                value={formData.currentPass}
                 onChange={handleChange}
                 required
               />
             </div>
             <div className="input-container input-space">
               <label htmlFor="password" className="form-label input-label">
-                Create Password <span className="required">*</span>
+                New Password <span className="required">*</span>
               </label>
               <input
                 type="password"
                 className="form-control form-box input-placeholder"
-                id="password"
-                name="password"
-                placeholder="Enter your Password"
-                value={formData.password}
+                id="newPass"
+                name="newPass"
+                placeholder="Enter your new password"
+                value={formData.newPass}
                 onChange={handleChange}
                 required
               />
@@ -141,7 +136,7 @@ export default function SignUp() {
               <button type="submit" className=" button-format buttonColor">
                 Next
               </button>
-              <Link to="/username">
+              <Link to={`/${action}-profile`}>
                 <button className="buttonEmpty button-format">Back</button>
               </Link>
             </div>

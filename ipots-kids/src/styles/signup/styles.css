@@ -422,4 +422,31 @@
   border-radius: 5px;
   background-color: #fff;
 }
+
+.changeProfile {
+  font-size: 20px;
+  font-weight: 600;
+}
+.changepass {
+  font-weight: 700;
+  text-align: left;
+  width: 586px;
+}
 /*END PROFILE*/
+
+/*NUMBER OF CHILDREN*/
+.num-space {
+  padding: 0 190px;
+  text-align: center;
+}
+/*END*/
+
+/*IACCESS CONFIRMATION*/
+.vector {
+  margin: 30px 0;
+}
+.list {
+  font-size: 24px;
+  font-weight: 400;
+}
+/*END IACCESS CONFIRMATION*/

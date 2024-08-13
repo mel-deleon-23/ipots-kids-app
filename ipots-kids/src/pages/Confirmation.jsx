@@ -7,7 +7,16 @@ import axios from "axios";
 export default function SignUp() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { email, username, action, accept, password } = location.state || {};
+  const {
+    email,
+    username,
+    action,
+    accept,
+    password,
+    confirm,
+    firstname,
+    lastname,
+  } = location.state || {};
 
   useEffect(() => {
     if (accept !== 1) {
@@ -59,7 +68,16 @@ export default function SignUp() {
           if (result.data.status === "success") {
             alert("Email verified successfully!");
             navigate("/dateofbirth", {
-              state: { email, username, action, accept, password },
+              state: {
+                email,
+                username,
+                action,
+                accept,
+                password,
+                firstname,
+                lastname,
+                confirm,
+              },
             });
           } else {
             setError(true);
@@ -125,7 +143,7 @@ export default function SignUp() {
               <button type="submit" className=" button-format buttonColor">
                 Next
               </button>
-              <Link to="/signup">
+              <Link to="/signup" state={{ username, action, accept, confirm }}>
                 <button className="buttonEmpty button-format">Back</button>
               </Link>
               <button

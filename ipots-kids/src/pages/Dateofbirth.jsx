@@ -26,13 +26,28 @@ export default function DateOfBirth() {
     }
   };
 
+  const calculateAge = (dob) => {
+    const today = new Date();
+    const birthDate = new Date(dob);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+    if (
+      monthDifference < 0 ||
+      (monthDifference === 0 && today.getDate() < birthDate.getDate())
+    ) {
+      age--;
+    }
+    return age;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formattedDate = dateOfBirth
       ? dateOfBirth.toISOString().split("T")[0]
       : "";
-    console.log("date", formattedDate);
-    if (action === "kids") {
+    const age = calculateAge(dateOfBirth);
+    // console.log("date", formattedDate);
+    if (action === "kids" && age < 13) {
       navigate("/parental", {
         state: {
           email,
@@ -43,8 +58,19 @@ export default function DateOfBirth() {
           accept,
         },
       });
-    } else if (action === "teachers" || action === "parents") {
-      navigate("/children", {
+    } else if ((action === "teachers" || action === "parents") && age >= 19) {
+      navigate("/children-number", {
+        state: {
+          email,
+          username,
+          password,
+          dateOfBirth: formattedDate,
+          action,
+          accept,
+        },
+      });
+    } else if (action === "kids" && age >= 13) {
+      navigate("/avatars", {
         state: {
           email,
           username,
@@ -55,7 +81,7 @@ export default function DateOfBirth() {
         },
       });
     } else {
-      navigate("/parental", {
+      navigate("/unsuitable", {
         state: {
           email,
           username,
@@ -66,6 +92,18 @@ export default function DateOfBirth() {
         },
       });
     }
+    //else {
+    //   navigate("/parental", {
+    //     state: {
+    //       email,
+    //       username,
+    //       password,
+    //       dateOfBirth: formattedDate,
+    //       action,
+    //       accept,
+    //     },
+    //   });
+    // }
   };
 
   const isDayDisabled = (date) => {
@@ -187,7 +225,7 @@ export default function DateOfBirth() {
               <button type="submit" className="button-format buttonColor">
                 Next
               </button>
-              <Link to="/">
+              <Link to="/signup">
                 <button className="buttonEmpty button-format">Back</button>
               </Link>
             </div>
