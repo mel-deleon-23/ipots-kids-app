@@ -1,17 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "./Auth"; // Import AuthContext
 
 export default function Avartar() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { email, username, password, action, accept, dateOfBirth, parental } =
-    location.state || {};
+  const { login } = useContext(AuthContext); // Get login function from context
+  const {
+    email,
+    username,
+    password,
+    action,
+    accept,
+    dateOfBirth,
+    parental,
+    numberOfChildren,
+    isUpdate, //  check if the user is updating the avatar
+  } = location.state || {};
+
   const [images, setImages] = useState([]);
   const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
-    if (!accept) {
+    if (!accept && !isUpdate) {
       navigate("/ineligible");
       return;
     }
@@ -34,7 +46,7 @@ export default function Avartar() {
         console.error("Error fetching images:", error);
         setImages([]); // Set an empty array in case of an error
       });
-  }, [action, accept, navigate]);
+  }, [action, accept, navigate, isUpdate]);
 
   const handleImageClick = (image) => {
     setSelectedImage(image);
@@ -47,32 +59,114 @@ export default function Avartar() {
       return;
     }
 
+    const apiEndpoint = isUpdate
+      ? "http://localhost/ipots-kids-app/ipots-server/update_avatar.php"
+      : "http://localhost/ipots-kids-app/ipots-server/signup.php";
+
+    const payload = {
+      email,
+      username,
+      password,
+      dateOfBirth,
+      action,
+      accept,
+      parental,
+      numberOfChildren,
+      imageId: selectedImage.id,
+      imageName: selectedImage.image,
+    };
+
     axios
-      .post("http://localhost/ipots-kids-app/ipots-server/signup.php", {
-        email,
-        username,
-        password,
-        dateOfBirth,
-        action,
-        accept,
-        parental,
-        imageId: selectedImage.id,
-        imageName: selectedImage.image,
-      })
+      .post(apiEndpoint, payload)
       .then((result) => {
         if (result.data.status === "success") {
-          alert("Account created successfully!");
-          navigate("/kids-success", {
-            state: {
-              email,
-              username,
-              password,
-              imageName: selectedImage.image, // Pass imageName to the next page
-              action,
-            },
-          });
+          alert(
+            isUpdate
+              ? "Avatar updated successfully!"
+              : "Account created successfully!"
+          );
+
+          if (isUpdate) {
+            // const existingToken = JSON.parse(
+            //   localStorage.getItem("sessionData")
+            // );
+            // console.log(existingToken);
+            if (action === "kids") {
+              navigate("/kids-profile", {
+                state: {
+                  email,
+                  username,
+                  password,
+                  imageName: selectedImage.image, // Pass updated imageName to the next page
+                  action,
+                },
+              });
+            } else if (action === "teachers") {
+              navigate("/teachers-profile");
+            } else if (action === "parents") {
+              navigate("/parents-profile", {
+                state: {
+                  email,
+                  username,
+                  password,
+                  imageName: selectedImage.image, // Pass update imageName to the next page
+                  action,
+                },
+              });
+            }
+          } else {
+            // save a session token with 3 hours
+            const expireTime = new Date().getTime() + 3 * 60 * 60 * 1000; // 3 hours in milliseconds
+            const sessionData = {
+              token: result.data.token,
+              expiration: expireTime,
+            };
+            localStorage.setItem("sessionData", JSON.stringify(sessionData));
+
+            // Update Auth
+            login(result.data.token);
+
+            if (action === "kids") {
+              navigate("/kids-success", {
+                state: {
+                  email,
+                  username,
+                  password,
+                  imageName: selectedImage.image, // Pass imageName to the next page
+                  action,
+                  accept,
+                },
+              });
+            } else if (action === "teachers") {
+              navigate("/teachers-success", {
+                state: {
+                  email,
+                  username,
+                  password,
+                  imageName: selectedImage.image, // Pass imageName to the next page
+                  action,
+                  accept,
+                },
+              });
+            } else if (action === "parents") {
+              navigate("/parents-success", {
+                state: {
+                  email,
+                  username,
+                  password,
+                  imageName: selectedImage.image, // Pass imageName to the next page
+                  action,
+                  accept,
+                },
+              });
+            }
+          }
         } else {
-          alert("Failed to create account: " + result.data.message);
+          alert(
+            "Failed to " +
+              (isUpdate ? "update avatar: " : "create account: ") +
+              result.data.message
+          );
         }
       })
       .catch((error) => {
@@ -110,7 +204,27 @@ export default function Avartar() {
           <button type="submit" className=" button-format buttonColor">
             Next
           </button>
-          <Link to="/parental">
+          <Link
+            to={
+              isUpdate
+                ? `/${action}-profile`
+                : parental
+                ? "/parental"
+                : numberOfChildren
+                ? "/children-number"
+                : "/dateOfBirth"
+            }
+            state={{
+              email,
+              username,
+              password,
+              dateOfBirth,
+              action,
+              accept,
+              parental,
+              numberOfChildren,
+            }}
+          >
             <button className="buttonEmpty button-format">Back</button>
           </Link>
         </div>
