@@ -44,13 +44,11 @@ export default function Details() {
   return (
     <div className="container-fluid space">
       <div className="d-flex flex-column justify-content-center align-items-center">
-        <h2>Select Username</h2>
-        <div className="d-flex flex-column justify-content-center align-items-center">
+        <h2>Enter Details</h2>
+        <div className="signup-box d-flex flex-column justify-content-center align-items-center">
           <form onSubmit={handleSubmit}>
             <div
-              className={`input-container username-box ${
-                isInvalid ? "input-invalid" : ""
-              }`}
+              className={`input-container ${isInvalid ? "input-invalid" : ""}`}
             >
               <label htmlFor="username" className="form-label input-label">
                 Username <span className="required">*</span>
@@ -68,7 +66,7 @@ export default function Details() {
               />
             </div>
 
-            <div className="input-container">
+            <div className="input-container input-space">
               <label htmlFor="firstname" className="form-label input-label">
                 First Name
               </label>
@@ -80,10 +78,9 @@ export default function Details() {
                 name="firstname"
                 value={formData.firstname}
                 onChange={handleChange}
-                required
               />
             </div>
-            <div className="input-container">
+            <div className="input-container input-space">
               <label htmlFor="lastname" className="form-label input-label">
                 Last Name
               </label>
@@ -95,7 +92,6 @@ export default function Details() {
                 name="lastname"
                 value={formData.lastname}
                 onChange={handleChange}
-                required
               />
             </div>
 

@@ -13,12 +13,12 @@ if (!$connect) {
 }
 // Get the parameters from URL
 $username = $_GET['username'] ?? '';
-$action = $_GET['action'] ?? '';
+// $action = $_GET['action'] ?? '';
 
 // Fetch user information
 $sql = "
     SELECT u.*, a.image 
-    FROM $action AS u 
+    FROM users AS u 
     LEFT JOIN avartars AS a ON u.avatar_id = a.id 
     WHERE u.username = ?
 ";

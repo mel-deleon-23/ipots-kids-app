@@ -124,7 +124,7 @@
   border-radius: 30px;
   background-color: #fff;
   z-index: 10;
-  margin-top: -35px;
+  margin-top: -15px;
   color: #000;
   white-space: nowrap;
   justify-content: center;
@@ -455,3 +455,28 @@
   font-weight: 400;
 }
 /*END IACCESS CONFIRMATION*/
+
+/*ALLERGIES*/
+.allergies {
+  margin-bottom: 24px;
+  font-size: 24px;
+  font-weight: 400;
+}
+.input-allergies {
+  height: 52px;
+  width: 490px;
+  border: 2px solid #0fc0fc;
+}
+.input-place {
+  margin-top: 5px !important;
+  width: 440px;
+}
+
+.form-check-input:checked {
+  background-color: #0fc0fc;
+  border-color: #0fc0fc;
+}
+.form-check-input {
+  border: 2px solid black;
+}
+/*END ALLERGIES*/

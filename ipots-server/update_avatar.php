@@ -26,28 +26,9 @@ $username = $data->username;
 $imageId = $data->imageId;
 $action = $data->action;
 
-// Determine the table based on the action
-$table = "";
-switch ($action) {
-    case "kids":
-        $table = "kids";
-        break;
-    case "teachers":
-        $table = "teachers";
-        break;
-    case "parents":
-        $table = "parents";
-        break;
-    case "iaccess":
-        $table = "iaccess";
-        break;
-    default:
-        echo json_encode(array("status" => "error", "message" => "Invalid action"));
-        exit();
-}
 
 
-$sql = "UPDATE $table SET avatar_id='$imageId' WHERE username='$username'";
+$sql = "UPDATE users SET avatar_id='$imageId' WHERE username='$username'";
 
 if (mysqli_query($connect, $sql)) {
     echo json_encode(array("status" => "success", "message" => "Avatar updated successfully"));
