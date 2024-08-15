@@ -79,6 +79,7 @@ export default function Avartar() {
     axios
       .post(apiEndpoint, payload)
       .then((result) => {
+        // console.log("Result Data:", result.data); // Log the result for debugging
         if (result.data.status === "success") {
           alert(
             isUpdate

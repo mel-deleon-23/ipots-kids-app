@@ -7,7 +7,8 @@ import "react-datepicker/dist/react-datepicker.css"; // Default styles
 export default function DateOfBirth() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { email, username, action, accept, password } = location.state || {};
+  const { email, username, action, accept, password, firstname, lastname } =
+    location.state || {};
   const [dateOfBirth, setDateOfBirth] = useState(null);
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -37,6 +38,7 @@ export default function DateOfBirth() {
     ) {
       age--;
     }
+    console.log(age);
     return age;
   };
 
@@ -47,50 +49,93 @@ export default function DateOfBirth() {
       : "";
     const age = calculateAge(dateOfBirth);
     // console.log("date", formattedDate);
-    if (action === "kids" && age < 13) {
-      navigate("/parental", {
-        state: {
-          email,
-          username,
-          password,
-          dateOfBirth: formattedDate,
-          action,
-          accept,
-        },
-      });
-    } else if ((action === "teachers" || action === "parents") && age >= 19) {
-      navigate("/children-number", {
-        state: {
-          email,
-          username,
-          password,
-          dateOfBirth: formattedDate,
-          action,
-          accept,
-        },
-      });
-    } else if (action === "kids" && age >= 13) {
-      navigate("/avatars", {
-        state: {
-          email,
-          username,
-          password,
-          dateOfBirth: formattedDate,
-          action,
-          accept,
-        },
-      });
-    } else {
-      navigate("/unsuitable", {
-        state: {
-          email,
-          username,
-          password,
-          dateOfBirth: formattedDate,
-          action,
-          accept,
-        },
-      });
+    if (action === "iaccess") {
+      if (age < 13) {
+        navigate("/unsuitable", {
+          state: {
+            email,
+            username,
+            password,
+            dateOfBirth: formattedDate,
+            action,
+            accept,
+          },
+        });
+      } else if (age < 18) {
+        navigate("/parental", {
+          state: {
+            email,
+            username,
+            password,
+            dateOfBirth: formattedDate,
+            action,
+            accept,
+            firstname,
+            lastname,
+          },
+        });
+      } else {
+        navigate("/location", {
+          state: {
+            email,
+            username,
+            password,
+            dateOfBirth: formattedDate,
+            action,
+            accept,
+            firstname,
+            lastname,
+          },
+        });
+      }
+    } else if (action === "kids") {
+      if (age < 13) {
+        navigate("/parental", {
+          state: {
+            email,
+            username,
+            password,
+            dateOfBirth: formattedDate,
+            action,
+            accept,
+          },
+        });
+      } else {
+        navigate("/avatars", {
+          state: {
+            email,
+            username,
+            password,
+            dateOfBirth: formattedDate,
+            action,
+            accept,
+          },
+        });
+      }
+    } else if (action === "teachers" || action === "parents") {
+      if (age >= 19) {
+        navigate("/children-number", {
+          state: {
+            email,
+            username,
+            password,
+            dateOfBirth: formattedDate,
+            action,
+            accept,
+          },
+        });
+      } else {
+        navigate("/unsuitable", {
+          state: {
+            email,
+            username,
+            password,
+            dateOfBirth: formattedDate,
+            action,
+            accept,
+          },
+        });
+      }
     }
     //else {
     //   navigate("/parental", {

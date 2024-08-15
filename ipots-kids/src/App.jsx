@@ -32,6 +32,9 @@ import ChangePassword from "./pages/ChangePassword";
 import { AuthProvider } from "./pages/Auth";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import IaccessConfirm from "./pages/IAccessConfirm";
+import Detail from "./pages/Details";
+import Location from "./pages/Location";
+import Food from "./pages/FoodAllergies";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Benefits from "./pages/Benefits/Benefits";
 
@@ -107,6 +110,9 @@ function App() {
                 path="/iaccess-confirmation"
                 element={<IaccessConfirm />}
               />
+              <Route path="/details" element={<Detail />} />
+              <Route path="/location" element={<Location />} />
+              <Route path="/food-allergies" element={<Food />} />
             </Routes>
           </main>
           <Footer />

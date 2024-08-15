@@ -4,6 +4,10 @@ include('include/database.php');
 include('include/functions.php');
 
 require 'vendor/autoload.php'; // Include Composer's autoloader
+require_once __DIR__ . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 use SendGrid\Mail\Mail;
 
@@ -26,11 +30,12 @@ $code = rand(100000, 999999); // Generate a 6-digit code
 // Save the verification code and email in the database for later verification
 $sql = "UPDATE verification_code SET code='$code' WHERE email='$email'";
 
+$emailAu = $_ENV['email'];
 
 if(mysqli_query($connect, $sql)){
 // Send verification email
 $emailContent = new Mail();
-$emailContent->setFrom("hathaonhin@gmail.com", "iPOTS Team");
+$emailContent->setFrom($emailAu, "iPOTS Team");
 $emailContent->setSubject("Confirm your registration");
 $emailContent->addTo($email);
 $emailContent->addContent("text/html", "
@@ -39,16 +44,19 @@ $emailContent->addContent("text/html", "
   <title>Resend A New Code</title>
 </head>
 <body>
-  <p>Hi,</p>
-  <h3>Verification Code</h3>
-  <p>Your new verification code is <strong>$code</strong>.</p>
-  <p>Best regards</p>
+   <p>Dear Friend,</p>
+  <p>Please use the following confirmation code to finalize your registration with iPOTS:</p>
+  <p>CODE: <strong>$code</strong></p>
+  <p>If you did not request the, please ignore this email.</p>
+  <p>Warm wishes,</p>
   <p>iPOTS Team</p>
 </body>
 </html>
 ");
 
-$sendGrid = new \SendGrid('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');
+$apiKey = $_ENV['API_KEY'];
+
+$sendGrid = new \SendGrid($apiKey);
 
 try {
     $response = $sendGrid->send($emailContent);

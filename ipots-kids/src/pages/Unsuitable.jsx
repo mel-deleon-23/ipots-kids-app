@@ -7,8 +7,10 @@ export default function Unsuitable() {
   let platform = "";
   if (action === "teachers") {
     platform = "iPOTS TEACHERS";
-  } else {
+  } else if (action === "parents") {
     platform = "iPOTS PARENTS";
+  } else {
+    platform = "iACCESS";
   }
 
   return (

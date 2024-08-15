@@ -27,28 +27,9 @@ if (empty($currentPass) || empty($newPass)) {
     exit();
 }
 
-// Determine the table based on the action
-$table = "";
-switch ($action) {
-    case "kids":
-        $table = "kids";
-        break;
-    case "teachers":
-        $table = "teachers";
-        break;
-    case "parents":
-        $table = "parents";
-        break;
-    case "iaccess":
-        $table = "iaccess";
-        break;
-    default:
-        echo json_encode(array("status" => "error", "message" => "Invalid action"));
-        exit();
-}
 
 // Fetch the current password from the database
-$query = $connect->prepare("SELECT password FROM $table WHERE username = ?");
+$query = $connect->prepare("SELECT password FROM users WHERE username = ?");
 $query->bind_param("s", $username);
 $query->execute();
 $result = $query->get_result();
@@ -63,7 +44,7 @@ if ($user) {
         $hashedNewPass = password_hash($newPass, PASSWORD_DEFAULT);
 
         // Update the password in the database
-        $updateQuery = $connect->prepare("UPDATE $table SET password = ? WHERE username = ?");
+        $updateQuery = $connect->prepare("UPDATE users SET password = ? WHERE username = ?");
         $updateQuery->bind_param("ss", $hashedNewPass, $username);
 
         if ($updateQuery->execute()) {
