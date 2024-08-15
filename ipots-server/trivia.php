@@ -7,7 +7,7 @@ $triviaData = [
         [
             'level' => 1,
             'title' => 'Flamingo',
-            'description' => 'This is the story about a flamnigo who travelled to space',
+            'description' => 'This story is about a flamingo who travelled to space',
             'image' => 'images/trivia-menu/Flamingo.png'
         ],
         [

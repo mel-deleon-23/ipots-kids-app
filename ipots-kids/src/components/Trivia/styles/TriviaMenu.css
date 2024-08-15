@@ -20,11 +20,16 @@
   margin-top: 2.5em !important;  /* Added this line to remove margin-top */
 }
 
+.triviamenu-cards {
+  margin-left: 23.5em;
+}
+
 .trivia-menu-card {
   border: 5px solid #00aaff;
   border-radius: 16px;
   padding: 10px;
   background-color: #fff;
+  width: 662px;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -92,12 +97,21 @@
 }
 
 /* DESKTOP */
+@media (max-width: 1440px) {
+  .triviamenu-cards {
+    margin-left: 16em;
+  }
+}
+
 @media (max-width: 1280px) {
   .trivia-menu {
       padding: 20px 100px;
   }
   .card-body {
     margin-top: 2.5em !important;  /* Added this line to remove margin-top */
+  }
+  .triviamenu-cards {
+    margin-left: 3.5em;
   }
   .trivia-header {
       font-size: 36px;
@@ -110,10 +124,10 @@
     padding-left: 15px;
   }
   .trivia-card-title {
-      font-size: 22px;
+      font-size: 25px;
   }
   .trivia-card-text {
-      font-size: 16px;
+      font-size: 20px;
   }
   .play-button {
       font-size: 22px;
@@ -124,6 +138,9 @@
 @media (max-width: 1024px) {
   .trivia-menu {
       padding: 20px 50px;
+  }
+  .triviamenu-cards {
+    margin-right: 7em;
   }
   .trivia-header {
       font-size: 32px;
@@ -144,10 +161,10 @@
     margin-top: 1.5em !important;
   }
   .trivia-card-title {
-      font-size: 22px;
+      font-size: 25px;
   }
   .trivia-card-text {
-      font-size: 18px;
+      font-size: 21px;
   }
   .play-button {
       font-size: 20px;
@@ -158,8 +175,17 @@
 
 /* MOBILE */
 @media (max-width: 768px) {
+  .trivia-levels {
+    width: 100%;
+  }
+  .triviamenu-cards {
+    margin-right: 17.5em;
+  }
   .trivia-menu {
     padding: 20px 50px;
+  }
+  .triviamenu-cards {
+    margin-right: 17.5em;
   }
   .trivia-header {
       font-size: 28px;
@@ -195,6 +221,9 @@
   .trivia-levels {
     width: 100%;
   }
+  .triviamenu-cards {
+    margin-right: 5em;
+  }
   .trivia-menu {
     padding: 10px 50px;
   }
@@ -216,11 +245,15 @@
     line-height: 1.2em;
   }
   .play-button {
-    font-size: 18px;
+    /* font-size: 18px; */
     width: 100%;
-    height: 48px;
+    height: 38px;
     margin-top: -0.5em;
     margin-bottom: 2.75em;
     text-align: center;
+  }
+  .play-text {
+    font-size: 20px;
+    margin-top: -0.25em;
   }
 }

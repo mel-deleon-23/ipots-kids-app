@@ -90,22 +90,22 @@ const TriviaQuestion = () => {
     <div className="trivia-question-container">
       <div className="stats-header">
         <div className="stats">
-          <div className="gems">
-            <span role="img" aria-label="gems">{gems}</span>
-            <img src="/images/trivia-question/system-uicons_diamond.png" className="icon-gems" alt="gems" />
+          <div className="gems" aria-label={`${gems} gems`} role="img">
+            <span role="img" aria-label="gems count">{gems}</span>
+            <img src="/images/trivia-question/system-uicons_diamond.png" className="icon-gems" alt="gems icon" />
             <div>
               <p className="stats-text-gems">gems</p>
             </div>
           </div>
-          <div className="streak">
-            <img src="/images/trivia-question/ph_fire.png" className="icon-streak" alt="streak" />
-            <span role="img" aria-label="streak">x{streak}</span>
+          <div className="streak" aria-label={`${streak} streak`} role="img">
+            <img src="/images/trivia-question/ph_fire.png" className="icon-streak" alt="streak icon" />
+            <span role="img" aria-label="streak count">x{streak}</span>
             <div className="streak-text">
               <p className="stats-text-streak">streak</p>
             </div>
           </div>
           <div className="sound">
-            <img src="/images/trivia-question/Vector-sound.png" className="icon-sound" alt="sound" />
+            <img src="/images/trivia-question/Vector-sound.png" className="icon-sound" alt="sound icon" />
             <div className="sound-text">
               <p className="stats-text-sound">sound</p>
             </div>
@@ -122,12 +122,17 @@ const TriviaQuestion = () => {
       <div className="trivia-question-card">
         <div className="trivia-card-body">
           <h2 className="question-title text-center">{currentQuestion.question}</h2>
-          <ul className="options list-unstyled">
+          <ul className="options list-unstyled" aria-label="answer options" role="radiogroup">
             {currentQuestion.options.map((option, index) => (
               <li 
                 key={index} 
                 className={`option-trivia-button btn ${selectedOption === option ? (isCorrect ? 'btn-success' : 'btn-danger') : 'btn-light'} my-2`} 
                 onClick={() => handleOptionClick(option)}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleOptionClick(option); }}
+                tabIndex={0}
+                role="radio"
+                aria-label={option}
+                aria-checked={selectedOption === option}
                 style={{ display: selectedOption && isCorrect && option !== questions[currentQuestionIndex].correctAnswer ? 'none' : 'block' }}
               >
                 {option}
@@ -141,10 +146,10 @@ const TriviaQuestion = () => {
             </div>
           )}
           {selectedOption && !isCorrect && (
-            <button className="try-again-button btn btn-info mt-3" onClick={handleTryAgain}>
+            <button className="try-again-button btn btn-info mt-3" onClick={handleTryAgain} aria-label="Try again">
               <img src="/images/trivia-question/try-again.png" alt="try-again" className="play-button-icon" /> Try Again</button>
           )}
-          <button className="read-story-button btn btn-info mt-3"><img src="/images/trivia-question/read-icon.png" alt="book" />  Read Story</button>
+          <button className="read-story-button btn btn-info mt-3" aria-label="Read Story"><img src="/images/trivia-question/read-icon.png" alt="read-story" />  Read Story</button>
           {selectedOption && isCorrect && (
             currentQuestionIndex === questions.length - 1 ? (
               <button className="finish-button btn btn-info mt-3" onClick={handleFinish}>Finish</button>

@@ -35,7 +35,7 @@ const TriviaMenu = () => {
       <h1 className="trivia-header text-center my-4">Trivia</h1>
       <div className="row justify-content-center trivia-levels">
         {triviaLevels.map((level, index) => (
-          <div key={index} className="col-md-8 mb-4">
+          <div key={index} className="triviamenu-cards col-md-8 mb-4">
             <div className="card trivia-menu-card d-flex flex-row align-items-center">
               <div className="level-title">LEVEL {level.level}</div>
               <img className="trivia-image" src={level.image} alt={`${level.title} image`} />
