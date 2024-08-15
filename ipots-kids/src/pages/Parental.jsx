@@ -5,14 +5,52 @@ import { useEffect } from "react";
 export default function ParentalConsent() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { email, username, action, accept, password, dateOfBirth } =
-    location.state || {};
+  const {
+    email,
+    username,
+    action,
+    accept,
+    password,
+    dateOfBirth,
+    firstname,
+    lastname,
+  } = location.state || {};
 
   useEffect(() => {
     if (accept !== 1) {
       navigate("/ineligible");
     }
   }, [accept, navigate]);
+
+  const handleAccept = () => {
+    if (action === "iaccess") {
+      navigate("/location", {
+        state: {
+          email,
+          username,
+          password,
+          action,
+          accept,
+          dateOfBirth,
+          parental: 1,
+          firstname,
+          lastname,
+        },
+      });
+    } else {
+      navigate("/avatars", {
+        state: {
+          email,
+          username,
+          password,
+          action,
+          accept,
+          dateOfBirth,
+          parental: 1,
+        },
+      });
+    }
+  };
 
   return (
     <>
@@ -49,22 +87,12 @@ export default function ParentalConsent() {
             </p>
           </div>
           <div className="buttonBox d-flex flex-column justify-content-center align-items-center">
-            <Link
-              to="/avatars"
-              state={{
-                email,
-                username,
-                password,
-                action,
-                accept,
-                dateOfBirth,
-                parental: 1,
-              }}
+            <button
+              onClick={handleAccept}
+              className=" button-format buttonConsent buttonAccept"
             >
-              <button className=" button-format buttonConsent buttonAccept">
-                ACCEPT
-              </button>
-            </Link>
+              ACCEPT
+            </button>
             <Link to="/parental-ineligible">
               <button className=" button-format buttonConsent buttonDecline">
                 DECLINE

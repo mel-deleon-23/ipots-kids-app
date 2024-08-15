@@ -4,10 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./Auth";
 import axios from "axios";
 
-export default function Kidprofile() {
+export default function ParentsProfile() {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
-  // const { email, username, password, imageName, action } = location.state || {};
+  // Log user data for debugging
+  //   console.log("User Data:", JSON.stringify(user, null, 2));
 
   if (!user) {
     navigate("/signIn");
@@ -56,7 +57,6 @@ export default function Kidprofile() {
   };
 
   if (!profileData) {
-    // Optionally, display a loading message or spinner
     return <div>Loading...</div>;
   }
 
@@ -113,7 +113,10 @@ export default function Kidprofile() {
             action: profileData.action,
           }}
         >
-          <button className=" button-format buttonColor">Next</button>
+          <button className=" button-format buttonColor">
+            <img src={`/images/adduser.png`} alt="Add user" /> Manage Kid
+            Accounts
+          </button>
         </Link>
         <button className=" button-format buttonEmpty" onClick={handleLogout}>
           Logout

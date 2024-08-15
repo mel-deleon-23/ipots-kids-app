@@ -31,7 +31,10 @@ export default function Options() {
                 iPOTS PARENTS
               </button>
             </Link>
-            <Link to="/username" state={{ action: "iAccess", accept }}>
+            <Link
+              to="/iaccess-confirmation"
+              state={{ action: "iaccess", accept }}
+            >
               <button className=" option-button buttonColor">iACCESS</button>
             </Link>
           </div>
