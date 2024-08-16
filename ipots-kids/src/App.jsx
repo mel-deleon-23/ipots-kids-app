@@ -51,12 +51,30 @@ function App() {
           <Navbar />
           <main id="main">
             <Routes>
-              <Route path="/trivia" element={<TriviaMenu />} />
+              <Route
+                path="/trivia"
+                element={
+                  <ProtectedRoute>
+                    <TriviaMenu />
+                  </ProtectedRoute>
+                }
+              />
               <Route
                 path="/question/level/:level"
-                element={<TriviaQuestion />}
+                element={
+                  <ProtectedRoute>
+                    <TriviaQuestion />
+                  </ProtectedRoute>
+                }
               />
-              <Route path="/summary" element={<TriviaSummary />} />
+              <Route
+                path="/summary"
+                element={
+                  <ProtectedRoute>
+                    <TriviaSummary />
+                  </ProtectedRoute>
+                }
+              />
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/ipotskids" element={<iPOTSKIDS />} />

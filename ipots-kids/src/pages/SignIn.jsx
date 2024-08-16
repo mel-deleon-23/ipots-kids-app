@@ -42,7 +42,7 @@ export default function SignIn() {
         // Update Auth context
         login(response.data.token);
 
-        navigate("/iaccess-profile");
+        navigate("/trivia");
       } else {
         alert(response.data.message);
       }
