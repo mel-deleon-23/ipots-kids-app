@@ -35,6 +35,11 @@ import IaccessConfirm from "./pages/IAccessConfirm";
 import Detail from "./pages/Details";
 import Location from "./pages/Location";
 import Food from "./pages/FoodAllergies";
+import Environment from "./pages/EnvironmentalAllergies";
+import Medication from "./pages/MedicationAllergies";
+import Medical from "./pages/MedicalCondition";
+import IaccessCongrat from "./pages/IaccessCongrat";
+import IaccessProfile from "./pages/IaccessProfile";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Benefits from "./pages/Benefits/Benefits";
 
@@ -113,6 +118,14 @@ function App() {
               <Route path="/details" element={<Detail />} />
               <Route path="/location" element={<Location />} />
               <Route path="/food-allergies" element={<Food />} />
+              <Route
+                path="/environmental-allergies"
+                element={<Environment />}
+              />
+              <Route path="/medication-allergies" element={<Medication />} />
+              <Route path="/medical-conditions" element={<Medical />} />
+              <Route path="/iaccess-success" element={<IaccessCongrat />} />
+              <Route path="/iaccess-profile" element={<IaccessProfile />} />
             </Routes>
           </main>
           <Footer />

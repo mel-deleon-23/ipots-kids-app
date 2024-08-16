@@ -37,7 +37,7 @@ export default function Consent() {
             </p>
           </div>
           <div className="buttonBox d-flex flex-column justify-content-center align-items-center">
-            <Link to="/options" state={{ action: 1 }}>
+            <Link to="/options" state={{ accept: 1 }}>
               <button className=" button-format buttonConsent buttonAccept">
                 ACCEPT
               </button>

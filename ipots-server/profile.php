@@ -13,15 +13,25 @@ if (!$connect) {
 }
 // Get the parameters from URL
 $username = $_GET['username'] ?? '';
-// $action = $_GET['action'] ?? '';
+$action = $_GET['action'] ?? '';
 
 // Fetch user information
+
+if($action==="iaccess"){
+    $sql = "
+    SELECT u.*, a.image, i.* 
+    FROM iaccess AS i 
+    LEFT JOIN avartars AS a ON i.avatar_id = a.id 
+    LEFT JOIN users As u ON u.id = i.user_id
+    WHERE u.username = ?
+";
+}else{
 $sql = "
     SELECT u.*, a.image 
     FROM users AS u 
     LEFT JOIN avartars AS a ON u.avatar_id = a.id 
     WHERE u.username = ?
-";
+";}
 $stmt = $connect->prepare($sql);
 $stmt->bind_param("s", $username);
 $stmt->execute();

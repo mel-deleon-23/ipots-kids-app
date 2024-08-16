@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function FoodAllergies() {
+export default function MedicalCondition() {
   const location = useLocation();
   const navigate = useNavigate();
   const {
@@ -18,12 +18,18 @@ export default function FoodAllergies() {
     lastname,
     city,
     country,
+    selectedFoodAllergies,
+    otherFoodAllergies,
+    selectedEnvironmentAllergies,
+    otherEnvironmentAllergies,
+    selectedMedicationAllergies,
+    otherMedicationAllergies,
   } = location.state || {};
 
-  const [foodAllergies, setFoodAllergies] = useState([]);
-  const [selectedFoodAllergies, setSelectedFoodAllergies] = useState([]);
-  const [otherFoodAllergy, setOtherFoodAllergy] = useState(""); // New state for other allergies
-  const [showOtherFoodInput, setShowOtherFoodInput] = useState(false); // State to manage "Other" checkbox
+  const [medicalCondition, setMedical] = useState([]);
+  const [selectedMedical, setSelectedMedical] = useState([]);
+  const [otherMedical, setOtherMedical] = useState(""); // New state for other allergies
+  const [showOtherMedicalInput, setShowOtherMedicalInput] = useState(false); // State to manage "Other" checkbox
 
   useEffect(() => {
     if (!accept) {
@@ -33,70 +39,70 @@ export default function FoodAllergies() {
 
     axios
       .get("http://localhost/ipots-kids-app/ipots-server/allergies.php", {
-        params: { type: "food" },
+        params: { type: "medical" },
       })
       .then((response) => {
         if (Array.isArray(response.data)) {
-          setFoodAllergies(response.data);
+          setMedical(response.data);
         } else {
           console.error("Invalid data format:", response.data);
-          setFoodAllergies([]);
+          setMedical([]);
         }
       })
       .catch((error) => {
-        console.error("Error fetching allergies:", error);
-        setFoodAllergies([]);
+        console.error("Error fetching medical conditions:", error);
+        setMedical([]);
       });
   }, [accept, navigate]);
 
-  const handleAllergyChange = (allergyId) => {
-    setSelectedFoodAllergies((prevSelected) => {
-      if (prevSelected.includes(allergyId)) {
-        return prevSelected.filter((id) => id !== allergyId);
+  const handleAllergyChange = (medicalId) => {
+    setSelectedMedical((prevSelected) => {
+      if (prevSelected.includes(medicalId)) {
+        return prevSelected.filter((id) => id !== medicalId);
       } else {
-        return [...prevSelected, allergyId];
+        return [...prevSelected, medicalId];
       }
     });
   };
 
   const handleOtherCheckboxChange = (e) => {
     const isChecked = e.target.checked;
-    setShowOtherFoodInput(isChecked);
+    setShowOtherMedicalInput(isChecked);
 
     // If the checkbox is unchecked, clear the input field
     if (!isChecked) {
-      setOtherFoodAllergy("");
+      setOtherMedical("");
     }
   };
 
   const handleOtherAllergyChange = (e) => {
-    setOtherFoodAllergy(e.target.value);
+    setOtherMedical(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Check if "I do not have any" checkbox is selected
-    const noAllergyChecked = document.getElementById("noAllergyS").checked;
+    const noMedicalChecked = document.getElementById("noMedicalS").checked;
 
     // Check if "Other" checkbox is checked
     const otherCheckboxChecked =
-      document.getElementById("otherAllergy").checked;
+      document.getElementById("otherMedical").checked;
 
     // If "I do not have any" is checked and there are selected or other allergies
     if (
-      noAllergyChecked &&
-      (selectedFoodAllergies.length > 0 || otherFoodAllergy.trim() !== "")
+      noMedicalChecked &&
+      (selectedMedical.length > 0 || otherMedical.trim() !== "")
     ) {
-      const confirmNoAllergy = window.confirm(
-        "Are you sure that you have no allergy? If no, please uncheck 'I do not have any'."
+      const confirmNoMedical = window.confirm(
+        "Are you sure that you have no medical condition? If no, please uncheck 'I do not have any'."
       );
 
-      if (confirmNoAllergy) {
-        // Clear selected allergies, other allergies, and uncheck the "Other" checkbox
-        setSelectedFoodAllergies([]);
-        setOtherFoodAllergy("");
-        setShowOtherFoodInput(false);
+      if (confirmNoMedical) {
+        // Clear selected medical, other medical, and uncheck the "Other" checkbox
+        setSelectedMedical([]);
+        setOtherMedical("");
+        setShowOtherMedicalInput(false);
         // Skip further validation as we are clearing the inputs
         return;
       } else {
@@ -106,33 +112,32 @@ export default function FoodAllergies() {
     }
 
     // Final validation with the cleared states if applicable
-    const finalSelectedFoodAllergies = noAllergyChecked
-      ? []
-      : selectedFoodAllergies;
-    const finalOtherFoodAllergies = noAllergyChecked ? "" : otherFoodAllergy;
+    const finalSelectedMedical = noMedicalChecked ? [] : selectedMedical;
+    const finalOtherMedical = noMedicalChecked ? "" : otherMedical;
 
     // Validation checks
     if (
-      !noAllergyChecked &&
-      finalSelectedFoodAllergies.length === 0 &&
-      finalOtherFoodAllergies.trim() === ""
+      !noMedicalChecked &&
+      finalSelectedMedical.length === 0 &&
+      finalOtherMedical.trim() === ""
     ) {
       alert(
-        "Please select at least one food allergy, specify an 'Other' allergy, or indicate 'I do not have any'."
+        "Please select at least one medical condition, specify an 'Other' medical condition, or indicate 'I do not have any'."
       );
       return;
     }
 
-    if (otherCheckboxChecked && finalOtherFoodAllergies.trim() === "") {
+    if (otherCheckboxChecked && finalOtherMedical.trim() === "") {
       alert("Please specify your 'Other' allergies.");
       return;
     }
 
-    if (!otherCheckboxChecked && finalOtherFoodAllergies.trim() !== "") {
+    if (!otherCheckboxChecked && finalOtherMedical.trim() !== "") {
       alert("Please check 'Other' checkbox to specify additional allergies.");
       return;
     }
-    navigate("/environmental-allergies", {
+
+    navigate("/avatars", {
       state: {
         email,
         username,
@@ -145,8 +150,14 @@ export default function FoodAllergies() {
         lastname,
         city,
         country,
-        selectedFoodAllergies: finalSelectedFoodAllergies,
-        otherFoodAllergies: finalOtherFoodAllergies,
+        selectedFoodAllergies,
+        otherFoodAllergies,
+        selectedEnvironmentAllergies,
+        otherEnvironmentAllergies,
+        selectedMedicationAllergies,
+        otherMedicationAllergies,
+        selectedMedical: finalSelectedMedical,
+        otherMedical: finalOtherMedical,
       },
     });
   };
@@ -155,24 +166,24 @@ export default function FoodAllergies() {
     <div className="container-fluid space">
       <div className="d-flex flex-column justify-content-center align-items-center">
         <img src="/images/Allergies.png" alt="Allergies" />
-        <h2>Any food allergies?</h2>
+        <h2>Any diagnosed medical conditions?</h2>
         <form onSubmit={handleSubmit}>
           <div className="allergies">
-            {foodAllergies.map((allergy) => (
-              <div key={allergy.id} className="form-check form-check-inline">
+            {medicalCondition.map((medical) => (
+              <div key={medical.id} className="form-check form-check-inline">
                 <input
                   className="form-check-input"
                   type="checkbox"
-                  id={`allergy-${allergy.id}`}
-                  value={allergy.id}
-                  checked={selectedFoodAllergies.includes(allergy.id)}
-                  onChange={() => handleAllergyChange(allergy.id)}
+                  id={`allergy-${medical.id}`}
+                  value={medical.id}
+                  checked={selectedMedical.includes(medical.id)}
+                  onChange={() => handleAllergyChange(medical.id)}
                 />
                 <label
                   className="form-check-label label-allergies"
-                  htmlFor={`allergy-${allergy.id}`}
+                  htmlFor={`allergy-${medical.id}`}
                 >
-                  {allergy.title}
+                  {medical.title}
                 </label>
               </div>
             ))}
@@ -180,13 +191,13 @@ export default function FoodAllergies() {
               <input
                 className="form-check-input"
                 type="checkbox"
-                id="otherAllergy"
-                checked={showOtherFoodInput}
+                id="otherMedical"
+                checked={showOtherMedicalInput}
                 onChange={handleOtherCheckboxChange}
               />
               <label
                 className="form-check-label label-allergies"
-                htmlFor="otherAllergy"
+                htmlFor="otherMedical"
               >
                 Other (please specify)
               </label>
@@ -195,9 +206,9 @@ export default function FoodAllergies() {
               <input
                 type="text"
                 className="form-control form-box input-placeholder input-place"
-                id="otherAllergyInput"
-                placeholder="Walnuts, Mango, etc."
-                value={otherFoodAllergy}
+                id="otherMedicalInput"
+                placeholder="Glaucoma, Hypothyroidism, etc."
+                value={otherMedical}
                 onChange={handleOtherAllergyChange}
               />
             </div>
@@ -205,12 +216,12 @@ export default function FoodAllergies() {
               <input
                 className="form-check-input"
                 type="checkbox"
-                id="noAllergyS"
+                id="noMedicalS"
                 value="0"
               />
               <label
                 className="form-check-label label-allergies"
-                htmlFor="noAllergyS"
+                htmlFor="noMedicalS"
               >
                 I do not have any...
               </label>
@@ -222,7 +233,7 @@ export default function FoodAllergies() {
               Next
             </button>
             <Link
-              to="/location"
+              to="/medication-allergies"
               state={{
                 email,
                 username,
@@ -235,6 +246,12 @@ export default function FoodAllergies() {
                 lastname,
                 city,
                 country,
+                selectedFoodAllergies,
+                otherFoodAllergies,
+                selectedEnvironmentAllergies,
+                otherEnvironmentAllergies,
+                selectedMedicationAllergies,
+                otherMedicationAllergies,
               }}
             >
               <button className="button-format buttonEmpty">Back</button>

@@ -24,7 +24,16 @@ export default function Details() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (e.target.checkValidity()) {
-      navigate("/signup", { state: { formData, action, accept, confirm } });
+      navigate("/signup", {
+        state: {
+          username: formData.username,
+          firstname: formData.firstname,
+          lastname: formData.lastname,
+          action,
+          accept,
+          confirm,
+        },
+      });
     } else {
       setIsInvalid(true); // Set invalid if form is not valid
     }
