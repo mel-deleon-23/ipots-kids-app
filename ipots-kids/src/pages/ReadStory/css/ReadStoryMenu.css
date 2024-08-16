@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
-/* TRIVIA MENU */
-.trivia-menu {
+/* STORY MENU */
+.readstory-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +11,7 @@
   padding: 20px;
 }
 
-.trivia-header {
+.readstory-header {
   font-size: 40px;
   font-weight: 800;
 }
@@ -20,11 +20,11 @@
   margin-top: 2.5em !important;  /* Added this line to remove margin-top */
 }
 
-.triviamenu-cards {
+.readstory-cards {
   margin-left: 23.5em;
 }
 
-.trivia-menu-card {
+.readstory-menu-card {
   border: 5px solid #00aaff;
   border-radius: 16px;
   padding: 10px;
@@ -36,7 +36,7 @@
   align-items: center;
 }
 
-.level-title {
+.readstory-title {
   font-size: 24px;
   font-weight: 700;
   color: #000;
@@ -48,7 +48,7 @@
   z-index: 1;
 }
 
-.trivia-image {
+.readstory-image {
   width: 128px;
   height: 128px;
   object-fit: cover;
@@ -57,20 +57,20 @@
   padding-top: 20px;
 }
 
-.trivia-card-title {
+.readstory-card-title {
   font-size: 24px;
   font-weight: bold;
   color: #000;
   margin: 0;
 }
 
-.trivia-card-text {
+.readstory-card-text {
   font-size: 20px;
   color: #000;
   margin: 5px 0;
 }
 
-.play-button {
+.read-button {
   display: inline-block;
   padding: 5px 40px;
   font-size: 24px;
@@ -82,91 +82,91 @@
   align-self: flex-end;
 }
 
-.play-button-icon {
+.read-button-icon {
   margin-top: -0.2em;
 }
-.play-text {
+.read-text {
   display: inline-block;
   padding-left: 5px;
   margin-bottom: 0.15em;
   font-weight: 700;
 }
 
-.play-button:hover {
+.read-button:hover {
   background-color: #0088cc;
 }
 
 /* DESKTOP */
 @media (max-width: 1440px) {
-  .triviamenu-cards {
+  .readstory-cards {
     margin-left: 16em;
   }
 }
 
 @media (max-width: 1280px) {
-  .trivia-menu {
+  .readstory-menu {
       padding: 20px 100px;
   }
   .card-body {
     margin-top: 2.5em !important;  /* Added this line to remove margin-top */
   }
-  .triviamenu-cards {
+  .readstory-cards {
     margin-left: 3.5em;
   }
-  .trivia-header {
+  .readstory-header {
       font-size: 36px;
   }
-  .trivia-card-content {
+  .readstory-card-content {
     padding-bottom: 15px;
   }
-  .trivia-image {
+  .readstory-image {
     margin-right: 10px;
     padding-left: 15px;
   }
-  .trivia-card-title {
+  .readstory-card-title {
       font-size: 25px;
   }
-  .trivia-card-text {
+  .readstory-card-text {
       font-size: 20px;
   }
-  .play-button {
+  .read-button {
       font-size: 22px;
   }
 }
 
 /* TABLET */
 @media (max-width: 1024px) {
-  .trivia-menu {
+  .readstory-menu {
       padding: 20px 50px;
   }
-  .triviamenu-cards {
+  .readstory-cards {
     margin-right: 7em;
   }
-  .trivia-header {
+  .readstory-header {
       font-size: 32px;
   }
-  .trivia-menu-card {
+  .readstory-menu-card {
       flex-direction: column;
       align-items: center;
   }
-  .level-title {
+  .readstory-title {
       font-size: 22px;
       top: 10px;
   }
-  .trivia-image {
+  .readstory-image {
       margin-top: 0.8em;
       padding-top: 0;
   }
   .card-body{
     margin-top: 1.5em !important;
   }
-  .trivia-card-title {
+  .readstory-card-title {
       font-size: 25px;
   }
-  .trivia-card-text {
+  .readstory-card-text {
       font-size: 21px;
   }
-  .play-button {
+  .read-button {
       font-size: 20px;
       width: 100%;
       text-align: center;
@@ -175,41 +175,38 @@
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .trivia-levels {
+  .readstory-levels {
     width: 100%;
   }
-  .triviamenu-cards {
-    margin-right: 17.5em;
-  }
-  .trivia-menu {
+  .readstory-menu {
     padding: 20px 50px;
   }
-  .triviamenu-cards {
+  .readstory-cards {
     margin-right: 17.5em;
   }
-  .trivia-header {
+  .readstory-header {
       font-size: 28px;
   }
-  .trivia-menu-card {
+  .readstory-menu-card {
       padding: 8px;
   }
-  .level-title {
+  .readstory-title {
       font-size: 20px;
       top: 15px;
       left: 15px;
   }
-  .trivia-image {
+  .readstory-image {
       width: 95px;
       height: 95px;
       margin-top: 1em;
   }
-  .trivia-card-title {
+  .readstory-card-title {
       font-size: 22px;
   }
-  .trivia-card-text {
+  .readstory-card-text {
       font-size: 18px;
   }
-  .play-button {
+  .read-button {
       font-size: 18px;
       width: 100%;
       text-align: center;
@@ -218,41 +215,41 @@
 
 /* MOBILE SMALLER SCREENS */
 @media (max-width: 480px) {
-  .trivia-levels {
+  .readstory-levels {
     width: 100%;
   }
-  .triviamenu-cards {
+  .readstory-cards {
     margin-right: 5em;
   }
-  .trivia-menu {
+  .readstory-menu {
     padding: 10px 50px;
   }
-  .trivia-menu-card{
+  .readstory-menu-card{
     width: 375px;
     height: 174px;
   }
-  .level-title {
+  .readstory-title {
     font-size: 20px;
     top: 7px;
     left: 15px;
   }
-  .trivia-card-title {
+  .readstory-card-title {
     font-size: 20px;
     padding-top: 30px;
   }
-  .trivia-card-text {
+  .readstory-card-text {
     font-size: 15px;
     line-height: 1.2em;
   }
-  .play-button {
-    /* font-size: 18px; */
+  .read-button {
+    /* font-size: 15px; */
     width: 100%;
     height: 38px;
     margin-top: -0.5em;
     margin-bottom: 2.75em;
     text-align: center;
   }
-  .play-text {
+  .read-text {
     font-size: 20px;
     margin-top: -0.25em;
   }

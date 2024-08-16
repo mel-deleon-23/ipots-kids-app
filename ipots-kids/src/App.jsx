@@ -8,6 +8,8 @@ import Contact from "./pages/Contact";
 import TriviaMenu from "./components/Trivia/TriviaMenu";
 import TriviaQuestion from "./components/Trivia/TriviaQuestion";
 import TriviaSummary from "./components/Trivia/TriviaSummary";
+import ReadStoryMenu from "./pages/ReadStory/ReadStoryMenu";
+import Story from "./pages/ReadStory/Story";
 import HomePage from "./pages/HomePage";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
@@ -75,6 +77,9 @@ function App() {
                   </ProtectedRoute>
                 }
               />
+
+              <Route path="/readstory" element={<ReadStoryMenu />} />
+              <Route path="/story/level/:level" element={<Story />} />
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/ipotskids" element={<iPOTSKIDS />} />
@@ -90,6 +95,7 @@ function App() {
               <Route path="/username" element={<Username />} />
               <Route path="/confirmation" element={<Confirm />} />
               <Route path="/dateofbirth" element={<Birth />} />
+              <Route path="/parental" element={<Parental />} />
               <Route path="/parental" element={<Parental />} />
               <Route
                 path="/parental-ineligible"

@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+.story-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.story-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.story-content {
+    margin-top: 20px;
+}
+
+.story-text {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.story-image {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.story-buttons .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+}
+
+.story-buttons .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.story-buttons .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}

@@ -182,6 +182,7 @@
 }
 
 .option-trivia-button.btn-light {
+
   border-color: #0fc0fc;
   background-color: #fff;
 }
@@ -238,7 +239,9 @@
   max-width: 307px; /* Add a max-width */
   height: 61px;
   border-radius: 16px;
+
   background-color: #0fc0fc;
+
   color: #000;
 }
 
