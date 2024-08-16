@@ -458,7 +458,9 @@
 
 /*ALLERGIES*/
 .allergies {
-  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0 40px 200px;
   font-size: 24px;
   font-weight: 400;
 }
@@ -466,6 +468,8 @@
   height: 52px;
   width: 490px;
   border: 2px solid #0fc0fc;
+  border-radius: 8px;
+  margin: 24px 0;
 }
 .input-place {
   margin-top: 5px !important;
@@ -478,5 +482,14 @@
 }
 .form-check-input {
   border: 2px solid black;
+}
+
+.label-allergies {
+  margin: 10px 10px 10px 15px;
+}
+.form-check-input[type="checkbox"] {
+  border-radius: 0.25em;
+  width: 42px;
+  height: 40px;
 }
 /*END ALLERGIES*/
