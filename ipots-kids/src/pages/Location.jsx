@@ -43,6 +43,8 @@ export default function Location() {
         parental,
         firstname,
         lastname,
+        city: formData.city,
+        country: formData.country,
       },
     });
   };
@@ -54,6 +56,7 @@ export default function Location() {
       [name]: value,
     });
   };
+  const backLink = parental ? `/parental` : `/dateOfBirth`;
 
   return (
     <div className="container-fluid space">
@@ -97,7 +100,7 @@ export default function Location() {
                 Next
               </button>
               <Link
-                to="/parental"
+                to={backLink}
                 state={{
                   email,
                   username,

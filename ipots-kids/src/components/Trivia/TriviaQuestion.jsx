@@ -1,12 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import TriviaSummary from "./TriviaSummary"; 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../Trivia/styles/TriviaQuestion.css';
+import TriviaSummary from "./TriviaSummary";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../Trivia/styles/TriviaQuestion.css";
+import { AuthContext } from "../../pages/Auth";
 
 const TriviaQuestion = () => {
   const { level } = useParams();
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
+  // Log user data for debugging
+  //   console.log("User Data:", JSON.stringify(user, null, 2));
+
+  if (!user) {
+    navigate("/signIn");
+  }
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -19,7 +27,9 @@ const TriviaQuestion = () => {
   useEffect(() => {
     const fetchQuestionData = async () => {
       try {
-        const response = await fetch(`http://localhost:8888/ipots-kids-app/ipots-server/trivia_question.php?level=${level}`);
+        const response = await fetch(
+          `http://localhost/ipots-kids-app/ipots-server/trivia_question.php?level=${level}`
+        );
         const data = await response.json();
 
         if (data.error) {
@@ -48,7 +58,7 @@ const TriviaQuestion = () => {
       setStreak(streak + 1);
     } else {
       setStreak(0);
-      setHasAnsweredCorrectly(true);  // Ensure the user can't earn the gem on try again
+      setHasAnsweredCorrectly(true); // Ensure the user can't earn the gem on try again
     }
   };
 
@@ -59,7 +69,7 @@ const TriviaQuestion = () => {
       setIsCorrect(null);
       setHasAnsweredCorrectly(false);
     } else {
-      setCompleted(true); 
+      setCompleted(true);
     }
   };
 
@@ -69,7 +79,9 @@ const TriviaQuestion = () => {
   };
 
   const handleFinish = () => {
-    navigate('/summary', { state: { gemsEarned: gems, totalQuestions: questions.length, level } });
+    navigate("/summary", {
+      state: { gemsEarned: gems, totalQuestions: questions.length, level },
+    });
   };
 
   if (questions.length === 0) {
@@ -90,6 +102,7 @@ const TriviaQuestion = () => {
     <div className="trivia-question-container">
       <div className="stats-header">
         <div className="stats">
+
           <div className="gems" aria-label={`${gems} gems`} role="img">
             <span role="img" aria-label="gems count">{gems}</span>
             <img src="/images/trivia-question/system-uicons_diamond.png" className="icon-gems" alt="gems icon" />
@@ -105,7 +118,9 @@ const TriviaQuestion = () => {
             </div>
           </div>
           <div className="sound">
+
             <img src="/images/trivia-question/Vector-sound.png" className="icon-sound" alt="sound icon" />
+
             <div className="sound-text">
               <p className="stats-text-sound">sound</p>
             </div>
@@ -115,12 +130,18 @@ const TriviaQuestion = () => {
 
       <div className="progress-bar-container mt-2">
         {Array.from({ length: questions.length }).map((_, index) => (
-          <div key={index} className={`progress-dot ${index <= currentQuestionIndex ? 'active' : ''}`} />
+          <div
+            key={index}
+            className={`progress-dot ${
+              index <= currentQuestionIndex ? "active" : ""
+            }`}
+          />
         ))}
       </div>
 
       <div className="trivia-question-card">
         <div className="trivia-card-body">
+
           <h2 className="question-title text-center">{currentQuestion.question}</h2>
           <ul className="options list-unstyled" aria-label="answer options" role="radiogroup">
             {currentQuestion.options.map((option, index) => (
@@ -146,6 +167,7 @@ const TriviaQuestion = () => {
             </div>
           )}
           {selectedOption && !isCorrect && (
+
             <button className="try-again-button btn btn-info mt-3" onClick={handleTryAgain} aria-label="Try again">
               <img src="/images/trivia-question/try-again.png" alt="try-again" className="play-button-icon" /> Try Again</button>
           )}
@@ -154,9 +176,13 @@ const TriviaQuestion = () => {
             currentQuestionIndex === questions.length - 1 ? (
               <button className="finish-button btn btn-info mt-3" onClick={handleFinish}>Finish</button>
             ) : (
-              <button className="next-question-button btn btn-info mt-3" onClick={handleNextQuestion}>Next Question</button>
-            )
-          )}
+              <button
+                className="next-question-button btn btn-info mt-3"
+                onClick={handleNextQuestion}
+              >
+                Next Question
+              </button>
+            ))}
         </div>
       </div>
     </div>

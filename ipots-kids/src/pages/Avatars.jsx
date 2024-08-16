@@ -16,6 +16,18 @@ export default function Avartar() {
     dateOfBirth,
     parental,
     numberOfChildren,
+    firstname,
+    lastname,
+    city,
+    country,
+    selectedFoodAllergies,
+    otherFoodAllergies,
+    selectedEnvironmentAllergies,
+    otherEnvironmentAllergies,
+    selectedMedicationAllergies,
+    otherMedicationAllergies,
+    selectedMedical,
+    otherMedical,
     isUpdate, //  check if the user is updating the avatar
   } = location.state || {};
 
@@ -72,9 +84,23 @@ export default function Avartar() {
       accept,
       parental,
       numberOfChildren,
+      firstname,
+      lastname,
+      city,
+      country,
+      selectedFoodAllergies,
+      otherFoodAllergies,
+      selectedEnvironmentAllergies,
+      otherEnvironmentAllergies,
+      selectedMedicationAllergies,
+      otherMedicationAllergies,
+      selectedMedical,
+      otherMedical,
       imageId: selectedImage.id,
       imageName: selectedImage.image,
     };
+
+    console.log(payload);
 
     axios
       .post(apiEndpoint, payload)
@@ -112,6 +138,19 @@ export default function Avartar() {
                   password,
                   imageName: selectedImage.image, // Pass update imageName to the next page
                   action,
+                },
+              });
+            } else if (action === "iaccess") {
+              navigate("/iaccess-profile", {
+                state: {
+                  email,
+                  username,
+                  password,
+                  firstname,
+                  lastname,
+                  imageName: selectedImage.image, // Pass imageName to the next page
+                  action,
+                  accept,
                 },
               });
             }
@@ -155,6 +194,19 @@ export default function Avartar() {
                   email,
                   username,
                   password,
+                  imageName: selectedImage.image, // Pass imageName to the next page
+                  action,
+                  accept,
+                },
+              });
+            } else if (action === "iaccess") {
+              navigate("/iaccess-success", {
+                state: {
+                  email,
+                  username,
+                  password,
+                  firstname,
+                  lastname,
                   imageName: selectedImage.image, // Pass imageName to the next page
                   action,
                   accept,

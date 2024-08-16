@@ -78,7 +78,7 @@
   width: 30px;
   height: 30px;
   /* Add some spacing between icon and text */
-  margin-left: 3.5em; 
+  margin-left: 3.5em;
 }
 
 .stats-text-gems {
@@ -92,14 +92,14 @@
   margin-left: -4.25em;
 }
 .stats-text-streak {
-  font-size: 20px; 
+  font-size: 20px;
   margin-left: -3.4em;
   text-align: center;
   margin-top: 3.45em;
 }
 
 .stats-text-sound {
-  font-size: 20px; 
+  font-size: 20px;
   margin-left: -3.25em;
   text-align: center;
   margin-top: 3.45em;
@@ -108,9 +108,10 @@
   margin-left: -3.15em;
 }
 
-.gems span, .streak span {
+.gems span,
+.streak span {
   font-size: 30px; /* Adjust the font size for the numbers */
-  font-weight: 500; 
+  font-weight: 500;
   margin-right: 5px; /* Add some spacing between number and icon */
 }
 
@@ -119,11 +120,11 @@
 }
 
 .streak p {
-  margin-left: 5px; 
+  margin-left: 5px;
 }
 
 .sound p {
-  margin-left: 5px; 
+  margin-left: 5px;
 }
 
 .progress-bar-container {
@@ -131,7 +132,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   width: 100%;
   max-width: 460px;
   border-radius: 10px;
@@ -150,7 +151,7 @@
 }
 
 .progress-dot.active {
-  background-color: #0FC0FC;
+  background-color: #0fc0fc;
 }
 
 .trivia-card-body {
@@ -175,36 +176,37 @@
   font-size: 24px;
   border-radius: 16px;
   color: #000;
-  border: 2px solid #0FC0FC;
+  border: 2px solid #0fc0fc;
   background-color: #fff;
   margin: 10px auto; /* Center the options and add margin */
 }
 
 .option-trivia-button.btn-light {
-  border-color: #0FC0FC;
+
+  border-color: #0fc0fc;
   background-color: #fff;
 }
 .option-trivia-button:hover {
-  background-color: #0FC0FC;
+  background-color: #0fc0fc;
   font-weight: 700;
 }
 
 .option-trivia-button.btn-success {
-  border-color: #0CCA63;
-  background-color: #0CCA63;
+  border-color: #0cca63;
+  background-color: #0cca63;
   color: #000;
   font-weight: 700;
 }
 
 .option-trivia-button.btn-danger {
-  border-color: #CA0C17;
-  background-color: #CA0C17;
+  border-color: #ca0c17;
+  background-color: #ca0c17;
   color: #fff;
   font-weight: 700;
 }
 
 .explanation {
-  background-color: #0FC0FC;
+  background-color: #0fc0fc;
   padding: 25px;
   border-radius: 8px;
   text-align: left;
@@ -237,7 +239,9 @@
   max-width: 307px; /* Add a max-width */
   height: 61px;
   border-radius: 16px;
-  background-color: #0FC0FC;
+
+  background-color: #0fc0fc;
+
   color: #000;
 }
 
@@ -245,12 +249,11 @@
 .try-again-button:hover,
 .next-question-button:hover,
 .finish-button:hover {
-  background-color: #87D6F2;
-  border-color: #87D6F2;
+  background-color: #87d6f2;
+  border-color: #87d6f2;
   color: #000;
   font-weight: 700;
 }
-
 
 /* DESKTOP */
 @media (max-width: 1280px) {
@@ -299,7 +302,9 @@
   .streak {
     margin-right: 16em;
   }
-  .icon-gems, .icon-streak, .icon-sound {
+  .icon-gems,
+  .icon-streak,
+  .icon-sound {
     width: 23px;
     height: 23px;
   }
@@ -309,7 +314,9 @@
   .icon-sound {
     margin-left: 0.5em;
   }
-  .stats-text-gems, .stats-text-streak, .stats-text-sound {
+  .stats-text-gems,
+  .stats-text-streak,
+  .stats-text-sound {
     font-size: 18px;
     margin-top: 3.45em;
   }
@@ -328,7 +335,8 @@
   .sound-text {
     margin-left: -2.8em;
   }
-  .gems span, .streak span {
+  .gems span,
+  .streak span {
     font-size: 20px;
   }
   .progress-bar-container {
@@ -363,7 +371,9 @@
   .icon-sound {
     margin-left: 1.25em;
   }
-  .stats-text-gems, .stats-text-streak, .stats-text-sound {
+  .stats-text-gems,
+  .stats-text-streak,
+  .stats-text-sound {
     font-size: 16px;
     margin-top: 3.45em;
   }
@@ -382,7 +392,8 @@
   .sound-text {
     margin-left: -2.5em;
   }
-  .gems span, .streak span {
+  .gems span,
+  .streak span {
     font-size: 18px;
   }
   .progress-bar-container {

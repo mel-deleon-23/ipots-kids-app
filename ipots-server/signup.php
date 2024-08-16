@@ -41,6 +41,15 @@ $firstname = $data -> firstname ?? 0;
 $lastname = $data ->lastname ?? 0;
 $city = $data->city ?? 0;
 $country = $data->country ?? 0;
+$foodAllergies = [];
+$otherFood = null;
+$environmentAllergies = [];
+$otherEnvironment = null;
+$medicationAllergies = [];
+$otherMedication = null;
+$medical = [];
+$otherMedical = null;
+
 
 $key = $_ENV['key'];
 $algorithm = 'HS256';
@@ -71,7 +80,9 @@ switch ($action) {
 }
 
 $columns = "email, username, password, birthday, avatar_id,consent,platform_id,user_type_id";
-$values = "'$email', '$username', '$password', '$birthday', '$image','$accept','$platform','$type'";
+$values = "'$email', '$username', '$password', '$birthday', " .
+           (($action !== "iaccess" && $image) ? "'$image'" : "NULL") . ", " . // Avatar ID for kids, teachers, parents
+           "'$accept', '$platform', '$type'";
 
 $sql = "INSERT INTO users ($columns) VALUES ($values)";
 
@@ -92,7 +103,7 @@ if (mysqli_query($connect, $sql)) {
         }
     } elseif ($action === "teachers") {
         // Insert into teachers table
-        $insertTeacherSql = "INSERT INTO teachers (user_id, children) VALUES ('$user_id',$children')";
+        $insertTeacherSql = "INSERT INTO teachers (user_id, children) VALUES ('$user_id','$children')";
         if (!mysqli_query($connect, $insertTeacherSql)) {
             echo json_encode(array("status" => "error", "message" => "Error inserting into teachers table: " . mysqli_error($connect)));
             exit();
@@ -105,10 +116,116 @@ if (mysqli_query($connect, $sql)) {
             exit();
         }
     }elseif ($action === "iaccess") {
-        // Insert into parents table
-        $insertParentSql = "INSERT INTO iaccess (user_id, firstname, lastname, city, country, avatar_id) VALUES ('$user_id','$firstname','$lastname','$city','$country','$image')";
-        if (!mysqli_query($connect, $insertParentSql)) {
-            echo json_encode(array("status" => "error", "message" => "Error inserting into parents table: " . mysqli_error($connect)));
+        $foodAllergies = is_array($data->selectedFoodAllergies) ? $data->selectedFoodAllergies : [];
+$otherFood = mysqli_real_escape_string($connect, $data->otherFoodAllergies ?? '');
+$environmentAllergies = is_array($data->selectedEnvironmentAllergies) ? $data->selectedEnvironmentAllergies : [];
+$otherEnvironment = mysqli_real_escape_string($connect, $data->otherEnvironmentAllergies ?? '');
+$medicationAllergies = is_array($data->selectedMedicationAllergies) ? $data->selectedMedicationAllergies : [];
+$otherMedication = mysqli_real_escape_string($connect, $data->otherMedicationAllergies ?? '');
+$medical = is_array($data->selectedMedical) ? $data->selectedMedical : [];
+$otherMedical = mysqli_real_escape_string($connect, $data->otherMedical ?? '');
+
+        $insertIaccessSql = "INSERT INTO iaccess (user_id, firstname, lastname, city, country, avatar_id, parent_consent) VALUES ('$user_id', '$firstname', '$lastname', '$city', '$country', " .
+                            (($image) ? "'$image'" : "NULL") . ", '$parental')";
+        if (!mysqli_query($connect, $insertIaccessSql)) {
+            echo json_encode(array("status" => "error", "message" => "Error inserting into iaccess table: " . mysqli_error($connect)));
+            exit();
+        }
+        $iaccess_id = mysqli_insert_id($connect); // Get the last inserted iaccess_id
+
+        // Insert food allergies into iaccess_allergies table
+        if (!empty($foodAllergies)) {
+            foreach ($foodAllergies as $allergy) {
+                $insertIaccessAllergySql = "INSERT INTO iaccess_allergies (iaccess_id, allergy_id) VALUES ('$iaccess_id', '$allergy')";
+                if (!mysqli_query($connect, $insertIaccessAllergySql)) {
+                    echo json_encode(array("status" => "error", "message" => "Error inserting into iaccess_allergies table: " . mysqli_error($connect)));
+                    exit();
+                }
+            }
+        } 
+        // else {
+        //     // Insert NULL into the iaccess_allergies table if no foodAllergies are selected
+        //     $insertIaccessAllergySql = "INSERT INTO iaccess_allergies (iaccess_id, allergy_id) VALUES ('$iaccess_id', '')";
+        //     if (!mysqli_query($connect, $insertIaccessAllergySql)) {
+        //         echo json_encode(array("status" => "error", "message" => "Error inserting NULL into iaccess_allergies table: " . mysqli_error($connect)));
+        //         exit();
+        //     }
+        // }
+    
+        // Insert environmental allergies into iaccess_allergies table
+        if (!empty($environmentAllergies)) {
+            foreach ($environmentAllergies as $allergy) {
+                $insertIaccessAllergySql = "INSERT INTO iaccess_allergies (iaccess_id, allergy_id) VALUES ('$iaccess_id', '$allergy')";
+                if (!mysqli_query($connect, $insertIaccessAllergySql)) {
+                    echo json_encode(array("status" => "error", "message" => "Error inserting into iaccess_allergies table: " . mysqli_error($connect)));
+                    exit();
+                }
+            }
+        } 
+        // else {
+        //     // Insert NULL into the iaccess_allergies table if no environmentalAllergies are selected
+        //     $insertIaccessAllergySql = "INSERT INTO iaccess_allergies (iaccess_id, allergy_id) VALUES ('$iaccess_id', '')";
+        //     if (!mysqli_query($connect, $insertIaccessAllergySql)) {
+        //         echo json_encode(array("status" => "error", "message" => "Error inserting NULL into iaccess_allergies table: " . mysqli_error($connect)));
+        //         exit();
+        //     }
+        // }
+    
+        // Insert medication allergies into iaccess_allergies table
+        if (!empty($medicationAllergies)) {
+            foreach ($medicationAllergies as $allergy) {
+                $insertIaccessAllergySql = "INSERT INTO iaccess_allergies (iaccess_id, allergy_id) VALUES ('$iaccess_id', '$allergy')";
+                if (!mysqli_query($connect, $insertIaccessAllergySql)) {
+                    echo json_encode(array("status" => "error", "message" => "Error inserting into iaccess_allergies table: " . mysqli_error($connect)));
+                    exit();
+                }
+            }
+        } 
+        // else {
+        //     // Insert NULL into the iaccess_allergies table if no medicationAllergies are selected
+        //     $insertIaccessAllergySql = "INSERT INTO iaccess_allergies (iaccess_id, allergy_id) VALUES ('$iaccess_id', '')";
+        //     if (!mysqli_query($connect, $insertIaccessAllergySql)) {
+        //         echo json_encode(array("status" => "error", "message" => "Error inserting NULL into iaccess_allergies table: " . mysqli_error($connect)));
+        //         exit();
+        //     }
+        // }
+    
+        // Insert medical conditions into iaccess_allergies table
+        if (!empty($medical)) {
+            foreach ($medical as $condition) {
+                $insertIaccessAllergySql = "INSERT INTO iaccess_allergies (iaccess_id, allergy_id) VALUES ('$iaccess_id', '$condition')";
+                if (!mysqli_query($connect, $insertIaccessAllergySql)) {
+                    echo json_encode(array("status" => "error", "message" => "Error inserting into iaccess_allergies table: " . mysqli_error($connect)));
+                    exit();
+                }
+            }
+        } 
+        // else {
+        //     // Insert NULL into the iaccess_allergies table if no medical conditions are selected
+        //     $insertIaccessAllergySql = "INSERT INTO iaccess_allergies (iaccess_id, allergy_id) VALUES ('$iaccess_id', '')";
+        //     if (!mysqli_query($connect, $insertIaccessAllergySql)) {
+        //         echo json_encode(array("status" => "error", "message" => "Error inserting NULL into iaccess_allergies table: " . mysqli_error($connect)));
+        //         exit();
+        //     }
+        // }
+    
+        // Insert data into iaccess_other_allergies table
+        $insertIaccessOtherAllergiesSql = "INSERT INTO iaccess_other_allergies (
+            iaccess_id, 
+            other_food_allergies, 
+            other_environmental_allergies, 
+            other_medication_allergies, 
+            other_medical_conditions
+        ) VALUES (
+            '$iaccess_id', 
+            ".(!empty($otherFood) ? "'".mysqli_real_escape_string($connect, $otherFood)."'" : "NULL").", 
+            ".(!empty($otherEnvironment) ? "'".mysqli_real_escape_string($connect, $otherEnvironment)."'" : "NULL").", 
+            ".(!empty($otherMedication) ? "'".mysqli_real_escape_string($connect, $otherMedication)."'" : "NULL").", 
+            ".(!empty($otherMedical) ? "'".mysqli_real_escape_string($connect, $otherMedical)."'" : "NULL")."
+        )";
+    
+        if (!mysqli_query($connect, $insertIaccessOtherAllergiesSql)) {
+            echo json_encode(array("status" => "error", "message" => "Error inserting into iaccess_other_allergies table: " . mysqli_error($connect)));
             exit();
         }
     }
@@ -120,6 +237,7 @@ if (mysqli_query($connect, $sql)) {
         'iat' => $issuedAt,
         'exp' => $expirationTime,
         'data' => array(
+            'id' => $user_id,
             'email' => $email,
             'username' => $username,
             'action' => $action,

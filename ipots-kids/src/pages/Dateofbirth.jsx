@@ -59,6 +59,8 @@ export default function DateOfBirth() {
             dateOfBirth: formattedDate,
             action,
             accept,
+            firstname,
+            lastname,
           },
         });
       } else if (age < 18) {
