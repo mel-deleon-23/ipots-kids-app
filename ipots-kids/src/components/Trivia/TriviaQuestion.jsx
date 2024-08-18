@@ -28,6 +28,7 @@ const TriviaQuestion = () => {
     const fetchQuestionData = async () => {
       try {
         const response = await fetch(
+          // `http://localhost:8888/ipots-kids-app/ipots-server/trivia_question.php?level=${level}`
           `http://localhost/ipots-kids-app/ipots-server/trivia_question.php?level=${level}`
         );
         const data = await response.json();

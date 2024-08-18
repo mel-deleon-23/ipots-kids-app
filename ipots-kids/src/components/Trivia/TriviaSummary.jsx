@@ -14,11 +14,11 @@ const TriviaSummary = () => {
   };
   const correctAnswers = gemsEarned;
   const incorrectAnswers = totalQuestions - gemsEarned;
-  const { user } = useContext(AuthContext);
+  // const { user } = useContext(AuthContext);
 
-  if (!user) {
-    navigate("/signIn");
-  }
+  // if (!user) {
+  //   navigate("/signIn");
+  // }
 
   const handlePlayAgain = () => {
     if (level) {
@@ -47,9 +47,10 @@ const TriviaSummary = () => {
       </div>
       <div className="actions">
 
-        <button className="action-button btn btn-primary mt-3"><img src="/images/trivia-menu/play-button.png" alt="play-button" className="play-button-icon" />  Next Game</button>
+        {/* <button className="action-button btn btn-primary mt-3"><img src="/images/trivia-menu/play-button.png" alt="play-button" className="play-button-icon" />  Next Game</button> */}
+        <Link className="play-crossword-button btn btn-secondary mt-3" to={`/trivia`}><img src="/images/trivia-menu/play-button.png" alt="home-button" className="play-button-icon" />  Play Crossword</Link>
         <button className="action-button btn btn-info mt-3" onClick={handlePlayAgain}><img src="/images/trivia-question/try-again.png" alt="try-again" className="play-button-icon" />  Play Again</button>
-        <Link className="home-button btn btn-secondary mt-3" to={`/trivia`}><img src="/images/trivia-menu/home-button.png" alt="home-button" className="play-button-icon" />  Home</Link>
+        <Link className="trivia-home-button btn btn-secondary mt-3" to={`/trivia`}><img src="/images/trivia-menu/home-button.png" alt="home-button" className="play-button-icon" />  Home</Link>
       </div>
     </div>
   );

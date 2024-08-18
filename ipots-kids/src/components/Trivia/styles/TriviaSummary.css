@@ -68,7 +68,7 @@
     align-items: center;
 }
 
-.action-button, .home-button {
+.action-button, .trivia-home-button, .play-crossword-button {
     display: block;
     width: 200px;
     height: 50px;
@@ -82,19 +82,19 @@
     text-align: center;
 }
 
-.home-button {
+.trivia-home-button, .play-crossword-button {
     background-color: #0FC0FC;
     color: #000;
     padding-top: 10px;
 }
 
-.action-button:hover, .home-button:hover {
+.action-button:hover, .trivia-home-button:hover, .play-crossword-button:hover {
     background-color: #87D6F2;
     color: #000;
     font-weight: 700;
 }
 
-.home-button:hover {
+.trivia-home-button:hover, .play-crossword-button:hover {
     background-color: #87D6F2;
 }
 

@@ -20,6 +20,7 @@ const TriviaMenu = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
+          // "http://localhost:8888/ipots-kids-app/ipots-server/trivia.php"
           "http://localhost/ipots-kids-app/ipots-server/trivia.php"
         );
         const data = await response.json();
