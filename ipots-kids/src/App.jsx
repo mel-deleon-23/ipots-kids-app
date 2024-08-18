@@ -44,6 +44,7 @@ import IaccessCongrat from "./pages/IaccessCongrat";
 import IaccessProfile from "./pages/IaccessProfile";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Benefits from "./pages/Benefits/Benefits";
+import Crossword from "./components/Crossword/components/Crossword";
 
 function App() {
   return (
@@ -77,7 +78,7 @@ function App() {
                   </ProtectedRoute>
                 }
               />
-              
+              <Route path="/crossword" element={<Crossword />} />
               <Route path="/readstory" element={<ReadStoryMenu />} />
               <Route path="/story/level/:level" element={<Story />} />
               <Route path="/" element={<Home />} />

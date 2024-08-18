@@ -1,0 +1,10 @@
+.cellhighlight{
+    background-color: gray !important;
+}
+.correct{
+    background-color: aqua !important;
+}
+.nextCell{
+    /* border-color: aqua; */
+    border: 5px solid aqua;
+}
