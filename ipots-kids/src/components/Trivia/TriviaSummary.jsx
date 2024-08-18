@@ -14,11 +14,11 @@ const TriviaSummary = () => {
   };
   const correctAnswers = gemsEarned;
   const incorrectAnswers = totalQuestions - gemsEarned;
-  // const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
-  // if (!user) {
-  //   navigate("/signIn");
-  // }
+  if (!user) {
+    navigate("/signIn");
+  }
 
   const handlePlayAgain = () => {
     if (level) {
