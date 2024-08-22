@@ -10,7 +10,7 @@ const Benefits = () => {
             <div className="container mt-lg-5">
                 <div className="card flex-row g-lg-5">
                     <div className="card-img-left d-flex gap-lg-3">
-                        <img src={img1} className="img-fluid" alt="Card image" />
+                        <img src={img1} className="img-fluid" alt="Disability Awareness" />
                     </div>
                     <div className="card-body">
                         <h5 className="card-title">Disability Awareness</h5>
