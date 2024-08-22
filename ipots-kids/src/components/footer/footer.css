@@ -6,13 +6,8 @@
     margin-top: 30px;
     padding-top: 20px;
   }
-  /* .container {
-    max-width: 1440px;
-    height: 369px;
-    margin: 0 auto;
-  } */
   
-  .input-container {
+  .input-box-container {
     display: flex;
     justify-content: center;
     margin: 30px;

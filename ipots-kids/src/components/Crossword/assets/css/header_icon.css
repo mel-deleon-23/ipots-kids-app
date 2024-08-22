@@ -1,0 +1,54 @@
+/* body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+} */
+
+.component{
+    display: flex;
+   justify-content: center;
+}
+.icon-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Reduced gap between icons */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100px;
+    transition: background-color 0.3s;
+}
+
+.icon-item i {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.icon-item p {
+    margin: 0;
+    font-size: 1em;
+    color: #333;
+}
+
+.icon-item:hover {
+    background-color: #d0d0d0;
+}

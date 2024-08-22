@@ -1,0 +1,1517 @@
+{
+    "1": [
+        {
+            "question": "What did Flamingo pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Tools",
+            "explanation": "Flamingo is a wheelchair user and is very aware that sometimes his wheelchair can have mechanical issues and requires tools and grease to make it run smoothly. While travelling into space, he would need to be extra prepared for the new environment and conditions of being in space. He felt packing tools would help make his trip more enjoyable if the new environment changed how his wheelchair could function."
+        },
+        {
+            "question": "What did Rhino pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Screen Reader",
+            "explanation": "Since Rhino is blind, he wanted to pack assistive devices that would make it easier for him to communicate with the people back on Earth. A screen reader helps to convert text into words so he can read using his ears instead of his eyes."
+        },
+        {
+            "question": "The trip Flamingo, Rhino, and Hedgehog won was taking them to ______________.",
+            "options": ["Space", "Pyramids", "Niagara Falls", "Great Barrier Reef"],
+            "correctAnswer": "Space",
+            "explanation": "The three friends were at the science centre when Flamingo answered all the space questions correctly and was entered into a contest to win a free trip to space. Rabbit called to tell them they won a zero g flight to see and feel what it is like to be on the edge of the world and on the cusp of being in outer space."
+        },
+        {
+            "question": "How did Flamingo feel when he couldn’t go into space?",
+            "options": ["Happy", "Sad", "Thankful", "Cheerful"],
+            "correctAnswer": "Sad",
+            "explanation": "When Flamingo found out he couldn’t safely travel into space with his wheelchair, he was really sad.  Rabbit knew how much this trip meant to Flamingo as he won the tickets into space for answering all the questions correctly at the science centre. Rabbit asked Flamingo if he wanted to be part of the mission control and meet the engineering team instead."
+        },
+        {
+            "question": "Why couldn’t Flamingo travel into space?",
+            "options": ["It was too dangerous to take a wheelchair into space", 
+            "His wheelchair wouldn’t fit in the shuttle", 
+            "He didn’t want to go to space", "He wanted to watch from mission control"],
+            "correctAnswer": "It was too dangerous to take a wheelchair into space",
+            "explanation": "As of yet, nobody with a disability has travelled into space. The European Space Agency is running a pilot program to see how safe it would be for someone with a disability to travel into space.  Without the proper testing and safety procedures, it wasn’t safe for Flamingo to take this trip into space, yet."
+        },
+        {
+            "question": "What did Flamingo get to do instead of travelling into space?",
+            "options": ["He played video games", "He took a trip to the pyramids", 
+            "He was part of mission control and go to work with the engineers", 
+            "He ate chocolate cake"],
+            "correctAnswer": "He was part of mission control and go to work with the engineers",
+            "explanation": "Instead of traveling with his friends on the space shuttle, he was invited to be part of mission control and work with the engineers. This is where he learned about inspirational people living with medical conditions contributing to the exploration and development of technology helping us better understand the cosmos."
+        },
+        {
+            "question": "How did Rhino and Hedgehog feel when Flamingo could not go into space?",
+            "options": ["They were happy", "They were sad", "They wanted to do something else", 
+            "They couldn’t decide how they felt"],
+            "correctAnswer": "They couldn’t decide how they felt",
+            "explanation": "When Rhino and Hedgehog learned that Flamingo could not live out his life’s dream of going into space, they were sad for his loss, but still secretly excited that they got to go on an adventure of a lifetime. They couldn’t decide if their personal feelings of joy were bigger than their feelings of sadness for their friend. In the end, they decided, they were both happy and sad at the same time."
+        },
+        {
+            "question": "How did Flamingo feel when he got to launch the mission?",
+            "options": ["Sad", "Overjoyed", "Disappointed", "Nervous"],
+            "correctAnswer": "Overjoyed",
+            "explanation": "When Flamingo learned he would get to push the big red button and launch the plane into space, he was overjoyed and excited that he was responsible for his friends being able to go into space. This was such an important job. Without doing this, nobody could go into space."
+        },
+        {
+            "question": "What did Hedgehog do when he was in space?",
+            "options": ["He put on his crown and celebrated that he was king of the world", 
+            "He was scared", "He tried to make Rhino see", "He ate an apple"],
+            "correctAnswer": "He put on his crown and celebrated that he was king of the world",
+            "explanation": "Since Hedgehog loves posting things on social media, he had to take a million pictures of his adventure into space and created a funny TikTok about finally being king of the world and put a crown on his head to celebrate his victory."
+        },
+        {
+            "question": "Who encouraged Flamingo to explore the shop floor and meet the engineers?",
+            "options": ["Hedgehog", "Rhino", "John McFall", "Lion"],
+            "correctAnswer": "Lion",
+            "explanation": "Lion told Flamingo that he would not be able to travel to space, as it was not safe to bring his wheelchair on the mission, instead offered Flamingo the opportunity to meet with the engineers and mechanics while touring the factory, as well as be part of ground control and help launch his friends into space. This was an awesome alternative to seeing what happens behind the scenes on a space mission. This experience inspired Flamingo to find a different way into space."
+        },
+        {
+            "question": "When Flamingo was with ground control, what did he learn?",
+            "options": ["John McFall is the first person with a disability who might go into space", 
+            "Engineers are boring", "Space travel is easy", "Flying a rocket is easy"],
+            "correctAnswer": "John McFall is the first person with a disability who might go into space",
+            "explanation": "John McFall is a British Paralympic sprinter, surgeon, and ESA Project astronaut. He was selected by the European Space Agency to become the first parastronaut and do a feasibility study on how flying to space needs to be adapted for people living with disabilities."
+        },
+        {
+            "question": "What famous person also had health challenges and helped change the way we understand space physics?",
+            "options": ["Alexander Graham Bell", "Stephan Hawking", "Kobe Bryant", "Sheldon Cooper"],
+            "correctAnswer": "Stephan Hawking",
+            "explanation": "Stephen Hawking was an English and theoretical physicist and cosmologist who was living with ALS (the neurons in his brain would break down so the messages would get lost in transit). He used a thumb switch and blink switch attached to his glasses to control his computer and motorized wheelchair and speech to text software. His theories on how black holes would release subatomic (really tiny) particles until they exploded; changed our understanding of the universe."
+        },
+        {
+            "question": "How did Flamingo feel when he learned there were other people like him working with space?",
+            "options": ["He was excited", "He was bored", "He was sad", "He was angry"],
+            "correctAnswer": "He was excited",
+            "explanation": "When Flamingo learned that there were other people with disabilities involved in space exploration, like Stephen Hawking’s work with theoretical physics (black holes emit radiation), or that John McFall might be the first disabled person to travel into space."
+        },
+        {
+            "question": "What did Flamingo decide he was going to do?",
+            "options": ["Become a chef", "Travel the world", "Play basketball", 
+            "Become and engineer and invent a way to bring a wheelchair into space"],
+            "correctAnswer": "Become and engineer and invent a way to bring a wheelchair into space",
+            "explanation": "While Flamingo dreamed of becoming an astronaut, he didn’t realize that to do that, becoming an engineer makes the journey easier.  He believes that becoming an engineer will give him the tools to invent something that will allow him and other wheelchair users a safe way to travel in space."
+        },
+        {
+            "question": "What did the Flamingo learn?",
+            "options": ["Being different is bad", "Being different is funny", 
+            "Being different isn’t wrong, it’s just different", "It’s better to be alone"],
+            "correctAnswer": "Being different isn’t wrong, it’s just different",
+            "explanation": "Flamingo is a wheelchair user and understands that some people use their legs to get from one spot to another, his wheelchair allows him to achieve the game goal, but differently. We all have different skills and capabilities, and it is ok to do things differently. Celebrating our differences makes the world a more interesting place."
+        }
+    ],
+    "2": [
+        {
+            "question": "What did Flamingo pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Tools",
+            "explanation": "Flamingo is a wheelchair user and is very aware that sometimes his wheelchair can have mechanical issues and requires tools and grease to make it run smoothly. While travelling into space, he would need to be extra prepared for the new environment and conditions of being in space. He felt packing tools would help make his trip more enjoyable if the new environment changed how his wheelchair could function."
+        },
+        {
+            "question": "What did Rhino pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Screen Reader",
+            "explanation": "Since Rhino is blind, he wanted to pack assistive devices that would make it easier for him to communicate with the people back on Earth. A screen reader helps to convert text into words so he can read using his ears instead of his eyes."
+        },
+        {
+            "question": "The trip Flamingo, Rhino, and Hedgehog won was taking them to ______________.",
+            "options": ["Space", "Pyramids", "Niagara Falls", "Great Barrier Reef"],
+            "correctAnswer": "Space",
+            "explanation": "The three friends were at the science centre when Flamingo answered all the space questions correctly and was entered into a contest to win a free trip to space. Rabbit called to tell them they won a zero g flight to see and feel what it is like to be on the edge of the world and on the cusp of being in outer space."
+        },
+        {
+            "question": "How did Flamingo feel when he couldn’t go into space?",
+            "options": ["Happy", "Sad", "Thankful", "Cheerful"],
+            "correctAnswer": "Sad",
+            "explanation": "When Flamingo found out he couldn’t safely travel into space with his wheelchair, he was really sad.  Rabbit knew how much this trip meant to Flamingo as he won the tickets into space for answering all the questions correctly at the science centre. Rabbit asked Flamingo if he wanted to be part of the mission control and meet the engineering team instead."
+        },
+        {
+            "question": "Why couldn’t Flamingo travel into space?",
+            "options": ["It was too dangerous to take a wheelchair into space", 
+            "His wheelchair wouldn’t fit in the shuttle", 
+            "He didn’t want to go to space", "He wanted to watch from mission control"],
+            "correctAnswer": "It was too dangerous to take a wheelchair into space",
+            "explanation": "As of yet, nobody with a disability has travelled into space. The European Space Agency is running a pilot program to see how safe it would be for someone with a disability to travel into space.  Without the proper testing and safety procedures, it wasn’t safe for Flamingo to take this trip into space, yet."
+        },
+        {
+            "question": "What did Flamingo get to do instead of travelling into space?",
+            "options": ["He played video games", "He took a trip to the pyramids", 
+            "He was part of mission control and go to work with the engineers", 
+            "He ate chocolate cake"],
+            "correctAnswer": "He was part of mission control and go to work with the engineers",
+            "explanation": "Instead of traveling with his friends on the space shuttle, he was invited to be part of mission control and work with the engineers. This is where he learned about inspirational people living with medical conditions contributing to the exploration and development of technology helping us better understand the cosmos."
+        },
+        {
+            "question": "How did Rhino and Hedgehog feel when Flamingo could not go into space?",
+            "options": ["They were happy", "They were sad", "They wanted to do something else", 
+            "They couldn’t decide how they felt"],
+            "correctAnswer": "They couldn’t decide how they felt",
+            "explanation": "When Rhino and Hedgehog learned that Flamingo could not live out his life’s dream of going into space, they were sad for his loss, but still secretly excited that they got to go on an adventure of a lifetime. They couldn’t decide if their personal feelings of joy were bigger than their feelings of sadness for their friend. In the end, they decided, they were both happy and sad at the same time."
+        },
+        {
+            "question": "How did Flamingo feel when he got to launch the mission?",
+            "options": ["Sad", "Overjoyed", "Disappointed", "Nervous"],
+            "correctAnswer": "Overjoyed",
+            "explanation": "When Flamingo learned he would get to push the big red button and launch the plane into space, he was overjoyed and excited that he was responsible for his friends being able to go into space. This was such an important job. Without doing this, nobody could go into space."
+        },
+        {
+            "question": "What did Hedgehog do when he was in space?",
+            "options": ["He put on his crown and celebrated that he was king of the world", 
+            "He was scared", "He tried to make Rhino see", "He ate an apple"],
+            "correctAnswer": "He put on his crown and celebrated that he was king of the world",
+            "explanation": "Since Hedgehog loves posting things on social media, he had to take a million pictures of his adventure into space and created a funny TikTok about finally being king of the world and put a crown on his head to celebrate his victory."
+        },
+        {
+            "question": "Who encouraged Flamingo to explore the shop floor and meet the engineers?",
+            "options": ["Hedgehog", "Rhino", "John McFall", "Lion"],
+            "correctAnswer": "Lion",
+            "explanation": "Lion told Flamingo that he would not be able to travel to space, as it was not safe to bring his wheelchair on the mission, instead offered Flamingo the opportunity to meet with the engineers and mechanics while touring the factory, as well as be part of ground control and help launch his friends into space. This was an awesome alternative to seeing what happens behind the scenes on a space mission. This experience inspired Flamingo to find a different way into space."
+        },
+        {
+            "question": "When Flamingo was with ground control, what did he learn?",
+            "options": ["John McFall is the first person with a disability who might go into space", 
+            "Engineers are boring", "Space travel is easy", "Flying a rocket is easy"],
+            "correctAnswer": "John McFall is the first person with a disability who might go into space",
+            "explanation": "John McFall is a British Paralympic sprinter, surgeon, and ESA Project astronaut. He was selected by the European Space Agency to become the first parastronaut and do a feasibility study on how flying to space needs to be adapted for people living with disabilities."
+        },
+        {
+            "question": "What famous person also had health challenges and helped change the way we understand space physics?",
+            "options": ["Alexander Graham Bell", "Stephan Hawking", "Kobe Bryant", "Sheldon Cooper"],
+            "correctAnswer": "Stephan Hawking",
+            "explanation": "Stephen Hawking was an English and theoretical physicist and cosmologist who was living with ALS (the neurons in his brain would break down so the messages would get lost in transit). He used a thumb switch and blink switch attached to his glasses to control his computer and motorized wheelchair and speech to text software. His theories on how black holes would release subatomic (really tiny) particles until they exploded; changed our understanding of the universe."
+        },
+        {
+            "question": "How did Flamingo feel when he learned there were other people like him working with space?",
+            "options": ["He was excited", "He was bored", "He was sad", "He was angry"],
+            "correctAnswer": "He was excited",
+            "explanation": "When Flamingo learned that there were other people with disabilities involved in space exploration, like Stephen Hawking’s work with theoretical physics (black holes emit radiation), or that John McFall might be the first disabled person to travel into space."
+        },
+        {
+            "question": "What did Flamingo decide he was going to do?",
+            "options": ["Become a chef", "Travel the world", "Play basketball", 
+            "Become and engineer and invent a way to bring a wheelchair into space"],
+            "correctAnswer": "Become and engineer and invent a way to bring a wheelchair into space",
+            "explanation": "While Flamingo dreamed of becoming an astronaut, he didn’t realize that to do that, becoming an engineer makes the journey easier.  He believes that becoming an engineer will give him the tools to invent something that will allow him and other wheelchair users a safe way to travel in space."
+        },
+        {
+            "question": "What did the Flamingo learn?",
+            "options": ["Being different is bad", "Being different is funny", 
+            "Being different isn’t wrong, it’s just different", "It’s better to be alone"],
+            "correctAnswer": "Being different isn’t wrong, it’s just different",
+            "explanation": "Flamingo is a wheelchair user and understands that some people use their legs to get from one spot to another, his wheelchair allows him to achieve the game goal, but differently. We all have different skills and capabilities, and it is ok to do things differently. Celebrating our differences makes the world a more interesting place."
+        }
+    ],
+    "3": [
+        {
+            "question": "What did Flamingo pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Tools",
+            "explanation": "Flamingo is a wheelchair user and is very aware that sometimes his wheelchair can have mechanical issues and requires tools and grease to make it run smoothly. While travelling into space, he would need to be extra prepared for the new environment and conditions of being in space. He felt packing tools would help make his trip more enjoyable if the new environment changed how his wheelchair could function."
+        },
+        {
+            "question": "What did Rhino pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Screen Reader",
+            "explanation": "Since Rhino is blind, he wanted to pack assistive devices that would make it easier for him to communicate with the people back on Earth. A screen reader helps to convert text into words so he can read using his ears instead of his eyes."
+        },
+        {
+            "question": "The trip Flamingo, Rhino, and Hedgehog won was taking them to ______________.",
+            "options": ["Space", "Pyramids", "Niagara Falls", "Great Barrier Reef"],
+            "correctAnswer": "Space",
+            "explanation": "The three friends were at the science centre when Flamingo answered all the space questions correctly and was entered into a contest to win a free trip to space. Rabbit called to tell them they won a zero g flight to see and feel what it is like to be on the edge of the world and on the cusp of being in outer space."
+        },
+        {
+            "question": "How did Flamingo feel when he couldn’t go into space?",
+            "options": ["Happy", "Sad", "Thankful", "Cheerful"],
+            "correctAnswer": "Sad",
+            "explanation": "When Flamingo found out he couldn’t safely travel into space with his wheelchair, he was really sad.  Rabbit knew how much this trip meant to Flamingo as he won the tickets into space for answering all the questions correctly at the science centre. Rabbit asked Flamingo if he wanted to be part of the mission control and meet the engineering team instead."
+        },
+        {
+            "question": "Why couldn’t Flamingo travel into space?",
+            "options": ["It was too dangerous to take a wheelchair into space", 
+            "His wheelchair wouldn’t fit in the shuttle", 
+            "He didn’t want to go to space", "He wanted to watch from mission control"],
+            "correctAnswer": "It was too dangerous to take a wheelchair into space",
+            "explanation": "As of yet, nobody with a disability has travelled into space. The European Space Agency is running a pilot program to see how safe it would be for someone with a disability to travel into space.  Without the proper testing and safety procedures, it wasn’t safe for Flamingo to take this trip into space, yet."
+        },
+        {
+            "question": "What did Flamingo get to do instead of travelling into space?",
+            "options": ["He played video games", "He took a trip to the pyramids", 
+            "He was part of mission control and go to work with the engineers", 
+            "He ate chocolate cake"],
+            "correctAnswer": "He was part of mission control and go to work with the engineers",
+            "explanation": "Instead of traveling with his friends on the space shuttle, he was invited to be part of mission control and work with the engineers. This is where he learned about inspirational people living with medical conditions contributing to the exploration and development of technology helping us better understand the cosmos."
+        },
+        {
+            "question": "How did Rhino and Hedgehog feel when Flamingo could not go into space?",
+            "options": ["They were happy", "They were sad", "They wanted to do something else", 
+            "They couldn’t decide how they felt"],
+            "correctAnswer": "They couldn’t decide how they felt",
+            "explanation": "When Rhino and Hedgehog learned that Flamingo could not live out his life’s dream of going into space, they were sad for his loss, but still secretly excited that they got to go on an adventure of a lifetime. They couldn’t decide if their personal feelings of joy were bigger than their feelings of sadness for their friend. In the end, they decided, they were both happy and sad at the same time."
+        },
+        {
+            "question": "How did Flamingo feel when he got to launch the mission?",
+            "options": ["Sad", "Overjoyed", "Disappointed", "Nervous"],
+            "correctAnswer": "Overjoyed",
+            "explanation": "When Flamingo learned he would get to push the big red button and launch the plane into space, he was overjoyed and excited that he was responsible for his friends being able to go into space. This was such an important job. Without doing this, nobody could go into space."
+        },
+        {
+            "question": "What did Hedgehog do when he was in space?",
+            "options": ["He put on his crown and celebrated that he was king of the world", 
+            "He was scared", "He tried to make Rhino see", "He ate an apple"],
+            "correctAnswer": "He put on his crown and celebrated that he was king of the world",
+            "explanation": "Since Hedgehog loves posting things on social media, he had to take a million pictures of his adventure into space and created a funny TikTok about finally being king of the world and put a crown on his head to celebrate his victory."
+        },
+        {
+            "question": "Who encouraged Flamingo to explore the shop floor and meet the engineers?",
+            "options": ["Hedgehog", "Rhino", "John McFall", "Lion"],
+            "correctAnswer": "Lion",
+            "explanation": "Lion told Flamingo that he would not be able to travel to space, as it was not safe to bring his wheelchair on the mission, instead offered Flamingo the opportunity to meet with the engineers and mechanics while touring the factory, as well as be part of ground control and help launch his friends into space. This was an awesome alternative to seeing what happens behind the scenes on a space mission. This experience inspired Flamingo to find a different way into space."
+        },
+        {
+            "question": "When Flamingo was with ground control, what did he learn?",
+            "options": ["John McFall is the first person with a disability who might go into space", 
+            "Engineers are boring", "Space travel is easy", "Flying a rocket is easy"],
+            "correctAnswer": "John McFall is the first person with a disability who might go into space",
+            "explanation": "John McFall is a British Paralympic sprinter, surgeon, and ESA Project astronaut. He was selected by the European Space Agency to become the first parastronaut and do a feasibility study on how flying to space needs to be adapted for people living with disabilities."
+        },
+        {
+            "question": "What famous person also had health challenges and helped change the way we understand space physics?",
+            "options": ["Alexander Graham Bell", "Stephan Hawking", "Kobe Bryant", "Sheldon Cooper"],
+            "correctAnswer": "Stephan Hawking",
+            "explanation": "Stephen Hawking was an English and theoretical physicist and cosmologist who was living with ALS (the neurons in his brain would break down so the messages would get lost in transit). He used a thumb switch and blink switch attached to his glasses to control his computer and motorized wheelchair and speech to text software. His theories on how black holes would release subatomic (really tiny) particles until they exploded; changed our understanding of the universe."
+        },
+        {
+            "question": "How did Flamingo feel when he learned there were other people like him working with space?",
+            "options": ["He was excited", "He was bored", "He was sad", "He was angry"],
+            "correctAnswer": "He was excited",
+            "explanation": "When Flamingo learned that there were other people with disabilities involved in space exploration, like Stephen Hawking’s work with theoretical physics (black holes emit radiation), or that John McFall might be the first disabled person to travel into space."
+        },
+        {
+            "question": "What did Flamingo decide he was going to do?",
+            "options": ["Become a chef", "Travel the world", "Play basketball", 
+            "Become and engineer and invent a way to bring a wheelchair into space"],
+            "correctAnswer": "Become and engineer and invent a way to bring a wheelchair into space",
+            "explanation": "While Flamingo dreamed of becoming an astronaut, he didn’t realize that to do that, becoming an engineer makes the journey easier.  He believes that becoming an engineer will give him the tools to invent something that will allow him and other wheelchair users a safe way to travel in space."
+        },
+        {
+            "question": "What did the Flamingo learn?",
+            "options": ["Being different is bad", "Being different is funny", 
+            "Being different isn’t wrong, it’s just different", "It’s better to be alone"],
+            "correctAnswer": "Being different isn’t wrong, it’s just different",
+            "explanation": "Flamingo is a wheelchair user and understands that some people use their legs to get from one spot to another, his wheelchair allows him to achieve the game goal, but differently. We all have different skills and capabilities, and it is ok to do things differently. Celebrating our differences makes the world a more interesting place."
+        }
+    ],
+    "4": [
+        {
+            "question": "What did Flamingo pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Tools",
+            "explanation": "Flamingo is a wheelchair user and is very aware that sometimes his wheelchair can have mechanical issues and requires tools and grease to make it run smoothly. While travelling into space, he would need to be extra prepared for the new environment and conditions of being in space. He felt packing tools would help make his trip more enjoyable if the new environment changed how his wheelchair could function."
+        },
+        {
+            "question": "What did Rhino pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Screen Reader",
+            "explanation": "Since Rhino is blind, he wanted to pack assistive devices that would make it easier for him to communicate with the people back on Earth. A screen reader helps to convert text into words so he can read using his ears instead of his eyes."
+        },
+        {
+            "question": "The trip Flamingo, Rhino, and Hedgehog won was taking them to ______________.",
+            "options": ["Space", "Pyramids", "Niagara Falls", "Great Barrier Reef"],
+            "correctAnswer": "Space",
+            "explanation": "The three friends were at the science centre when Flamingo answered all the space questions correctly and was entered into a contest to win a free trip to space. Rabbit called to tell them they won a zero g flight to see and feel what it is like to be on the edge of the world and on the cusp of being in outer space."
+        },
+        {
+            "question": "How did Flamingo feel when he couldn’t go into space?",
+            "options": ["Happy", "Sad", "Thankful", "Cheerful"],
+            "correctAnswer": "Sad",
+            "explanation": "When Flamingo found out he couldn’t safely travel into space with his wheelchair, he was really sad.  Rabbit knew how much this trip meant to Flamingo as he won the tickets into space for answering all the questions correctly at the science centre. Rabbit asked Flamingo if he wanted to be part of the mission control and meet the engineering team instead."
+        },
+        {
+            "question": "Why couldn’t Flamingo travel into space?",
+            "options": ["It was too dangerous to take a wheelchair into space", 
+            "His wheelchair wouldn’t fit in the shuttle", 
+            "He didn’t want to go to space", "He wanted to watch from mission control"],
+            "correctAnswer": "It was too dangerous to take a wheelchair into space",
+            "explanation": "As of yet, nobody with a disability has travelled into space. The European Space Agency is running a pilot program to see how safe it would be for someone with a disability to travel into space.  Without the proper testing and safety procedures, it wasn’t safe for Flamingo to take this trip into space, yet."
+        },
+        {
+            "question": "What did Flamingo get to do instead of travelling into space?",
+            "options": ["He played video games", "He took a trip to the pyramids", 
+            "He was part of mission control and go to work with the engineers", 
+            "He ate chocolate cake"],
+            "correctAnswer": "He was part of mission control and go to work with the engineers",
+            "explanation": "Instead of traveling with his friends on the space shuttle, he was invited to be part of mission control and work with the engineers. This is where he learned about inspirational people living with medical conditions contributing to the exploration and development of technology helping us better understand the cosmos."
+        },
+        {
+            "question": "How did Rhino and Hedgehog feel when Flamingo could not go into space?",
+            "options": ["They were happy", "They were sad", "They wanted to do something else", 
+            "They couldn’t decide how they felt"],
+            "correctAnswer": "They couldn’t decide how they felt",
+            "explanation": "When Rhino and Hedgehog learned that Flamingo could not live out his life’s dream of going into space, they were sad for his loss, but still secretly excited that they got to go on an adventure of a lifetime. They couldn’t decide if their personal feelings of joy were bigger than their feelings of sadness for their friend. In the end, they decided, they were both happy and sad at the same time."
+        },
+        {
+            "question": "How did Flamingo feel when he got to launch the mission?",
+            "options": ["Sad", "Overjoyed", "Disappointed", "Nervous"],
+            "correctAnswer": "Overjoyed",
+            "explanation": "When Flamingo learned he would get to push the big red button and launch the plane into space, he was overjoyed and excited that he was responsible for his friends being able to go into space. This was such an important job. Without doing this, nobody could go into space."
+        },
+        {
+            "question": "What did Hedgehog do when he was in space?",
+            "options": ["He put on his crown and celebrated that he was king of the world", 
+            "He was scared", "He tried to make Rhino see", "He ate an apple"],
+            "correctAnswer": "He put on his crown and celebrated that he was king of the world",
+            "explanation": "Since Hedgehog loves posting things on social media, he had to take a million pictures of his adventure into space and created a funny TikTok about finally being king of the world and put a crown on his head to celebrate his victory."
+        },
+        {
+            "question": "Who encouraged Flamingo to explore the shop floor and meet the engineers?",
+            "options": ["Hedgehog", "Rhino", "John McFall", "Lion"],
+            "correctAnswer": "Lion",
+            "explanation": "Lion told Flamingo that he would not be able to travel to space, as it was not safe to bring his wheelchair on the mission, instead offered Flamingo the opportunity to meet with the engineers and mechanics while touring the factory, as well as be part of ground control and help launch his friends into space. This was an awesome alternative to seeing what happens behind the scenes on a space mission. This experience inspired Flamingo to find a different way into space."
+        },
+        {
+            "question": "When Flamingo was with ground control, what did he learn?",
+            "options": ["John McFall is the first person with a disability who might go into space", 
+            "Engineers are boring", "Space travel is easy", "Flying a rocket is easy"],
+            "correctAnswer": "John McFall is the first person with a disability who might go into space",
+            "explanation": "John McFall is a British Paralympic sprinter, surgeon, and ESA Project astronaut. He was selected by the European Space Agency to become the first parastronaut and do a feasibility study on how flying to space needs to be adapted for people living with disabilities."
+        },
+        {
+            "question": "What famous person also had health challenges and helped change the way we understand space physics?",
+            "options": ["Alexander Graham Bell", "Stephan Hawking", "Kobe Bryant", "Sheldon Cooper"],
+            "correctAnswer": "Stephan Hawking",
+            "explanation": "Stephen Hawking was an English and theoretical physicist and cosmologist who was living with ALS (the neurons in his brain would break down so the messages would get lost in transit). He used a thumb switch and blink switch attached to his glasses to control his computer and motorized wheelchair and speech to text software. His theories on how black holes would release subatomic (really tiny) particles until they exploded; changed our understanding of the universe."
+        },
+        {
+            "question": "How did Flamingo feel when he learned there were other people like him working with space?",
+            "options": ["He was excited", "He was bored", "He was sad", "He was angry"],
+            "correctAnswer": "He was excited",
+            "explanation": "When Flamingo learned that there were other people with disabilities involved in space exploration, like Stephen Hawking’s work with theoretical physics (black holes emit radiation), or that John McFall might be the first disabled person to travel into space."
+        },
+        {
+            "question": "What did Flamingo decide he was going to do?",
+            "options": ["Become a chef", "Travel the world", "Play basketball", 
+            "Become and engineer and invent a way to bring a wheelchair into space"],
+            "correctAnswer": "Become and engineer and invent a way to bring a wheelchair into space",
+            "explanation": "While Flamingo dreamed of becoming an astronaut, he didn’t realize that to do that, becoming an engineer makes the journey easier.  He believes that becoming an engineer will give him the tools to invent something that will allow him and other wheelchair users a safe way to travel in space."
+        },
+        {
+            "question": "What did the Flamingo learn?",
+            "options": ["Being different is bad", "Being different is funny", 
+            "Being different isn’t wrong, it’s just different", "It’s better to be alone"],
+            "correctAnswer": "Being different isn’t wrong, it’s just different",
+            "explanation": "Flamingo is a wheelchair user and understands that some people use their legs to get from one spot to another, his wheelchair allows him to achieve the game goal, but differently. We all have different skills and capabilities, and it is ok to do things differently. Celebrating our differences makes the world a more interesting place."
+        }
+    ],
+    "5": [
+        {
+            "question": "What did Flamingo pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Tools",
+            "explanation": "Flamingo is a wheelchair user and is very aware that sometimes his wheelchair can have mechanical issues and requires tools and grease to make it run smoothly. While travelling into space, he would need to be extra prepared for the new environment and conditions of being in space. He felt packing tools would help make his trip more enjoyable if the new environment changed how his wheelchair could function."
+        },
+        {
+            "question": "What did Rhino pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Screen Reader",
+            "explanation": "Since Rhino is blind, he wanted to pack assistive devices that would make it easier for him to communicate with the people back on Earth. A screen reader helps to convert text into words so he can read using his ears instead of his eyes."
+        },
+        {
+            "question": "The trip Flamingo, Rhino, and Hedgehog won was taking them to ______________.",
+            "options": ["Space", "Pyramids", "Niagara Falls", "Great Barrier Reef"],
+            "correctAnswer": "Space",
+            "explanation": "The three friends were at the science centre when Flamingo answered all the space questions correctly and was entered into a contest to win a free trip to space. Rabbit called to tell them they won a zero g flight to see and feel what it is like to be on the edge of the world and on the cusp of being in outer space."
+        },
+        {
+            "question": "How did Flamingo feel when he couldn’t go into space?",
+            "options": ["Happy", "Sad", "Thankful", "Cheerful"],
+            "correctAnswer": "Sad",
+            "explanation": "When Flamingo found out he couldn’t safely travel into space with his wheelchair, he was really sad.  Rabbit knew how much this trip meant to Flamingo as he won the tickets into space for answering all the questions correctly at the science centre. Rabbit asked Flamingo if he wanted to be part of the mission control and meet the engineering team instead."
+        },
+        {
+            "question": "Why couldn’t Flamingo travel into space?",
+            "options": ["It was too dangerous to take a wheelchair into space", 
+            "His wheelchair wouldn’t fit in the shuttle", 
+            "He didn’t want to go to space", "He wanted to watch from mission control"],
+            "correctAnswer": "It was too dangerous to take a wheelchair into space",
+            "explanation": "As of yet, nobody with a disability has travelled into space. The European Space Agency is running a pilot program to see how safe it would be for someone with a disability to travel into space.  Without the proper testing and safety procedures, it wasn’t safe for Flamingo to take this trip into space, yet."
+        },
+        {
+            "question": "What did Flamingo get to do instead of travelling into space?",
+            "options": ["He played video games", "He took a trip to the pyramids", 
+            "He was part of mission control and go to work with the engineers", 
+            "He ate chocolate cake"],
+            "correctAnswer": "He was part of mission control and go to work with the engineers",
+            "explanation": "Instead of traveling with his friends on the space shuttle, he was invited to be part of mission control and work with the engineers. This is where he learned about inspirational people living with medical conditions contributing to the exploration and development of technology helping us better understand the cosmos."
+        },
+        {
+            "question": "How did Rhino and Hedgehog feel when Flamingo could not go into space?",
+            "options": ["They were happy", "They were sad", "They wanted to do something else", 
+            "They couldn’t decide how they felt"],
+            "correctAnswer": "They couldn’t decide how they felt",
+            "explanation": "When Rhino and Hedgehog learned that Flamingo could not live out his life’s dream of going into space, they were sad for his loss, but still secretly excited that they got to go on an adventure of a lifetime. They couldn’t decide if their personal feelings of joy were bigger than their feelings of sadness for their friend. In the end, they decided, they were both happy and sad at the same time."
+        },
+        {
+            "question": "How did Flamingo feel when he got to launch the mission?",
+            "options": ["Sad", "Overjoyed", "Disappointed", "Nervous"],
+            "correctAnswer": "Overjoyed",
+            "explanation": "When Flamingo learned he would get to push the big red button and launch the plane into space, he was overjoyed and excited that he was responsible for his friends being able to go into space. This was such an important job. Without doing this, nobody could go into space."
+        },
+        {
+            "question": "What did Hedgehog do when he was in space?",
+            "options": ["He put on his crown and celebrated that he was king of the world", 
+            "He was scared", "He tried to make Rhino see", "He ate an apple"],
+            "correctAnswer": "He put on his crown and celebrated that he was king of the world",
+            "explanation": "Since Hedgehog loves posting things on social media, he had to take a million pictures of his adventure into space and created a funny TikTok about finally being king of the world and put a crown on his head to celebrate his victory."
+        },
+        {
+            "question": "Who encouraged Flamingo to explore the shop floor and meet the engineers?",
+            "options": ["Hedgehog", "Rhino", "John McFall", "Lion"],
+            "correctAnswer": "Lion",
+            "explanation": "Lion told Flamingo that he would not be able to travel to space, as it was not safe to bring his wheelchair on the mission, instead offered Flamingo the opportunity to meet with the engineers and mechanics while touring the factory, as well as be part of ground control and help launch his friends into space. This was an awesome alternative to seeing what happens behind the scenes on a space mission. This experience inspired Flamingo to find a different way into space."
+        },
+        {
+            "question": "When Flamingo was with ground control, what did he learn?",
+            "options": ["John McFall is the first person with a disability who might go into space", 
+            "Engineers are boring", "Space travel is easy", "Flying a rocket is easy"],
+            "correctAnswer": "John McFall is the first person with a disability who might go into space",
+            "explanation": "John McFall is a British Paralympic sprinter, surgeon, and ESA Project astronaut. He was selected by the European Space Agency to become the first parastronaut and do a feasibility study on how flying to space needs to be adapted for people living with disabilities."
+        },
+        {
+            "question": "What famous person also had health challenges and helped change the way we understand space physics?",
+            "options": ["Alexander Graham Bell", "Stephan Hawking", "Kobe Bryant", "Sheldon Cooper"],
+            "correctAnswer": "Stephan Hawking",
+            "explanation": "Stephen Hawking was an English and theoretical physicist and cosmologist who was living with ALS (the neurons in his brain would break down so the messages would get lost in transit). He used a thumb switch and blink switch attached to his glasses to control his computer and motorized wheelchair and speech to text software. His theories on how black holes would release subatomic (really tiny) particles until they exploded; changed our understanding of the universe."
+        },
+        {
+            "question": "How did Flamingo feel when he learned there were other people like him working with space?",
+            "options": ["He was excited", "He was bored", "He was sad", "He was angry"],
+            "correctAnswer": "He was excited",
+            "explanation": "When Flamingo learned that there were other people with disabilities involved in space exploration, like Stephen Hawking’s work with theoretical physics (black holes emit radiation), or that John McFall might be the first disabled person to travel into space."
+        },
+        {
+            "question": "What did Flamingo decide he was going to do?",
+            "options": ["Become a chef", "Travel the world", "Play basketball", 
+            "Become and engineer and invent a way to bring a wheelchair into space"],
+            "correctAnswer": "Become and engineer and invent a way to bring a wheelchair into space",
+            "explanation": "While Flamingo dreamed of becoming an astronaut, he didn’t realize that to do that, becoming an engineer makes the journey easier.  He believes that becoming an engineer will give him the tools to invent something that will allow him and other wheelchair users a safe way to travel in space."
+        },
+        {
+            "question": "What did the Flamingo learn?",
+            "options": ["Being different is bad", "Being different is funny", 
+            "Being different isn’t wrong, it’s just different", "It’s better to be alone"],
+            "correctAnswer": "Being different isn’t wrong, it’s just different",
+            "explanation": "Flamingo is a wheelchair user and understands that some people use their legs to get from one spot to another, his wheelchair allows him to achieve the game goal, but differently. We all have different skills and capabilities, and it is ok to do things differently. Celebrating our differences makes the world a more interesting place."
+        }
+    ],
+    "6": [
+        {
+            "question": "What did Flamingo pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Tools",
+            "explanation": "Flamingo is a wheelchair user and is very aware that sometimes his wheelchair can have mechanical issues and requires tools and grease to make it run smoothly. While travelling into space, he would need to be extra prepared for the new environment and conditions of being in space. He felt packing tools would help make his trip more enjoyable if the new environment changed how his wheelchair could function."
+        },
+        {
+            "question": "What did Rhino pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Screen Reader",
+            "explanation": "Since Rhino is blind, he wanted to pack assistive devices that would make it easier for him to communicate with the people back on Earth. A screen reader helps to convert text into words so he can read using his ears instead of his eyes."
+        },
+        {
+            "question": "The trip Flamingo, Rhino, and Hedgehog won was taking them to ______________.",
+            "options": ["Space", "Pyramids", "Niagara Falls", "Great Barrier Reef"],
+            "correctAnswer": "Space",
+            "explanation": "The three friends were at the science centre when Flamingo answered all the space questions correctly and was entered into a contest to win a free trip to space. Rabbit called to tell them they won a zero g flight to see and feel what it is like to be on the edge of the world and on the cusp of being in outer space."
+        },
+        {
+            "question": "How did Flamingo feel when he couldn’t go into space?",
+            "options": ["Happy", "Sad", "Thankful", "Cheerful"],
+            "correctAnswer": "Sad",
+            "explanation": "When Flamingo found out he couldn’t safely travel into space with his wheelchair, he was really sad.  Rabbit knew how much this trip meant to Flamingo as he won the tickets into space for answering all the questions correctly at the science centre. Rabbit asked Flamingo if he wanted to be part of the mission control and meet the engineering team instead."
+        },
+        {
+            "question": "Why couldn’t Flamingo travel into space?",
+            "options": ["It was too dangerous to take a wheelchair into space", 
+            "His wheelchair wouldn’t fit in the shuttle", 
+            "He didn’t want to go to space", "He wanted to watch from mission control"],
+            "correctAnswer": "It was too dangerous to take a wheelchair into space",
+            "explanation": "As of yet, nobody with a disability has travelled into space. The European Space Agency is running a pilot program to see how safe it would be for someone with a disability to travel into space.  Without the proper testing and safety procedures, it wasn’t safe for Flamingo to take this trip into space, yet."
+        },
+        {
+            "question": "What did Flamingo get to do instead of travelling into space?",
+            "options": ["He played video games", "He took a trip to the pyramids", 
+            "He was part of mission control and go to work with the engineers", 
+            "He ate chocolate cake"],
+            "correctAnswer": "He was part of mission control and go to work with the engineers",
+            "explanation": "Instead of traveling with his friends on the space shuttle, he was invited to be part of mission control and work with the engineers. This is where he learned about inspirational people living with medical conditions contributing to the exploration and development of technology helping us better understand the cosmos."
+        },
+        {
+            "question": "How did Rhino and Hedgehog feel when Flamingo could not go into space?",
+            "options": ["They were happy", "They were sad", "They wanted to do something else", 
+            "They couldn’t decide how they felt"],
+            "correctAnswer": "They couldn’t decide how they felt",
+            "explanation": "When Rhino and Hedgehog learned that Flamingo could not live out his life’s dream of going into space, they were sad for his loss, but still secretly excited that they got to go on an adventure of a lifetime. They couldn’t decide if their personal feelings of joy were bigger than their feelings of sadness for their friend. In the end, they decided, they were both happy and sad at the same time."
+        },
+        {
+            "question": "How did Flamingo feel when he got to launch the mission?",
+            "options": ["Sad", "Overjoyed", "Disappointed", "Nervous"],
+            "correctAnswer": "Overjoyed",
+            "explanation": "When Flamingo learned he would get to push the big red button and launch the plane into space, he was overjoyed and excited that he was responsible for his friends being able to go into space. This was such an important job. Without doing this, nobody could go into space."
+        },
+        {
+            "question": "What did Hedgehog do when he was in space?",
+            "options": ["He put on his crown and celebrated that he was king of the world", 
+            "He was scared", "He tried to make Rhino see", "He ate an apple"],
+            "correctAnswer": "He put on his crown and celebrated that he was king of the world",
+            "explanation": "Since Hedgehog loves posting things on social media, he had to take a million pictures of his adventure into space and created a funny TikTok about finally being king of the world and put a crown on his head to celebrate his victory."
+        },
+        {
+            "question": "Who encouraged Flamingo to explore the shop floor and meet the engineers?",
+            "options": ["Hedgehog", "Rhino", "John McFall", "Lion"],
+            "correctAnswer": "Lion",
+            "explanation": "Lion told Flamingo that he would not be able to travel to space, as it was not safe to bring his wheelchair on the mission, instead offered Flamingo the opportunity to meet with the engineers and mechanics while touring the factory, as well as be part of ground control and help launch his friends into space. This was an awesome alternative to seeing what happens behind the scenes on a space mission. This experience inspired Flamingo to find a different way into space."
+        },
+        {
+            "question": "When Flamingo was with ground control, what did he learn?",
+            "options": ["John McFall is the first person with a disability who might go into space", 
+            "Engineers are boring", "Space travel is easy", "Flying a rocket is easy"],
+            "correctAnswer": "John McFall is the first person with a disability who might go into space",
+            "explanation": "John McFall is a British Paralympic sprinter, surgeon, and ESA Project astronaut. He was selected by the European Space Agency to become the first parastronaut and do a feasibility study on how flying to space needs to be adapted for people living with disabilities."
+        },
+        {
+            "question": "What famous person also had health challenges and helped change the way we understand space physics?",
+            "options": ["Alexander Graham Bell", "Stephan Hawking", "Kobe Bryant", "Sheldon Cooper"],
+            "correctAnswer": "Stephan Hawking",
+            "explanation": "Stephen Hawking was an English and theoretical physicist and cosmologist who was living with ALS (the neurons in his brain would break down so the messages would get lost in transit). He used a thumb switch and blink switch attached to his glasses to control his computer and motorized wheelchair and speech to text software. His theories on how black holes would release subatomic (really tiny) particles until they exploded; changed our understanding of the universe."
+        },
+        {
+            "question": "How did Flamingo feel when he learned there were other people like him working with space?",
+            "options": ["He was excited", "He was bored", "He was sad", "He was angry"],
+            "correctAnswer": "He was excited",
+            "explanation": "When Flamingo learned that there were other people with disabilities involved in space exploration, like Stephen Hawking’s work with theoretical physics (black holes emit radiation), or that John McFall might be the first disabled person to travel into space."
+        },
+        {
+            "question": "What did Flamingo decide he was going to do?",
+            "options": ["Become a chef", "Travel the world", "Play basketball", 
+            "Become and engineer and invent a way to bring a wheelchair into space"],
+            "correctAnswer": "Become and engineer and invent a way to bring a wheelchair into space",
+            "explanation": "While Flamingo dreamed of becoming an astronaut, he didn’t realize that to do that, becoming an engineer makes the journey easier.  He believes that becoming an engineer will give him the tools to invent something that will allow him and other wheelchair users a safe way to travel in space."
+        },
+        {
+            "question": "What did the Flamingo learn?",
+            "options": ["Being different is bad", "Being different is funny", 
+            "Being different isn’t wrong, it’s just different", "It’s better to be alone"],
+            "correctAnswer": "Being different isn’t wrong, it’s just different",
+            "explanation": "Flamingo is a wheelchair user and understands that some people use their legs to get from one spot to another, his wheelchair allows him to achieve the game goal, but differently. We all have different skills and capabilities, and it is ok to do things differently. Celebrating our differences makes the world a more interesting place."
+        }
+    ],
+    "7": [
+        {
+            "question": "What did Flamingo pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Tools",
+            "explanation": "Flamingo is a wheelchair user and is very aware that sometimes his wheelchair can have mechanical issues and requires tools and grease to make it run smoothly. While travelling into space, he would need to be extra prepared for the new environment and conditions of being in space. He felt packing tools would help make his trip more enjoyable if the new environment changed how his wheelchair could function."
+        },
+        {
+            "question": "What did Rhino pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Screen Reader",
+            "explanation": "Since Rhino is blind, he wanted to pack assistive devices that would make it easier for him to communicate with the people back on Earth. A screen reader helps to convert text into words so he can read using his ears instead of his eyes."
+        },
+        {
+            "question": "The trip Flamingo, Rhino, and Hedgehog won was taking them to ______________.",
+            "options": ["Space", "Pyramids", "Niagara Falls", "Great Barrier Reef"],
+            "correctAnswer": "Space",
+            "explanation": "The three friends were at the science centre when Flamingo answered all the space questions correctly and was entered into a contest to win a free trip to space. Rabbit called to tell them they won a zero g flight to see and feel what it is like to be on the edge of the world and on the cusp of being in outer space."
+        },
+        {
+            "question": "How did Flamingo feel when he couldn’t go into space?",
+            "options": ["Happy", "Sad", "Thankful", "Cheerful"],
+            "correctAnswer": "Sad",
+            "explanation": "When Flamingo found out he couldn’t safely travel into space with his wheelchair, he was really sad.  Rabbit knew how much this trip meant to Flamingo as he won the tickets into space for answering all the questions correctly at the science centre. Rabbit asked Flamingo if he wanted to be part of the mission control and meet the engineering team instead."
+        },
+        {
+            "question": "Why couldn’t Flamingo travel into space?",
+            "options": ["It was too dangerous to take a wheelchair into space", 
+            "His wheelchair wouldn’t fit in the shuttle", 
+            "He didn’t want to go to space", "He wanted to watch from mission control"],
+            "correctAnswer": "It was too dangerous to take a wheelchair into space",
+            "explanation": "As of yet, nobody with a disability has travelled into space. The European Space Agency is running a pilot program to see how safe it would be for someone with a disability to travel into space.  Without the proper testing and safety procedures, it wasn’t safe for Flamingo to take this trip into space, yet."
+        },
+        {
+            "question": "What did Flamingo get to do instead of travelling into space?",
+            "options": ["He played video games", "He took a trip to the pyramids", 
+            "He was part of mission control and go to work with the engineers", 
+            "He ate chocolate cake"],
+            "correctAnswer": "He was part of mission control and go to work with the engineers",
+            "explanation": "Instead of traveling with his friends on the space shuttle, he was invited to be part of mission control and work with the engineers. This is where he learned about inspirational people living with medical conditions contributing to the exploration and development of technology helping us better understand the cosmos."
+        },
+        {
+            "question": "How did Rhino and Hedgehog feel when Flamingo could not go into space?",
+            "options": ["They were happy", "They were sad", "They wanted to do something else", 
+            "They couldn’t decide how they felt"],
+            "correctAnswer": "They couldn’t decide how they felt",
+            "explanation": "When Rhino and Hedgehog learned that Flamingo could not live out his life’s dream of going into space, they were sad for his loss, but still secretly excited that they got to go on an adventure of a lifetime. They couldn’t decide if their personal feelings of joy were bigger than their feelings of sadness for their friend. In the end, they decided, they were both happy and sad at the same time."
+        },
+        {
+            "question": "How did Flamingo feel when he got to launch the mission?",
+            "options": ["Sad", "Overjoyed", "Disappointed", "Nervous"],
+            "correctAnswer": "Overjoyed",
+            "explanation": "When Flamingo learned he would get to push the big red button and launch the plane into space, he was overjoyed and excited that he was responsible for his friends being able to go into space. This was such an important job. Without doing this, nobody could go into space."
+        },
+        {
+            "question": "What did Hedgehog do when he was in space?",
+            "options": ["He put on his crown and celebrated that he was king of the world", 
+            "He was scared", "He tried to make Rhino see", "He ate an apple"],
+            "correctAnswer": "He put on his crown and celebrated that he was king of the world",
+            "explanation": "Since Hedgehog loves posting things on social media, he had to take a million pictures of his adventure into space and created a funny TikTok about finally being king of the world and put a crown on his head to celebrate his victory."
+        },
+        {
+            "question": "Who encouraged Flamingo to explore the shop floor and meet the engineers?",
+            "options": ["Hedgehog", "Rhino", "John McFall", "Lion"],
+            "correctAnswer": "Lion",
+            "explanation": "Lion told Flamingo that he would not be able to travel to space, as it was not safe to bring his wheelchair on the mission, instead offered Flamingo the opportunity to meet with the engineers and mechanics while touring the factory, as well as be part of ground control and help launch his friends into space. This was an awesome alternative to seeing what happens behind the scenes on a space mission. This experience inspired Flamingo to find a different way into space."
+        },
+        {
+            "question": "When Flamingo was with ground control, what did he learn?",
+            "options": ["John McFall is the first person with a disability who might go into space", 
+            "Engineers are boring", "Space travel is easy", "Flying a rocket is easy"],
+            "correctAnswer": "John McFall is the first person with a disability who might go into space",
+            "explanation": "John McFall is a British Paralympic sprinter, surgeon, and ESA Project astronaut. He was selected by the European Space Agency to become the first parastronaut and do a feasibility study on how flying to space needs to be adapted for people living with disabilities."
+        },
+        {
+            "question": "What famous person also had health challenges and helped change the way we understand space physics?",
+            "options": ["Alexander Graham Bell", "Stephan Hawking", "Kobe Bryant", "Sheldon Cooper"],
+            "correctAnswer": "Stephan Hawking",
+            "explanation": "Stephen Hawking was an English and theoretical physicist and cosmologist who was living with ALS (the neurons in his brain would break down so the messages would get lost in transit). He used a thumb switch and blink switch attached to his glasses to control his computer and motorized wheelchair and speech to text software. His theories on how black holes would release subatomic (really tiny) particles until they exploded; changed our understanding of the universe."
+        },
+        {
+            "question": "How did Flamingo feel when he learned there were other people like him working with space?",
+            "options": ["He was excited", "He was bored", "He was sad", "He was angry"],
+            "correctAnswer": "He was excited",
+            "explanation": "When Flamingo learned that there were other people with disabilities involved in space exploration, like Stephen Hawking’s work with theoretical physics (black holes emit radiation), or that John McFall might be the first disabled person to travel into space."
+        },
+        {
+            "question": "What did Flamingo decide he was going to do?",
+            "options": ["Become a chef", "Travel the world", "Play basketball", 
+            "Become and engineer and invent a way to bring a wheelchair into space"],
+            "correctAnswer": "Become and engineer and invent a way to bring a wheelchair into space",
+            "explanation": "While Flamingo dreamed of becoming an astronaut, he didn’t realize that to do that, becoming an engineer makes the journey easier.  He believes that becoming an engineer will give him the tools to invent something that will allow him and other wheelchair users a safe way to travel in space."
+        },
+        {
+            "question": "What did the Flamingo learn?",
+            "options": ["Being different is bad", "Being different is funny", 
+            "Being different isn’t wrong, it’s just different", "It’s better to be alone"],
+            "correctAnswer": "Being different isn’t wrong, it’s just different",
+            "explanation": "Flamingo is a wheelchair user and understands that some people use their legs to get from one spot to another, his wheelchair allows him to achieve the game goal, but differently. We all have different skills and capabilities, and it is ok to do things differently. Celebrating our differences makes the world a more interesting place."
+        }
+    ],
+    "8": [
+        {
+            "question": "What did Flamingo pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Tools",
+            "explanation": "Flamingo is a wheelchair user and is very aware that sometimes his wheelchair can have mechanical issues and requires tools and grease to make it run smoothly. While travelling into space, he would need to be extra prepared for the new environment and conditions of being in space. He felt packing tools would help make his trip more enjoyable if the new environment changed how his wheelchair could function."
+        },
+        {
+            "question": "What did Rhino pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Screen Reader",
+            "explanation": "Since Rhino is blind, he wanted to pack assistive devices that would make it easier for him to communicate with the people back on Earth. A screen reader helps to convert text into words so he can read using his ears instead of his eyes."
+        },
+        {
+            "question": "The trip Flamingo, Rhino, and Hedgehog won was taking them to ______________.",
+            "options": ["Space", "Pyramids", "Niagara Falls", "Great Barrier Reef"],
+            "correctAnswer": "Space",
+            "explanation": "The three friends were at the science centre when Flamingo answered all the space questions correctly and was entered into a contest to win a free trip to space. Rabbit called to tell them they won a zero g flight to see and feel what it is like to be on the edge of the world and on the cusp of being in outer space."
+        },
+        {
+            "question": "How did Flamingo feel when he couldn’t go into space?",
+            "options": ["Happy", "Sad", "Thankful", "Cheerful"],
+            "correctAnswer": "Sad",
+            "explanation": "When Flamingo found out he couldn’t safely travel into space with his wheelchair, he was really sad.  Rabbit knew how much this trip meant to Flamingo as he won the tickets into space for answering all the questions correctly at the science centre. Rabbit asked Flamingo if he wanted to be part of the mission control and meet the engineering team instead."
+        },
+        {
+            "question": "Why couldn’t Flamingo travel into space?",
+            "options": ["It was too dangerous to take a wheelchair into space", 
+            "His wheelchair wouldn’t fit in the shuttle", 
+            "He didn’t want to go to space", "He wanted to watch from mission control"],
+            "correctAnswer": "It was too dangerous to take a wheelchair into space",
+            "explanation": "As of yet, nobody with a disability has travelled into space. The European Space Agency is running a pilot program to see how safe it would be for someone with a disability to travel into space.  Without the proper testing and safety procedures, it wasn’t safe for Flamingo to take this trip into space, yet."
+        },
+        {
+            "question": "What did Flamingo get to do instead of travelling into space?",
+            "options": ["He played video games", "He took a trip to the pyramids", 
+            "He was part of mission control and go to work with the engineers", 
+            "He ate chocolate cake"],
+            "correctAnswer": "He was part of mission control and go to work with the engineers",
+            "explanation": "Instead of traveling with his friends on the space shuttle, he was invited to be part of mission control and work with the engineers. This is where he learned about inspirational people living with medical conditions contributing to the exploration and development of technology helping us better understand the cosmos."
+        },
+        {
+            "question": "How did Rhino and Hedgehog feel when Flamingo could not go into space?",
+            "options": ["They were happy", "They were sad", "They wanted to do something else", 
+            "They couldn’t decide how they felt"],
+            "correctAnswer": "They couldn’t decide how they felt",
+            "explanation": "When Rhino and Hedgehog learned that Flamingo could not live out his life’s dream of going into space, they were sad for his loss, but still secretly excited that they got to go on an adventure of a lifetime. They couldn’t decide if their personal feelings of joy were bigger than their feelings of sadness for their friend. In the end, they decided, they were both happy and sad at the same time."
+        },
+        {
+            "question": "How did Flamingo feel when he got to launch the mission?",
+            "options": ["Sad", "Overjoyed", "Disappointed", "Nervous"],
+            "correctAnswer": "Overjoyed",
+            "explanation": "When Flamingo learned he would get to push the big red button and launch the plane into space, he was overjoyed and excited that he was responsible for his friends being able to go into space. This was such an important job. Without doing this, nobody could go into space."
+        },
+        {
+            "question": "What did Hedgehog do when he was in space?",
+            "options": ["He put on his crown and celebrated that he was king of the world", 
+            "He was scared", "He tried to make Rhino see", "He ate an apple"],
+            "correctAnswer": "He put on his crown and celebrated that he was king of the world",
+            "explanation": "Since Hedgehog loves posting things on social media, he had to take a million pictures of his adventure into space and created a funny TikTok about finally being king of the world and put a crown on his head to celebrate his victory."
+        },
+        {
+            "question": "Who encouraged Flamingo to explore the shop floor and meet the engineers?",
+            "options": ["Hedgehog", "Rhino", "John McFall", "Lion"],
+            "correctAnswer": "Lion",
+            "explanation": "Lion told Flamingo that he would not be able to travel to space, as it was not safe to bring his wheelchair on the mission, instead offered Flamingo the opportunity to meet with the engineers and mechanics while touring the factory, as well as be part of ground control and help launch his friends into space. This was an awesome alternative to seeing what happens behind the scenes on a space mission. This experience inspired Flamingo to find a different way into space."
+        },
+        {
+            "question": "When Flamingo was with ground control, what did he learn?",
+            "options": ["John McFall is the first person with a disability who might go into space", 
+            "Engineers are boring", "Space travel is easy", "Flying a rocket is easy"],
+            "correctAnswer": "John McFall is the first person with a disability who might go into space",
+            "explanation": "John McFall is a British Paralympic sprinter, surgeon, and ESA Project astronaut. He was selected by the European Space Agency to become the first parastronaut and do a feasibility study on how flying to space needs to be adapted for people living with disabilities."
+        },
+        {
+            "question": "What famous person also had health challenges and helped change the way we understand space physics?",
+            "options": ["Alexander Graham Bell", "Stephan Hawking", "Kobe Bryant", "Sheldon Cooper"],
+            "correctAnswer": "Stephan Hawking",
+            "explanation": "Stephen Hawking was an English and theoretical physicist and cosmologist who was living with ALS (the neurons in his brain would break down so the messages would get lost in transit). He used a thumb switch and blink switch attached to his glasses to control his computer and motorized wheelchair and speech to text software. His theories on how black holes would release subatomic (really tiny) particles until they exploded; changed our understanding of the universe."
+        },
+        {
+            "question": "How did Flamingo feel when he learned there were other people like him working with space?",
+            "options": ["He was excited", "He was bored", "He was sad", "He was angry"],
+            "correctAnswer": "He was excited",
+            "explanation": "When Flamingo learned that there were other people with disabilities involved in space exploration, like Stephen Hawking’s work with theoretical physics (black holes emit radiation), or that John McFall might be the first disabled person to travel into space."
+        },
+        {
+            "question": "What did Flamingo decide he was going to do?",
+            "options": ["Become a chef", "Travel the world", "Play basketball", 
+            "Become and engineer and invent a way to bring a wheelchair into space"],
+            "correctAnswer": "Become and engineer and invent a way to bring a wheelchair into space",
+            "explanation": "While Flamingo dreamed of becoming an astronaut, he didn’t realize that to do that, becoming an engineer makes the journey easier.  He believes that becoming an engineer will give him the tools to invent something that will allow him and other wheelchair users a safe way to travel in space."
+        },
+        {
+            "question": "What did the Flamingo learn?",
+            "options": ["Being different is bad", "Being different is funny", 
+            "Being different isn’t wrong, it’s just different", "It’s better to be alone"],
+            "correctAnswer": "Being different isn’t wrong, it’s just different",
+            "explanation": "Flamingo is a wheelchair user and understands that some people use their legs to get from one spot to another, his wheelchair allows him to achieve the game goal, but differently. We all have different skills and capabilities, and it is ok to do things differently. Celebrating our differences makes the world a more interesting place."
+        }
+    ],
+    "9": [
+        {
+            "question": "What did Flamingo pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Tools",
+            "explanation": "Flamingo is a wheelchair user and is very aware that sometimes his wheelchair can have mechanical issues and requires tools and grease to make it run smoothly. While travelling into space, he would need to be extra prepared for the new environment and conditions of being in space. He felt packing tools would help make his trip more enjoyable if the new environment changed how his wheelchair could function."
+        },
+        {
+            "question": "What did Rhino pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Screen Reader",
+            "explanation": "Since Rhino is blind, he wanted to pack assistive devices that would make it easier for him to communicate with the people back on Earth. A screen reader helps to convert text into words so he can read using his ears instead of his eyes."
+        },
+        {
+            "question": "The trip Flamingo, Rhino, and Hedgehog won was taking them to ______________.",
+            "options": ["Space", "Pyramids", "Niagara Falls", "Great Barrier Reef"],
+            "correctAnswer": "Space",
+            "explanation": "The three friends were at the science centre when Flamingo answered all the space questions correctly and was entered into a contest to win a free trip to space. Rabbit called to tell them they won a zero g flight to see and feel what it is like to be on the edge of the world and on the cusp of being in outer space."
+        },
+        {
+            "question": "How did Flamingo feel when he couldn’t go into space?",
+            "options": ["Happy", "Sad", "Thankful", "Cheerful"],
+            "correctAnswer": "Sad",
+            "explanation": "When Flamingo found out he couldn’t safely travel into space with his wheelchair, he was really sad.  Rabbit knew how much this trip meant to Flamingo as he won the tickets into space for answering all the questions correctly at the science centre. Rabbit asked Flamingo if he wanted to be part of the mission control and meet the engineering team instead."
+        },
+        {
+            "question": "Why couldn’t Flamingo travel into space?",
+            "options": ["It was too dangerous to take a wheelchair into space", 
+            "His wheelchair wouldn’t fit in the shuttle", 
+            "He didn’t want to go to space", "He wanted to watch from mission control"],
+            "correctAnswer": "It was too dangerous to take a wheelchair into space",
+            "explanation": "As of yet, nobody with a disability has travelled into space. The European Space Agency is running a pilot program to see how safe it would be for someone with a disability to travel into space.  Without the proper testing and safety procedures, it wasn’t safe for Flamingo to take this trip into space, yet."
+        },
+        {
+            "question": "What did Flamingo get to do instead of travelling into space?",
+            "options": ["He played video games", "He took a trip to the pyramids", 
+            "He was part of mission control and go to work with the engineers", 
+            "He ate chocolate cake"],
+            "correctAnswer": "He was part of mission control and go to work with the engineers",
+            "explanation": "Instead of traveling with his friends on the space shuttle, he was invited to be part of mission control and work with the engineers. This is where he learned about inspirational people living with medical conditions contributing to the exploration and development of technology helping us better understand the cosmos."
+        },
+        {
+            "question": "How did Rhino and Hedgehog feel when Flamingo could not go into space?",
+            "options": ["They were happy", "They were sad", "They wanted to do something else", 
+            "They couldn’t decide how they felt"],
+            "correctAnswer": "They couldn’t decide how they felt",
+            "explanation": "When Rhino and Hedgehog learned that Flamingo could not live out his life’s dream of going into space, they were sad for his loss, but still secretly excited that they got to go on an adventure of a lifetime. They couldn’t decide if their personal feelings of joy were bigger than their feelings of sadness for their friend. In the end, they decided, they were both happy and sad at the same time."
+        },
+        {
+            "question": "How did Flamingo feel when he got to launch the mission?",
+            "options": ["Sad", "Overjoyed", "Disappointed", "Nervous"],
+            "correctAnswer": "Overjoyed",
+            "explanation": "When Flamingo learned he would get to push the big red button and launch the plane into space, he was overjoyed and excited that he was responsible for his friends being able to go into space. This was such an important job. Without doing this, nobody could go into space."
+        },
+        {
+            "question": "What did Hedgehog do when he was in space?",
+            "options": ["He put on his crown and celebrated that he was king of the world", 
+            "He was scared", "He tried to make Rhino see", "He ate an apple"],
+            "correctAnswer": "He put on his crown and celebrated that he was king of the world",
+            "explanation": "Since Hedgehog loves posting things on social media, he had to take a million pictures of his adventure into space and created a funny TikTok about finally being king of the world and put a crown on his head to celebrate his victory."
+        },
+        {
+            "question": "Who encouraged Flamingo to explore the shop floor and meet the engineers?",
+            "options": ["Hedgehog", "Rhino", "John McFall", "Lion"],
+            "correctAnswer": "Lion",
+            "explanation": "Lion told Flamingo that he would not be able to travel to space, as it was not safe to bring his wheelchair on the mission, instead offered Flamingo the opportunity to meet with the engineers and mechanics while touring the factory, as well as be part of ground control and help launch his friends into space. This was an awesome alternative to seeing what happens behind the scenes on a space mission. This experience inspired Flamingo to find a different way into space."
+        },
+        {
+            "question": "When Flamingo was with ground control, what did he learn?",
+            "options": ["John McFall is the first person with a disability who might go into space", 
+            "Engineers are boring", "Space travel is easy", "Flying a rocket is easy"],
+            "correctAnswer": "John McFall is the first person with a disability who might go into space",
+            "explanation": "John McFall is a British Paralympic sprinter, surgeon, and ESA Project astronaut. He was selected by the European Space Agency to become the first parastronaut and do a feasibility study on how flying to space needs to be adapted for people living with disabilities."
+        },
+        {
+            "question": "What famous person also had health challenges and helped change the way we understand space physics?",
+            "options": ["Alexander Graham Bell", "Stephan Hawking", "Kobe Bryant", "Sheldon Cooper"],
+            "correctAnswer": "Stephan Hawking",
+            "explanation": "Stephen Hawking was an English and theoretical physicist and cosmologist who was living with ALS (the neurons in his brain would break down so the messages would get lost in transit). He used a thumb switch and blink switch attached to his glasses to control his computer and motorized wheelchair and speech to text software. His theories on how black holes would release subatomic (really tiny) particles until they exploded; changed our understanding of the universe."
+        },
+        {
+            "question": "How did Flamingo feel when he learned there were other people like him working with space?",
+            "options": ["He was excited", "He was bored", "He was sad", "He was angry"],
+            "correctAnswer": "He was excited",
+            "explanation": "When Flamingo learned that there were other people with disabilities involved in space exploration, like Stephen Hawking’s work with theoretical physics (black holes emit radiation), or that John McFall might be the first disabled person to travel into space."
+        },
+        {
+            "question": "What did Flamingo decide he was going to do?",
+            "options": ["Become a chef", "Travel the world", "Play basketball", 
+            "Become and engineer and invent a way to bring a wheelchair into space"],
+            "correctAnswer": "Become and engineer and invent a way to bring a wheelchair into space",
+            "explanation": "While Flamingo dreamed of becoming an astronaut, he didn’t realize that to do that, becoming an engineer makes the journey easier.  He believes that becoming an engineer will give him the tools to invent something that will allow him and other wheelchair users a safe way to travel in space."
+        },
+        {
+            "question": "What did the Flamingo learn?",
+            "options": ["Being different is bad", "Being different is funny", 
+            "Being different isn’t wrong, it’s just different", "It’s better to be alone"],
+            "correctAnswer": "Being different isn’t wrong, it’s just different",
+            "explanation": "Flamingo is a wheelchair user and understands that some people use their legs to get from one spot to another, his wheelchair allows him to achieve the game goal, but differently. We all have different skills and capabilities, and it is ok to do things differently. Celebrating our differences makes the world a more interesting place."
+        }
+    ],
+    "10": [
+        {
+            "question": "What did Flamingo pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Tools",
+            "explanation": "Flamingo is a wheelchair user and is very aware that sometimes his wheelchair can have mechanical issues and requires tools and grease to make it run smoothly. While travelling into space, he would need to be extra prepared for the new environment and conditions of being in space. He felt packing tools would help make his trip more enjoyable if the new environment changed how his wheelchair could function."
+        },
+        {
+            "question": "What did Rhino pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Screen Reader",
+            "explanation": "Since Rhino is blind, he wanted to pack assistive devices that would make it easier for him to communicate with the people back on Earth. A screen reader helps to convert text into words so he can read using his ears instead of his eyes."
+        },
+        {
+            "question": "The trip Flamingo, Rhino, and Hedgehog won was taking them to ______________.",
+            "options": ["Space", "Pyramids", "Niagara Falls", "Great Barrier Reef"],
+            "correctAnswer": "Space",
+            "explanation": "The three friends were at the science centre when Flamingo answered all the space questions correctly and was entered into a contest to win a free trip to space. Rabbit called to tell them they won a zero g flight to see and feel what it is like to be on the edge of the world and on the cusp of being in outer space."
+        },
+        {
+            "question": "How did Flamingo feel when he couldn’t go into space?",
+            "options": ["Happy", "Sad", "Thankful", "Cheerful"],
+            "correctAnswer": "Sad",
+            "explanation": "When Flamingo found out he couldn’t safely travel into space with his wheelchair, he was really sad.  Rabbit knew how much this trip meant to Flamingo as he won the tickets into space for answering all the questions correctly at the science centre. Rabbit asked Flamingo if he wanted to be part of the mission control and meet the engineering team instead."
+        },
+        {
+            "question": "Why couldn’t Flamingo travel into space?",
+            "options": ["It was too dangerous to take a wheelchair into space", 
+            "His wheelchair wouldn’t fit in the shuttle", 
+            "He didn’t want to go to space", "He wanted to watch from mission control"],
+            "correctAnswer": "It was too dangerous to take a wheelchair into space",
+            "explanation": "As of yet, nobody with a disability has travelled into space. The European Space Agency is running a pilot program to see how safe it would be for someone with a disability to travel into space.  Without the proper testing and safety procedures, it wasn’t safe for Flamingo to take this trip into space, yet."
+        },
+        {
+            "question": "What did Flamingo get to do instead of travelling into space?",
+            "options": ["He played video games", "He took a trip to the pyramids", 
+            "He was part of mission control and go to work with the engineers", 
+            "He ate chocolate cake"],
+            "correctAnswer": "He was part of mission control and go to work with the engineers",
+            "explanation": "Instead of traveling with his friends on the space shuttle, he was invited to be part of mission control and work with the engineers. This is where he learned about inspirational people living with medical conditions contributing to the exploration and development of technology helping us better understand the cosmos."
+        },
+        {
+            "question": "How did Rhino and Hedgehog feel when Flamingo could not go into space?",
+            "options": ["They were happy", "They were sad", "They wanted to do something else", 
+            "They couldn’t decide how they felt"],
+            "correctAnswer": "They couldn’t decide how they felt",
+            "explanation": "When Rhino and Hedgehog learned that Flamingo could not live out his life’s dream of going into space, they were sad for his loss, but still secretly excited that they got to go on an adventure of a lifetime. They couldn’t decide if their personal feelings of joy were bigger than their feelings of sadness for their friend. In the end, they decided, they were both happy and sad at the same time."
+        },
+        {
+            "question": "How did Flamingo feel when he got to launch the mission?",
+            "options": ["Sad", "Overjoyed", "Disappointed", "Nervous"],
+            "correctAnswer": "Overjoyed",
+            "explanation": "When Flamingo learned he would get to push the big red button and launch the plane into space, he was overjoyed and excited that he was responsible for his friends being able to go into space. This was such an important job. Without doing this, nobody could go into space."
+        },
+        {
+            "question": "What did Hedgehog do when he was in space?",
+            "options": ["He put on his crown and celebrated that he was king of the world", 
+            "He was scared", "He tried to make Rhino see", "He ate an apple"],
+            "correctAnswer": "He put on his crown and celebrated that he was king of the world",
+            "explanation": "Since Hedgehog loves posting things on social media, he had to take a million pictures of his adventure into space and created a funny TikTok about finally being king of the world and put a crown on his head to celebrate his victory."
+        },
+        {
+            "question": "Who encouraged Flamingo to explore the shop floor and meet the engineers?",
+            "options": ["Hedgehog", "Rhino", "John McFall", "Lion"],
+            "correctAnswer": "Lion",
+            "explanation": "Lion told Flamingo that he would not be able to travel to space, as it was not safe to bring his wheelchair on the mission, instead offered Flamingo the opportunity to meet with the engineers and mechanics while touring the factory, as well as be part of ground control and help launch his friends into space. This was an awesome alternative to seeing what happens behind the scenes on a space mission. This experience inspired Flamingo to find a different way into space."
+        },
+        {
+            "question": "When Flamingo was with ground control, what did he learn?",
+            "options": ["John McFall is the first person with a disability who might go into space", 
+            "Engineers are boring", "Space travel is easy", "Flying a rocket is easy"],
+            "correctAnswer": "John McFall is the first person with a disability who might go into space",
+            "explanation": "John McFall is a British Paralympic sprinter, surgeon, and ESA Project astronaut. He was selected by the European Space Agency to become the first parastronaut and do a feasibility study on how flying to space needs to be adapted for people living with disabilities."
+        },
+        {
+            "question": "What famous person also had health challenges and helped change the way we understand space physics?",
+            "options": ["Alexander Graham Bell", "Stephan Hawking", "Kobe Bryant", "Sheldon Cooper"],
+            "correctAnswer": "Stephan Hawking",
+            "explanation": "Stephen Hawking was an English and theoretical physicist and cosmologist who was living with ALS (the neurons in his brain would break down so the messages would get lost in transit). He used a thumb switch and blink switch attached to his glasses to control his computer and motorized wheelchair and speech to text software. His theories on how black holes would release subatomic (really tiny) particles until they exploded; changed our understanding of the universe."
+        },
+        {
+            "question": "How did Flamingo feel when he learned there were other people like him working with space?",
+            "options": ["He was excited", "He was bored", "He was sad", "He was angry"],
+            "correctAnswer": "He was excited",
+            "explanation": "When Flamingo learned that there were other people with disabilities involved in space exploration, like Stephen Hawking’s work with theoretical physics (black holes emit radiation), or that John McFall might be the first disabled person to travel into space."
+        },
+        {
+            "question": "What did Flamingo decide he was going to do?",
+            "options": ["Become a chef", "Travel the world", "Play basketball", 
+            "Become and engineer and invent a way to bring a wheelchair into space"],
+            "correctAnswer": "Become and engineer and invent a way to bring a wheelchair into space",
+            "explanation": "While Flamingo dreamed of becoming an astronaut, he didn’t realize that to do that, becoming an engineer makes the journey easier.  He believes that becoming an engineer will give him the tools to invent something that will allow him and other wheelchair users a safe way to travel in space."
+        },
+        {
+            "question": "What did the Flamingo learn?",
+            "options": ["Being different is bad", "Being different is funny", 
+            "Being different isn’t wrong, it’s just different", "It’s better to be alone"],
+            "correctAnswer": "Being different isn’t wrong, it’s just different",
+            "explanation": "Flamingo is a wheelchair user and understands that some people use their legs to get from one spot to another, his wheelchair allows him to achieve the game goal, but differently. We all have different skills and capabilities, and it is ok to do things differently. Celebrating our differences makes the world a more interesting place."
+        }
+    ],
+    "11": [
+        {
+            "question": "What did Flamingo pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Tools",
+            "explanation": "Flamingo is a wheelchair user and is very aware that sometimes his wheelchair can have mechanical issues and requires tools and grease to make it run smoothly. While travelling into space, he would need to be extra prepared for the new environment and conditions of being in space. He felt packing tools would help make his trip more enjoyable if the new environment changed how his wheelchair could function."
+        },
+        {
+            "question": "What did Rhino pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Screen Reader",
+            "explanation": "Since Rhino is blind, he wanted to pack assistive devices that would make it easier for him to communicate with the people back on Earth. A screen reader helps to convert text into words so he can read using his ears instead of his eyes."
+        },
+        {
+            "question": "The trip Flamingo, Rhino, and Hedgehog won was taking them to ______________.",
+            "options": ["Space", "Pyramids", "Niagara Falls", "Great Barrier Reef"],
+            "correctAnswer": "Space",
+            "explanation": "The three friends were at the science centre when Flamingo answered all the space questions correctly and was entered into a contest to win a free trip to space. Rabbit called to tell them they won a zero g flight to see and feel what it is like to be on the edge of the world and on the cusp of being in outer space."
+        },
+        {
+            "question": "How did Flamingo feel when he couldn’t go into space?",
+            "options": ["Happy", "Sad", "Thankful", "Cheerful"],
+            "correctAnswer": "Sad",
+            "explanation": "When Flamingo found out he couldn’t safely travel into space with his wheelchair, he was really sad.  Rabbit knew how much this trip meant to Flamingo as he won the tickets into space for answering all the questions correctly at the science centre. Rabbit asked Flamingo if he wanted to be part of the mission control and meet the engineering team instead."
+        },
+        {
+            "question": "Why couldn’t Flamingo travel into space?",
+            "options": ["It was too dangerous to take a wheelchair into space", 
+            "His wheelchair wouldn’t fit in the shuttle", 
+            "He didn’t want to go to space", "He wanted to watch from mission control"],
+            "correctAnswer": "It was too dangerous to take a wheelchair into space",
+            "explanation": "As of yet, nobody with a disability has travelled into space. The European Space Agency is running a pilot program to see how safe it would be for someone with a disability to travel into space.  Without the proper testing and safety procedures, it wasn’t safe for Flamingo to take this trip into space, yet."
+        },
+        {
+            "question": "What did Flamingo get to do instead of travelling into space?",
+            "options": ["He played video games", "He took a trip to the pyramids", 
+            "He was part of mission control and go to work with the engineers", 
+            "He ate chocolate cake"],
+            "correctAnswer": "He was part of mission control and go to work with the engineers",
+            "explanation": "Instead of traveling with his friends on the space shuttle, he was invited to be part of mission control and work with the engineers. This is where he learned about inspirational people living with medical conditions contributing to the exploration and development of technology helping us better understand the cosmos."
+        },
+        {
+            "question": "How did Rhino and Hedgehog feel when Flamingo could not go into space?",
+            "options": ["They were happy", "They were sad", "They wanted to do something else", 
+            "They couldn’t decide how they felt"],
+            "correctAnswer": "They couldn’t decide how they felt",
+            "explanation": "When Rhino and Hedgehog learned that Flamingo could not live out his life’s dream of going into space, they were sad for his loss, but still secretly excited that they got to go on an adventure of a lifetime. They couldn’t decide if their personal feelings of joy were bigger than their feelings of sadness for their friend. In the end, they decided, they were both happy and sad at the same time."
+        },
+        {
+            "question": "How did Flamingo feel when he got to launch the mission?",
+            "options": ["Sad", "Overjoyed", "Disappointed", "Nervous"],
+            "correctAnswer": "Overjoyed",
+            "explanation": "When Flamingo learned he would get to push the big red button and launch the plane into space, he was overjoyed and excited that he was responsible for his friends being able to go into space. This was such an important job. Without doing this, nobody could go into space."
+        },
+        {
+            "question": "What did Hedgehog do when he was in space?",
+            "options": ["He put on his crown and celebrated that he was king of the world", 
+            "He was scared", "He tried to make Rhino see", "He ate an apple"],
+            "correctAnswer": "He put on his crown and celebrated that he was king of the world",
+            "explanation": "Since Hedgehog loves posting things on social media, he had to take a million pictures of his adventure into space and created a funny TikTok about finally being king of the world and put a crown on his head to celebrate his victory."
+        },
+        {
+            "question": "Who encouraged Flamingo to explore the shop floor and meet the engineers?",
+            "options": ["Hedgehog", "Rhino", "John McFall", "Lion"],
+            "correctAnswer": "Lion",
+            "explanation": "Lion told Flamingo that he would not be able to travel to space, as it was not safe to bring his wheelchair on the mission, instead offered Flamingo the opportunity to meet with the engineers and mechanics while touring the factory, as well as be part of ground control and help launch his friends into space. This was an awesome alternative to seeing what happens behind the scenes on a space mission. This experience inspired Flamingo to find a different way into space."
+        },
+        {
+            "question": "When Flamingo was with ground control, what did he learn?",
+            "options": ["John McFall is the first person with a disability who might go into space", 
+            "Engineers are boring", "Space travel is easy", "Flying a rocket is easy"],
+            "correctAnswer": "John McFall is the first person with a disability who might go into space",
+            "explanation": "John McFall is a British Paralympic sprinter, surgeon, and ESA Project astronaut. He was selected by the European Space Agency to become the first parastronaut and do a feasibility study on how flying to space needs to be adapted for people living with disabilities."
+        },
+        {
+            "question": "What famous person also had health challenges and helped change the way we understand space physics?",
+            "options": ["Alexander Graham Bell", "Stephan Hawking", "Kobe Bryant", "Sheldon Cooper"],
+            "correctAnswer": "Stephan Hawking",
+            "explanation": "Stephen Hawking was an English and theoretical physicist and cosmologist who was living with ALS (the neurons in his brain would break down so the messages would get lost in transit). He used a thumb switch and blink switch attached to his glasses to control his computer and motorized wheelchair and speech to text software. His theories on how black holes would release subatomic (really tiny) particles until they exploded; changed our understanding of the universe."
+        },
+        {
+            "question": "How did Flamingo feel when he learned there were other people like him working with space?",
+            "options": ["He was excited", "He was bored", "He was sad", "He was angry"],
+            "correctAnswer": "He was excited",
+            "explanation": "When Flamingo learned that there were other people with disabilities involved in space exploration, like Stephen Hawking’s work with theoretical physics (black holes emit radiation), or that John McFall might be the first disabled person to travel into space."
+        },
+        {
+            "question": "What did Flamingo decide he was going to do?",
+            "options": ["Become a chef", "Travel the world", "Play basketball", 
+            "Become and engineer and invent a way to bring a wheelchair into space"],
+            "correctAnswer": "Become and engineer and invent a way to bring a wheelchair into space",
+            "explanation": "While Flamingo dreamed of becoming an astronaut, he didn’t realize that to do that, becoming an engineer makes the journey easier.  He believes that becoming an engineer will give him the tools to invent something that will allow him and other wheelchair users a safe way to travel in space."
+        },
+        {
+            "question": "What did the Flamingo learn?",
+            "options": ["Being different is bad", "Being different is funny", 
+            "Being different isn’t wrong, it’s just different", "It’s better to be alone"],
+            "correctAnswer": "Being different isn’t wrong, it’s just different",
+            "explanation": "Flamingo is a wheelchair user and understands that some people use their legs to get from one spot to another, his wheelchair allows him to achieve the game goal, but differently. We all have different skills and capabilities, and it is ok to do things differently. Celebrating our differences makes the world a more interesting place."
+        }
+    ],
+    "12": [
+        {
+            "question": "What did Flamingo pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Tools",
+            "explanation": "Flamingo is a wheelchair user and is very aware that sometimes his wheelchair can have mechanical issues and requires tools and grease to make it run smoothly. While travelling into space, he would need to be extra prepared for the new environment and conditions of being in space. He felt packing tools would help make his trip more enjoyable if the new environment changed how his wheelchair could function."
+        },
+        {
+            "question": "What did Rhino pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Screen Reader",
+            "explanation": "Since Rhino is blind, he wanted to pack assistive devices that would make it easier for him to communicate with the people back on Earth. A screen reader helps to convert text into words so he can read using his ears instead of his eyes."
+        },
+        {
+            "question": "The trip Flamingo, Rhino, and Hedgehog won was taking them to ______________.",
+            "options": ["Space", "Pyramids", "Niagara Falls", "Great Barrier Reef"],
+            "correctAnswer": "Space",
+            "explanation": "The three friends were at the science centre when Flamingo answered all the space questions correctly and was entered into a contest to win a free trip to space. Rabbit called to tell them they won a zero g flight to see and feel what it is like to be on the edge of the world and on the cusp of being in outer space."
+        },
+        {
+            "question": "How did Flamingo feel when he couldn’t go into space?",
+            "options": ["Happy", "Sad", "Thankful", "Cheerful"],
+            "correctAnswer": "Sad",
+            "explanation": "When Flamingo found out he couldn’t safely travel into space with his wheelchair, he was really sad.  Rabbit knew how much this trip meant to Flamingo as he won the tickets into space for answering all the questions correctly at the science centre. Rabbit asked Flamingo if he wanted to be part of the mission control and meet the engineering team instead."
+        },
+        {
+            "question": "Why couldn’t Flamingo travel into space?",
+            "options": ["It was too dangerous to take a wheelchair into space", 
+            "His wheelchair wouldn’t fit in the shuttle", 
+            "He didn’t want to go to space", "He wanted to watch from mission control"],
+            "correctAnswer": "It was too dangerous to take a wheelchair into space",
+            "explanation": "As of yet, nobody with a disability has travelled into space. The European Space Agency is running a pilot program to see how safe it would be for someone with a disability to travel into space.  Without the proper testing and safety procedures, it wasn’t safe for Flamingo to take this trip into space, yet."
+        },
+        {
+            "question": "What did Flamingo get to do instead of travelling into space?",
+            "options": ["He played video games", "He took a trip to the pyramids", 
+            "He was part of mission control and go to work with the engineers", 
+            "He ate chocolate cake"],
+            "correctAnswer": "He was part of mission control and go to work with the engineers",
+            "explanation": "Instead of traveling with his friends on the space shuttle, he was invited to be part of mission control and work with the engineers. This is where he learned about inspirational people living with medical conditions contributing to the exploration and development of technology helping us better understand the cosmos."
+        },
+        {
+            "question": "How did Rhino and Hedgehog feel when Flamingo could not go into space?",
+            "options": ["They were happy", "They were sad", "They wanted to do something else", 
+            "They couldn’t decide how they felt"],
+            "correctAnswer": "They couldn’t decide how they felt",
+            "explanation": "When Rhino and Hedgehog learned that Flamingo could not live out his life’s dream of going into space, they were sad for his loss, but still secretly excited that they got to go on an adventure of a lifetime. They couldn’t decide if their personal feelings of joy were bigger than their feelings of sadness for their friend. In the end, they decided, they were both happy and sad at the same time."
+        },
+        {
+            "question": "How did Flamingo feel when he got to launch the mission?",
+            "options": ["Sad", "Overjoyed", "Disappointed", "Nervous"],
+            "correctAnswer": "Overjoyed",
+            "explanation": "When Flamingo learned he would get to push the big red button and launch the plane into space, he was overjoyed and excited that he was responsible for his friends being able to go into space. This was such an important job. Without doing this, nobody could go into space."
+        },
+        {
+            "question": "What did Hedgehog do when he was in space?",
+            "options": ["He put on his crown and celebrated that he was king of the world", 
+            "He was scared", "He tried to make Rhino see", "He ate an apple"],
+            "correctAnswer": "He put on his crown and celebrated that he was king of the world",
+            "explanation": "Since Hedgehog loves posting things on social media, he had to take a million pictures of his adventure into space and created a funny TikTok about finally being king of the world and put a crown on his head to celebrate his victory."
+        },
+        {
+            "question": "Who encouraged Flamingo to explore the shop floor and meet the engineers?",
+            "options": ["Hedgehog", "Rhino", "John McFall", "Lion"],
+            "correctAnswer": "Lion",
+            "explanation": "Lion told Flamingo that he would not be able to travel to space, as it was not safe to bring his wheelchair on the mission, instead offered Flamingo the opportunity to meet with the engineers and mechanics while touring the factory, as well as be part of ground control and help launch his friends into space. This was an awesome alternative to seeing what happens behind the scenes on a space mission. This experience inspired Flamingo to find a different way into space."
+        },
+        {
+            "question": "When Flamingo was with ground control, what did he learn?",
+            "options": ["John McFall is the first person with a disability who might go into space", 
+            "Engineers are boring", "Space travel is easy", "Flying a rocket is easy"],
+            "correctAnswer": "John McFall is the first person with a disability who might go into space",
+            "explanation": "John McFall is a British Paralympic sprinter, surgeon, and ESA Project astronaut. He was selected by the European Space Agency to become the first parastronaut and do a feasibility study on how flying to space needs to be adapted for people living with disabilities."
+        },
+        {
+            "question": "What famous person also had health challenges and helped change the way we understand space physics?",
+            "options": ["Alexander Graham Bell", "Stephan Hawking", "Kobe Bryant", "Sheldon Cooper"],
+            "correctAnswer": "Stephan Hawking",
+            "explanation": "Stephen Hawking was an English and theoretical physicist and cosmologist who was living with ALS (the neurons in his brain would break down so the messages would get lost in transit). He used a thumb switch and blink switch attached to his glasses to control his computer and motorized wheelchair and speech to text software. His theories on how black holes would release subatomic (really tiny) particles until they exploded; changed our understanding of the universe."
+        },
+        {
+            "question": "How did Flamingo feel when he learned there were other people like him working with space?",
+            "options": ["He was excited", "He was bored", "He was sad", "He was angry"],
+            "correctAnswer": "He was excited",
+            "explanation": "When Flamingo learned that there were other people with disabilities involved in space exploration, like Stephen Hawking’s work with theoretical physics (black holes emit radiation), or that John McFall might be the first disabled person to travel into space."
+        },
+        {
+            "question": "What did Flamingo decide he was going to do?",
+            "options": ["Become a chef", "Travel the world", "Play basketball", 
+            "Become and engineer and invent a way to bring a wheelchair into space"],
+            "correctAnswer": "Become and engineer and invent a way to bring a wheelchair into space",
+            "explanation": "While Flamingo dreamed of becoming an astronaut, he didn’t realize that to do that, becoming an engineer makes the journey easier.  He believes that becoming an engineer will give him the tools to invent something that will allow him and other wheelchair users a safe way to travel in space."
+        },
+        {
+            "question": "What did the Flamingo learn?",
+            "options": ["Being different is bad", "Being different is funny", 
+            "Being different isn’t wrong, it’s just different", "It’s better to be alone"],
+            "correctAnswer": "Being different isn’t wrong, it’s just different",
+            "explanation": "Flamingo is a wheelchair user and understands that some people use their legs to get from one spot to another, his wheelchair allows him to achieve the game goal, but differently. We all have different skills and capabilities, and it is ok to do things differently. Celebrating our differences makes the world a more interesting place."
+        }
+    ],
+    "13": [
+        {
+            "question": "What did Flamingo pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Tools",
+            "explanation": "Flamingo is a wheelchair user and is very aware that sometimes his wheelchair can have mechanical issues and requires tools and grease to make it run smoothly. While travelling into space, he would need to be extra prepared for the new environment and conditions of being in space. He felt packing tools would help make his trip more enjoyable if the new environment changed how his wheelchair could function."
+        },
+        {
+            "question": "What did Rhino pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Screen Reader",
+            "explanation": "Since Rhino is blind, he wanted to pack assistive devices that would make it easier for him to communicate with the people back on Earth. A screen reader helps to convert text into words so he can read using his ears instead of his eyes."
+        },
+        {
+            "question": "The trip Flamingo, Rhino, and Hedgehog won was taking them to ______________.",
+            "options": ["Space", "Pyramids", "Niagara Falls", "Great Barrier Reef"],
+            "correctAnswer": "Space",
+            "explanation": "The three friends were at the science centre when Flamingo answered all the space questions correctly and was entered into a contest to win a free trip to space. Rabbit called to tell them they won a zero g flight to see and feel what it is like to be on the edge of the world and on the cusp of being in outer space."
+        },
+        {
+            "question": "How did Flamingo feel when he couldn’t go into space?",
+            "options": ["Happy", "Sad", "Thankful", "Cheerful"],
+            "correctAnswer": "Sad",
+            "explanation": "When Flamingo found out he couldn’t safely travel into space with his wheelchair, he was really sad.  Rabbit knew how much this trip meant to Flamingo as he won the tickets into space for answering all the questions correctly at the science centre. Rabbit asked Flamingo if he wanted to be part of the mission control and meet the engineering team instead."
+        },
+        {
+            "question": "Why couldn’t Flamingo travel into space?",
+            "options": ["It was too dangerous to take a wheelchair into space", 
+            "His wheelchair wouldn’t fit in the shuttle", 
+            "He didn’t want to go to space", "He wanted to watch from mission control"],
+            "correctAnswer": "It was too dangerous to take a wheelchair into space",
+            "explanation": "As of yet, nobody with a disability has travelled into space. The European Space Agency is running a pilot program to see how safe it would be for someone with a disability to travel into space.  Without the proper testing and safety procedures, it wasn’t safe for Flamingo to take this trip into space, yet."
+        },
+        {
+            "question": "What did Flamingo get to do instead of travelling into space?",
+            "options": ["He played video games", "He took a trip to the pyramids", 
+            "He was part of mission control and go to work with the engineers", 
+            "He ate chocolate cake"],
+            "correctAnswer": "He was part of mission control and go to work with the engineers",
+            "explanation": "Instead of traveling with his friends on the space shuttle, he was invited to be part of mission control and work with the engineers. This is where he learned about inspirational people living with medical conditions contributing to the exploration and development of technology helping us better understand the cosmos."
+        },
+        {
+            "question": "How did Rhino and Hedgehog feel when Flamingo could not go into space?",
+            "options": ["They were happy", "They were sad", "They wanted to do something else", 
+            "They couldn’t decide how they felt"],
+            "correctAnswer": "They couldn’t decide how they felt",
+            "explanation": "When Rhino and Hedgehog learned that Flamingo could not live out his life’s dream of going into space, they were sad for his loss, but still secretly excited that they got to go on an adventure of a lifetime. They couldn’t decide if their personal feelings of joy were bigger than their feelings of sadness for their friend. In the end, they decided, they were both happy and sad at the same time."
+        },
+        {
+            "question": "How did Flamingo feel when he got to launch the mission?",
+            "options": ["Sad", "Overjoyed", "Disappointed", "Nervous"],
+            "correctAnswer": "Overjoyed",
+            "explanation": "When Flamingo learned he would get to push the big red button and launch the plane into space, he was overjoyed and excited that he was responsible for his friends being able to go into space. This was such an important job. Without doing this, nobody could go into space."
+        },
+        {
+            "question": "What did Hedgehog do when he was in space?",
+            "options": ["He put on his crown and celebrated that he was king of the world", 
+            "He was scared", "He tried to make Rhino see", "He ate an apple"],
+            "correctAnswer": "He put on his crown and celebrated that he was king of the world",
+            "explanation": "Since Hedgehog loves posting things on social media, he had to take a million pictures of his adventure into space and created a funny TikTok about finally being king of the world and put a crown on his head to celebrate his victory."
+        },
+        {
+            "question": "Who encouraged Flamingo to explore the shop floor and meet the engineers?",
+            "options": ["Hedgehog", "Rhino", "John McFall", "Lion"],
+            "correctAnswer": "Lion",
+            "explanation": "Lion told Flamingo that he would not be able to travel to space, as it was not safe to bring his wheelchair on the mission, instead offered Flamingo the opportunity to meet with the engineers and mechanics while touring the factory, as well as be part of ground control and help launch his friends into space. This was an awesome alternative to seeing what happens behind the scenes on a space mission. This experience inspired Flamingo to find a different way into space."
+        },
+        {
+            "question": "When Flamingo was with ground control, what did he learn?",
+            "options": ["John McFall is the first person with a disability who might go into space", 
+            "Engineers are boring", "Space travel is easy", "Flying a rocket is easy"],
+            "correctAnswer": "John McFall is the first person with a disability who might go into space",
+            "explanation": "John McFall is a British Paralympic sprinter, surgeon, and ESA Project astronaut. He was selected by the European Space Agency to become the first parastronaut and do a feasibility study on how flying to space needs to be adapted for people living with disabilities."
+        },
+        {
+            "question": "What famous person also had health challenges and helped change the way we understand space physics?",
+            "options": ["Alexander Graham Bell", "Stephan Hawking", "Kobe Bryant", "Sheldon Cooper"],
+            "correctAnswer": "Stephan Hawking",
+            "explanation": "Stephen Hawking was an English and theoretical physicist and cosmologist who was living with ALS (the neurons in his brain would break down so the messages would get lost in transit). He used a thumb switch and blink switch attached to his glasses to control his computer and motorized wheelchair and speech to text software. His theories on how black holes would release subatomic (really tiny) particles until they exploded; changed our understanding of the universe."
+        },
+        {
+            "question": "How did Flamingo feel when he learned there were other people like him working with space?",
+            "options": ["He was excited", "He was bored", "He was sad", "He was angry"],
+            "correctAnswer": "He was excited",
+            "explanation": "When Flamingo learned that there were other people with disabilities involved in space exploration, like Stephen Hawking’s work with theoretical physics (black holes emit radiation), or that John McFall might be the first disabled person to travel into space."
+        },
+        {
+            "question": "What did Flamingo decide he was going to do?",
+            "options": ["Become a chef", "Travel the world", "Play basketball", 
+            "Become and engineer and invent a way to bring a wheelchair into space"],
+            "correctAnswer": "Become and engineer and invent a way to bring a wheelchair into space",
+            "explanation": "While Flamingo dreamed of becoming an astronaut, he didn’t realize that to do that, becoming an engineer makes the journey easier.  He believes that becoming an engineer will give him the tools to invent something that will allow him and other wheelchair users a safe way to travel in space."
+        },
+        {
+            "question": "What did the Flamingo learn?",
+            "options": ["Being different is bad", "Being different is funny", 
+            "Being different isn’t wrong, it’s just different", "It’s better to be alone"],
+            "correctAnswer": "Being different isn’t wrong, it’s just different",
+            "explanation": "Flamingo is a wheelchair user and understands that some people use their legs to get from one spot to another, his wheelchair allows him to achieve the game goal, but differently. We all have different skills and capabilities, and it is ok to do things differently. Celebrating our differences makes the world a more interesting place."
+        }
+    ],
+    "14": [
+        {
+            "question": "What did Flamingo pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Tools",
+            "explanation": "Flamingo is a wheelchair user and is very aware that sometimes his wheelchair can have mechanical issues and requires tools and grease to make it run smoothly. While travelling into space, he would need to be extra prepared for the new environment and conditions of being in space. He felt packing tools would help make his trip more enjoyable if the new environment changed how his wheelchair could function."
+        },
+        {
+            "question": "What did Rhino pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Screen Reader",
+            "explanation": "Since Rhino is blind, he wanted to pack assistive devices that would make it easier for him to communicate with the people back on Earth. A screen reader helps to convert text into words so he can read using his ears instead of his eyes."
+        },
+        {
+            "question": "The trip Flamingo, Rhino, and Hedgehog won was taking them to ______________.",
+            "options": ["Space", "Pyramids", "Niagara Falls", "Great Barrier Reef"],
+            "correctAnswer": "Space",
+            "explanation": "The three friends were at the science centre when Flamingo answered all the space questions correctly and was entered into a contest to win a free trip to space. Rabbit called to tell them they won a zero g flight to see and feel what it is like to be on the edge of the world and on the cusp of being in outer space."
+        },
+        {
+            "question": "How did Flamingo feel when he couldn’t go into space?",
+            "options": ["Happy", "Sad", "Thankful", "Cheerful"],
+            "correctAnswer": "Sad",
+            "explanation": "When Flamingo found out he couldn’t safely travel into space with his wheelchair, he was really sad.  Rabbit knew how much this trip meant to Flamingo as he won the tickets into space for answering all the questions correctly at the science centre. Rabbit asked Flamingo if he wanted to be part of the mission control and meet the engineering team instead."
+        },
+        {
+            "question": "Why couldn’t Flamingo travel into space?",
+            "options": ["It was too dangerous to take a wheelchair into space", 
+            "His wheelchair wouldn’t fit in the shuttle", 
+            "He didn’t want to go to space", "He wanted to watch from mission control"],
+            "correctAnswer": "It was too dangerous to take a wheelchair into space",
+            "explanation": "As of yet, nobody with a disability has travelled into space. The European Space Agency is running a pilot program to see how safe it would be for someone with a disability to travel into space.  Without the proper testing and safety procedures, it wasn’t safe for Flamingo to take this trip into space, yet."
+        },
+        {
+            "question": "What did Flamingo get to do instead of travelling into space?",
+            "options": ["He played video games", "He took a trip to the pyramids", 
+            "He was part of mission control and go to work with the engineers", 
+            "He ate chocolate cake"],
+            "correctAnswer": "He was part of mission control and go to work with the engineers",
+            "explanation": "Instead of traveling with his friends on the space shuttle, he was invited to be part of mission control and work with the engineers. This is where he learned about inspirational people living with medical conditions contributing to the exploration and development of technology helping us better understand the cosmos."
+        },
+        {
+            "question": "How did Rhino and Hedgehog feel when Flamingo could not go into space?",
+            "options": ["They were happy", "They were sad", "They wanted to do something else", 
+            "They couldn’t decide how they felt"],
+            "correctAnswer": "They couldn’t decide how they felt",
+            "explanation": "When Rhino and Hedgehog learned that Flamingo could not live out his life’s dream of going into space, they were sad for his loss, but still secretly excited that they got to go on an adventure of a lifetime. They couldn’t decide if their personal feelings of joy were bigger than their feelings of sadness for their friend. In the end, they decided, they were both happy and sad at the same time."
+        },
+        {
+            "question": "How did Flamingo feel when he got to launch the mission?",
+            "options": ["Sad", "Overjoyed", "Disappointed", "Nervous"],
+            "correctAnswer": "Overjoyed",
+            "explanation": "When Flamingo learned he would get to push the big red button and launch the plane into space, he was overjoyed and excited that he was responsible for his friends being able to go into space. This was such an important job. Without doing this, nobody could go into space."
+        },
+        {
+            "question": "What did Hedgehog do when he was in space?",
+            "options": ["He put on his crown and celebrated that he was king of the world", 
+            "He was scared", "He tried to make Rhino see", "He ate an apple"],
+            "correctAnswer": "He put on his crown and celebrated that he was king of the world",
+            "explanation": "Since Hedgehog loves posting things on social media, he had to take a million pictures of his adventure into space and created a funny TikTok about finally being king of the world and put a crown on his head to celebrate his victory."
+        },
+        {
+            "question": "Who encouraged Flamingo to explore the shop floor and meet the engineers?",
+            "options": ["Hedgehog", "Rhino", "John McFall", "Lion"],
+            "correctAnswer": "Lion",
+            "explanation": "Lion told Flamingo that he would not be able to travel to space, as it was not safe to bring his wheelchair on the mission, instead offered Flamingo the opportunity to meet with the engineers and mechanics while touring the factory, as well as be part of ground control and help launch his friends into space. This was an awesome alternative to seeing what happens behind the scenes on a space mission. This experience inspired Flamingo to find a different way into space."
+        },
+        {
+            "question": "When Flamingo was with ground control, what did he learn?",
+            "options": ["John McFall is the first person with a disability who might go into space", 
+            "Engineers are boring", "Space travel is easy", "Flying a rocket is easy"],
+            "correctAnswer": "John McFall is the first person with a disability who might go into space",
+            "explanation": "John McFall is a British Paralympic sprinter, surgeon, and ESA Project astronaut. He was selected by the European Space Agency to become the first parastronaut and do a feasibility study on how flying to space needs to be adapted for people living with disabilities."
+        },
+        {
+            "question": "What famous person also had health challenges and helped change the way we understand space physics?",
+            "options": ["Alexander Graham Bell", "Stephan Hawking", "Kobe Bryant", "Sheldon Cooper"],
+            "correctAnswer": "Stephan Hawking",
+            "explanation": "Stephen Hawking was an English and theoretical physicist and cosmologist who was living with ALS (the neurons in his brain would break down so the messages would get lost in transit). He used a thumb switch and blink switch attached to his glasses to control his computer and motorized wheelchair and speech to text software. His theories on how black holes would release subatomic (really tiny) particles until they exploded; changed our understanding of the universe."
+        },
+        {
+            "question": "How did Flamingo feel when he learned there were other people like him working with space?",
+            "options": ["He was excited", "He was bored", "He was sad", "He was angry"],
+            "correctAnswer": "He was excited",
+            "explanation": "When Flamingo learned that there were other people with disabilities involved in space exploration, like Stephen Hawking’s work with theoretical physics (black holes emit radiation), or that John McFall might be the first disabled person to travel into space."
+        },
+        {
+            "question": "What did Flamingo decide he was going to do?",
+            "options": ["Become a chef", "Travel the world", "Play basketball", 
+            "Become and engineer and invent a way to bring a wheelchair into space"],
+            "correctAnswer": "Become and engineer and invent a way to bring a wheelchair into space",
+            "explanation": "While Flamingo dreamed of becoming an astronaut, he didn’t realize that to do that, becoming an engineer makes the journey easier.  He believes that becoming an engineer will give him the tools to invent something that will allow him and other wheelchair users a safe way to travel in space."
+        },
+        {
+            "question": "What did the Flamingo learn?",
+            "options": ["Being different is bad", "Being different is funny", 
+            "Being different isn’t wrong, it’s just different", "It’s better to be alone"],
+            "correctAnswer": "Being different isn’t wrong, it’s just different",
+            "explanation": "Flamingo is a wheelchair user and understands that some people use their legs to get from one spot to another, his wheelchair allows him to achieve the game goal, but differently. We all have different skills and capabilities, and it is ok to do things differently. Celebrating our differences makes the world a more interesting place."
+        }
+    ],
+    "15": [
+        {
+            "question": "What did Flamingo pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Tools",
+            "explanation": "Flamingo is a wheelchair user and is very aware that sometimes his wheelchair can have mechanical issues and requires tools and grease to make it run smoothly. While travelling into space, he would need to be extra prepared for the new environment and conditions of being in space. He felt packing tools would help make his trip more enjoyable if the new environment changed how his wheelchair could function."
+        },
+        {
+            "question": "What did Rhino pack for his trip?",
+            "options": ["Sunglasses", "Cool Clothes", "Screen Reader", "Tools"],
+            "correctAnswer": "Screen Reader",
+            "explanation": "Since Rhino is blind, he wanted to pack assistive devices that would make it easier for him to communicate with the people back on Earth. A screen reader helps to convert text into words so he can read using his ears instead of his eyes."
+        },
+        {
+            "question": "The trip Flamingo, Rhino, and Hedgehog won was taking them to ______________.",
+            "options": ["Space", "Pyramids", "Niagara Falls", "Great Barrier Reef"],
+            "correctAnswer": "Space",
+            "explanation": "The three friends were at the science centre when Flamingo answered all the space questions correctly and was entered into a contest to win a free trip to space. Rabbit called to tell them they won a zero g flight to see and feel what it is like to be on the edge of the world and on the cusp of being in outer space."
+        },
+        {
+            "question": "How did Flamingo feel when he couldn’t go into space?",
+            "options": ["Happy", "Sad", "Thankful", "Cheerful"],
+            "correctAnswer": "Sad",
+            "explanation": "When Flamingo found out he couldn’t safely travel into space with his wheelchair, he was really sad.  Rabbit knew how much this trip meant to Flamingo as he won the tickets into space for answering all the questions correctly at the science centre. Rabbit asked Flamingo if he wanted to be part of the mission control and meet the engineering team instead."
+        },
+        {
+            "question": "Why couldn’t Flamingo travel into space?",
+            "options": ["It was too dangerous to take a wheelchair into space", 
+            "His wheelchair wouldn’t fit in the shuttle", 
+            "He didn’t want to go to space", "He wanted to watch from mission control"],
+            "correctAnswer": "It was too dangerous to take a wheelchair into space",
+            "explanation": "As of yet, nobody with a disability has travelled into space. The European Space Agency is running a pilot program to see how safe it would be for someone with a disability to travel into space.  Without the proper testing and safety procedures, it wasn’t safe for Flamingo to take this trip into space, yet."
+        },
+        {
+            "question": "What did Flamingo get to do instead of travelling into space?",
+            "options": ["He played video games", "He took a trip to the pyramids", 
+            "He was part of mission control and go to work with the engineers", 
+            "He ate chocolate cake"],
+            "correctAnswer": "He was part of mission control and go to work with the engineers",
+            "explanation": "Instead of traveling with his friends on the space shuttle, he was invited to be part of mission control and work with the engineers. This is where he learned about inspirational people living with medical conditions contributing to the exploration and development of technology helping us better understand the cosmos."
+        },
+        {
+            "question": "How did Rhino and Hedgehog feel when Flamingo could not go into space?",
+            "options": ["They were happy", "They were sad", "They wanted to do something else", 
+            "They couldn’t decide how they felt"],
+            "correctAnswer": "They couldn’t decide how they felt",
+            "explanation": "When Rhino and Hedgehog learned that Flamingo could not live out his life’s dream of going into space, they were sad for his loss, but still secretly excited that they got to go on an adventure of a lifetime. They couldn’t decide if their personal feelings of joy were bigger than their feelings of sadness for their friend. In the end, they decided, they were both happy and sad at the same time."
+        },
+        {
+            "question": "How did Flamingo feel when he got to launch the mission?",
+            "options": ["Sad", "Overjoyed", "Disappointed", "Nervous"],
+            "correctAnswer": "Overjoyed",
+            "explanation": "When Flamingo learned he would get to push the big red button and launch the plane into space, he was overjoyed and excited that he was responsible for his friends being able to go into space. This was such an important job. Without doing this, nobody could go into space."
+        },
+        {
+            "question": "What did Hedgehog do when he was in space?",
+            "options": ["He put on his crown and celebrated that he was king of the world", 
+            "He was scared", "He tried to make Rhino see", "He ate an apple"],
+            "correctAnswer": "He put on his crown and celebrated that he was king of the world",
+            "explanation": "Since Hedgehog loves posting things on social media, he had to take a million pictures of his adventure into space and created a funny TikTok about finally being king of the world and put a crown on his head to celebrate his victory."
+        },
+        {
+            "question": "Who encouraged Flamingo to explore the shop floor and meet the engineers?",
+            "options": ["Hedgehog", "Rhino", "John McFall", "Lion"],
+            "correctAnswer": "Lion",
+            "explanation": "Lion told Flamingo that he would not be able to travel to space, as it was not safe to bring his wheelchair on the mission, instead offered Flamingo the opportunity to meet with the engineers and mechanics while touring the factory, as well as be part of ground control and help launch his friends into space. This was an awesome alternative to seeing what happens behind the scenes on a space mission. This experience inspired Flamingo to find a different way into space."
+        },
+        {
+            "question": "When Flamingo was with ground control, what did he learn?",
+            "options": ["John McFall is the first person with a disability who might go into space", 
+            "Engineers are boring", "Space travel is easy", "Flying a rocket is easy"],
+            "correctAnswer": "John McFall is the first person with a disability who might go into space",
+            "explanation": "John McFall is a British Paralympic sprinter, surgeon, and ESA Project astronaut. He was selected by the European Space Agency to become the first parastronaut and do a feasibility study on how flying to space needs to be adapted for people living with disabilities."
+        },
+        {
+            "question": "What famous person also had health challenges and helped change the way we understand space physics?",
+            "options": ["Alexander Graham Bell", "Stephan Hawking", "Kobe Bryant", "Sheldon Cooper"],
+            "correctAnswer": "Stephan Hawking",
+            "explanation": "Stephen Hawking was an English and theoretical physicist and cosmologist who was living with ALS (the neurons in his brain would break down so the messages would get lost in transit). He used a thumb switch and blink switch attached to his glasses to control his computer and motorized wheelchair and speech to text software. His theories on how black holes would release subatomic (really tiny) particles until they exploded; changed our understanding of the universe."
+        },
+        {
+            "question": "How did Flamingo feel when he learned there were other people like him working with space?",
+            "options": ["He was excited", "He was bored", "He was sad", "He was angry"],
+            "correctAnswer": "He was excited",
+            "explanation": "When Flamingo learned that there were other people with disabilities involved in space exploration, like Stephen Hawking’s work with theoretical physics (black holes emit radiation), or that John McFall might be the first disabled person to travel into space."
+        },
+        {
+            "question": "What did Flamingo decide he was going to do?",
+            "options": ["Become a chef", "Travel the world", "Play basketball", 
+            "Become and engineer and invent a way to bring a wheelchair into space"],
+            "correctAnswer": "Become and engineer and invent a way to bring a wheelchair into space",
+            "explanation": "While Flamingo dreamed of becoming an astronaut, he didn’t realize that to do that, becoming an engineer makes the journey easier.  He believes that becoming an engineer will give him the tools to invent something that will allow him and other wheelchair users a safe way to travel in space."
+        },
+        {
+            "question": "What did the Flamingo learn?",
+            "options": ["Being different is bad", "Being different is funny", 
+            "Being different isn’t wrong, it’s just different", "It’s better to be alone"],
+            "correctAnswer": "Being different isn’t wrong, it’s just different",
+            "explanation": "Flamingo is a wheelchair user and understands that some people use their legs to get from one spot to another, his wheelchair allows him to achieve the game goal, but differently. We all have different skills and capabilities, and it is ok to do things differently. Celebrating our differences makes the world a more interesting place."
+        }
+    ]
+}

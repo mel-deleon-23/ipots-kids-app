@@ -1,0 +1,20 @@
+.testimonial{
+ height: 20rem;
+ width: 725px !important;
+ background-color: #0FC0FC;
+}
+
+.testimonial-thumbnail{
+  width: 294px;
+  height: auto;
+}
+
+.carousel-indicators button {
+  border-radius: 100% !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.testimonial-text{
+  width: 419px;
+}
