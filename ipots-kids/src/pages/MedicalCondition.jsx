@@ -2,6 +2,7 @@ import "../styles/signup/styles.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Modal, Button } from "react-bootstrap";
 
 export default function MedicalCondition() {
   const location = useLocation();
@@ -30,6 +31,10 @@ export default function MedicalCondition() {
   const [selectedMedical, setSelectedMedical] = useState([]);
   const [otherMedical, setOtherMedical] = useState(""); // New state for other allergies
   const [showOtherMedicalInput, setShowOtherMedicalInput] = useState(false); // State to manage "Other" checkbox
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState("");
+  const [modalTitle, setModalTitle] = useState(""); // Add this state
+  const [modalType, setModalType] = useState(""); // Track modal type for button behavior
 
   useEffect(() => {
     if (!accept) {
@@ -94,21 +99,13 @@ export default function MedicalCondition() {
       noMedicalChecked &&
       (selectedMedical.length > 0 || otherMedical.trim() !== "")
     ) {
-      const confirmNoMedical = window.confirm(
-        "Are you sure that you have no medical condition? If no, please uncheck 'I do not have any'."
+      setModalTitle("ARE YOU SURE?");
+      setModalContent(
+        "If you do not have any medical condition, please unclick selected medical conditions."
       );
-
-      if (confirmNoMedical) {
-        // Clear selected medical, other medical, and uncheck the "Other" checkbox
-        setSelectedMedical([]);
-        setOtherMedical("");
-        setShowOtherMedicalInput(false);
-        // Skip further validation as we are clearing the inputs
-        return;
-      } else {
-        // If the user cancels, prevent form submission
-        return;
-      }
+      setModalType("noMedicalWithSelected");
+      setShowModal(true);
+      return;
     }
 
     // Final validation with the cleared states if applicable
@@ -121,19 +118,30 @@ export default function MedicalCondition() {
       finalSelectedMedical.length === 0 &&
       finalOtherMedical.trim() === ""
     ) {
-      alert(
-        "Please select at least one medical condition, specify an 'Other' medical condition, or indicate 'I do not have any'."
+      setModalTitle("OOPS, YOU FORGOT!");
+      setModalContent(
+        "Please select at least one medical condition or I do not have any."
       );
+      setModalType("noSelectedBox");
+      setShowModal(true);
       return;
     }
 
     if (otherCheckboxChecked && finalOtherMedical.trim() === "") {
-      alert("Please specify your 'Other' allergies.");
+      setModalTitle("OOPS, YOU FORGOT!");
+      setModalContent('Please type in your "Other" medical conditions.');
+      setModalType("otherCheckedWithoutInput");
+      setShowModal(true);
       return;
     }
 
     if (!otherCheckboxChecked && finalOtherMedical.trim() !== "") {
-      alert("Please check 'Other' checkbox to specify additional allergies.");
+      setModalTitle("OOPS, YOU FORGOT!");
+      setModalContent(
+        'Please, click "Other" to register your typed medical conditions.'
+      );
+      setModalType("inputWithoutOtherChecked");
+      setShowModal(true);
       return;
     }
 
@@ -162,6 +170,27 @@ export default function MedicalCondition() {
     });
   };
 
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
+  const handleModalOk = () => {
+    if (modalType === "noMedicalWithSelected") {
+      // Clear selected medical conditions, other medical conditions, and uncheck the "Other" checkbox
+      setSelectedMedical([]);
+      setOtherMedical("");
+      setShowOtherMedicalInput(false);
+    }
+    setShowModal(false);
+  };
+
+  const handleModalCancel = () => {
+    if (modalType === "noMedicalWithSelected") {
+      // Uncheck the "I do not have any" checkbox
+      document.getElementById("noMedicalS").checked = false;
+    }
+    setShowModal(false);
+  };
   return (
     <div className="container-fluid space">
       <div className="d-flex flex-column justify-content-center align-items-center">
@@ -259,6 +288,47 @@ export default function MedicalCondition() {
           </div>
         </form>
       </div>
+      <Modal
+        show={showModal}
+        onHide={handleModalClose}
+        dialogClassName={`custom-modal ${
+          modalType === "noMedicalWithSelected" ? "large-modal" : "small-modal"
+        }`}
+      >
+        <Modal.Header>
+          <Modal.Title>{modalTitle}</Modal.Title>
+        </Modal.Header>
+        <img
+          className="sad-allergies"
+          src={`/images/sad-allergies.png`}
+          alt="Sad icon"
+        />
+        <Modal.Body
+          className={`${
+            modalType === "noMedicalWithSelected"
+              ? "small-space"
+              : "large-space"
+          }`}
+        >
+          {modalContent}
+        </Modal.Body>
+        <Modal.Footer>
+          {modalType === "noMedicalWithSelected" ? (
+            <>
+              <Button variant="primary" onClick={handleModalOk}>
+                OK
+              </Button>
+              <Button variant="secondary" onClick={handleModalCancel}>
+                Cancel
+              </Button>
+            </>
+          ) : (
+            <Button variant="primary" onClick={handleModalClose}>
+              OK
+            </Button>
+          )}
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }

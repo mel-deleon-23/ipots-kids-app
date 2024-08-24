@@ -3,6 +3,7 @@ import "../styles/signup/styles.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Modal, Button } from "react-bootstrap";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -24,8 +25,7 @@ export default function SignUp() {
     confirmPassword: "",
   });
 
-  // const [error, setError] = useState("");
-  //   const [success, setSuccess] = useState("");
+  const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -36,10 +36,11 @@ export default function SignUp() {
 
     // console.log(formData);
   };
+  const handleClose = () => setShowModal(false);
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords do not match");
+      setShowModal(true);
       return;
     }
     const sendData = {
@@ -141,13 +142,28 @@ export default function SignUp() {
               <button type="submit" className=" button-format buttonColor">
                 Next
               </button>
-              <Link to="/username">
+              <Link to="/username" state={{ accept, action }}>
                 <button className="buttonEmpty button-format">Back</button>
               </Link>
             </div>
           </form>
         </div>
       </div>
+      <Modal
+        show={showModal}
+        onHide={handleClose}
+        dialogClassName="custom-modal"
+      >
+        <Modal.Header>
+          <Modal.Title>PASSWORD MISMATCH</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Password do not match. Please re-enter.</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose}>
+            OK
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }

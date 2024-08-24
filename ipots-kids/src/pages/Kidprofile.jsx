@@ -29,13 +29,17 @@ export default function Kidprofile() {
           "http://localhost/ipots-kids-app/ipots-server/profile.php",
           {
             headers: { Authorization: `Bearer ${token}` },
-            params: { username: user.data.username, action: user.data.action },
+            params: {
+              id: user.data.id,
+              action: user.data.action,
+              type: user.data.type,
+            },
           }
         );
 
         if (response.data.status === "success") {
           setProfileData(response.data.user);
-          //   console.log("Profile Data:", response.data.user); // Log profileData
+          // console.log("Profile Data:", response.data.user); // Log profileData
         } else {
           console.error("Failed to fetch user details:", response.data.message);
           navigate("/signIn");
@@ -47,7 +51,7 @@ export default function Kidprofile() {
     };
 
     fetchUserDetails();
-  }, [navigate, user.data.username, user.data.action]);
+  }, [navigate, user.data.id, user.data.action, user.data.type]);
 
   // Logout function to clear session and redirect to sign-in
   const handleLogout = () => {
@@ -64,7 +68,8 @@ export default function Kidprofile() {
     <div className="App">
       <div className="profile-container">
         <img
-          src={`/images/avartars/${user.data.action}/${profileData.image}.png`} // Use user data from context
+          className="profileIm"
+          src={`/images/avartars/${profileData.type}/${profileData.image}.png`} // Use user data from context
           alt="User Avatar"
         />
         <Link
@@ -75,7 +80,7 @@ export default function Kidprofile() {
             email: profileData.email,
             username: profileData.username,
             imageName: profileData.image,
-            action: user.data.action,
+            action: profileData.type,
             isUpdate: true,
           }}
         >
@@ -88,24 +93,10 @@ export default function Kidprofile() {
         <div>
           <p className="profileInfor">**********</p>
         </div>
-        <div>
-          <Link
-            to="/change-password"
-            state={{
-              id: profileData.id,
-              email: profileData.email,
-              username: profileData.username,
-              imageName: profileData.image,
-              action: user.data.action,
-            }}
-          >
-            <p className="changepass">Change Password</p>
-          </Link>
-        </div>
       </div>
       <div className="d-flex flex-column justify-content-center align-items-center">
         <Link
-          to="/"
+          to="/pending"
           state={{
             email: profileData.email,
             username: profileData.username,

@@ -3,6 +3,7 @@ import "../styles/signup/styles.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Modal, Button } from "react-bootstrap";
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -27,6 +28,9 @@ export default function SignUp() {
   const [code, setCode] = useState("");
   const [isInvalid, setIsInvalid] = useState(false);
   const [isError, setError] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState("");
+  const [nextPage, setNextPage] = useState(null);
 
   const formatNumber = (value) => {
     // Remove non-numeric characters
@@ -66,19 +70,9 @@ export default function SignUp() {
         )
         .then((result) => {
           if (result.data.status === "success") {
-            alert("Email verified successfully!");
-            navigate("/dateofbirth", {
-              state: {
-                email,
-                username,
-                action,
-                accept,
-                password,
-                firstname,
-                lastname,
-                confirm,
-              },
-            });
+            setModalContent("CONFIRMATION SUCCESSFUL"); // Set modal content
+            setShowModal(true);
+            setNextPage("/dateofbirth"); // Set the next page
           } else {
             setError(true);
             // alert("Invalid verification code. Please try again.");
@@ -97,7 +91,8 @@ export default function SignUp() {
       })
       .then((result) => {
         if (result.data.status === "success") {
-          alert("Verification code resent successfully!");
+          setModalContent("RESENT CONFIRMATION CODE");
+          setShowModal(true);
         } else {
           alert("Failed to resend verification code. Please try again.");
         }
@@ -107,12 +102,32 @@ export default function SignUp() {
       });
   };
 
+  const handleClose = () => {
+    setShowModal(false);
+    if (nextPage) {
+      navigate(nextPage, {
+        state: {
+          email,
+          username,
+          action,
+          accept,
+          password,
+          firstname,
+          lastname,
+          confirm,
+        },
+      });
+    }
+  };
+
   return (
     <div className="container-fluid space">
       <div className="d-flex flex-column justify-content-center align-items-center">
         <h2>Confirm Your Email</h2>
-        <img className="" src={`/images/mail.png`} alt="mail" />
-        <p>A confirmation email has been sent to {email}</p>
+        <img className="mailIm" src={`/images/mail.png`} alt="mail" />
+        <p className="confirmP">
+          A confirmation email has been sent to {email}
+        </p>
         <div className=" signup-box d-flex flex-column justify-content-center align-items-center">
           <form onSubmit={handleSubmit}>
             <div
@@ -157,6 +172,29 @@ export default function SignUp() {
           </form>
         </div>
       </div>
+      <Modal
+        show={showModal}
+        onHide={handleClose}
+        dialogClassName="custom-modal"
+      >
+        <Modal.Header>
+          <Modal.Title>{modalContent}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          {modalContent === "CONFIRMATION SUCCESSFUL" ? (
+            <>
+              <img className="icon-modal" src="/images/check.png" alt="check" />
+            </>
+          ) : (
+            <p>Your confirmation code has been resent.</p>
+          )}
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose}>
+            OK
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }

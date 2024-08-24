@@ -30,7 +30,9 @@ export default function ParentsProfile() {
           "http://localhost/ipots-kids-app/ipots-server/profile.php",
           {
             headers: { Authorization: `Bearer ${token}` },
-            params: { username: user.data.username, action: user.data.action },
+            params: {
+              id: user.data.id,
+            },
           }
         );
 
@@ -48,7 +50,7 @@ export default function ParentsProfile() {
     };
 
     fetchUserDetails();
-  }, [navigate, user.data.username, user.data.action]);
+  }, [navigate, user.data.id]);
 
   // Logout function to clear session and redirect to sign-in
   const handleLogout = () => {
@@ -59,12 +61,15 @@ export default function ParentsProfile() {
   if (!profileData) {
     return <div>Loading...</div>;
   }
-
+  const handleManage = () => {
+    navigate("/manage-kids");
+  };
   return (
     <div className="App">
       <div className="profile-container">
         <img
-          src={`/images/avartars/${user.data.action}/${profileData.image}.png`} // Use user data from context
+          className="profileIm"
+          src={`/images/avartars/${profileData.type}/${profileData.image}.png`} // Use user data from context
           alt="User Avatar"
         />
         <Link
@@ -75,7 +80,7 @@ export default function ParentsProfile() {
             email: profileData.email,
             username: profileData.username,
             imageName: profileData.image,
-            action: user.data.action,
+            action: profileData.type,
             isUpdate: true,
           }}
         >
@@ -96,7 +101,7 @@ export default function ParentsProfile() {
               email: profileData.email,
               username: profileData.username,
               imageName: profileData.image,
-              action: user.data.action,
+              action: profileData.type,
             }}
           >
             <p className="changepass">Change Password</p>
@@ -104,20 +109,9 @@ export default function ParentsProfile() {
         </div>
       </div>
       <div className="d-flex flex-column justify-content-center align-items-center">
-        <Link
-          to="/"
-          state={{
-            email: profileData.email,
-            username: profileData.username,
-            imageName: profileData.image,
-            action: profileData.action,
-          }}
-        >
-          <button className=" button-format buttonColor">
-            <img src={`/images/adduser.png`} alt="Add user" /> Manage Kid
-            Accounts
-          </button>
-        </Link>
+        <button className=" button-format buttonColor" onClick={handleManage}>
+          <img src={`/images/adduser.png`} alt="Add user" /> Manage Kid Accounts
+        </button>
         <button className=" button-format buttonEmpty" onClick={handleLogout}>
           Logout
         </button>

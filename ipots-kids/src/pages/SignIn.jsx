@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { AuthContext } from "./Auth"; // Import AuthContext
+import { AuthContext } from "./Auth";
+import { Modal, Button } from "react-bootstrap";
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -12,6 +13,8 @@ export default function SignIn() {
     username: "",
     password: "",
   });
+
+  const [showModal, setShowModal] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -44,12 +47,15 @@ export default function SignIn() {
 
         navigate("/trivia");
       } else {
-        alert(response.data.message);
+        setShowModal(true);
       }
     } catch (error) {
       alert("An error occurred. Please try again.");
     }
   };
+
+  const handleClose = () => setShowModal(false);
+
   return (
     <div className="container-fluid space">
       <div className=" d-flex flex-column justify-content-center align-items-center">
@@ -97,6 +103,23 @@ export default function SignIn() {
           </form>
         </div>
       </div>
+      <Modal
+        show={showModal}
+        onHide={handleClose}
+        dialogClassName="custom-modal"
+      >
+        <Modal.Header>
+          <Modal.Title>Incorrect Password</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          Incorrect password, please type in the correct password.
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose}>
+            OK
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }

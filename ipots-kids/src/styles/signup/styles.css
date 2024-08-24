@@ -493,3 +493,342 @@
   height: 40px;
 }
 /*END ALLERGIES*/
+
+/*MODAL*/
+.custom-modal .modal-dialog {
+  width: 100%;
+}
+
+.custom-modal .modal-content {
+  margin-top: 139px;
+  border-radius: 16px;
+  padding: 10px;
+  text-align: center;
+}
+.large-modal .modal-content {
+  width: 526px;
+  height: 418px;
+}
+
+.small-modal .modal-content {
+  height: 360px;
+}
+
+.custom-modal .modal-header,
+.custom-modal .modal-footer {
+  border: none;
+  text-align: center;
+  justify-content: center;
+}
+
+.custom-modal .modal-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin: auto;
+}
+
+.custom-modal .modal-body {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 10px;
+  flex: 0;
+}
+
+.large-space {
+  margin-bottom: 41px;
+}
+
+.small-space {
+  margin-bottom: 0;
+}
+.custom-modal .modal-footer {
+  padding: 0;
+}
+
+.custom-modal .btn-primary {
+  font-size: 24px;
+  font-weight: 700;
+  width: 443px;
+  height: 53px;
+  color: #000;
+  background-color: #0fc0fc; /* Custom button color */
+  border: none;
+  border-radius: 16px;
+}
+
+.custom-modal .btn-secondary {
+  font-size: 24px;
+  font-weight: 700;
+  width: 443px;
+  height: 53px;
+  border: 3px solid #0fc0fc;
+  margin-bottom: 33px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 16px;
+}
+
+.modal-icon {
+  width: 99px;
+  height: 99px;
+}
+
+.sad-allergies {
+  width: 63px;
+  height: 63px;
+  margin: 0 auto;
+}
+/*END MODAL*/
+
+/*MANAGE KIDS*/
+
+.kid-container {
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally the kid-container itself */
+  margin-bottom: 20px; /* Add space between each kid container */
+}
+
+.kidname {
+  width: 416px;
+  height: 98px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0fc0fc;
+  padding: 0 32px;
+}
+
+.kidname.pending {
+  margin-left: 125px; /* Add margin when status is Pending */
+}
+
+.status-kids {
+  width: 100px;
+  height: 40px;
+  border: 2px solid #0fc0fc;
+  font-size: 15px;
+  border-radius: 10px;
+  align-self: center;
+  margin-left: 20px;
+}
+
+.image-back {
+  width: 33px;
+  height: 34px;
+}
+
+/*END MANAGE KIDS*/
+
+/*ADD KIDS*/
+.checkbox-invalid {
+  border: 1px solid red; /* Set border to red for invalid state */
+  border-radius: 4px; /* Optional: Add some border-radius */
+  padding: 4px; /* Optional: Add padding to ensure the border is visible */
+}
+/*END ADD KIDS*/
+
+/*KIDS PENDING*/
+.accept-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+/*END KIDS PENDING*/
+
+/* MOBILE */
+@media (max-width: 768px) {
+  /*Home Page*/
+
+  .space {
+    margin: 27px auto;
+    max-width: 337px;
+  }
+
+  .button-box {
+    margin-top: 40px;
+  }
+
+  .button-format {
+    height: 88px;
+    width: 347px;
+    border-radius: 8px;
+  }
+
+  .logoIpot {
+    width: 279px;
+    height: 213px;
+  }
+  /*End Home Page*/
+
+  /*Consent*/
+  .content {
+    margin-bottom: 40px;
+  }
+
+  .sub {
+    margin: 12px 0 48px 0;
+  }
+
+  .paragraph {
+    margin: auto;
+    margin-bottom: 22px;
+    width: 327px;
+    text-align: justify;
+  }
+  /*End Consent*/
+
+  /* OPTIONS */
+  .option-button {
+    width: 347px;
+    height: 88px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+  }
+  /*END OPTIONS*/
+
+  /*Sign Up*/
+  .input-container {
+    width: 350px;
+    /* max-width: 100%; */
+    height: 88px;
+  }
+
+  .username-box {
+    margin: 51px 0 182px 0;
+  }
+  .mailIm {
+    width: 150px;
+    height: 150px;
+  }
+  .confirmP {
+    font-size: 23px !important;
+    width: 376px;
+    text-align: center;
+  }
+
+  /*END SIGN UP*/
+
+  /*CONFIRMATION*/
+  .code-input {
+    width: 347px;
+    height: 88px;
+    border-radius: 8px;
+    border: 4px solid #0fc0fc;
+  }
+  .code-placeholder {
+    margin-top: 3px;
+    color: #706c6c;
+    opacity: 0.85;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 5px 77px;
+  }
+  .code-invalid {
+    border: 5px solid #ca0c17 !important;
+  }
+  .error-text {
+    margin-top: 6px;
+    color: #ca0c17;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+  }
+  /*END CONFIRMATION*/
+  /*AVARTAR*/
+
+  .image-gallery {
+    width: 375px;
+  }
+
+  /*END AVARTAR*/
+  /*PROFILE*/
+  .profileIm {
+    width: 125px;
+    height: 125px;
+  }
+
+  .profileInfor {
+    font-weight: 500;
+    width: 310px;
+    border: none;
+    border-bottom: 1px solid #000000;
+    text-align: justify;
+  }
+
+  .changeProfile {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .changepass {
+    font-weight: 700;
+    text-align: left;
+    width: 310px;
+  }
+  /*END PROFILE*/
+
+  /*ALLERGIES*/
+  .allergies {
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0 40px 200px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+  .input-allergies {
+    height: 52px;
+    width: 490px;
+    border: 2px solid #0fc0fc;
+    border-radius: 8px;
+    margin: 24px 0;
+  }
+  .input-place {
+    margin-top: 5px !important;
+    width: 440px;
+  }
+
+  .form-check-input:checked {
+    background-color: #0fc0fc;
+    border-color: #0fc0fc;
+  }
+  .form-check-input {
+    border: 2px solid black;
+  }
+
+  .label-allergies {
+    margin: 10px 10px 10px 15px;
+  }
+  .form-check-input[type="checkbox"] {
+    border-radius: 0.25em;
+    width: 42px;
+    height: 40px;
+  }
+  /*END ALLERGIES*/
+
+  /*MANAGE KIDS*/
+
+  .kid-container {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally the kid-container itself */
+    margin-bottom: 20px; /* Add space between each kid container */
+  }
+
+  .kidname {
+    width: 316px;
+    height: 88px;
+    padding: 0 22px;
+  }
+
+  .image-back {
+    width: 28px;
+    height: 29px;
+  }
+
+  /*END MANAGE KIDS*/
+}

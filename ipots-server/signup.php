@@ -56,33 +56,34 @@ $algorithm = 'HS256';
 
 
 // Determine the platform and type based on the action
-$platform = "";
+$iaccess = "";
 $type = "";
 switch ($action) {
     case "kids":
-        $platform = 1;
+        $iaccess = 0;
         $type = 1;
         break;
     case "teachers":
-        $platform = 1;
+        $iaccess = 0;
         $type = 2;
         break;
     case "parents":
-        $platform = 1;
+        $iaccess = 0;
         $type = 3;
         break;
     case "iaccess":
-        $platform = 2;
+        $iaccess = 1;
+        $type = 0;
         break;
     default:
         echo json_encode(array("status" => "error", "message" => "Invalid action"));
         exit();
 }
 
-$columns = "email, username, password, birthday, avatar_id,consent,platform_id,user_type_id";
+$columns = "email, username, password, birthday, avatar_id,consent,iaccess,user_type_id";
 $values = "'$email', '$username', '$password', '$birthday', " .
            (($action !== "iaccess" && $image) ? "'$image'" : "NULL") . ", " . // Avatar ID for kids, teachers, parents
-           "'$accept', '$platform', '$type'";
+           "'$accept', '$iaccess', '$type'";
 
 $sql = "INSERT INTO users ($columns) VALUES ($values)";
 

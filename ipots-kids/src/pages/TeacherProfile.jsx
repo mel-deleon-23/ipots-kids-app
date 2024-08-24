@@ -7,8 +7,6 @@ import axios from "axios";
 export default function TeacherProfile() {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
-  // Log user data for debugging
-  //   console.log("User Data:", JSON.stringify(user, null, 2));
 
   if (!user) {
     navigate("/signIn");
@@ -30,13 +28,17 @@ export default function TeacherProfile() {
           "http://localhost/ipots-kids-app/ipots-server/profile.php",
           {
             headers: { Authorization: `Bearer ${token}` },
-            params: { username: user.data.username, action: user.data.action },
+            params: {
+              id: user.data.id,
+              action: user.data.action,
+              type: user.data.type,
+            },
           }
         );
 
         if (response.data.status === "success") {
           setProfileData(response.data.user);
-          //   console.log("Profile Data:", response.data.user); // Log profileData
+          // console.log("Profile Data:", response.data.user); // Log profileData
         } else {
           console.error("Failed to fetch user details:", response.data.message);
           navigate("/signIn");
@@ -48,7 +50,7 @@ export default function TeacherProfile() {
     };
 
     fetchUserDetails();
-  }, [navigate, user.data.username, user.data.action]);
+  }, [navigate, user.data.id, user.data.action, user.data.type]);
 
   //   const maskPassword = (password) => {
   //     return "*".repeat(password.length);
@@ -65,11 +67,20 @@ export default function TeacherProfile() {
     return <div>Loading...</div>;
   }
 
+  const handleManage = () => {
+    navigate("/manage-kids", {
+      state: {
+        user_type: profileData.type,
+      },
+    });
+  };
+
   return (
     <div className="App">
       <div className="profile-container">
         <img
-          src={`/images/avartars/${user.data.action}/${profileData.image}.png`} // Use user data from context
+          className="profileIm"
+          src={`/images/avartars/${profileData.type}/${profileData.image}.png`} // Use user data from context
           alt="User Avatar"
         />
         <Link
@@ -80,7 +91,7 @@ export default function TeacherProfile() {
             email: profileData.email,
             username: profileData.username,
             imageName: profileData.image,
-            action: user.data.action,
+            action: profileData.type,
             isUpdate: true,
           }}
         >
@@ -101,7 +112,7 @@ export default function TeacherProfile() {
               email: profileData.email,
               username: profileData.username,
               imageName: profileData.image,
-              action: user.data.action,
+              action: profileData.type,
             }}
           >
             <p className="changepass">Change Password</p>
@@ -109,20 +120,9 @@ export default function TeacherProfile() {
         </div>
       </div>
       <div className="d-flex flex-column justify-content-center align-items-center">
-        <Link
-          to="/"
-          state={{
-            email: profileData.email,
-            username: profileData.username,
-            imageName: profileData.image,
-            action: profileData.action,
-          }}
-        >
-          <button className=" button-format buttonColor">
-            <img src={`/images/adduser.png`} alt="Add user" /> Manage Kid
-            Accounts
-          </button>
-        </Link>
+        <button className=" button-format buttonColor" onClick={handleManage}>
+          <img src={`/images/adduser.png`} alt="Add user" /> Manage Kid Accounts
+        </button>
         <button className=" button-format buttonEmpty" onClick={handleLogout}>
           Logout
         </button>

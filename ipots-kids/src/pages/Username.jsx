@@ -62,7 +62,7 @@ export default function Username() {
               <button type="submit" className="button-format buttonColor">
                 Next
               </button>
-              <Link to="/options">
+              <Link to="/options" state={{ accept }}>
                 <button className="button-format buttonEmpty">Back</button>
               </Link>
             </div>

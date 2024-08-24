@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <div className="container-fluid space">
         <div className=" d-flex flex-column justify-content-center align-items-center">
-          <img className="" src={`/images/logo.png`} alt="logo" />
+          <img className="logoIpot" src={`/images/logo.png`} alt="logo" />
           <div className="button-box d-flex flex-column justify-content-center align-items-center">
             <Link to="/signIn">
               <button className=" button-format buttonColor">Sign in</button>

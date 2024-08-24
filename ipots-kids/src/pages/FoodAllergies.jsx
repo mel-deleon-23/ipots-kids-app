@@ -2,6 +2,7 @@ import "../styles/signup/styles.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Modal, Button } from "react-bootstrap";
 
 export default function FoodAllergies() {
   const location = useLocation();
@@ -24,6 +25,10 @@ export default function FoodAllergies() {
   const [selectedFoodAllergies, setSelectedFoodAllergies] = useState([]);
   const [otherFoodAllergy, setOtherFoodAllergy] = useState(""); // New state for other allergies
   const [showOtherFoodInput, setShowOtherFoodInput] = useState(false); // State to manage "Other" checkbox
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState("");
+  const [modalTitle, setModalTitle] = useState(""); // Add this state
+  const [modalType, setModalType] = useState(""); // Track modal type for button behavior
 
   useEffect(() => {
     if (!accept) {
@@ -83,26 +88,18 @@ export default function FoodAllergies() {
     const otherCheckboxChecked =
       document.getElementById("otherAllergy").checked;
 
-    // If "I do not have any" is checked and there are selected or other allergies
+    // Scenario 1: "I do not have any" is checked and there are selected or other allergies
     if (
       noAllergyChecked &&
       (selectedFoodAllergies.length > 0 || otherFoodAllergy.trim() !== "")
     ) {
-      const confirmNoAllergy = window.confirm(
-        "Are you sure that you have no allergy? If no, please uncheck 'I do not have any'."
+      setModalTitle("ARE YOU SURE?");
+      setModalContent(
+        "If you do not have any allergies, please unclick selected allergies."
       );
-
-      if (confirmNoAllergy) {
-        // Clear selected allergies, other allergies, and uncheck the "Other" checkbox
-        setSelectedFoodAllergies([]);
-        setOtherFoodAllergy("");
-        setShowOtherFoodInput(false);
-        // Skip further validation as we are clearing the inputs
-        return;
-      } else {
-        // If the user cancels, prevent form submission
-        return;
-      }
+      setModalType("noAllergyWithSelected");
+      setShowModal(true);
+      return;
     }
 
     // Final validation with the cleared states if applicable
@@ -117,21 +114,34 @@ export default function FoodAllergies() {
       finalSelectedFoodAllergies.length === 0 &&
       finalOtherFoodAllergies.trim() === ""
     ) {
-      alert(
-        "Please select at least one food allergy, specify an 'Other' allergy, or indicate 'I do not have any'."
+      setModalTitle("OOPS, YOU FORGOT!");
+      setModalContent("Please select one of allergies or I do not have any.");
+      setModalType("noSelectedBox");
+      setShowModal(true);
+      return;
+    }
+
+    // Scenario 2: "Other" checkbox is checked but no allergy is specified
+    if (otherCheckboxChecked && otherFoodAllergy.trim() === "") {
+      setModalTitle("OOPS, YOU FORGOT!");
+      setModalContent('Please type in your "Other" allergies.');
+      setModalType("otherCheckedWithoutInput");
+      setShowModal(true);
+      return;
+    }
+
+    // Scenario 3: Other allergies are typed but "Other" checkbox is not checked
+    if (!otherCheckboxChecked && otherFoodAllergy.trim() !== "") {
+      setModalTitle("OOPS, YOU FORGOT!");
+      setModalContent(
+        'Please, click "Other" to register your typed allergies.'
       );
+      setModalType("inputWithoutOtherChecked");
+      setShowModal(true);
       return;
     }
 
-    if (otherCheckboxChecked && finalOtherFoodAllergies.trim() === "") {
-      alert("Please specify your 'Other' allergies.");
-      return;
-    }
-
-    if (!otherCheckboxChecked && finalOtherFoodAllergies.trim() !== "") {
-      alert("Please check 'Other' checkbox to specify additional allergies.");
-      return;
-    }
+    // Navigate to the next page
     navigate("/environmental-allergies", {
       state: {
         email,
@@ -149,6 +159,28 @@ export default function FoodAllergies() {
         otherFoodAllergies: finalOtherFoodAllergies,
       },
     });
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+
+  const handleModalOk = () => {
+    if (modalType === "noAllergyWithSelected") {
+      // Clear selected allergies, other allergies, and uncheck the "Other" checkbox
+      setSelectedFoodAllergies([]);
+      setOtherFoodAllergy("");
+      setShowOtherFoodInput(false);
+    }
+    setShowModal(false);
+  };
+
+  const handleModalCancel = () => {
+    if (modalType === "noAllergyWithSelected") {
+      // Uncheck the "I do not have any" checkbox
+      document.getElementById("noAllergyS").checked = false;
+    }
+    setShowModal(false);
   };
 
   return (
@@ -188,7 +220,7 @@ export default function FoodAllergies() {
                 className="form-check-label label-allergies"
                 htmlFor="otherAllergy"
               >
-                Other (please specify)
+                Other
               </label>
             </div>
             <div className="input-container input-allergies">
@@ -242,6 +274,47 @@ export default function FoodAllergies() {
           </div>
         </form>
       </div>
+      <Modal
+        show={showModal}
+        onHide={handleModalClose}
+        dialogClassName={`custom-modal ${
+          modalType === "noAllergyWithSelected" ? "large-modal" : "small-modal"
+        }`}
+      >
+        <Modal.Header>
+          <Modal.Title>{modalTitle}</Modal.Title>
+        </Modal.Header>
+        <img
+          className="sad-allergies"
+          src={`/images/sad-allergies.png`}
+          alt="Sad icon"
+        />
+        <Modal.Body
+          className={`${
+            modalType === "noAllergyWithSelected"
+              ? "small-space"
+              : "large-space"
+          }`}
+        >
+          {modalContent}
+        </Modal.Body>
+        <Modal.Footer>
+          {modalType === "noAllergyWithSelected" ? (
+            <>
+              <Button variant="primary" onClick={handleModalOk}>
+                OK
+              </Button>
+              <Button variant="secondary" onClick={handleModalCancel}>
+                Cancel
+              </Button>
+            </>
+          ) : (
+            <Button variant="primary" onClick={handleModalClose}>
+              OK
+            </Button>
+          )}
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }
