@@ -600,6 +600,10 @@
   padding: 0 32px;
 }
 
+.kidname h2 {
+  text-align: left;
+}
+
 .kidname.pending {
   margin-left: 125px; /* Add margin when status is Pending */
 }
@@ -820,9 +824,23 @@
   }
 
   .kidname {
-    width: 316px;
+    width: 230px;
     height: 88px;
     padding: 0 22px;
+  }
+
+  .kidname.pending {
+    margin-left: 78px; /* Add margin when status is Pending */
+  }
+
+  .status-kids {
+    width: 60px;
+    height: 30px;
+    border: 2px solid #0fc0fc;
+    font-size: 12px;
+    border-radius: 10px;
+    align-self: center;
+    margin-left: 10px;
   }
 
   .image-back {
