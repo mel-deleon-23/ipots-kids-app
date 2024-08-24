@@ -1,13 +1,15 @@
-// SignUp.jsx
+// ChangePassword.jsx
 import "../styles/signup/styles.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { Modal, Button } from "react-bootstrap";
 
 export default function ChangePassword() {
   const navigate = useNavigate();
   const location = useLocation();
   const { email, username, action, imageName } = location.state || {};
+  const [showModal, setShowModal] = useState(false);
 
   const [formData, setFormData] = useState({
     currentPass: "",
@@ -21,9 +23,8 @@ export default function ChangePassword() {
       ...formData,
       [name]: value,
     });
-
-    // console.log(formData);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.newPass !== formData.confirmPassword) {
@@ -49,25 +50,11 @@ export default function ChangePassword() {
         }
       )
       .then((result) => {
-        // console.log("Response:", result.data);
         if (result.data && result.data.status === "success") {
-          alert("Password is changed successfully");
-          // If the password update is successful
-          const profileRoute = `/${action}-profile`;
-          navigate(profileRoute, {
-            state: {
-              email,
-              username,
-              action,
-              imageName,
-              password: formData.newPass,
-            },
-          });
+          setShowModal(true); // Show the modal
         } else {
-          // If there is an error, display the message
           const errorMessage =
             result.data?.message || "An unexpected error occurred.";
-          //   console.error("Error Message from Server:", errorMessage);
           alert(errorMessage);
         }
       })
@@ -76,16 +63,29 @@ export default function ChangePassword() {
       });
   };
 
+  const handleClose = () => {
+    setShowModal(false);
+    // Navigate to the desired profile page after closing the modal
+    const profileRoute = `/${action}-profile`;
+    navigate(profileRoute, {
+      state: {
+        email,
+        username,
+        action,
+        imageName,
+        password: formData.newPass,
+      },
+    });
+  };
+
   return (
     <div className="container-fluid space">
       <div className="d-flex flex-column justify-content-center align-items-center">
-        <h2>Registration</h2>
-        {/* {error && <div className="alert alert-danger">{error}</div>} */}
-        {/* {success && <div className="alert alert-success">{success}</div>} */}
-        <div className=" signup-box d-flex flex-column justify-content-center align-items-center">
+        <h2>Change Password</h2>
+        <div className="signup-box d-flex flex-column justify-content-center align-items-center">
           <form onSubmit={handleSubmit}>
             <div className="input-container">
-              <label htmlFor="email" className="form-label input-label">
+              <label htmlFor="currentPass" className="form-label input-label">
                 Current Password <span className="required">*</span>
               </label>
               <input
@@ -100,7 +100,7 @@ export default function ChangePassword() {
               />
             </div>
             <div className="input-container input-space">
-              <label htmlFor="password" className="form-label input-label">
+              <label htmlFor="newPass" className="form-label input-label">
                 New Password <span className="required">*</span>
               </label>
               <input
@@ -133,8 +133,8 @@ export default function ChangePassword() {
               />
             </div>
             <div className="button-box d-flex flex-column justify-content-center align-items-center">
-              <button type="submit" className=" button-format buttonColor">
-                Next
+              <button type="submit" className="button-format buttonColor">
+                Change Password
               </button>
               <Link to={`/${action}-profile`}>
                 <button className="buttonEmpty button-format">Back</button>
@@ -143,6 +143,21 @@ export default function ChangePassword() {
           </form>
         </div>
       </div>
+      <Modal
+        show={showModal}
+        onHide={handleClose}
+        dialogClassName="custom-modal"
+      >
+        <Modal.Header>
+          <Modal.Title>SUCCESSFULLY CHANGED</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Your password has been changed successfully.</Modal.Body>
+        <Modal.Footer>
+          <Button variant="primary" onClick={handleClose}>
+            OK
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
 }

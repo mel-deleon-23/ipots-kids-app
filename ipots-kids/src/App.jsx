@@ -42,6 +42,9 @@ import Medication from "./pages/MedicationAllergies";
 import Medical from "./pages/MedicalCondition";
 import IaccessCongrat from "./pages/IaccessCongrat";
 import IaccessProfile from "./pages/IaccessProfile";
+import ManageKids from "./pages/ManageKids";
+import AddKids from "./pages/AddKid";
+import KidsPending from "./pages/KidsPending";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Benefits from "./pages/Benefits/Benefits";
 
@@ -150,6 +153,30 @@ function App() {
               <Route path="/medical-conditions" element={<Medical />} />
               <Route path="/iaccess-success" element={<IaccessCongrat />} />
               <Route path="/iaccess-profile" element={<IaccessProfile />} />
+              <Route
+                path="/manage-kids"
+                element={
+                  <ProtectedRoute>
+                    <ManageKids />{" "}
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/addkids"
+                element={
+                  <ProtectedRoute>
+                    <AddKids />{" "}
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/pending"
+                element={
+                  <ProtectedRoute>
+                    <KidsPending />
+                  </ProtectedRoute>
+                }
+              />
             </Routes>
           </main>
           <Footer />

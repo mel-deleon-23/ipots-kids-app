@@ -12,8 +12,43 @@ if (!$connect) {
     exit();
 }
 // Get the parameters from URL
-$username = $_GET['username'] ?? '';
+$username = $_GET['id'] ?? '';
 $action = $_GET['action'] ?? '';
+$iaccess = $_GET['iaccess'] ?? '';
+$type = $_GET['type'] ?? '';
+
+//Check if the user has an iAccess account if action is not provided
+if (empty($action)) {
+    // Fetch iaccess and user_type_id
+    $checkSql = "SELECT iaccess, user_type_id FROM users WHERE id = ?";
+    $checkStmt = $connect->prepare($checkSql);
+    $checkStmt->bind_param("s", $username);
+    $checkStmt->execute();
+    $checkResult = $checkStmt->get_result();
+    
+    if ($checkResult->num_rows > 0) {
+        $user = $checkResult->fetch_assoc();
+        if ($user['iaccess'] == 1) {
+            $action = "iaccess";
+        } else {
+            // Determine type based on user_type_id
+            $userTypeSql = "
+                SELECT type 
+                FROM user_type 
+                WHERE id = ?
+            ";
+            $userTypeStmt = $connect->prepare($userTypeSql);
+            $userTypeStmt->bind_param("i", $user['user_type_id']);
+            $userTypeStmt->execute();
+            $userTypeResult = $userTypeStmt->get_result();
+
+            if ($userTypeResult->num_rows > 0) {
+                $userType = $userTypeResult->fetch_assoc();
+                $action = $userType['type'];
+            }
+        }
+    }
+}
 
 // Fetch user information
 
@@ -23,14 +58,15 @@ if($action==="iaccess"){
     FROM iaccess AS i 
     LEFT JOIN avartars AS a ON i.avatar_id = a.id 
     LEFT JOIN users As u ON u.id = i.user_id
-    WHERE u.username = ?
+    WHERE u.id = ?
 ";
 }else{
 $sql = "
-    SELECT u.*, a.image 
+    SELECT u.*, a.image, t.type 
     FROM users AS u 
-    LEFT JOIN avartars AS a ON u.avatar_id = a.id 
-    WHERE u.username = ?
+    LEFT JOIN avartars AS a ON u.avatar_id = a.id
+    LEFT JOIN user_type as t ON u.user_type_id = t.id 
+    WHERE u.id = ?
 ";}
 $stmt = $connect->prepare($sql);
 $stmt->bind_param("s", $username);

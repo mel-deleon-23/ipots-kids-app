@@ -100,18 +100,16 @@ export default function Avartar() {
       imageName: selectedImage.image,
     };
 
-    console.log(payload);
-
     axios
       .post(apiEndpoint, payload)
       .then((result) => {
         // console.log("Result Data:", result.data); // Log the result for debugging
         if (result.data.status === "success") {
-          alert(
-            isUpdate
-              ? "Avatar updated successfully!"
-              : "Account created successfully!"
-          );
+          // alert(
+          //   isUpdate
+          //     ? "Avatar updated successfully!"
+          //     : "Account created successfully!"
+          // );
 
           if (isUpdate) {
             // const existingToken = JSON.parse(

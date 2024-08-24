@@ -50,9 +50,11 @@ if (mysqli_num_rows($result) === 1) {
             'iat' => $issuedAt,
             'exp' => $expirationTime,
             'data' => array(
-                'user_id' =>$user['id'],
+                'id' =>$user['id'],
                 'username' => $username,
                 'email' => $user['email'],
+                'iaccess'=>$user['iaccess'],
+                'type'=>$user['user_type_id'],
             )
         );
 

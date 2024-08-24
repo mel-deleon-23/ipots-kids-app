@@ -30,7 +30,7 @@ export default function IaccessProfile() {
           "http://localhost/ipots-kids-app/ipots-server/profile.php",
           {
             headers: { Authorization: `Bearer ${token}` },
-            params: { username: user.data.username, action: user.data.action },
+            params: { id: user.data.id, action: user.data.action },
           }
         );
 
