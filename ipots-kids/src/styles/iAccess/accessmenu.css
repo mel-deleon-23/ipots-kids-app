@@ -98,10 +98,24 @@
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
 }
+/* for disabled categories */
+.category-access-gray-menu
+{
+  background-color: #C0C0C0;
+  color: #706C6C;
+  cursor: default;
+  transition: none;
+}
 
 .category-access-menu:hover {
   background-color: #0fc0fc;
   transform: scale(1.02);
+}
+/* for disabled categories */
+.category-access-gray-menu:hover
+{
+  background-color: #C0C0C0;
+  transform: none;
 }
 
 .category-access-menu-icon {

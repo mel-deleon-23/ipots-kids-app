@@ -173,14 +173,14 @@ useEffect(() => {
         { name: "Mobility", img: mobilityImg },
         { name: "Hearing", img: earImg },
         { name: "Cognitive", img: brainImg },
-        { name: "MentalHealth", img: mentalImg },
+        { name: "Mental Health", img: mentalImg },
         { name: "Sensory", img: sensorImg },
         { name: "Allergy", img: allergyImg },
         { name: "Vision", img: visionImg },
         { name: "Pain", img: painImg },
         { name: "Digestion", img: stomachImg },
         { name: "Safety", img: safetyImg },
-        { name: "MedicalDevices", img: medicalImg },
+        { name: "Medical Devices", img: medicalImg },
         { name: "Medication", img: medicationImg },
       ];  
     const categoryObject = categories.find(cat => cat.name === category);

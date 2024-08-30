@@ -6,7 +6,7 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-W
 header('Content-Type: application/json');
 
 // Include config file
-require_once('include/database.php');
+require_once('includes/database.php');
 // include('includes/config.php');
 
 
@@ -164,18 +164,122 @@ if ($method == 'All') {
     // If medicalCondition is set
     if (isset($medicalCondition)) {
         $stmt = $connect->prepare("
-            SELECT DISTINCT a.disability_category
-            FROM accommodations a 
-            JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
-            WHERE ma.user_id = ? 
-            AND a.location = ? 
-            AND a.medical_condition = ?");
-
+            SELECT DISTINCT category
+            FROM (
+                SELECT DISTINCT 'Vision' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.medical_condition = ?
+                AND a.Vision = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Hearing' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.medical_condition = ?
+                AND a.Hearing = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Mobility' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.medical_condition = ?
+                AND a.Mobility = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Cognitive' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.medical_condition = ?
+                AND a.Cognitive = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Sensory' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.medical_condition = ?
+                AND a.Sensory = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Allergy' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.medical_condition = ?
+                AND a.Allergy = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Safety' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.medical_condition = ?
+                AND a.Safety = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Digestion' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.medical_condition = ?
+                AND a.Digestion = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Pain' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.medical_condition = ?
+                AND a.Pain = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Medical Devices' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.medical_condition = ?
+                AND a.Medical_Devices = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Mental Health' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.medical_condition = ?
+                AND a.Mental_Health = 1
+            ) AS categories");
+            
         if ($stmt) {
-            $stmt->bind_param("iss", $userId, $location, $medicalCondition);
+            $stmt->bind_param("isisisisisisisisisisis", $userId, $medicalCondition, $userId, $medicalCondition, $userId, $medicalCondition, $userId, $medicalCondition, $userId, $medicalCondition, $userId, $medicalCondition, $userId, $medicalCondition, $userId, $medicalCondition, $userId, $medicalCondition, $userId, $medicalCondition, $userId, $medicalCondition);
             $stmt->execute();
             $result = $stmt->get_result();
-
+    
             while ($row = $result->fetch_assoc()) {
                 $response[] = $row;
             }
@@ -183,24 +287,118 @@ if ($method == 'All') {
         }
     } else {
         $stmt = $connect->prepare("
-            SELECT DISTINCT a.disability_category 
-            FROM accommodations a 
-            JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
-            WHERE ma.user_id = ? 
-            AND a.location = ?");
-
+            SELECT DISTINCT category
+            FROM (
+                SELECT DISTINCT 'Vision' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.Vision = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Hearing' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.Hearing = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Mobility' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.Mobility = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Cognitive' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.Cognitive = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Sensory' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.Sensory = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Allergy' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.Allergy = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Safety' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.Safety = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Digestion' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.Digestion = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Pain' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.Pain = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Medical Devices' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.Medical_Devices = 1
+    
+                UNION
+    
+                SELECT DISTINCT 'Mental Health' AS category
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1' 
+                AND a.Mental_Health = 1
+            ) AS categories");
+            
         if ($stmt) {
-            $stmt->bind_param("is", $userId, $location);
+            $stmt->bind_param("iiiiiiiiiii", $userId, $userId, $userId, $userId, $userId, $userId, $userId, $userId, $userId, $userId, $userId);
             $stmt->execute();
             $result = $stmt->get_result();
-
+    
             while ($row = $result->fetch_assoc()) {
                 $response[] = $row;
             }
             $stmt->close();
         }
     }
-    echo json_encode($response);
+      echo json_encode($response);
 }
 
 
