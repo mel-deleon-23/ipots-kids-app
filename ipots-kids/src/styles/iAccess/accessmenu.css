@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+.access-menu-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  height: 100vh;
+  padding-top: 10px;
+}
+
+.header-access-menu-title {
+  width: 34.5rem;
+  height: 3.125rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+.navbar-access-menu-container {
+  display: flex;
+  justify-content: center;
+  width: 82.813rem;
+  height: 14.25rem;
+  margin-top: 5.188rem;
+}
+
+.location-access-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 8.4rem;
+  height: 9.7rem;
+  margin: 0 0.938rem;
+  padding: 0.625rem;
+  cursor: pointer;
+  border-radius: 0.625rem;
+  background-color: #c0c0c0;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.location-access-menu:hover {
+  background-color: #b0b0b0;
+  transform: scale(1.05);
+}
+
+.location-access-menu.selected {
+  background-color: #0fc0fc;
+}
+
+.location-access-menu-img {
+  width: 6.125rem;
+  height: 6.125rem;
+  margin-top: 1rem;
+  margin-left: 1.625rem;
+  margin-right: 1.625rem;
+}
+
+.location-access-menu-icon {
+  font-size: 1.5rem;
+}
+
+.location-access-menu-name {
+  margin-top: 0.313rem;
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: black;
+}
+
+.categories-access-menu-container {
+  margin-top: 3.75rem;
+  width: 38rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+}
+
+.category-access-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #0fc0fc;
+  color: black;
+  width: 10.5rem;
+  height: 10.5rem;
+  padding: 1.25rem;
+  margin: 1rem;
+  border-radius: 0.625rem;
+  font-size: 2.188rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.category-access-menu:hover {
+  background-color: #0fc0fc;
+  transform: scale(1.02);
+}
+
+.category-access-menu-icon {
+  width: 6.25rem;
+  height: 6.25rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.category-access-menu-names {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  width: 8rem;
+  padding-top: 0.125rem;
+  height: 3.563rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+/* Mobile Design */
+@media (max-width: 971px) {
+  .header-access-menu-title {
+    font-family: "Inter", sans-serif;
+    font-size: 1.563rem;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  .navbar-access-menu-container {
+    margin-top: 2.4rem;
+    width: 17.2rem;
+    height: 14.8rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .location-access-menu {
+    margin: 0.82rem;
+    width: 5.164rem;
+    height: 6.994rem;
+    border-radius: 0.375rem;
+  }
+
+  .location-access-menu-img {
+    width: 3.791rem;
+    height: 3.791rem;
+    /* margin-top: 0.654rem; */
+    margin-right: 0.654rem;
+    margin-left: 0.719rem;
+    /* margin-bottom: 2.549rem; */
+  }
+
+  .location-access-menu-name {
+    font-size: 0.75rem;
+  }
+
+  .categories-access-menu-container {
+    width: 20.463rem;
+    height: 27.393rem;
+    margin-top: 3.1rem;
+  }
+
+  .category-access-menu {
+    width: 5.998rem;
+    height: 5.939rem;
+    padding: 0.9rem;
+  }
+
+  .category-access-menu-icon {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .category-access-menu-names {
+    width: 5.313rem;
+    height: 1.685rem;
+    font-size: 0.938rem;
+    line-height: 0.9rem;
+    padding-top: 0.5rem;
+  }
+}

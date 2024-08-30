@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  height: 100vh;
+  padding-top: 0.625rem; /*changed it */
+}
+
+.homepage-home-title {
+  width: 12rem;
+  height: 3.125rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin: 0;
+}
+
+.navbar-home-container {
+  display: flex;
+  justify-content: center;
+  width: 56.625rem;
+  height: 9.744rem;
+  margin-top: 2.5rem;
+}
+
+.location-home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 8.375rem;
+  height: 9.688rem;
+  margin: 0 0.625rem;
+  cursor: pointer;
+  border-radius: 0.625rem;
+  background-color: #c0c0c0;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.location-home:hover {
+  background-color: #b0b0b0;
+  transform: scale(1.05);
+}
+
+.location-home.selected {
+  background-color: #0fc0fc;
+}
+
+.location-home-img {
+  width: 6.2rem;
+  height: 6.2rem;
+  margin-top: 1rem;
+  margin-left: 1.625rem;
+  margin-right: 1.625rem;
+}
+
+.location-home-name {
+  margin-top: 0.313rem;
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+.accessibility-categories-container {
+  margin-top: 2.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.accessibility-category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0fc0fc;
+  color: black;
+  width: 25.625rem;
+  height: 4rem;
+  padding: 0 0.625rem;
+  margin: 0.25rem 0;
+  border-radius: 0.625rem;
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.category:hover {
+  background-color: #0fc0fc;
+  transform: scale(1.02);
+}
+
+.accessibility-category-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.938rem;
+}
+
+.accessibility-category-name {
+  width: 17.563rem;
+  height: 2.438rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.accessibility-category-back {
+  width: 33.63px;
+  height: 43.73px;
+  margin-left: 20px;
+}
+
+/* Styles for the popup overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Styles for the popup content */
+.popup-content {
+  padding: 20px;
+  background: #fff; /* Ensure the background is white */
+  border-radius: 16px;
+  max-width: 32.874rem; /* Set a maximum width */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  color: #000;
+  font-size: 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it appears above the overlay */
+}
+
+.popup-message {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 24;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.popup-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+.message {
+  text-wrap: wrap;
+  max-width: 13.125rem;
+  margin-top: 4.002rem;
+}
+.close {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  margin-top: 1.25rem;
+  /* margin-bottom: 2.502rem; */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #0fc0fc;
+  border: none;
+  border-radius: 10px;
+  color: black;
+  width: 27.713rem;
+  margin-top: 4.07rem;
+}
+.sign-in {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  margin-top: 1.25rem;
+  /* margin-bottom: 2.502rem; */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #0fc0fc;
+  border: none;
+  border-radius: 10px;
+  color: black;
+  width: 27.713rem;
+  margin-top: 4.07rem;
+}
+.cancel {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  margin-top: 1.25rem;
+  /* margin-bottom: 2.502rem; */
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #0fc0fc;
+  border: none;
+  border-radius: 10px;
+  color: black;
+  width: 27.713rem;
+  margin-top: 0.518rem;
+}
+.popup-location-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; /* This allows the items to wrap to the next line if they overflow */
+  justify-content: center; /* Centers the items horizontally */
+  padding: 0;
+  list-style-type: none;
+  margin: 0;
+}
+
+.popup-location-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 5px; /* Adjust the margin as needed for spacing */
+  width: 65.6px;
+  height: 65.97px;
+  border-radius: 5px;
+  background-color: #c0c0c0;
+}
+
+.popup-location-img {
+  margin-top: 0.563rem;
+  width: 2.188rem;
+  height: 2.188rem;
+  object-fit: cover;
+}
+
+.popup-location-name {
+  margin-top: 0.25rem;
+  margin-bottom: 0.561rem;
+  font-size: 9px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
+}
+
+/* Mobile Design */
+@media (max-width: 971px) {
+  .navbar-home-container {
+    margin-top: 2.4rem;
+    width: 17.2rem;
+    height: 14.8rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .location-home {
+    margin: 0.82rem;
+    width: 5.164rem;
+    height: 6.994rem;
+    border-radius: 0.375rem;
+  }
+
+  .location-home-img {
+    width: 3.791rem;
+    height: 3.791rem;
+    /* margin-top: 0.654rem; */
+    margin-right: 0.654rem;
+    margin-left: 0.719rem;
+    /* margin-bottom: 2.549rem; */
+  }
+
+  .location-home-name {
+    font-size: 0.75rem;
+  }
+
+  .accessibility-categories-container {
+    margin-top: 3rem;
+    width: 21.39rem;
+    height: 25.188rem;
+  }
+
+  .accessibility-category {
+    width: 21.39rem;
+    height: 4.263rem;
+  }
+
+  .accessibility-category-name {
+    width: 15.236rem;
+    height: 1.55rem;
+    font-size: 1.18rem;
+  }
+}

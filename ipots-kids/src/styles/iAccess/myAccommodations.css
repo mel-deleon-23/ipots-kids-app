@@ -1,0 +1,120 @@
+.myAccommodations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  height: 100vh;
+  padding-top: 10px; /*changed it */
+}
+
+.myAccommodations-title {
+  width: 1671px;
+  height: 146px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 110px;
+  font-weight: bold;
+  color: #000000;
+  margin: 0;
+}
+
+.myNavbar-container {
+  display: flex;
+  justify-content: center;
+  width: 1325px;
+  height: 228px;
+  margin-top: 83px;
+}
+
+.myLocation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 196px;
+  height: 228px;
+  margin: 0 15px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #c0c0c0;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.myLocation:hover {
+  background-color: #b0b0b0;
+  transform: scale(1.05);
+}
+
+.myLocation.selected {
+  background-color: #0fc0fc;
+}
+
+.myLocation-img {
+  width: 144.01px;
+  height: 143.74px;
+  margin-top: 16px;
+  margin-left: 26px;
+  margin-right: 26px;
+}
+
+.myLocation-icon {
+  font-size: 24px;
+}
+
+.myLocation-name {
+  margin-top: 5px;
+  font-size: 35px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+.myAccessibility-categories-container {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.myAccessibility-category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0fc0fc;
+  color: black;
+  width: 760px;
+  height: 129px;
+  padding: 0 20px;
+  margin: 12px 0;
+  border-radius: 10px;
+  font-size: 45px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.myCategory:hover {
+  background-color: #0fc0fc;
+  transform: scale(1.02);
+}
+
+.myAccessibility-category-icon {
+  width: 85px;
+  height: 85px;
+  margin-right: 25px;
+}
+
+.myAccessibility-category-name {
+  width: 526px;
+  height: 46px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+.myAccessibility-category-back {
+  width: 33.63px;
+  height: 43.73px;
+  margin-left: 20px;
+}

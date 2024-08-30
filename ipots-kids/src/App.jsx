@@ -44,6 +44,20 @@ import IaccessCongrat from "./pages/IaccessCongrat";
 import IaccessProfile from "./pages/IaccessProfile";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Benefits from "./pages/Benefits/Benefits";
+// iaccess pages
+
+import IAccessHomePage from "./pages/iAccess/homepage";
+import AccessMenu from "./pages/iAccess/accessmenu";
+import Accommodation from "./pages/iAccess/accommodation";
+import MedicalCondits from "./pages/iAccess/medicalcondits";
+import MedicalConditsReview from "./pages/iAccess/medicalconditreview";
+import MyAccommodationsMenu from "./pages/iAccess/myAccommodationsMenu";
+import MyMedicalConditions from "./pages/iAccess/myMedicalCondtions";
+import MyAccommodations from "./pages/iAccess/myAccommodations";
+import MyAccessMenu from "./pages/iAccess/myaccessmenu";
+import Dictionary from "./pages/iAccess/dictionary";
+import DictionaryReview from "./pages/iAccess/dictionaryreview";
+import MyAllergies from "./pages/iAccess/myallergies";
 
 function App() {
   return (
@@ -83,7 +97,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/ipotskids" element={<iPOTSKIDS />} />
-              <Route path="/iaccess" element={<iAccess />} />
+              {/* <Route path="/iaccess" element={<iAccess />} /> */}
               <Route path="/contact" element={<Contact />} />
               <Route path="/benefits" element={<Benefits />} />
               <Route path="/home" element={<HomePage />} />
@@ -150,6 +164,54 @@ function App() {
               <Route path="/medical-conditions" element={<Medical />} />
               <Route path="/iaccess-success" element={<IaccessCongrat />} />
               <Route path="/iaccess-profile" element={<IaccessProfile />} />
+              {/* iaccess Routes */}
+              <Route path="/iaccess" element={<IAccessHomePage />} />
+              <Route path="/accessmenu" element={<AccessMenu />} />
+              <Route path="/accommodation" element={<Accommodation />} />
+              <Route path="/myaccommodationsmenu" 
+                element={
+                  <ProtectedRoute>
+                    <MyAccommodationsMenu />
+                  </ProtectedRoute>} 
+              />
+              <Route path="/myaccommodations" 
+                element={
+                  <ProtectedRoute>
+                    <MyAccommodations />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route path="/myallergies" 
+                element={
+                  <ProtectedRoute>
+                    <MyAllergies />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route path="/medicalcondits" element={<MedicalCondits />} />
+              <Route path="/myaccessmenu"
+                element={
+                  <ProtectedRoute>
+                    <MyAccessMenu />
+                  </ProtectedRoute>
+                } 
+              />
+              <Route path="/mymedicalconditions" 
+                element={
+                  <ProtectedRoute>
+                    <MyMedicalConditions />
+                  </ProtectedRoute>
+                  } 
+              />
+              <Route
+                path="/medicalconditreview"
+                element={
+                    <MedicalConditsReview />                  
+                }
+              />
+              <Route path="/dictionary" element={<Dictionary />} />
+              <Route path="/dictionaryreview" element={<DictionaryReview />} />
+
             </Routes>
           </main>
           <Footer />

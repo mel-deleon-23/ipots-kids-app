@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
+
+.accommodations-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  height: 100vh;
+  padding-top: 0.625rem;
+}
+.acc-header-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.vision-image {
+  margin-right: 0.625rem;
+  width: 4.625rem;
+  height: 4.625rem;
+}
+
+.accommodation-title {
+  width: 12rem;
+  height: 3.125rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000000;
+  margin: 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: center;
+  width: 56.625rem;
+  height: 9.744rem;
+  margin-top: 2.5rem;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 8.375rem;
+  height: 9.688rem;
+  margin: 0 0.625rem;
+  cursor: pointer;
+  border-radius: 0.625rem;
+  background-color: #c0c0c0;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.location:hover {
+  background-color: #b0b0b0;
+  transform: scale(1.05);
+}
+
+.location.selected {
+  background-color: #0fc0fc;
+}
+
+.location-img {
+  width: 6.125rem;
+  height: 125rem;
+  margin-top: 1rem;
+  margin-left: 1.625rem;
+  margin-right: 1.625rem;
+}
+
+.location-icon {
+  font-size: 1.5rem;
+}
+
+.location-name {
+  margin-top: 0.313rem;
+  font-size: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.search-bar-container {
+  padding-top: 2.5rem;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.searchbox {
+  width: 47.5rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+  color: #b0b0b0;
+  border: 0.063rem solid #b0b0b0;
+  padding-left: 2.5rem;
+  padding-right: 3.5rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 0.75rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  pointer-events: none;
+  color: #b0b0b0;
+}
+
+input {
+  text-indent: 1.1rem;
+  font-size: 1.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+
+.microphone-icon {
+  position: absolute;
+  right: 0.625rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  pointer-events: none;
+  color: #828282;
+}
+
+/* Items List */
+.item-list {
+  width: 100%;
+  max-width: 47.5rem;
+  height: 4rem;
+  margin: 1.25rem auto;
+}
+
+.item {
+  background-color: #e0e0e0;
+  padding: 0.625rem;
+  border-radius: 1rem;
+  margin-bottom: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.item.selected {
+  background-color: #0fc0fc;
+  color: #000000;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0 1.563rem 0 1.563rem;
+}
+
+.item-header.expanded {
+  font-size: 2.5rem;
+}
+.acommodation-save {
+  width: 2.5rem;
+  height: 2.5;
+  margin-left: 1.25rem;
+}
+
+.item-details {
+  margin-top: 0.625rem;
+}
+
+.item-details img {
+  width: 16.938rem;
+  height: 16.938rem;
+  display: block;
+  margin: 0 auto;
+}
+
+.item-details p {
+  text-align: justify;
+  margin-top: 0.625rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  padding: 0 1.563rem 0 1.563rem;
+  line-height: 2.5rem;
+}
+
+img {
+  position: relative;
+  z-index: 10;
+}
