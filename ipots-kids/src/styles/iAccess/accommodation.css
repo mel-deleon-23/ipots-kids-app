@@ -9,13 +9,12 @@
   height: 100vh;
   padding-top: 0.625rem;
 }
-.acc-header-container {
+.header-container2 {
   display: flex;
   align-items: center;
-  margin-bottom: 1.25rem;
 }
 
-.vision-image {
+.category-image {
   margin-right: 0.625rem;
   width: 4.625rem;
   height: 4.625rem;
@@ -51,6 +50,8 @@
   border-radius: 0.625rem;
   background-color: #c0c0c0;
   transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
+  color: inherit;
 }
 
 .location:hover {
@@ -82,7 +83,7 @@
 }
 
 .search-bar-container {
-  padding-top: 2.5rem;
+  margin-top: 2.5rem;
   padding-bottom: 0;
   display: flex;
   justify-content: center;
@@ -120,21 +121,16 @@ input {
   font-weight: 400;
 }
 
-.microphone-icon {
-  position: absolute;
-  right: 0.625rem;
-  width: 3.125rem;
-  height: 3.125rem;
-  pointer-events: none;
-  color: #828282;
-}
-
-/* Items List */
-.item-list {
+.item-container {
+  margin-top: 2.5rem;
   width: 100%;
   max-width: 47.5rem;
   height: 4rem;
-  margin: 1.25rem auto;
+}
+.item-list{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .item {
@@ -164,12 +160,6 @@ input {
 .item-header.expanded {
   font-size: 2.5rem;
 }
-.acommodation-save {
-  width: 2.5rem;
-  height: 2.5;
-  margin-left: 1.25rem;
-}
-
 .item-details {
   margin-top: 0.625rem;
 }
@@ -193,4 +183,91 @@ input {
 img {
   position: relative;
   z-index: 10;
+}
+/* Mobile Design */
+@media (max-width: 971px) {
+
+  .category-image{
+    width:2.375rem ;
+    height:2.375rem ;
+
+  }
+  .accommodation-title {
+    width: 7.625rem;
+    height: 2.375rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.563rem;
+    font-weight: 400;
+    line-height: 150%;
+  }
+
+  .navbar-container{
+    margin-top: 2.063rem;
+    width: 17.2rem;
+    height: 14.8rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+  }
+
+  .location {
+    margin: 0.375rem;
+    width: 5.164rem;
+    height: 6.994rem;
+    border-radius: 0.375rem;
+  }
+
+  .location-img {
+    width: 3.791rem;
+    height: 3.791rem;
+    margin-right: 0.654rem;
+    margin-left: 0.719rem;
+  }
+
+  .location-name {
+    font-size: 0.75rem;
+  }
+  .item-container{
+    width:20.188rem ;
+    height: auto;
+    margin-top: 2.688rem;
+  }
+  .item-header{
+    font-size: 1.25rem ;
+    padding: 0 0.938rem 0 0.938rem;
+    text-align: left;
+  }
+  .item-header.expanded {
+    font-size: 1.45rem;
+  }
+  .bookmark-img, .unbookmarkimg{
+    width:2.313rem ;
+    height: 2.313rem;
+  }
+  .item-details img{
+    width: 9.063rem;
+    height: 9.063rem;
+  }
+  .item-details p{
+    font-size:0.875rem ;
+    padding: 0 0.938rem 0 0.938rem;
+    line-height: 1.5rem;
+  }
+  .search-bar-container {
+    width: 20.188rem;
+    height: 4rem; 
+  }
+
+  .search-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .searchbox {
+    width: 20.188rem;
+    height: 3.625rem;
+    font-size: 16px;
+    padding-left: 3rem;
+    padding-right: 3.625rem;
+  }
 }

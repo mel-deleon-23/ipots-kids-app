@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect , useRef  } from "react";
 import { useLocation, useNavigate } from "react-router-dom"; // added useNavigate
 import axios from "axios";
 import Popup from "reactjs-popup";
@@ -62,6 +62,23 @@ const Accommodation2 = () => {
       setUserId(user.data.user_id);
     }
   }, [user]);
+
+  const listRef = useRef(null); // Create a ref for the list
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key.toLowerCase() === "l") {
+        if (listRef.current) {
+          listRef.current.focus(); // Focus the list when "L" is pressed
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchBookmarks = async () => {
@@ -158,12 +175,12 @@ const Accommodation2 = () => {
   );
 
   const locations = [
-    { name: "Home", img: homeImg },
-    { name: "Work", img: briefcaseImg },
-    { name: "School", img: backpackImg },
-    { name: "Transit", img: transitImg },
-    { name: "Medical", img: hospitalImg },
-    { name: "All", img: earthImg },
+    { name: "Home", img: homeImg, area: "Home" },
+    { name: "Work", img: briefcaseImg, area: "Work"},
+    { name: "School", img: backpackImg, area: "School" },
+    { name: "Transit", img: transitImg, area: "Transit" },
+    { name: "Medical", img: hospitalImg, area: "Medical" },
+    { name: "All", img: earthImg, area: "All Locations" },
   ];
 
   const categories = [
@@ -186,21 +203,33 @@ const Accommodation2 = () => {
 
   return (
     <div className="accommodations-page">
-      <div className="acc-header-container">
-        <img src={iconImg} alt="Vision" className="vision-image" />
-        {medicalCondition && (
-          <h1 className="accommodation-title"> ({medicalCondition})</h1>
+        
+        {medicalCondition ? (
+          <>
+            <h1 className="accommodation-title">{medicalCondition}</h1>
+            <div className="header-container2">
+              <img src={iconImg} alt={category} className="category-image" />
+              <h2 className="accommodation-title">{category}</h2>
+            </div>
+          </>
+        ) : (
+          <div className="header-container2">
+              <img src={iconImg} alt={category} className="category-image" />
+              <h1 className="accommodation-title">{category}</h1>
+            </div>
         )}
-        <h1 className="accommodation-title">{category}</h1>
-      </div>
       <div className="navbar-container">
         {locations.map((location) => (
-          <div
-            key={location.name}
+          <a
+            key={location.name}s
+            href="#"
+            aria-label={`${location.area}${selectedLocation === location.name ? " (selected)" : ""}`}
             className={`location ${
               selectedLocation === location.name ? "selected" : ""
             }`}
-            onClick={() => handleLocationClick(location.name)}
+            onClick={(event) => {
+              event.preventDefault();
+              handleLocationClick(location.name)}}
           >
             <img
               src={location.img}
@@ -208,11 +237,11 @@ const Accommodation2 = () => {
               className="location-img"
             />
             <span className="location-name">{location.name}</span>
-          </div>
+          </a>
         ))}
       </div>
       <div className="search-bar-container">
-        <div className="search-bar">
+        <div className="search-bar" >
           <CiSearch className="search-icon" />
           <input
             type="search"
@@ -220,67 +249,118 @@ const Accommodation2 = () => {
             placeholder="Search"
             value={searchTerm}
             onChange={handleSearchChange}
+            aria-label={`Search for accommodations for ${category}`}
           />
         </div>
       </div>
-      <div className="item-list">
+      <div className="item-container" >
         {filteredAccommodations.length > 0 ? (
-          filteredAccommodations.map((accommodation) => (
-            <div
+          <ul className="item-list" aria-label="List of accommodations" tabIndex="-1" ref={listRef}>
+          {filteredAccommodations.map((accommodation) => (
+            <li
               key={accommodation.id}
-              className={`item-container ${
+              className={`item ${
                 selectedItem === accommodation.id ? "selected" : ""
               }`}
-              onClick={() => handleItemClick(accommodation)}
             >
-              <div className="item-content">
-                <h3 className="item-name">{accommodation.accommodation}</h3>
-                {selectedItem === accommodation.id && (
-                  <>
-                    <p className="item-description">
-                      {accommodation.description}
-                    </p>
-                    <div className="item-buttons">
-                      {isBookmarked(accommodation.id) ? (
-                        <img
-                          src={unsaveImg}
-                          alt="Unsave"
-                          className="bookmark"
-                          onClick={() => handleUnbookmark(accommodation.id)}
-                        />
-                      ) : (
-                        <img
-                          src={saveImg}
-                          alt="Bookmark"
-                          className="bookmark"
-                          onClick={() => {
-                            if (!userId) {
-                              openpopup(); // Open the sign-in modal
-                            } else {
-                              handleBookmark(accommodation.id);
-                            }
-                          }}
-                        />
-                      )}
-                    </div>
-                  </>
+              <div
+                className={`item-header ${
+                  selectedItem === accommodation.id ? "expanded" : ""
+                }`}
+              >
+                <span onClick={() => handleItemClick(accommodation)}>
+                  {accommodation.accommodation}
+                </span>
+                {/* bookmark works only if user is logged in */}
+                {userId ? (
+                isBookmarked(accommodation.id) ? (
+                  <a 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault(); 
+                    handleUnbookmark(accommodation.id);
+                  }}
+                  aria-label="Click to remove bookmark from this item"
+                >
+                  <img
+                    className="bookmark-img"
+                    src={saveImg}
+                    alt="Save"
+                  />
+                </a>
+                ) : (
+                  <a 
+                    href="#" 
+                    onClick={(e) => {
+                      e.preventDefault(); 
+                      handleBookmark(accommodation.id);
+                    }}
+                    aria-label="Click to bookmark this item"
+                  >
+                    <img
+                      className="unbookmarkimg"
+                      src={unsaveImg}
+                      alt="UnSave"
+                    />
+                  </a>
+                )
+                ):(
+                     // else popup for signup appears
+                     <a 
+                    href="#" 
+                    onClick={(e) => {
+                      e.preventDefault(); 
+                      () => openpopup()
+                    }}
+                    aria-label="Click to bookmark this item"
+                  >
+                    <img
+                      className="unbookmarkimg"
+                      src={unsaveImg}
+                      alt="UnSave"
+                    />
+                  </a>
                 )}
               </div>
-            </div>
-          ))
+              {selectedItem === accommodation.id && (
+                <div
+                  className="item-details"
+                  onClick={() => handleItemClick(accommodation)}
+                >
+                  <img
+                    src={iconImg}
+                    alt={accommodation.accommodation}
+                    className="item-image"
+                  />
+                  <p>{accommodation.description}</p>
+                </div>
+              )}
+            </li>
+          ))}
+          </ul>
         ) : (
-          <p>No accommodations found.</p>
+          <p className="Error">
+            No accommodations available for {category} at {selectedLocation}.
+          </p>
         )}
       </div>
-
-      <Popup open={signInOpen} onClose={closeSignInModal} modal>
-        <div className="modal">
-          <h2 className="modal-title">Sign In Required</h2>
-          <p className="modal-description">
-            Please sign in to bookmark accommodations.
-          </p>
-          <button className="modal-button" onClick={handleSignIn}>
+      <Popup
+        open={signInOpen}
+        closeOnDocumentClick
+        onClose={closeSignInModal}
+        overlayClassName="popup-overlay"
+        contentClassName="popup-content"
+      >
+        <div className="popup-message">
+          <h2 className="popup-title">SIGN IN REQUIRED</h2>
+          <div className="message">
+            Please sign in to use BookMark Feature
+          </div>
+          <button className="sign-in" onClick={handleSignIn}>
             Sign In
+          </button>
+          <button className="cancel" onClick={closeSignInModal}>
+            Cancel
           </button>
         </div>
       </Popup>

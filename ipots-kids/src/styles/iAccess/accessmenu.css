@@ -23,9 +23,9 @@
 .navbar-access-menu-container {
   display: flex;
   justify-content: center;
-  width: 82.813rem;
-  height: 14.25rem;
-  margin-top: 5.188rem;
+  width: 56.625rem;
+  height: 9.744rem;
+  margin-top: 2.5rem;
 }
 
 .location-access-menu {
@@ -33,14 +33,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 8.4rem;
-  height: 9.7rem;
-  margin: 0 0.938rem;
-  padding: 0.625rem;
+  width: 8.375rem;
+  height: 9.688rem;
+  margin: 0 0.625rem;
   cursor: pointer;
   border-radius: 0.625rem;
   background-color: #c0c0c0;
   transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
+  color: inherit;
 }
 
 .location-access-menu:hover {
@@ -75,11 +76,18 @@
 .categories-access-menu-container {
   margin-top: 3.75rem;
   width: 38rem;
+}
+.categories-access-menu-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); 
   justify-content: center;
 }
-
+.category-access-menu-items {
+  list-style: none;
+}
 .category-access-menu {
   display: flex;
   flex-direction: column;
@@ -97,6 +105,8 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
+  color: inherit;
 }
 /* for disabled categories */
 .category-access-gray-menu
@@ -138,6 +148,7 @@
 /* Mobile Design */
 @media (max-width: 971px) {
   .header-access-menu-title {
+    height: 2.375rem;
     font-family: "Inter", sans-serif;
     font-size: 1.563rem;
     font-weight: 400;
@@ -145,17 +156,16 @@
   }
 
   .navbar-access-menu-container {
-    margin-top: 2.4rem;
+    margin-top: 2.063rem;
     width: 17.2rem;
     height: 14.8rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    margin-bottom: 2rem;
   }
 
   .location-access-menu {
-    margin: 0.82rem;
+    margin: 0.375rem;
     width: 5.164rem;
     height: 6.994rem;
     border-radius: 0.375rem;
@@ -164,10 +174,8 @@
   .location-access-menu-img {
     width: 3.791rem;
     height: 3.791rem;
-    /* margin-top: 0.654rem; */
     margin-right: 0.654rem;
     margin-left: 0.719rem;
-    /* margin-bottom: 2.549rem; */
   }
 
   .location-access-menu-name {
@@ -177,13 +185,14 @@
   .categories-access-menu-container {
     width: 20.463rem;
     height: 27.393rem;
-    margin-top: 3.1rem;
+    margin-top: 2.688rem;
   }
 
   .category-access-menu {
     width: 5.998rem;
     height: 5.939rem;
     padding: 0.9rem;
+    margin: 0.625rem;
   }
 
   .category-access-menu-icon {

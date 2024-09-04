@@ -1,4 +1,4 @@
-import React, { useContext ,useState } from "react";
+import React, { useContext ,useState, useRef, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -31,6 +31,24 @@ const AccessMenu = () => {
   const [selectedLocation, setSelectedLocation] = useState(location);
   const navigate = useNavigate();
 
+  
+  const listRef = useRef(null); // Create a ref for the list
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key.toLowerCase() === "l") {
+        if (listRef.current) {
+          listRef.current.focus(); // Focus the list when "L" is pressed
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
+
   const handleLocationClick = (location) => {
     setSelectedLocation(location);
   };
@@ -54,12 +72,12 @@ const AccessMenu = () => {
   };
 
   const locations = [
-    { name: "Home", img: homeImg },
-    { name: "Work", img: briefcaseImg },
-    { name: "School", img: backpackImg },
-    { name: "Transit", img: transitImg },
-    { name: "Medical", img: hospitalImg },
-    { name: "All", img: earthImg },
+    { name: "Home", img: homeImg, area: "Home" },
+    { name: "Work", img: briefcaseImg, area: "Work"},
+    { name: "School", img: backpackImg, area: "School" },
+    { name: "Transit", img: transitImg, area: "Transit" },
+    { name: "Medical", img: hospitalImg, area: "Medical" },
+    { name: "All", img: earthImg, area: "All Locations" },
   ];
 
   const categories = [
@@ -81,20 +99,26 @@ const AccessMenu = () => {
   return (
     <>
       <div className="access-menu-page">
-        <h1 className="header-access-menu-title">
-          Accessibility Categories
-        </h1>
-        {medicalCondition && (
-                        <h1 className="header-access-menu-title">  {medicalCondition}</h1>
-                    )}
+        {medicalCondition ? (
+          <>
+            <h1 className="header-access-menu-title">{medicalCondition}</h1>
+            <h2 className="header-access-menu-title">My Accessibility Categories</h2>
+          </>
+          ) : (
+            <h1 className="header-access-menu-title">My Accessibility Categories</h1>
+        )}
         <div className="navbar-access-menu-container">
           {locations.map((location) => (
-            <div
+            <a
               key={location.name}
+              href="#"
+              aria-label={`${location.area}${selectedLocation === location.name ? " (selected)" : ""}`}
               className={`location-access-menu ${
                 selectedLocation === location.name ? "selected" : ""
               }`}
-              onClick={() => handleLocationClick(location.name)}
+              onClick={(event) => {
+                event.preventDefault();
+                handleLocationClick(location.name)}}
             >
               <img
                 src={location.img}
@@ -102,15 +126,20 @@ const AccessMenu = () => {
                 className="location-access-menu-img"
               />
               <span className="location-access-menu-name">{location.name}</span>
-            </div>
+            </a>
           ))}
         </div>
         <div className="categories-access-menu-container">
+          <ul aria-label="List of accessibilty categories" tabIndex="-1" ref={listRef}>
           {categories.map((category) => (
-            <div
+            <li className="category-access-menu-items" key={category.name}>
+            <a
               key={category.name}
+              href="#"
               className="category-access-menu"
-              onClick={(event) => checkBeforeNavigate(category.name, event)}
+              onClick={(event) => {
+                event.preventDefault();
+                checkBeforeNavigate(category.name, event)}}
             >
               <img
                 src={category.img}
@@ -120,8 +149,10 @@ const AccessMenu = () => {
               <span className="category-access-menu-names">
                 {category.name}
               </span>
-            </div>
+            </a>
+            </li>
           ))}
+          </ul>
         </div>
       </div>
     </>
