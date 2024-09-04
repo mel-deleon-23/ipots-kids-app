@@ -22,7 +22,7 @@ export default function IaccessCongratulation() {
           <h2 className="title">Welcome to iACCESS!</h2>
           <div className="d-flex flex-column justify-content-center align-items-center">
             <Link
-              to="/iaccess-profile"
+              to="/iaccess"
               state={{
                 email,
                 username,

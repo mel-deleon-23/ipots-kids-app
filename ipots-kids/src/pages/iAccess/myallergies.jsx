@@ -8,7 +8,7 @@ import upImg from "../../../public/iAccess/arrowUp.png";
 
 const MyAllergies = () => {
   const host = "http://localhost";
-  const [userId , setUserId] = useState("1");
+  const [userId , setUserId] = useState(null);
   const { user } = useContext(AuthContext);
   const [openCategory, setOpenCategory] = useState(null);
   const [allergies, setAllergies] = useState([]);
@@ -18,54 +18,58 @@ const MyAllergies = () => {
     otherMedicationAllergies: [],
   });
 //  set user id if user is signed in else navigate to signin
-  useEffect(() => {
+useEffect(() => {
+  const checkUserAndFetchAllergies = async () => {
     if (user) {
       setUserId(user.data.user_id);
-    }
-    else {
+    } else {
       navigate('/home');
+      return; // Return early if user is not available
     }
-  }, [user]);
 
-  useEffect(() => {
     const fetchAllergies = async () => {
       try {
+        const url = host + "/ipots-kids-app/ipots-server/myallergies.php";
+        
         // Fetch allergies (method=allallergies)
-        const url = host + "/ipots-kids-app/ipots-server/myallergies.php" ;
         const allergiesResponse = await axios.get(url, {
           params: {
             method: 'allallergies',
-            iaccess_id: userId ,
+            iaccess_id: userId,
           },
         });
+        console.log(allergiesResponse.data);
         setAllergies(allergiesResponse.data);
 
         // Fetch other allergies (method=otherallergies)
-        
         const otherAllergiesResponse = await axios.get(url, {
           params: {
             method: 'otherallergies',
-            iaccess_id: userId, 
+            iaccess_id: userId,
           },
         });
-       
-        // setOtherAllergies(otherAllergiesResponse.data);
-        // setOtherAllergies(otherAllergiesResponse.data[0]);
-        setOtherAllergies({
-          otherFoodAllergies:otherAllergiesResponse.data[0].other_food_allergies || '',
-          otherEnvironmentalAllergies: otherAllergiesResponse.data[0].other_environmental_allergies || '',
-          otherMedicationAllergies: otherAllergiesResponse.data[0].other_medication_allergies || '',
-        });
-        console.log( otherAllergies);
+        console.log(otherAllergiesResponse.data);
+        // Ensure valid data structure before accessing properties
+        
+          setOtherAllergies({
+            otherFoodAllergies: otherAllergiesResponse.data[0].other_food_allergies || '',
+            otherEnvironmentalAllergies: otherAllergiesResponse.data[0].other_environmental_allergies || '',
+            otherMedicationAllergies: otherAllergiesResponse.data[0].other_medication_allergies || '',
+          });
+        // } else {
+        //   console.error('Invalid data structure for otherAllergiesResponse:', otherAllergiesResponse.data);
+        // }
 
       } catch (error) {
         console.error('Error fetching allergies:', error);
       }
     };
 
-    fetchAllergies();
-  }, []);
+    await fetchAllergies();
+  };
 
+  checkUserAndFetchAllergies();
+}, [user, userId]);
   const toggleCategory = (category) => {
     setOpenCategory(openCategory === category ? null : category);
   };
@@ -84,12 +88,17 @@ const MyAllergies = () => {
           </div>
           {openCategory === 'food' && (
             <div className="allergies-category-content">
-              {allergies.filter(allergy => allergy.type === 'food').map(allergy => (
-                <div key={allergy.id} className="allergy-item">{allergy.title}</div>
-              ))}
-              {otherAllergies.otherFoodAllergies.split(',').map((allergy, index) => (
-                <div key={`other-food-${index}`} className="allergy-item">{allergy}</div>
-              ))}
+              {allergies.length > 0 && (
+                allergies.filter(allergy => allergy.type === 'food').map(allergy => (
+                  <div key={allergy.id} className="allergy-item">{allergy.title}</div>
+                ))
+              )}
+
+              {otherAllergies.otherFoodAllergies && otherAllergies.otherFoodAllergies.trim() !== "" && (
+                otherAllergies.otherFoodAllergies.split(',').map((allergy, index) => (
+                  <div key={`other-food-${index}`} className="allergy-item">{allergy.trim()}</div>
+                ))
+              )}
             </div>
           )}
         </div>
@@ -100,12 +109,17 @@ const MyAllergies = () => {
           </div>
           {openCategory === 'environmental' && (
             <div className="allergies-category-content">
-              {allergies.filter(allergy => allergy.type === 'environmental').map(allergy => (
-                <div key={allergy.id} className="allergy-item">{allergy.title}</div>
-              ))}
-              {otherAllergies.otherEnvironmentalAllergies.split(',').map((allergy, index) => (
-                <div key={`other-environmental-${index}`} className="allergy-item">{allergy}</div>
-              ))}
+              {allergies.length > 0 && (
+                allergies.filter(allergy => allergy.type === 'environmental').map(allergy => (
+                  <div key={allergy.id} className="allergy-item">{allergy.title}</div>
+                ))
+              )}
+
+              {otherAllergies.otherEnvironmentalAllergies && otherAllergies.otherEnvironmentalAllergies.trim() !== "" && (
+                otherAllergies.otherEnvironmentalAllergies.split(',').map((allergy, index) => (
+                  <div key={`other-environmental-${index}`} className="allergy-item">{allergy.trim()}</div>
+                ))
+              )}
             </div>
           )}
         </div>
@@ -116,12 +130,17 @@ const MyAllergies = () => {
           </div>
           {openCategory === 'medication' && (
             <div className="allergies-category-content">
-              {allergies.filter(allergy => allergy.type === 'medication').map(allergy => (
-                <div key={allergy.id} className="allergy-item">{allergy.title}</div>
-              ))}
-              {otherAllergies.otherMedicationAllergies.split(',').map((allergy, index) => (
-                <div key={`other-medication-${index}`} className="allergy-item">{allergy}</div>
-              ))}
+              {allergies.length > 0 && (
+                allergies.filter(allergy => allergy.type === 'medication').map(allergy => (
+                  <div key={allergy.id} className="allergy-item">{allergy.title}</div>
+                ))
+              )}
+
+              {otherAllergies.otherMedicationAllergies && otherAllergies.otherMedicationAllergies.trim() !== "" && (
+                otherAllergies.otherMedicationAllergies.split(',').map((allergy, index) => (
+                  <div key={`other-medication-${index}`} className="allergy-item">{allergy.trim()}</div>
+                ))
+              )}
             </div>
           )}
         </div>
