@@ -58,6 +58,7 @@ import MyAccessMenu from "./pages/iAccess/myaccessmenu";
 import Dictionary from "./pages/iAccess/dictionary";
 import DictionaryReview from "./pages/iAccess/dictionaryreview";
 import MyAllergies from "./pages/iAccess/myallergies";
+import LegalPage from "./pages/iAccess/legalpage";
 
 function App() {
   return (
@@ -165,6 +166,7 @@ function App() {
               <Route path="/iaccess-success" element={<IaccessCongrat />} />
               <Route path="/iaccess-profile" element={<IaccessProfile />} />
               {/* iaccess Routes */}
+              <Route path="/legalpage" element={<LegalPage />} />
               <Route path="/iaccess" element={<IAccessHomePage />} />
               <Route path="/accessmenu" element={<AccessMenu />} />
               <Route path="/accommodation" element={<Accommodation />} />
