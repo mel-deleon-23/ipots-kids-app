@@ -1,4 +1,4 @@
-import { useContext ,useEffect, useState } from "react";
+import { useContext ,useEffect, useState , useRef } from "react";
 import { useLocation , useNavigate } from "react-router-dom";
 import axios from "axios";
 import * as CiIcons from "react-icons/ci";
@@ -6,6 +6,7 @@ import * as PiIcons from "react-icons/pi";
 import unsaveImg from '../../../public/iAccess/unsave.png';
 import saveImg from '../../../public/iAccess/save.png';
 import "../../styles/iAccess/medicalconditreview.css";
+import caduceusImg from "../../../public/iAccess/Caduceus.png";
 import Popup from "reactjs-popup";
 import { AuthContext } from "../Auth";
 
@@ -45,6 +46,23 @@ const MedicalConditsReview = () => {
       setUserId(user.data.user_id);
     }
   }, [user]);
+
+  const listRef = useRef(null); // Create a ref for the list
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key.toLowerCase() === "l") {
+        if (listRef.current) {
+          listRef.current.focus(); // Focus the list when "L" is pressed
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchConditions = async () => {
@@ -116,13 +134,11 @@ const MedicalConditsReview = () => {
     <>
       <div className="all-page">
         <div className="title-page">
-          <span className="icon">
-            <img src="../../public/Caduceus.png" className="caduceus" />
-          </span>
-          <span className="name-page">Medical Conditions</span>
+            <img src={caduceusImg} alt="Medical Conditions" className="medical-condit-logo" />
+          <h1 className="name-page"> Medical Conditions</h1>
         </div>
         <div className="letter-area">
-          <h1 className="letter-style">{letter}</h1>
+          <div className="letter-style">{letter}</div>
         </div>
         <div className="search-bar-container">
           <div className="search-bar">
@@ -133,45 +149,71 @@ const MedicalConditsReview = () => {
               placeholder="Search" 
               value={searchTerm}
               onChange={handleSearchChange}
+              aria-label={`Search with ${letter}`}
             />
           </div>
         </div>
         <div className="conditions-container">
         {filteredConditions.length > 0 ? (
-            filteredConditions.map((condition) => (
-              <div key={condition.id} className="condition-box">
+          <ul className="conditions-list" aria-label={`List of conditions start with ${letter}`} tabIndex="-1" ref={listRef}>
+            {filteredConditions.map((condition) => (
+              <li key={condition.id} className="condition-box">
                 <div className="condition" onClick={() => handleConditionClick(condition)}>{condition.term}</div>
                 <div className="icons">
-                  
-                  {/* bookmark works only if user is logged in */}
-                  {userId ? (
-                    isBookmarked(condition.id) ? (
-                        <img
-                        className="img"
-                        src={saveImg}
-                        onClick={() => handleUnbookmark(condition.id)}
-                        alt="Bookmarked"
-                        />
-                    ) : (
-                        <img
-                        className="img"
-                        src={unsaveImg}
-                        onClick={() => handleBookmark(condition.id)}
-                        alt="Not Bookmarked"
-                        />
-                    )
-                    ) : (
-                        // else popup for signup appears
+                {/* bookmark works only if user is logged in */}
+                {userId ? (
+                isBookmarked(condition.id) ? (
+                  <a 
+                  href="#" 
+                  onClick={(e) => {
+                    e.preventDefault(); 
+                    handleUnbookmark(condition.id);
+                  }}
+                  aria-label="Click to remove bookmark from this item"
+                >
+                  <img
+                    className="bookmark-img"
+                    src={saveImg}
+                    alt="Save"
+                  />
+                </a>
+                ) : (
+                  <a 
+                    href="#" 
+                    onClick={(e) => {
+                      e.preventDefault(); 
+                      handleBookmark(condition.id);
+                    }}
+                    aria-label="Click to bookmark this item"
+                  >
                     <img
-                        className="img"
-                        src={unsaveImg}
-                        onClick={() => openpopup()}
-                        alt="Not Bookmarked"
+                      className="unbookmarkimg"
+                      src={unsaveImg}
+                      alt="UnSave"
                     />
-                  )}
+                  </a>
+                )
+                ):(
+                     // else popup for signup appears
+                     <a 
+                    href="#" 
+                    onClick={(e) => {
+                      e.preventDefault(); 
+                      () => openpopup()
+                    }}
+                    aria-label="Click to bookmark this item"
+                  >
+                    <img
+                      className="unbookmarkimg"
+                      src={unsaveImg}
+                      alt="UnSave"
+                    />
+                  </a>
+                )}
                 </div>
-              </div>
-            ))
+              </li>
+            ))}
+          </ul>
           ) : (
             <p className='Error'>No medical conditions match your search.</p>
           )}
