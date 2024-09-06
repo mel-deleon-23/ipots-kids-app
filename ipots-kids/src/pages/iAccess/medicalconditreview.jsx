@@ -12,7 +12,7 @@ import { AuthContext } from "../Auth";
 
 const MedicalConditsReview = () => {
   const host = "http://localhost";
-  const [userId , setUserId] = useState("1");
+  const [userId , setUserId] = useState(null);
   const { user } = useContext(AuthContext);
   const [conditions, setConditions] = useState([]);
   const [bookmarks, setBookmarks] = useState([]);

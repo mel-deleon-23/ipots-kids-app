@@ -18,7 +18,7 @@ import saveImg from '../../../public/iAccess/save.png';
 
 const MedicalCondits = () => {
   const host = "http://localhost";
-  const [userId , setUserId] = useState("1");
+  const [userId , setUserId] = useState(null);
   const { user } = useContext(AuthContext); 
   const locat = useLocation();
   const queryParams = new URLSearchParams(locat.search);

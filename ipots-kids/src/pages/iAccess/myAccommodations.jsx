@@ -31,8 +31,8 @@ import medicationImg from "../../../public/iAccess/12-medication.png";
 
 const myAccommodations = () => {
     const host = "http://localhost";
-    const [userId , setUserId] = useState("1");
-  const { user } = useContext(AuthContext);
+    const [userId , setUserId] = useState(null);
+    const { user } = useContext(AuthContext);
     const [accommodations, setAccommodations] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
     const locat = useLocation();

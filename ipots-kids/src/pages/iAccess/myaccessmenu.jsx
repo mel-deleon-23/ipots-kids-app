@@ -41,7 +41,7 @@ import grayMedicationImg from "../../../public/iAccess/12-medication-grey.png";
 
 const AccessMenu = () => {
   const locat = useLocation(); // Get the current location object
-  const [userId , setUserId] = useState("1");
+  const [userId , setUserId] = useState(null);
   const { user } = useContext(AuthContext);
   const queryParams = new URLSearchParams(locat.search); // Parse the query string
   const location = queryParams.get("location");
