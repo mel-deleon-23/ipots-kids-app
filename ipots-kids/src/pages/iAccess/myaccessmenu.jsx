@@ -1,4 +1,4 @@
-import React, { useContext,useState ,useEffect } from "react";
+import React, { useContext,useState ,useEffect , useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import axios from 'axios';
@@ -59,6 +59,22 @@ useEffect(() => {
     navigate('/home');
   }
 }, [user]);
+const listRef = useRef(null); // Create a ref for the list
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key.toLowerCase() === "l") {
+        if (listRef.current) {
+          listRef.current.focus(); // Focus the list when "L" is pressed
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
   
 
 useEffect(() => {
@@ -112,77 +128,95 @@ const checkBeforeNavigate = (category, event) => {
 };
 
 const locations = [
-  { name: "Home", img: homeImg },
-  { name: "Work", img: briefcaseImg },
-  { name: "School", img: backpackImg },
-  { name: "Transit", img: transitImg },
-  { name: "Medical", img: hospitalImg },
-  { name: "All", img: earthImg },
+  { name: "Home", img: homeImg, area: "Home" },
+  { name: "Work", img: briefcaseImg, area: "Work"},
+  { name: "School", img: backpackImg, area: "School" },
+  { name: "Transit", img: transitImg, area: "Transit" },
+  { name: "Medical", img: hospitalImg, area: "Medical" },
+  { name: "All", img: earthImg, area: "All Locations" },
 ];
 
 const categories = [
-  { name: "Mobility", img: mobilityImg, grayImg: grayMobilityImg },
+  { name: "Vision", img: visionImg, grayImg: grayVisionImg },
   { name: "Hearing", img: earImg, grayImg: grayEarImg },
+  { name: "Mobility", img: mobilityImg, grayImg: grayMobilityImg },
   { name: "Cognitive", img: brainImg, grayImg: grayBrainImg },
-  { name: "Mental Health", img: mentalImg, grayImg: grayMentalImg},
   { name: "Sensory", img: sensorImg, grayImg: graySensorImg},
   { name: "Allergy", img: allergyImg, grayImg: grayAllergyImg},
-  { name: "Vision", img: visionImg, grayImg: grayVisionImg },
-  { name: "Pain", img: painImg, grayImg: grayPainImg },
-  { name: "Digestion", img: stomachImg, grayImg: grayStomachImg },
   { name: "Safety", img: safetyImg, grayImg: graySafetyImg },
+  { name: "Digestion", img: stomachImg, grayImg: grayStomachImg },
+  { name: "Pain", img: painImg, grayImg: grayPainImg },
   { name: "Medical Devices", img: medicalImg, grayImg: grayMedicalImg },
+  { name: "Mental Health", img: mentalImg, grayImg: grayMentalImg},
   { name: "Medicine", img: medicationImg, grayImg: grayMedicationImg },
 ];
 
 return (
-  <div className="access-menu-page">
-    <h1 className="header-access-menu-title">
-      My Accessibility Categories
-    </h1>
-    {medicalCondition && (
-      <h1 className="medical-condition">{medicalCondition}</h1>
-    )}
-    <div className="navbar-access-menu-container">
-      {locations.map((loc) => (
-        <div
-          key={loc.name}
-          className={`location-access-menu ${
-            selectedLocation === loc.name ? "selected" : ""
-          }`}
-          onClick={() => handleLocationClick(loc.name)}
-        >
-          <img
-            src={loc.img}
-            alt={loc.name}
-            className="location-access-menu-img"
-          />
-          <span className="location-access-menu-name">{loc.name}</span>
+  <>
+      <div className="access-menu-page">
+        {medicalCondition ? (
+          <>
+            <h1 className="header-access-menu-title">{medicalCondition}</h1>
+            <h2 className="header-access-menu-title">My Accessibility Categories</h2>
+          </>
+        ) : (
+          <h1 className="header-access-menu-title">My Accessibility Categories</h1>
+        )}
+       
+        <div className="navbar-access-menu-container">
+          {locations.map((location) => (
+            <a
+              key={location.name}
+              href="#"
+              aria-label={`${location.area}${selectedLocation === location.name ? " (selected)" : ""}`}
+              className={`location-access-menu ${
+                selectedLocation === location.name ? "selected" : ""
+              }`}
+              onClick={(event) => {
+                event.preventDefault();
+                handleLocationClick(location.name)}}
+            >
+              <img
+                src={location.img}
+                alt={location.name}
+                className="location-access-menu-img"
+              />
+              <span className="location-access-menu-name">{location.name}</span>
+            </a>
+          ))}
         </div>
-      ))}
-    </div>
-    <div className="categories-access-menu-container">
-      {categories.map((category) => {
-        const isCategoryAvailable = myAccessibilityCat.includes(category.name);
-        return (
-          <div
-            key={category.name}
-            className={`category-access-menu ${isCategoryAvailable ? "" : "category-access-gray-menu"}`}
-            onClick={(event) => isCategoryAvailable && checkBeforeNavigate(category.name, event)}
-          >
-            <img
-              src={isCategoryAvailable ? category.img : category.grayImg}
-              alt={category.name}
-              className="category-access-menu-icon"
-            />
-            <span className="category-access-menu-names">
-              {category.name}
-            </span>
-          </div>
-        );
-      })}
-    </div>
-  </div>
+        <div className="categories-access-menu-container">
+        <ul aria-label="List of accessibilty categories" tabIndex="-1" ref={listRef}>
+          {
+            categories.map((category) => {
+               const isCategoryAvailable = myAccessibilityCat.includes(category.name);
+               return(
+              <li key={category.name} className="category-access-menu-items" aria-hidden={!isCategoryAvailable}>
+            <a
+              key={category.name}
+              href="#"
+              className={`category-access-menu ${isCategoryAvailable ? "" : "category-access-gray-menu"}`}
+              onClick={(event) => {
+                event.preventDefault();
+                isCategoryAvailable && checkBeforeNavigate(category.name, event)}}
+              tabIndex={isCategoryAvailable ? 0 : -1}
+            >
+              <img
+                src={isCategoryAvailable ? category.img : category.grayImg}
+                alt={category.name}
+                className="category-access-menu-icon"
+              />
+              <span className="category-access-menu-names">
+                {category.name}
+              </span>
+            </a>
+            </li>
+             ); }
+          )}
+          </ul>
+        </div>
+      </div>
+    </>
 );
 };
 

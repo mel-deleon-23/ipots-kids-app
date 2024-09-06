@@ -1,4 +1,4 @@
-import React, { useContext ,useState, useEffect } from 'react';
+import React, { useContext ,useState, useEffect ,useRef} from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
@@ -53,6 +53,23 @@ useEffect(() => {
       navigate('/home');
     }
   }, [user]);
+
+  const listRef = useRef(null); // Create a ref for the list
+
+    useEffect(() => {
+      const handleKeyPress = (event) => {
+        if (event.key.toLowerCase() === "l") {
+          if (listRef.current) {
+            listRef.current.focus(); // Focus the list when "L" is pressed
+          }
+        }
+      };
+  
+      window.addEventListener("keydown", handleKeyPress);
+      return () => {
+        window.removeEventListener("keydown", handleKeyPress);
+      };
+    }, []);
 
     useEffect(() => {
         const bookmark = async () => {
@@ -234,9 +251,35 @@ useEffect(() => {
                             <div className={`item-header ${selectedItem === accommodation.id ? 'expanded' : ''}`}>
                                 <span onClick={() => handleItemClick(accommodation)}>{accommodation.accommodation}</span>
                                 {isBookmarked(accommodation.id) ? (                                     
-                                    <img className="img"src={saveImg} onClick={() => handleUnbookmark(accommodation.id)} alt="BookMarked"  />
-                                ) : (
-                                    <img className="img" src={unsaveImg} onClick={() => handleBookmark(accommodation.id)} alt="Not Bookmarked"  />
+                                   <a 
+                                   href="#" 
+                                   onClick={(e) => {
+                                     e.preventDefault(); 
+                                     handleUnbookmark(accommodation.id);
+                                   }}
+                                   aria-label="Click to remove bookmark from this item"
+                                 >
+                                   <img
+                                     className="bookmark-img"
+                                     src={saveImg}
+                                     alt="Save"
+                                   />
+                                 </a>
+                              ) : (
+                                  <a 
+                                      href="#" 
+                                      onClick={(e) => {
+                                      e.preventDefault(); 
+                                      handleBookmark(accommodation.id);
+                                      }}
+                                      aria-label="Click to bookmark this item"
+                                  >
+                                      <img
+                                      className="unbookmarkimg"
+                                      src={unsaveImg}
+                                      alt="UnSave"
+                                      />
+                                  </a>
                                 )}
                                
                             </div>
