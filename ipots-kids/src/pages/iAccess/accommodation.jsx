@@ -116,7 +116,7 @@ const Accommodation2 = () => {
   }, [location, category, userId]);
 
   const handleBookmark = async (accommodationId) => {
-    const url = host + "/iPots/iAccess-Server/myAccessibility.php";
+    const url = host + "/ipots-kids-app/ipots-server/myAccessibility.php";
     const params = {
       userId: userId,
       accommodationId: accommodationId,
@@ -128,7 +128,7 @@ const Accommodation2 = () => {
   };
 
   const handleUnbookmark = async (accommodationId) => {
-    const url = host + "/iPots/iAccess-Server/myAccessibility.php";
+    const url = host + "/ipots-kids-app/ipots-server/myAccessibility.php";
     const params = {
       userId: userId,
       accommodationId: accommodationId,
@@ -146,7 +146,7 @@ const Accommodation2 = () => {
   const handleLocationClick = async (location) => {
     setSelectedLocation(location);
     try {
-      const url = host + "/iPots/iAccess-Server/accommodation.php";
+      const url = host + "/ipots-kids-app/ipots-server/accommodation.php";
       const response = await axios.get(url, {
         params: { category: category, location: location },
       });

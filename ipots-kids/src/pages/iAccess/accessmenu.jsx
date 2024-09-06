@@ -24,6 +24,7 @@ import mentalImg from "../../../public/iAccess/11-mental health.png";
 import medicationImg from "../../../public/iAccess/12-medication.png";
 
 const AccessMenu = () => {
+  
   const locat = useLocation(); // Get the current location object
   const queryParams = new URLSearchParams(locat.search); // Parse the query string
   const location = queryParams.get("location");

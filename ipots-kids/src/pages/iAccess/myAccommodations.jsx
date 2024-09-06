@@ -74,7 +74,7 @@ useEffect(() => {
     useEffect(() => {
         const bookmark = async () => {
             // Fetch the user's accessibilty
-            const url = host + "/ipots-kids-app/ipots-server/myAccessibility.php?method=All&userId="+userId ; 
+            const url = host + "/ipots-kids-app/ipots-server/myAccessibility.php?method=All&userId="+ user.data.user_id ; 
             const response = await axios.get(url) 
             if(Array.isArray(response.data)){
                 setBookmarks(response.data);
@@ -86,7 +86,7 @@ useEffect(() => {
             try {
                 const params = {
                     method: 'showAll',
-                    userId: userId,
+                    userId: user.data.user_id,
                     location: location,
                     category:category
                 };

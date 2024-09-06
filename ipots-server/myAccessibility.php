@@ -6,7 +6,7 @@ header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-W
 header('Content-Type: application/json');
 
 // Include config file
-require_once('includes/database.php');
+require_once('include/database.php');
 // include('includes/config.php');
 
 

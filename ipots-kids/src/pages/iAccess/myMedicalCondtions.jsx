@@ -1,4 +1,4 @@
-import { useContext , useState, useEffect } from "react";
+import { useContext , useState, useEffect , useRef} from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../Auth";
@@ -11,13 +11,13 @@ import backpackImg from "../../../public/iAccess/03-school.png";
 import transitImg from "../../../public/iAccess/04-transit.png";
 import hospitalImg from "../../../public/iAccess/05-medical.png";
 import earthImg from "../../../public/iAccess/06-all.png";
-
+import caduceusImg from "../../../public/iAccess/Caduceus.png";
 import unsaveImg from "../../../public/iAccess/unsave.png";
 import saveImg from "../../../public/iAccess/save.png";
 
 const myMedicalCondits = () => {
   const host = "http://localhost";
-  const [userId , setUserId] = useState("1");
+  const [userId , setUserId] = useState(null);
   const { user } = useContext(AuthContext);
   const locat = useLocation();
   const queryParams = new URLSearchParams(locat.search);
@@ -28,6 +28,22 @@ const myMedicalCondits = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [bookmarks, setBookmarks] = useState([]);
   const navigate = useNavigate();
+  const listRef = useRef(null); // Create a ref for the list
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key.toLowerCase() === "l") {
+        if (listRef.current) {
+          listRef.current.focus(); // Focus the list when "L" is pressed
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
 
 //  set user id if user is signed in else navigate to signin
   useEffect(() => {
@@ -44,19 +60,19 @@ const myMedicalCondits = () => {
         const url =
           host +
           "/ipots-kids-app/ipots-server/myMedicalCondition.php?method=showAll&userId=" +
-          userId;
+          user.data.user_id;
         const response = await axios.get(url);
         setMedicalConditions(response.data);
-        console.log(response.data);
+        // console.log(response.data);
       } catch (error) {
-        console.error("Error fetching medical conditions:", error);
+        // console.error("Error fetching medical conditions:", error);
       }
     };
     const fetchBookmarks = async () => {
       const url =
         host +
         "/ipots-kids-app/ipots-server/myMedicalCondition.php?method=All&userId=" +
-        userId;
+        user.data.user_id;
       const response = await axios.get(url);
       if (Array.isArray(response.data)) {
         setBookmarks(response.data);
@@ -70,7 +86,7 @@ const myMedicalCondits = () => {
   const handleBookmark = async (conditionId) => {
     const url = host + "/ipots-kids-app/ipots-server/myMedicalCondition.php";
     const params = {
-      userId: userId,
+      userId: user.data.user_id,
       medicalConditionId: conditionId,
       method: "Add",
     };
@@ -82,7 +98,7 @@ const myMedicalCondits = () => {
   const handleUnbookmark = async (conditionId) => {
     const url = host + "/ipots-kids-app/ipots-server/myMedicalCondition.php";
     const params = {
-      userId: userId,
+      userId: user.data.user_id,
       medicalConditionId: conditionId,
       method: "Delete",
     };
@@ -114,31 +130,35 @@ const myMedicalCondits = () => {
   );
 
   const locations = [
-    { name: "Home", img: homeImg },
-    { name: "Work", img: briefcaseImg },
-    { name: "School", img: backpackImg },
-    { name: "Transit", img: transitImg },
-    { name: "Medical", img: hospitalImg },
-    { name: "All", img: earthImg },
+    { name: "Home", img: homeImg, area: "Home" },
+    { name: "Work", img: briefcaseImg, area: "Work"},
+    { name: "School", img: backpackImg, area: "School" },
+    { name: "Transit", img: transitImg, area: "Transit" },
+    { name: "Medical", img: hospitalImg, area: "Medical" },
+    { name: "All", img: earthImg, area: "All Locations" },
   ];
 
   return (
     <>
       <div className="total-page">
-        <div className="page-title">
-          <span className="logo">
-            <img src="../../../public/iAccess/Caduceus.png" className="caduceus" />
-          </span>
-          <span className="page-name">My Medical Conditions</span>
+
+        <div className="my-medical-condit-title">
+            <img src={caduceusImg} alt="Medical Conditions" className="my-medical-condit-logo" />
+          <h1 className="my-medical-condit-name">My Medical Conditions</h1>
         </div>
+
         <div className="nav-container">
           {locations.map((location) => (
-            <div
+            <a
               key={location.name}
+              href="#"
+              aria-label={`${location.area}${selectedLocation === location.name ? " (selected)" : ""}`}
               className={`location-condits ${
                 selectedLocation === location.name ? "selected" : ""
               }`}
-              onClick={() => handleLocationClick(location.name)}
+              onClick={(event) => {
+                event.preventDefault();
+                handleLocationClick(location.name)}}
             >
               <img
                 src={location.img}
@@ -146,7 +166,7 @@ const myMedicalCondits = () => {
                 className="location-condits-img"
               />
               <span className="location-condits-name">{location.name}</span>
-            </div>
+            </a>
           ))}
         </div>
         <div className="search-bar-container">
@@ -158,14 +178,16 @@ const myMedicalCondits = () => {
               placeholder="Search"
               value={searchTerm}
               onChange={handleSearchChange}
+              aria-label="Search for my medical conditions"
             />
           </div>
         </div>
 
         <div className="conditions-container">
           {filteredConditions.length > 0 ? (
-            filteredConditions.map((condition) => (
-              <div key={condition.id} className="condition-box">
+            <ul className="conditions-list" aria-label="List of my medical conditions" tabIndex="-1" ref={listRef}>
+            {filteredConditions.map((condition) => (
+               <li key={condition.id} className="condition-box">
                 <div
                   className="condition"
                   onClick={() => handleConditionClick(condition)}
@@ -174,30 +196,47 @@ const myMedicalCondits = () => {
                 </div>
                 <div className="icons">
                   {isBookmarked(condition.id) ? (
+                    <a 
+                    href="#" 
+                    onClick={(e) => {
+                      e.preventDefault(); 
+                      handleUnbookmark(condition.id);
+                    }}
+                    aria-label="Click to remove bookmark from this item"
+                  >
                     <img
-                      className="img"
+                      className="bookmark-img"
                       src={saveImg}
-                      onClick={() => handleUnbookmark(condition.id)}
-                      alt="Bookmarked"
+                      alt="Save"
                     />
+                  </a>
                   ) : (
+                    <a 
+                    href="#" 
+                    onClick={(e) => {
+                      e.preventDefault(); 
+                      handleBookmark(condition.id);
+                    }}
+                    aria-label="Click to bookmark this item"
+                  >
                     <img
-                      className="img"
+                      className="unbookmarkimg"
                       src={unsaveImg}
-                      onClick={() => handleBookmark(condition.id)}
-                      alt="Not Bookmarked"
+                      alt="UnSave"
                     />
+                  </a>
                   )}
                 </div>
-              </div>
-            ))
+              </li>
+            ))}
+            </ul>
           ) : (
             <p className="Error">No medical conditions match "{searchTerm}".</p>
           )}
         </div>
       </div>
-    </>
-  );
+    </>  
+);
 };
 
 export default myMedicalCondits;

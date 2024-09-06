@@ -48,6 +48,7 @@ const HomePage = () => {
   useEffect(() => {
     if (user) {
       console.log (user);
+      console.log (user.data.user_id);
       setUserId(user.data.user_id);
     }
   }, [user]); // Update userId only when the user changes

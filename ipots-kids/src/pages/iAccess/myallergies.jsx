@@ -52,13 +52,6 @@ const MyAllergies = () => {
 //  set user id if user is signed in else navigate to signin
 useEffect(() => {
   const checkUserAndFetchAllergies = async () => {
-    // if (user) {
-    //   setUserId(user.data.user_id);
-    // } else {
-    //   navigate('/home');
-    //   return; // Return early if user is not available
-    // }
-
     const fetchAllergies = async () => {
       try {
         const url = host + "/ipots-kids-app/ipots-server/myallergies.php";
@@ -67,7 +60,7 @@ useEffect(() => {
         const allergiesResponse = await axios.get(url, {
           params: {
             method: 'allallergies',
-            iaccess_id: userId,
+            iaccess_id: user.data.user_id,
           },
         });
         console.log(allergiesResponse.data);
@@ -77,16 +70,17 @@ useEffect(() => {
         const otherAllergiesResponse = await axios.get(url, {
           params: {
             method: 'otherallergies',
-            iaccess_id: userId,
+            iaccess_id: user.data.user_id,
           },
         });
+        
         console.log(otherAllergiesResponse.data);
         // Ensure valid data structure before accessing properties
         
           setOtherAllergies({
-            otherFoodAllergies: otherAllergiesResponse.data[0].other_food_allergies || '',
-            otherEnvironmentalAllergies: otherAllergiesResponse.data[0].other_environmental_allergies || '',
-            otherMedicationAllergies: otherAllergiesResponse.data[0].other_medication_allergies || '',
+            otherFoodAllergies: otherAllergiesResponse.data.other_food_allergies || '',
+            otherEnvironmentalAllergies: otherAllergiesResponse.data.other_environmental_allergies || '',
+            otherMedicationAllergies: otherAllergiesResponse.data.other_medication_allergies || '',
           });
         // } else {
         //   console.error('Invalid data structure for otherAllergiesResponse:', otherAllergiesResponse.data);

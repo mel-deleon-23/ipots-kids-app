@@ -43,12 +43,21 @@ if ($method == 'allallergies' && $iaccess_id) {
     $stmt->execute();
     $result = $stmt->get_result();
 
-    $otherAllergies = [];
-    while ($row = $result->fetch_assoc()) {
-        $otherAllergies[] = $row;
+    if ($result->num_rows > 0) {
+        // Fetch other allergies if available
+        $otherAllergies = $result->fetch_assoc();
+        echo json_encode($otherAllergies);
+    } else {
+        // Return default response if no rows are found
+        $defaultOtherAllergies = [
+            "other_food_allergies" => null,
+            "other_environmental_allergies" => null,
+            "other_medication_allergies" => null,
+            "other_medical_conditions" => null
+        ];
+        echo json_encode([$defaultOtherAllergies]);
     }
 
-    echo json_encode($otherAllergies);
 
 } else {
     echo json_encode(["error" => "Invalid method or missing parameters"]);

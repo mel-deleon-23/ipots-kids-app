@@ -40,6 +40,7 @@ import grayMedicationImg from "../../../public/iAccess/12-medication-grey.png";
 
 
 const AccessMenu = () => {
+  const host = "http://localhost";
   const locat = useLocation(); // Get the current location object
   const [userId , setUserId] = useState(null);
   const { user } = useContext(AuthContext);
@@ -80,10 +81,11 @@ const listRef = useRef(null); // Create a ref for the list
 useEffect(() => {
   // for fetching data from database when page loads 
   const fetchmyAccessibilityCat = async () => {
+    
       try {
           const params = {
               method: 'Category',
-              userId: userId,
+              userId: user.data.user_id,
               location: location
           };
           
@@ -91,8 +93,8 @@ useEffect(() => {
           if (medicalCondition) {
               params.medicalCondition = medicalCondition;
           }
-          
-          const url = host + '/iPots/iAccess-Server/myAccessibility.php';
+          // console.log(params);
+          const url = host + '/ipots-kids-app/ipots-server/myAccessibility.php';
           const response = await axios.get(url, { params });
           
           setMyAccessibilityCat(response.data.map(item => item.category));
@@ -103,10 +105,33 @@ useEffect(() => {
         }
   };
   fetchmyAccessibilityCat();
-}, [location]);
+}, [location,user]);
 
 const handleLocationClick = (location) => {
   setSelectedLocation(location);
+  const fetchmyAccessibilityCat = async () => {
+    try {
+        const params = {
+            method: 'Category',
+            userId: userId,
+            location: location
+        };
+        // console.log(params);
+        // Checking if the user is coming from the medical page
+        if (medicalCondition) {
+            params.medicalCondition = medicalCondition;
+        }
+        
+        const url = host + '/ipots-kids-app/ipots-server/myAccessibility.php';
+        const response = await axios.get(url, { params });
+        
+        setMyAccessibilityCat(response.data.map(item => item.category));
+        // console.log(response.data.map(item => item.category));
+        
+      } catch (error) {
+        console.error("Error fetching Accommodation:", error);
+      }
+};
   fetchmyAccessibilityCat();
 };
 
