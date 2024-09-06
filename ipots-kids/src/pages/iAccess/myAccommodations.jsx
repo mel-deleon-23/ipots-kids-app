@@ -114,7 +114,7 @@ useEffect(() => {
      const handleBookmark = async (accommodationId) => {
         const url = host + "/ipots-kids-app/ipots-server/myAccessibility.php";
         const params ={
-            userId: userId, 
+            userId: user.data.user_id, 
             accommodationId: accommodationId,
             method: 'Add'
         } 
@@ -127,7 +127,7 @@ useEffect(() => {
     const handleUnbookmark =  async (accommodationId) => {
         const url = host + "/ipots-kids-app/ipots-server/myAccessibility.php";
         const params = {
-            userId: userId,
+            userId: user.data.user_id,
             accommodationId: accommodationId,
             method:"Delete"
         }
@@ -149,7 +149,7 @@ useEffect(() => {
             const response = await axios.get(url , {
                 params: {
                     method: 'showAll',
-                    userId: userId,
+                    userId: user.data.user_id,
                     location: location,
                     category:category
                 },

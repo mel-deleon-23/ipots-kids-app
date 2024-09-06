@@ -77,7 +77,7 @@ const MedicalCondits = () => {
       }
     };
     const fetchBookmarks = async () => {
-      const url = host + "/ipots-kids-app/ipots-server/myMedicalCondition.php?method=All&userId=" + userId; 
+      const url = host + "/ipots-kids-app/ipots-server/myMedicalCondition.php?method=All&userId=" + user.data.user_id; 
       const response = await axios.get(url);
       if (Array.isArray(response.data)) {
         setBookmarks(response.data);
@@ -91,7 +91,7 @@ const MedicalCondits = () => {
   const handleBookmark = async (conditionId) => {
     const url = host + "/ipots-kids-app/ipots-server/myMedicalCondition.php";
     const params = {
-      userId: userId, 
+      userId: user.data.user_id, 
       medicalConditionId: conditionId,
       method: 'Add'
     };
@@ -103,7 +103,7 @@ const MedicalCondits = () => {
   const handleUnbookmark = async (conditionId) => {
     const url = host + "/ipots-kids-app/ipots-server/myMedicalCondition.php";
     const params = {
-      userId: userId,
+      userId: user.data.user_id,
       medicalConditionId: conditionId,
       method: "Delete"
     };

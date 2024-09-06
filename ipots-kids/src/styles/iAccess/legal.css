@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+.accordion {
+  --bs-accordion-btn-bg: #d9d9d9;
+  --bs-accordion-active-bg: #0fc0fc;
+  --bs-accordion-bg: #0fc0fc;
+  padding: 60px 171px 103px;
+}
+.accordion-button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  font-weight: 700;
+}
+.accordion-button:not(.collapsed) {
+  box-shadow: none;
+  font-size: 40px;
+  --bs-accordion-active-color: black;
+}
+.accordion-item {
+  margin-top: 24px;
+  border-radius: 10px;
+  --bs-accordion-border-radius: 10px;
+}
+
+.legal-body {
+  display: flex;
+  flex-direction: column;
+  padding: 97px 171px 0px;
+}
+.legal-body-title {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 40px;
+  font-family: "Inter", sans-serif;
+}
+.legal-body-text {
+  font-family: "Inter", sans-serif;
+  font-size: 25px;
+}
+.legal-header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.legal-header-title {
+  font-weight: bold;
+  font-size: 60px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  padding-left: 18px;
+}

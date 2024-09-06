@@ -113,7 +113,7 @@ const handleLocationClick = (location) => {
     try {
         const params = {
             method: 'Category',
-            userId: userId,
+            userId: user.data.user_id,
             location: location
         };
         // console.log(params);
