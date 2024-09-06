@@ -125,7 +125,7 @@ input {
   margin-top: 2.5rem;
   width: 100%;
   max-width: 47.5rem;
-  height: 4rem;
+  height: auto;
 }
 .item-list{
   list-style-type: none;
