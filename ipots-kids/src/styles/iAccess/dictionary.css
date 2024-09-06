@@ -10,129 +10,40 @@
   height: 100vh;
   padding-top: 0.625rem;
 }
-
 .dictionary-page-title {
-  width: 104.461rem;
-  height: 9.125rem;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 2.5rem; /*40px*/
-  font-weight: bold;
-  color: #000;
-  margin: 0;
-}
-
-.page-name {
-  padding-left: 1.25rem;
-}
-
-.nav-container {
   display: flex;
-  justify-content: center;
-  width: 82.813rem;
-  height: 14.25rem;
-  margin-top: 5.188rem;
-}
-
-.location-condits {
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  width: 8.4rem;
-  height: 9.7rem;
-  margin: 0 0.938rem;
-  padding: 0.625rem;
-  cursor: pointer;
-  border-radius: 0.625rem;
-  background-color: #c0c0c0;
-  transition: background-color 0.3s, transform 0.3s;
 }
 
-.location-condits:hover {
-  background-color: #b0b0b0;
-  transform: scale(1.05);
+.dic-logo {
+  margin-right: 0.625rem;
+  width: 5rem;
+  height: 4.375rem;
 }
 
-.location-condits.selected {
-  background-color: #0fc0fc;
-}
-
-.location-condits-img {
-  width: 6.125rem;
-  height: 6.125rem;
-  margin-top: 1rem;
-  margin-left: 1.625rem;
-  margin-right: 1.625rem;
-}
-
-.location-condits-icon {
-  font-size: 1.5rem;
-}
-
-.location-condits-name {
-  margin-top: 0.313rem;
-  font-size: 1.5rem;
-  font-family: "Montserrat", sans-serif;
+.dic-page-name {
+  width: 18rem;
+  height: 3.125rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: black;
+  color: #000000;
 }
 
 .dictionary-letters-container {
   margin-top: 3.75rem;
-  width: 53rem; /* Had I use the Figma width, the screen would */
-  height: 79rem; /* have been 2x2, instead of the 4x4 in the */
-  display: grid; /* design on the Figma. */
+  width: 53rem; 
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.dictionary-letters-container ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: grid; 
   grid-template-columns: repeat(4, 0.01fr);
   grid-gap: 0.5rem;
-  justify-content: center;
-}
-
-.search-bar-container {
-  padding-top: 2.5rem;
-  padding-bottom: 0;
-  display: flex;
-  justify-content: center;
-}
-
-.search-bar {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.searchbox {
-  width: 49rem;
-  height: 4rem;
-  border-radius: 0.5rem;
-  color: #b0b0b0;
-  border: 1px solid #b0b0b0;
-  padding-left: 2.5rem;
-  padding-right: 3.5rem;
-}
-
-.search-icon {
-  position: absolute;
-  left: 0.75rem;
-  width: 40px;
-  height: 40px;
-  pointer-events: none;
-  color: #b0b0b0;
-}
-
-input {
-  text-indent: 1.1rem;
-  font-size: 1.5rem;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-}
-
-.microphone-icon {
-  position: absolute;
-  right: 10px;
-  width: 50px;
-  height: 50px;
-  pointer-events: none;
-  color: #000;
 }
 
 .dictionary-letter {
@@ -144,13 +55,15 @@ input {
   color: black;
   width: 8.813rem;
   height: 9.875rem;
-  margin: 1rem; /*adjusted from figma to 24px*/
+  margin: 1rem; 
   border-radius: 1.25rem;
   font-size: 2.188rem;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
+  text-decoration: none;
+  color: inherit;
 }
 
 .dictionary-letter:hover {
@@ -168,4 +81,32 @@ input {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
   text-align: center;
+}
+/* Mobile Design */
+@media (max-width: 971px) {
+  .dic-logo{
+    width:3rem ;
+    height:2.375rem ;
+  }
+  .dic-page-name{
+    width: 7.625rem;
+    height: 2.375rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.563rem;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .dictionary-letters-container{
+    width: 20.188rem;
+  }
+  .dictionary-letter{
+    margin: 0.60rem;
+    width: 3.75rem;
+    height: 3.688rem;
+    border-radius: 0.625rem;
+  }
+  .dictionary-the-letters{
+    font-size: 3rem;
+    line-height: 3.8rem; 
+  }
 }

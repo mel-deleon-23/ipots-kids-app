@@ -1,4 +1,4 @@
-import { useContext ,useState, useEffect } from "react";
+import { useContext ,useState, useEffect , useRef} from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import "../../styles/iAccess/dictionary.css";
@@ -11,6 +11,22 @@ const Dictionary = () => {
   const [dictionary, setdictionary] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
+  const listRef = useRef(null); // Create a ref for the list
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key.toLowerCase() === "l") {
+        if (listRef.current) {
+          listRef.current.focus(); // Focus the list when "L" is pressed
+        }
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyPress);
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
 
   useEffect(() => {
     const fetchdictionaries = async () => {
@@ -83,10 +99,8 @@ const Dictionary = () => {
     <>
       <div className="dictionary-total-page">
         <div className="dictionary-page-title">
-          <span className="logo">
-            <img src={dictionaryImg} />
-          </span>
-          <span className="page-name"> Dictionary</span>
+          <img src={dictionaryImg} alt="Dictionary" className="dic-logo" />
+          <h1 className="dic-page-name"> Dictionary</h1>
         </div>
         <div className="search-bar-container">
           <div className="search-bar">
@@ -97,6 +111,7 @@ const Dictionary = () => {
               placeholder="Search"
               value={searchTerm}
               onChange={handleSearchChange}
+              aria-label="Search for words or definitions in the dictionary"
             />
             {/* <PiMicrophoneFill className="microphone-icon" /> */}
           </div>
@@ -130,20 +145,27 @@ const Dictionary = () => {
           </div>
         ) : (
           <div className="dictionary-letters-container">
-            {letters.map((letter) => (
-              <div
-                key={letter.num}
-                className={`dictionary-letter ${
-                  selectedLetter === letter.num ? "selected" : ""
-                }`}
-                onClick={(event) => {
-                  checkBeforeNavigate(letter.char, event);
-                  handleLetterClick(letter.num);
-                }}
-              >
-                <span className="dictionary-the-letters">{letter.char}</span>
-              </div>
-            ))}
+            <ul aria-label="List of letters" tabIndex="-1" ref={listRef}>
+              {letters.map((letter) => (
+                <li key={letter.num} className="letter-items">
+                <a
+                  key={letter.num}
+                  href="#"
+                  aria-label={`Search with ${letter.char}`}
+                  className={`dictionary-letter ${
+                    selectedLetter === letter.num ? "selected" : ""
+                  }`}
+                  onClick={(event) => {
+                    event.preventDefault();
+                    checkBeforeNavigate(letter.char, event);
+                    handleLetterClick(letter.num);
+                  }}
+                >
+                  <span className="dictionary-the-letters">{letter.char}</span>
+                </a>
+                </li>
+              ))}
+            </ul>
           </div>
         )}
       </div>

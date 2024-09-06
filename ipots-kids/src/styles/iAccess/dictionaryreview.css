@@ -10,27 +10,31 @@
   height: 100vh;
   padding-top: 0.625rem;
 }
-
 .dictionary-title-page {
-  width: 104.461rem;
-  height: 9.125rem;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #000;
-  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
   margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.dictionary-logo {
+  margin-right: 0.625rem;
+  width: 5rem;
+  height: 4.375rem;
 }
 
 .dictionary-name-page {
-  padding-left: 1.25rem;
+  width: 18rem;
+  height: 3.125rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000000;
 }
 
 .dictionary-letter-area {
   width: 17.313rem;
   height: 14.313rem;
-  margin-top: 10px;
-  margin-bottom: 30px;
 }
 
 .dictionary-letter-style {
@@ -38,65 +42,21 @@
   font-size: 18.75rem;
   color: #0fc0fc;
   font-weight: 700;
-  line-height: 2.5rem;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.search-bar-container {
-  margin-top: 2rem;
-  padding-top: 2.5rem;
-  padding-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-}
-
-.search-bar {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.searchbox {
-  width: 47.625rem;
-  height: 4rem;
-  border-radius: 0.5rem;
-  color: #b0b0b0;
-  border: 1px solid #b0b0b0;
-  padding-left: 2.5rem;
-  padding-right: 3.5rem;
-}
-
-.search-icon {
-  position: absolute;
-  left: 0.75rem;
-  width: 40px;
-  height: 40px;
-  pointer-events: none;
-  color: #b0b0b0;
-}
-
-input {
-  text-indent: 1.1rem;
-  font-size: 1.5rem;
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-}
-
-.microphone-icon {
-  position: absolute;
-  right: 10px;
-  width: 50px;
-  height: 50px;
-  pointer-events: none;
-  color: #c0c0c0;
+  line-height: 10.5rem;
 }
 
 .dictionary-container {
+  margin-top: 2.5rem;
   width: 47.625rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.dictionary-list{
+  width: 47.625rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .dictionary-box {
@@ -104,7 +64,6 @@ input {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  /* margin-top: 2.5rem; */
   border-top: 1px solid #ddd;
   padding: 1rem;
   flex-direction: column;
@@ -119,11 +78,9 @@ input {
   text-align: left;
   cursor: pointer;
 }
-
-.dictionary-box:hover {
-  border: 2px solid #0fc0fc;
-  border-radius: 16px;
+.item.selected {
   background-color: #0fc0fc;
+  color: #000000;
 }
 
 .icons {
@@ -140,4 +97,45 @@ input {
 
 .bookmark {
   stroke-width: 1;
+}
+
+/* Mobile Design */
+@media (max-width: 971px) {
+  .dictionary-title-page{
+    margin-bottom: 1.875rem;
+  }
+  .dictionary-logo{
+    width:3rem ;
+    height:2.375rem ;
+  }
+  .dictionary-name-page{
+    width: 7.625rem;
+    height: 2.375rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.563rem;
+    font-weight: 400;
+    line-height: 150%;
+  }
+  .dictionary-letter-area{
+    width:6.625rem ;
+    height: 7.375rem;
+  }
+  .dictionary-letter-style{
+    font-size: 8rem;
+  }
+  .dictionary-container
+  {
+    width:20.188rem ;
+    height: auto;
+  }
+  .dictionary-list{
+    width:20.188rem ;
+    height: auto;
+  }
+  .item-header{
+    font-size: 1.25rem ;
+    padding: 0 0.938rem 0 0.938rem;
+    text-align: left;
+  }
+
 }
