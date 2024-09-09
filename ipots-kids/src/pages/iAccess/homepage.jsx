@@ -187,7 +187,7 @@ const HomePage = () => {
           <p className="message">
             Select the location where these accommodations will be used
           </p>
-          <ul className="popup-location-list">
+          <ul aria-label="location options" className="popup-location-list">
             {locations.map((location) => (
               <li
                 key={location.name}
