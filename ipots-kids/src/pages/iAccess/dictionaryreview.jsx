@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState ,useRef } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import * as CiIcons from "react-icons/ci";
@@ -7,7 +7,7 @@ import dictionaryImg from "../../../public/iAccess/Dictionary.png";
 import "../../styles/iAccess/dictionaryreview.css";
 
 const DictionaryReview = () => {
-  const host = "http://localhost";
+  const host = "http://localhost:8888";
   const [dictionary, setdictionary] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const locat = useLocation();
@@ -53,7 +53,9 @@ const DictionaryReview = () => {
   const [selectedDictionary, setSelectedDictionary] = useState(null);
 
   const handleDictionaryClick = (dictionary) => {
-    setSelectedDictionary(selectedDictionary === dictionary.id ? null : dictionary.id);
+    setSelectedDictionary(
+      selectedDictionary === dictionary.id ? null : dictionary.id
+    );
   };
 
   const handleSearchChange = (event) => {
@@ -68,7 +70,11 @@ const DictionaryReview = () => {
     <>
       <div className="dictionary-all-page">
         <div className="dictionary-title-page">
-          <img src={dictionaryImg} alt="Dictionary" className="dictionary-logo" />
+          <img
+            src={dictionaryImg}
+            alt="Dictionary"
+            className="dictionary-logo"
+          />
           <h1 className="dictionary-name-page"> Dictionary</h1>
         </div>
         <div className="dictionary-letter-area">
@@ -89,29 +95,40 @@ const DictionaryReview = () => {
           </div>
         </div>
         <div className="dictionary-container">
-            {filteredDictionaries.length > 0 ? (
-              <ul className="dictionary-list" aria-label={`List of terms start with ${letter}`} tabIndex="-1" ref={listRef}>
-                {filteredDictionaries.map((dictionary) => (
-                  <li key={dictionary.id} className={`item dictionary-box ${selectedDictionary === dictionary.id ? "selected" : ""
-                  }`}   onClick={() => handleDictionaryClick(dictionary)}>
-                    <div
-                      className={`dictionary item-header ${selectedDictionary === dictionary.id ? 'expanded' : ''}`}
-                      
-                    >
-                      {dictionary.term}
+          {filteredDictionaries.length > 0 ? (
+            <ul
+              className="dictionary-list"
+              aria-label={`List of terms start with ${letter}`}
+              tabIndex="-1"
+              ref={listRef}
+            >
+              {filteredDictionaries.map((dictionary) => (
+                <li
+                  key={dictionary.id}
+                  className={`item dictionary-box ${
+                    selectedDictionary === dictionary.id ? "selected" : ""
+                  }`}
+                  onClick={() => handleDictionaryClick(dictionary)}
+                >
+                  <div
+                    className={`dictionary item-header ${
+                      selectedDictionary === dictionary.id ? "expanded" : ""
+                    }`}
+                  >
+                    {dictionary.term}
+                  </div>
+                  {selectedDictionary === dictionary.id && (
+                    <div className="item-details">
+                      <p>{dictionary.definition}</p>
                     </div>
-                    {selectedDictionary === dictionary.id && (
-                        <div className="item-details">
-                          <p>{dictionary.definition}</p>
-                        </div>                    
-                    )}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="Error">No Term matches {searchTerm}.</p>
-            )}
-          </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="Error">No Term matches {searchTerm}.</p>
+          )}
+        </div>
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect , useRef } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Popup from "reactjs-popup";
 import "../../styles/iAccess/homepage.css";
@@ -47,8 +47,8 @@ const HomePage = () => {
 
   useEffect(() => {
     if (user) {
-      console.log (user);
-      console.log (user.data.user_id);
+      console.log(user);
+      console.log(user.data.user_id);
       setUserId(user.data.user_id);
     }
   }, [user]); // Update userId only when the user changes
@@ -59,14 +59,22 @@ const HomePage = () => {
 
   const checkBeforeNavigate = (category, event) => {
     // Check if the user is trying to access "My Accommodations" or "My Allergies"
-    if ((category.url === "/myaccommodationsmenu" || category.url === "/myallergies") && !userId) {
+    if (
+      (category.url === "/myaccommodationsmenu" ||
+        category.url === "/myallergies") &&
+      !userId
+    ) {
       setSignInOpen(true);
       event.preventDefault();
       return;
     }
 
     // Skip location check if category is "Dictionary" or "Legal"
-    if (category.name !== "Dictionary" && category.name !== "Legal" && category.name !== "My Allergies") {
+    if (
+      category.name !== "Dictionary" &&
+      category.name !== "Legal" &&
+      category.name !== "My Allergies"
+    ) {
       // Check if the user selected the location
       if (!selectedLocation) {
         setOpen(true);
@@ -83,12 +91,12 @@ const HomePage = () => {
 
   const handleSignIn = () => {
     closeSignInModal(); // Close the modal
-    navigate('/home'); // Redirect to /home
+    navigate("/home"); // Redirect to /home
   };
 
   const locations = [
     { name: "Home", img: homeImg, area: "Home" },
-    { name: "Work", img: briefcaseImg, area: "Work"},
+    { name: "Work", img: briefcaseImg, area: "Work" },
     { name: "School", img: backpackImg, area: "School" },
     { name: "Transit", img: transitImg, area: "Transit" },
     { name: "Medical", img: hospitalImg, area: "Medical" },
@@ -96,7 +104,11 @@ const HomePage = () => {
   ];
 
   const categories = [
-    { name: "Accessibility Category", img: assistiveTechImg, url: "/accessmenu" },
+    {
+      name: "Accessibility Category",
+      img: assistiveTechImg,
+      url: "/accessmenu",
+    },
     { name: "Medical Conditions", img: caduceusImg, url: "/medicalcondits" },
     { name: "Legal", img: lawImg, url: "/legalpage" },
     { name: "Dictionary", img: dictionaryImg, url: "/dictionary" },
@@ -110,15 +122,18 @@ const HomePage = () => {
       <div className="navbar-home-container">
         {locations.map((location) => (
           <a
-          key={location.name}
-          href="#"
-          aria-label={`${location.area}${selectedLocation === location.name ? " (selected)" : ""}`}
-          className={`location-home ${
-            selectedLocation === location.name ? "selected" : ""
-          }`}
-          onClick={(event) => {
-            event.preventDefault();
-            handleLocationClick(location.name)}}            
+            key={location.name}
+            href="#"
+            aria-label={`${location.area}${
+              selectedLocation === location.name ? " (selected)" : ""
+            }`}
+            className={`location-home ${
+              selectedLocation === location.name ? "selected" : ""
+            }`}
+            onClick={(event) => {
+              event.preventDefault();
+              handleLocationClick(location.name);
+            }}
           >
             <img
               src={location.img}
@@ -139,14 +154,17 @@ const HomePage = () => {
                 className="accessibility-category"
                 onClick={(event) => {
                   event.preventDefault();
-                  checkBeforeNavigate(category, event)}}
+                  checkBeforeNavigate(category, event);
+                }}
               >
                 <img
                   src={category.img}
                   alt={category.name}
                   className="accessibility-category-icon"
                 />
-                <span className="accessibility-category-name">{category.name}</span>
+                <span className="accessibility-category-name">
+                  {category.name}
+                </span>
                 <img
                   src={backImg}
                   aria-label="Right Arrow"
@@ -166,9 +184,16 @@ const HomePage = () => {
         contentClassName="popup-content"
       >
         <div className="popup-message">
+          <p className="message">
+            Select the location where these accommodations will be used
+          </p>
           <ul className="popup-location-list">
             {locations.map((location) => (
-              <li key={location.name} className="popup-location-item" aria-label={location.area}>
+              <li
+                key={location.name}
+                className="popup-location-item"
+                aria-label={location.area}
+              >
                 <img
                   src={location.img}
                   alt={location.name}
@@ -178,13 +203,17 @@ const HomePage = () => {
               </li>
             ))}
           </ul>
-          <div className="message">
-            Select the location where these accommodations will be used
-          </div>
-          <div id="button-description" style={{ position: 'absolute', left: '-9999px' }}>
+          <div
+            id="button-description"
+            style={{ position: "absolute", left: "-9999px" }}
+          >
             Button-
           </div>
-          <button className="close" onClick={closeModal} aria-describedby="button-description">
+          <button
+            className="close"
+            onClick={closeModal}
+            aria-describedby="button-description"
+          >
             OK
           </button>
         </div>
@@ -198,9 +227,7 @@ const HomePage = () => {
       >
         <div className="popup-message">
           <h2 className="popup-title">SIGN IN REQUIRED</h2>
-          <div className="message">
-            Please sign in to access My Accommodation
-          </div>
+          <p className="message">Please sign in to access My Accommodation</p>
           <button className="sign-in" onClick={handleSignIn}>
             Sign In
           </button>

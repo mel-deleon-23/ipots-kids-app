@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect , useRef } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import "../../styles/iAccess/medicalcondits.css";
@@ -13,16 +13,16 @@ import earthImg from "../../../public/iAccess/06-all.png";
 import Popup from "reactjs-popup";
 import { AuthContext } from "../Auth";
 
-import unsaveImg from '../../../public/iAccess/unsave.png';
-import saveImg from '../../../public/iAccess/save.png';
+import unsaveImg from "../../../public/iAccess/unsave.png";
+import saveImg from "../../../public/iAccess/save.png";
 
 const MedicalCondits = () => {
-  const host = "http://localhost";
-  const [userId , setUserId] = useState(null);
-  const { user } = useContext(AuthContext); 
+  const host = "http://localhost:8888";
+  const [userId, setUserId] = useState(null);
+  const { user } = useContext(AuthContext);
   const locat = useLocation();
   const queryParams = new URLSearchParams(locat.search);
-  const location = queryParams.get('location');
+  const location = queryParams.get("location");
   const [selectedLocation, setSelectedLocation] = useState(location);
   const [selectedLetter, setSelectedLetter] = useState("");
   const [medicalConditions, setMedicalConditions] = useState([]);
@@ -34,17 +34,17 @@ const MedicalCondits = () => {
   const closeSignInModal = () => setSignInOpen(false);
   const handleSignIn = () => {
     closeSignInModal(); // Close the modal
-    navigate('/home'); // Redirect to /home
+    navigate("/home"); // Redirect to /home
   };
-  
+
   const openpopup = () => {
     setSignInOpen(true);
-    return;   
-  }
+    return;
+  };
   //   set user id if user is logged in
   useEffect(() => {
     if (user) {
-      console.log (user);
+      console.log(user);
       setUserId(user.data.user_id);
     }
   }, [user]);
@@ -68,21 +68,25 @@ const MedicalCondits = () => {
   useEffect(() => {
     const fetchMedicalConditions = async () => {
       try {
-        const url = host + '/ipots-kids-app/ipots-server/medical_conditions.php?method=All';
+        const url =
+          host +
+          "/ipots-kids-app/ipots-server/medical_conditions.php?method=All";
         const response = await axios.get(url);
         setMedicalConditions(response.data);
-        
       } catch (error) {
         console.error("Error fetching medical conditions:", error);
       }
     };
     const fetchBookmarks = async () => {
-      const url = host + "/ipots-kids-app/ipots-server/myMedicalCondition.php?method=All&userId=" + user.data.user_id; 
+      const url =
+        host +
+        "/ipots-kids-app/ipots-server/myMedicalCondition.php?method=All&userId=" +
+        user.data.user_id;
       const response = await axios.get(url);
       if (Array.isArray(response.data)) {
         setBookmarks(response.data);
-      }           
-    }
+      }
+    };
 
     fetchMedicalConditions();
     fetchBookmarks();
@@ -91,12 +95,12 @@ const MedicalCondits = () => {
   const handleBookmark = async (conditionId) => {
     const url = host + "/ipots-kids-app/ipots-server/myMedicalCondition.php";
     const params = {
-      userId: user.data.user_id, 
+      userId: user.data.user_id,
       medicalConditionId: conditionId,
-      method: 'Add'
+      method: "Add",
     };
     const response = await axios.get(url, { params });
-    
+
     setBookmarks([...bookmarks, conditionId]);
   };
 
@@ -105,17 +109,16 @@ const MedicalCondits = () => {
     const params = {
       userId: user.data.user_id,
       medicalConditionId: conditionId,
-      method: "Delete"
+      method: "Delete",
     };
     const response = await axios.get(url, { params });
-    
-    setBookmarks(bookmarks.filter(id => id !== conditionId));
+
+    setBookmarks(bookmarks.filter((id) => id !== conditionId));
   };
 
   const isBookmarked = (conditionId) => {
     return bookmarks.includes(conditionId);
   };
-
 
   const handleLocationClick = (location) => {
     setSelectedLocation(location);
@@ -127,7 +130,11 @@ const MedicalCondits = () => {
       event.preventDefault();
       return;
     } else {
-      const Url ="/medicalconditreview?Method=Letter&letter=" + letter + "&location=" + selectedLocation;
+      const Url =
+        "/medicalconditreview?Method=Letter&letter=" +
+        letter +
+        "&location=" +
+        selectedLocation;
       navigate(Url);
     }
   };
@@ -146,7 +153,7 @@ const MedicalCondits = () => {
 
   const locations = [
     { name: "Home", img: homeImg, area: "Home" },
-    { name: "Work", img: briefcaseImg, area: "Work"},
+    { name: "Work", img: briefcaseImg, area: "Work" },
     { name: "School", img: backpackImg, area: "School" },
     { name: "Transit", img: transitImg, area: "Transit" },
     { name: "Medical", img: hospitalImg, area: "Medical" },
@@ -186,7 +193,11 @@ const MedicalCondits = () => {
     <>
       <div className="medical-condit-page">
         <div className="medical-condit-title">
-            <img src={caduceusImg} alt="Medical Conditions" className="medical-condit-logo" />
+          <img
+            src={caduceusImg}
+            alt="Medical Conditions"
+            className="medical-condit-logo"
+          />
           <h1 className="medical-condit-name"> Medical Conditions</h1>
         </div>
         <div className="nav-medical-condit-container">
@@ -194,13 +205,16 @@ const MedicalCondits = () => {
             <a
               key={location.name}
               href="#"
-              aria-label={`${location.area}${selectedLocation === location.name ? " (selected)" : ""}`}
+              aria-label={`${location.area}${
+                selectedLocation === location.name ? " (selected)" : ""
+              }`}
               className={`location-condits ${
                 selectedLocation === location.name ? "selected" : ""
               }`}
               onClick={(event) => {
                 event.preventDefault();
-                handleLocationClick(location.name)}}
+                handleLocationClick(location.name);
+              }}
             >
               <img
                 src={location.img}
@@ -229,63 +243,70 @@ const MedicalCondits = () => {
             {filteredConditions.length > 0 ? (
               filteredConditions.map((condition) => (
                 <div key={condition.id} className="medical-condition-box">
-                  <div className="medical-condition" onClick={() => handleConditionClick(condition)}>{condition.term}</div>
+                  <div
+                    className="medical-condition"
+                    onClick={() => handleConditionClick(condition)}
+                  >
+                    {condition.term}
+                  </div>
                   <div className="medical-icons">
                     {/* bookmark works only if user is logged in */}
                     {userId ? (
                       isBookmarked(condition.id) ? (
-                          <img
+                        <img
                           className="img"
                           src={saveImg}
                           onClick={() => handleUnbookmark(condition.id)}
                           alt="Bookmarked"
-                          />
+                        />
                       ) : (
-                          <img
+                        <img
                           className="img"
                           src={unsaveImg}
                           onClick={() => handleBookmark(condition.id)}
                           alt="Not Bookmarked"
-                          />
+                        />
                       )
-                      ) : (
-                          // else popup for signup appears
+                    ) : (
+                      // else popup for signup appears
                       <img
-                          className="img"
-                          src={unsaveImg}
-                          onClick={() => openpopup()}
-                          alt="Not Bookmarked"
+                        className="img"
+                        src={unsaveImg}
+                        onClick={() => openpopup()}
+                        alt="Not Bookmarked"
                       />
                     )}
                   </div>
                 </div>
               ))
             ) : (
-              <p className="Error">No medical conditions matchs {searchTerm}.</p>
+              <p className="Error">
+                No medical conditions matchs {searchTerm}.
+              </p>
             )}
           </div>
         ) : (
           <div className="medical-letters-container">
             <ul aria-label="List of letters" tabIndex="-1" ref={listRef}>
-            {letters.map((letter) => (
-              <li key={letter.num} className="letter-items">
-              <a
-                key={letter.num}
-                href="#"
-                aria-label={`Search with ${letter.char}`}
-                className={`medical-letter ${
-                  selectedLetter === letter.num ? "selected" : ""
-                }`}
-                onClick={(event) => {
-                  event.preventDefault();
-                  checkBeforeNavigate(letter.char, event);
-                  handleLetterClick(letter.num);
-                }}
-              >
-                <span className="medical-the-letters">{letter.char}</span>
-              </a>
-              </li>
-            ))}
+              {letters.map((letter) => (
+                <li key={letter.num} className="letter-items">
+                  <a
+                    key={letter.num}
+                    href="#"
+                    aria-label={`Search with ${letter.char}`}
+                    className={`medical-letter ${
+                      selectedLetter === letter.num ? "selected" : ""
+                    }`}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      checkBeforeNavigate(letter.char, event);
+                      handleLetterClick(letter.num);
+                    }}
+                  >
+                    <span className="medical-the-letters">{letter.char}</span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         )}

@@ -8,7 +8,7 @@
   justify-content: flex-start;
   text-align: center;
   height: auto;
-  padding-top: 0.625rem; 
+  padding-top: 0.625rem;
 }
 
 .homepage-home-title {
@@ -67,7 +67,6 @@
   font-size: 1.5rem;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
- 
 }
 .accessibility-categories-container {
   margin-top: 2.5rem;
@@ -98,7 +97,7 @@
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
-   text-decoration: none;
+  text-decoration: none;
   color: inherit;
 }
 
@@ -144,9 +143,9 @@
 /* Styles for the popup content */
 .popup-content {
   padding: 20px;
-  background: #fff; 
+  background: #fff;
   border-radius: 16px;
-  max-width: 32.874rem; 
+  max-width: 32.874rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   color: #000;
   font-size: 16px;
@@ -155,7 +154,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 1000; 
+  z-index: 1000;
 }
 
 .popup-message {
@@ -174,7 +173,7 @@
 }
 .message {
   text-wrap: wrap;
-  max-width: 13.125rem;
+  max-width: 20rem;
   margin-top: 4.002rem;
 }
 .close {
@@ -225,8 +224,8 @@
 .popup-location-list {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap; 
-  justify-content: center; 
+  flex-wrap: wrap;
+  justify-content: center;
   padding: 0;
   list-style-type: none;
   margin: 0;
@@ -237,7 +236,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 5px; 
+  margin: 2px;
   width: 65.6px;
   height: 65.97px;
   border-radius: 5px;
@@ -263,10 +262,9 @@
 
 /* Mobile Design */
 @media (max-width: 971px) {
-  .homepage-home-title{
+  .homepage-home-title {
     font-size: 1.563rem;
     height: 2.375rem;
-    
   }
   .navbar-home-container {
     margin-top: 2.063rem;
@@ -296,15 +294,17 @@
   }
 
   /* popup for mobile */
-  .popup-content{
+  .popup-content {
     width: 21.389rem;
   }
   .popup-location-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    justify-content: center; 
+    justify-content: center;
   }
-  .close, .sign-in, .cancel{
+  .close,
+  .sign-in,
+  .cancel {
     width: 17rem;
   }
 

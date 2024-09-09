@@ -1,4 +1,4 @@
-import { useContext , useState, useEffect , useRef} from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../Auth";
@@ -16,8 +16,8 @@ import unsaveImg from "../../../public/iAccess/unsave.png";
 import saveImg from "../../../public/iAccess/save.png";
 
 const myMedicalCondits = () => {
-  const host = "http://localhost";
-  const [userId , setUserId] = useState(null);
+  const host = "http://localhost:8888";
+  const [userId, setUserId] = useState(null);
   const { user } = useContext(AuthContext);
   const locat = useLocation();
   const queryParams = new URLSearchParams(locat.search);
@@ -45,13 +45,12 @@ const myMedicalCondits = () => {
     };
   }, []);
 
-//  set user id if user is signed in else navigate to signin
+  //  set user id if user is signed in else navigate to signin
   useEffect(() => {
     if (user) {
       setUserId(user.data.user_id);
-    }
-    else {
-      navigate('/home');
+    } else {
+      navigate("/home");
     }
   }, [user]);
   useEffect(() => {
@@ -131,7 +130,7 @@ const myMedicalCondits = () => {
 
   const locations = [
     { name: "Home", img: homeImg, area: "Home" },
-    { name: "Work", img: briefcaseImg, area: "Work"},
+    { name: "Work", img: briefcaseImg, area: "Work" },
     { name: "School", img: backpackImg, area: "School" },
     { name: "Transit", img: transitImg, area: "Transit" },
     { name: "Medical", img: hospitalImg, area: "Medical" },
@@ -141,9 +140,12 @@ const myMedicalCondits = () => {
   return (
     <>
       <div className="total-page">
-
         <div className="my-medical-condit-title">
-            <img src={caduceusImg} alt="Medical Conditions" className="my-medical-condit-logo" />
+          <img
+            src={caduceusImg}
+            alt="Medical Conditions"
+            className="my-medical-condit-logo"
+          />
           <h1 className="my-medical-condit-name">My Medical Conditions</h1>
         </div>
 
@@ -152,13 +154,16 @@ const myMedicalCondits = () => {
             <a
               key={location.name}
               href="#"
-              aria-label={`${location.area}${selectedLocation === location.name ? " (selected)" : ""}`}
+              aria-label={`${location.area}${
+                selectedLocation === location.name ? " (selected)" : ""
+              }`}
               className={`location-condits ${
                 selectedLocation === location.name ? "selected" : ""
               }`}
               onClick={(event) => {
                 event.preventDefault();
-                handleLocationClick(location.name)}}
+                handleLocationClick(location.name);
+              }}
             >
               <img
                 src={location.img}
@@ -185,58 +190,63 @@ const myMedicalCondits = () => {
 
         <div className="conditions-container">
           {filteredConditions.length > 0 ? (
-            <ul className="conditions-list" aria-label="List of my medical conditions" tabIndex="-1" ref={listRef}>
-            {filteredConditions.map((condition) => (
-               <li key={condition.id} className="condition-box">
-                <div
-                  className="condition"
-                  onClick={() => handleConditionClick(condition)}
-                >
-                  {condition.term}
-                </div>
-                <div className="icons">
-                  {isBookmarked(condition.id) ? (
-                    <a 
-                    href="#" 
-                    onClick={(e) => {
-                      e.preventDefault(); 
-                      handleUnbookmark(condition.id);
-                    }}
-                    aria-label="Click to remove bookmark from this item"
+            <ul
+              className="conditions-list"
+              aria-label="List of my medical conditions"
+              tabIndex="-1"
+              ref={listRef}
+            >
+              {filteredConditions.map((condition) => (
+                <li key={condition.id} className="condition-box">
+                  <div
+                    className="condition"
+                    onClick={() => handleConditionClick(condition)}
                   >
-                    <img
-                      className="bookmark-img"
-                      src={saveImg}
-                      alt="Save"
-                    />
-                  </a>
-                  ) : (
-                    <a 
-                    href="#" 
-                    onClick={(e) => {
-                      e.preventDefault(); 
-                      handleBookmark(condition.id);
-                    }}
-                    aria-label="Click to bookmark this item"
-                  >
-                    <img
-                      className="unbookmarkimg"
-                      src={unsaveImg}
-                      alt="UnSave"
-                    />
-                  </a>
-                  )}
-                </div>
-              </li>
-            ))}
+                    {condition.term}
+                  </div>
+                  <div className="icons">
+                    {isBookmarked(condition.id) ? (
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleUnbookmark(condition.id);
+                        }}
+                        aria-label="Click to remove bookmark from this item"
+                      >
+                        <img
+                          className="bookmark-img"
+                          src={saveImg}
+                          alt="Save"
+                        />
+                      </a>
+                    ) : (
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          handleBookmark(condition.id);
+                        }}
+                        aria-label="Click to bookmark this item"
+                      >
+                        <img
+                          className="unbookmarkimg"
+                          src={unsaveImg}
+                          alt="UnSave"
+                        />
+                      </a>
+                    )}
+                  </div>
+                </li>
+              ))}
             </ul>
           ) : (
             <p className="Error">No medical conditions match "{searchTerm}".</p>
           )}
         </div>
       </div>
-    </>  
-);
+    </>
+  );
 };
 
 export default myMedicalCondits;

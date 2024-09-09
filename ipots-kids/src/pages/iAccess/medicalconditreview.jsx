@@ -1,18 +1,18 @@
-import { useContext ,useEffect, useState , useRef } from "react";
-import { useLocation , useNavigate } from "react-router-dom";
+import { useContext, useEffect, useState, useRef } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import * as CiIcons from "react-icons/ci";
 import * as PiIcons from "react-icons/pi";
-import unsaveImg from '../../../public/iAccess/unsave.png';
-import saveImg from '../../../public/iAccess/save.png';
+import unsaveImg from "../../../public/iAccess/unsave.png";
+import saveImg from "../../../public/iAccess/save.png";
 import "../../styles/iAccess/medicalconditreview.css";
 import caduceusImg from "../../../public/iAccess/Caduceus.png";
 import Popup from "reactjs-popup";
 import { AuthContext } from "../Auth";
 
 const MedicalConditsReview = () => {
-  const host = "http://localhost";
-  const [userId , setUserId] = useState(null);
+  const host = "http://localhost:8888";
+  const [userId, setUserId] = useState(null);
   const { user } = useContext(AuthContext);
   const [conditions, setConditions] = useState([]);
   const [bookmarks, setBookmarks] = useState([]);
@@ -31,18 +31,18 @@ const MedicalConditsReview = () => {
 
   const handleSignIn = () => {
     closeSignInModal(); // Close the modal
-    navigate('/home'); // Redirect to /home
+    navigate("/home"); // Redirect to /home
   };
 
   const openpopup = () => {
     setSignInOpen(true);
-    return;   
-  }
+    return;
+  };
 
   //   set user id if user is logged in
   useEffect(() => {
     if (user) {
-      console.log (user);
+      console.log(user);
       setUserId(user.data.user_id);
     }
   }, [user]);
@@ -67,7 +67,12 @@ const MedicalConditsReview = () => {
   useEffect(() => {
     const fetchConditions = async () => {
       try {
-        const url = host + '/ipots-kids-app/ipots-server/medical_conditions.php?method='+method +"&letter="+letter;
+        const url =
+          host +
+          "/ipots-kids-app/ipots-server/medical_conditions.php?method=" +
+          method +
+          "&letter=" +
+          letter;
         const response = await axios.get(url);
         setConditions(response.data);
       } catch (error) {
@@ -76,30 +81,34 @@ const MedicalConditsReview = () => {
     };
 
     const fetchBookmarks = async () => {
-      const url = host + "/ipots-kids-app/ipots-server/myMedicalCondition.php?method=All&userId=" + user.data.user_id; 
+      const url =
+        host +
+        "/ipots-kids-app/ipots-server/myMedicalCondition.php?method=All&userId=" +
+        user.data.user_id;
       const response = await axios.get(url);
       if (Array.isArray(response.data)) {
         setBookmarks(response.data);
-      }           
-    }
+      }
+    };
 
     fetchConditions();
-    if(userId)
-    {
-        fetchBookmarks();
+    if (userId) {
+      fetchBookmarks();
     }
   }, [method, letter]);
 
   const handleConditionClick = (condition) => {
-    navigate(`/accessmenu?medicalCondition=${condition.term}&location=${location}`);
+    navigate(
+      `/accessmenu?medicalCondition=${condition.term}&location=${location}`
+    );
   };
 
   const handleBookmark = async (conditionId) => {
     const url = host + "/ipots-kids-app/ipots-server/myMedicalCondition.php";
     const params = {
-      userId: user.data.user_id, 
+      userId: user.data.user_id,
       medicalConditionId: conditionId,
-      method: 'Add'
+      method: "Add",
     };
     const response = await axios.get(url, { params });
     console.log(response);
@@ -111,11 +120,11 @@ const MedicalConditsReview = () => {
     const params = {
       userId: user.data.user_id,
       medicalConditionId: conditionId,
-      method: "Delete"
+      method: "Delete",
     };
     const response = await axios.get(url, { params });
     console.log(response);
-    setBookmarks(bookmarks.filter(id => id !== conditionId));
+    setBookmarks(bookmarks.filter((id) => id !== conditionId));
   };
 
   const isBookmarked = (conditionId) => {
@@ -134,7 +143,11 @@ const MedicalConditsReview = () => {
     <>
       <div className="all-page">
         <div className="title-page">
-            <img src={caduceusImg} alt="Medical Conditions" className="medical-condit-logo" />
+          <img
+            src={caduceusImg}
+            alt="Medical Conditions"
+            className="medical-condit-logo"
+          />
           <h1 className="name-page"> Medical Conditions</h1>
         </div>
         <div className="letter-area">
@@ -143,10 +156,10 @@ const MedicalConditsReview = () => {
         <div className="search-bar-container">
           <div className="search-bar">
             <CiIcons.CiSearch className="search-icon" />
-            <input 
-              type="search" 
-              className="searchbox" 
-              placeholder="Search" 
+            <input
+              type="search"
+              className="searchbox"
+              placeholder="Search"
               value={searchTerm}
               onChange={handleSearchChange}
               aria-label={`Search with ${letter}`}
@@ -154,68 +167,78 @@ const MedicalConditsReview = () => {
           </div>
         </div>
         <div className="conditions-container">
-        {filteredConditions.length > 0 ? (
-          <ul className="conditions-list" aria-label={`List of conditions start with ${letter}`} tabIndex="-1" ref={listRef}>
-            {filteredConditions.map((condition) => (
-              <li key={condition.id} className="condition-box">
-                <div className="condition" onClick={() => handleConditionClick(condition)}>{condition.term}</div>
-                <div className="icons">
-                {/* bookmark works only if user is logged in */}
-                {userId ? (
-                isBookmarked(condition.id) ? (
-                  <a 
-                  href="#" 
-                  onClick={(e) => {
-                    e.preventDefault(); 
-                    handleUnbookmark(condition.id);
-                  }}
-                  aria-label="Click to remove bookmark from this item"
-                >
-                  <img
-                    className="bookmark-img"
-                    src={saveImg}
-                    alt="Save"
-                  />
-                </a>
-                ) : (
-                  <a 
-                    href="#" 
-                    onClick={(e) => {
-                      e.preventDefault(); 
-                      handleBookmark(condition.id);
-                    }}
-                    aria-label="Click to bookmark this item"
+          {filteredConditions.length > 0 ? (
+            <ul
+              className="conditions-list"
+              aria-label={`List of conditions start with ${letter}`}
+              tabIndex="-1"
+              ref={listRef}
+            >
+              {filteredConditions.map((condition) => (
+                <li key={condition.id} className="condition-box">
+                  <div
+                    className="condition"
+                    onClick={() => handleConditionClick(condition)}
                   >
-                    <img
-                      className="unbookmarkimg"
-                      src={unsaveImg}
-                      alt="UnSave"
-                    />
-                  </a>
-                )
-                ):(
-                     // else popup for signup appears
-                     <a 
-                    href="#" 
-                    onClick={(e) => {
-                      e.preventDefault(); 
-                      () => openpopup()
-                    }}
-                    aria-label="Click to bookmark this item"
-                  >
-                    <img
-                      className="unbookmarkimg"
-                      src={unsaveImg}
-                      alt="UnSave"
-                    />
-                  </a>
-                )}
-                </div>
-              </li>
-            ))}
-          </ul>
+                    {condition.term}
+                  </div>
+                  <div className="icons">
+                    {/* bookmark works only if user is logged in */}
+                    {userId ? (
+                      isBookmarked(condition.id) ? (
+                        <a
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleUnbookmark(condition.id);
+                          }}
+                          aria-label="Click to remove bookmark from this item"
+                        >
+                          <img
+                            className="bookmark-img"
+                            src={saveImg}
+                            alt="Save"
+                          />
+                        </a>
+                      ) : (
+                        <a
+                          href="#"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            handleBookmark(condition.id);
+                          }}
+                          aria-label="Click to bookmark this item"
+                        >
+                          <img
+                            className="unbookmarkimg"
+                            src={unsaveImg}
+                            alt="UnSave"
+                          />
+                        </a>
+                      )
+                    ) : (
+                      // else popup for signup appears
+                      <a
+                        href="#"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          () => openpopup();
+                        }}
+                        aria-label="Click to bookmark this item"
+                      >
+                        <img
+                          className="unbookmarkimg"
+                          src={unsaveImg}
+                          alt="UnSave"
+                        />
+                      </a>
+                    )}
+                  </div>
+                </li>
+              ))}
+            </ul>
           ) : (
-            <p className='Error'>No medical conditions match your search.</p>
+            <p className="Error">No medical conditions match your search.</p>
           )}
         </div>
         <Popup

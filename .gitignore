@@ -1,3 +1,5 @@
 ### AL ###
 /ipots-server/.env
 /ipots-kids/node_modules
+.DS_Store
+node_modules

@@ -1,4 +1,4 @@
-import { useContext ,useState, useEffect , useRef} from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import "../../styles/iAccess/dictionary.css";
@@ -6,7 +6,7 @@ import { CiSearch } from "react-icons/ci";
 import dictionaryImg from "../../../public/iAccess/Dictionary.png";
 
 const Dictionary = () => {
-  const host = "http://localhost";
+  const host = "http://localhost:8888";
   const [selectedLetter, setSelectedLetter] = useState("");
   const [dictionary, setdictionary] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
@@ -31,7 +31,8 @@ const Dictionary = () => {
   useEffect(() => {
     const fetchdictionaries = async () => {
       try {
-        const url = host + "/ipots-kids-app/ipots-server/dictionary.php?method=All";
+        const url =
+          host + "/ipots-kids-app/ipots-server/dictionary.php?method=All";
         const response = await axios.get(url);
         setdictionary(response.data);
       } catch (error) {
@@ -148,21 +149,23 @@ const Dictionary = () => {
             <ul aria-label="List of letters" tabIndex="-1" ref={listRef}>
               {letters.map((letter) => (
                 <li key={letter.num} className="letter-items">
-                <a
-                  key={letter.num}
-                  href="#"
-                  aria-label={`Search with ${letter.char}`}
-                  className={`dictionary-letter ${
-                    selectedLetter === letter.num ? "selected" : ""
-                  }`}
-                  onClick={(event) => {
-                    event.preventDefault();
-                    checkBeforeNavigate(letter.char, event);
-                    handleLetterClick(letter.num);
-                  }}
-                >
-                  <span className="dictionary-the-letters">{letter.char}</span>
-                </a>
+                  <a
+                    key={letter.num}
+                    href="#"
+                    aria-label={`Search with ${letter.char}`}
+                    className={`dictionary-letter ${
+                      selectedLetter === letter.num ? "selected" : ""
+                    }`}
+                    onClick={(event) => {
+                      event.preventDefault();
+                      checkBeforeNavigate(letter.char, event);
+                      handleLetterClick(letter.num);
+                    }}
+                  >
+                    <span className="dictionary-the-letters">
+                      {letter.char}
+                    </span>
+                  </a>
                 </li>
               ))}
             </ul>
