@@ -67,6 +67,7 @@ const Dictionary = () => {
     );
   };
 
+  //ADD BOOTSTRAP FOR THE INDIVIDUAL LETTERS
   const letters = [
     { num: 1, char: "A" },
     { num: 2, char: "B" },
