@@ -9,6 +9,7 @@
   text-align: center;
   height: auto;
   padding-top: 0.625rem;
+  padding-bottom: 20px;
 }
 
 .homepage-home-title {
@@ -46,7 +47,8 @@
 }
 
 .location-home:hover {
-  background-color: #b0b0b0;
+  background-color: #b0b0b0 ;
+  color: black;
   transform: scale(1.05);
 }
 
@@ -101,8 +103,9 @@
   color: inherit;
 }
 
-.category:hover {
+.accessibility-category:hover {
   background-color: #0fc0fc;
+  color: black ;
   transform: scale(1.02);
 }
 

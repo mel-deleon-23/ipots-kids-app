@@ -59,6 +59,8 @@ import Dictionary from "./pages/iAccess/dictionary";
 import DictionaryReview from "./pages/iAccess/dictionaryreview";
 import MyAllergies from "./pages/iAccess/myallergies";
 import LegalPage from "./pages/iAccess/legalpage";
+import ProfilePage from "./pages/iAccess/accountinfo";
+
 
 function App() {
   return (
@@ -170,6 +172,7 @@ function App() {
               <Route path="/iaccess" element={<IAccessHomePage />} />
               <Route path="/accessmenu" element={<AccessMenu />} />
               <Route path="/accommodation" element={<Accommodation />} />
+              <Route path="/accountinfo" element={<ProfilePage />} />
               <Route path="/myaccommodationsmenu" 
                 element={
                   <ProtectedRoute>

@@ -9,7 +9,7 @@
 }
 
 .myAccommodations-title {
-  width: 26.125rem;
+  width: auto;
   height: 3.125rem;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 2.5rem;
@@ -44,6 +44,7 @@
 
 .myLocation:hover {
   background-color: #b0b0b0;
+  color: black;
   transform: scale(1.05);
 }
 
@@ -98,8 +99,9 @@
   color: inherit;
 }
 
-.myCategory:hover {
+.myAccessibility-category:hover {
   background-color: #0fc0fc;
+  color: black;
   transform: scale(1.02);
 }
 

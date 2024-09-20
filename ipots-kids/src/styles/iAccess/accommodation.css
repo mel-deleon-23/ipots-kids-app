@@ -21,7 +21,7 @@
 }
 
 .accommodation-title {
-  width: 12rem;
+  width: auto;
   height: 3.125rem;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 2.5rem;
@@ -56,6 +56,7 @@
 
 .location:hover {
   background-color: #b0b0b0;
+  color: black;
   transform: scale(1.05);
 }
 
@@ -93,6 +94,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .searchbox {
@@ -103,6 +105,7 @@
   border: 0.063rem solid #b0b0b0;
   padding-left: 2.5rem;
   padding-right: 3.5rem;
+  
 }
 
 .search-icon {
@@ -193,7 +196,7 @@ img {
 
   }
   .accommodation-title {
-    width: 7.625rem;
+    width: auto;
     height: 2.375rem;
     font-family: "Inter", sans-serif;
     font-size: 1.563rem;
@@ -269,5 +272,6 @@ img {
     font-size: 16px;
     padding-left: 3rem;
     padding-right: 3.625rem;
+
   }
 }

@@ -36,7 +36,7 @@ export default function IaccessProfile() {
 
         if (response.data.status === "success") {
           setProfileData(response.data.user);
-          //   console.log("Profile Data:", response.data.user); // Log profileData
+          // console.log("Profile Data:", response.data.user); Log profileData
         } else {
           console.error("Failed to fetch user details:", response.data.message);
           navigate("/signIn");

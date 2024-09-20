@@ -8,7 +8,7 @@ import downImg from "../../../public/iAccess/arrowDown.png";
 import upImg from "../../../public/iAccess/arrowUp.png";
 
 const MyAllergies = () => {
-  const host = "http://localhost:8888";
+  const host = "http://localhost";
   const [userId, setUserId] = useState(null);
   const { user } = useContext(AuthContext);
   const [openCategory, setOpenCategory] = useState(null);

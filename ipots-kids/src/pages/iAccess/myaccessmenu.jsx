@@ -39,7 +39,7 @@ import grayMentalImg from "../../../public/iAccess/11-mental health-grey.png";
 import grayMedicationImg from "../../../public/iAccess/12-medication-grey.png";
 
 const AccessMenu = () => {
-  const host = "http://localhost:8888";
+  const host = "http://localhost";
   const locat = useLocation(); // Get the current location object
   const [userId, setUserId] = useState(null);
   const { user } = useContext(AuthContext);
@@ -140,7 +140,29 @@ const AccessMenu = () => {
       "/myaccommodations?location=" +
       selectedLocation +
       "&category=" +
-      category;
+      category +
+      "&method=showAll" ;
+
+    if (medicalCondition) {
+      Url += `&medicalCondition=${medicalCondition}`;
+    }
+
+    navigate(Url);
+  };
+  // function for all button (to get all accommodation under a location)
+  const allAccommodation = () => {
+    // checking if the user selected the location
+    if (!selectedLocation) {
+      alert("Please select a location first");
+      
+      return;
+    }
+    let Url =
+      "/myaccommodations?location=" +
+      selectedLocation +
+      "&category=all" + //extra code to avoid errors in myaccommodation.jsx
+      
+      "&method=AllAccommodation";
 
     if (medicalCondition) {
       Url += `&medicalCondition=${medicalCondition}`;
@@ -258,6 +280,12 @@ const AccessMenu = () => {
               );
             })}
           </ul>
+          <div className="accessibility-button-container">
+            <button className="accessibility-button"
+             onClick={allAccommodation}>
+              All accessibility categories for {location}
+            </button>
+          </div>
         </div>
       </div>
     </>

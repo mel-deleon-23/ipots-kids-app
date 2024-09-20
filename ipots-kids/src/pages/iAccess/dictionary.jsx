@@ -6,7 +6,7 @@ import { CiSearch } from "react-icons/ci";
 import dictionaryImg from "../../../public/iAccess/Dictionary.png";
 
 const Dictionary = () => {
-  const host = "http://localhost:8888";
+  const host = "http://localhost";
   const [selectedLetter, setSelectedLetter] = useState("");
   const [dictionary, setdictionary] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");

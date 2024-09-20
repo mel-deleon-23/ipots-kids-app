@@ -7,7 +7,7 @@ export default function LegalPage() {
   return (
     <div className="legal">
       <div className="legal-header">
-        <img src={law} alt="image of gavel hitting a sounding block" />
+        <img src={law} alt="legal" className="law-image" />
         <h1 className="legal-header-title">Legal</h1>
       </div>
       <div className="legal-body">
@@ -18,12 +18,14 @@ export default function LegalPage() {
           their situation. Here is a basic guide:
         </p>
       </div>
-      <div className="legal-Accordion">
-        <div class="accordion accordion-flush" id="accordionFlushExample">
+      <div className="legal-Accordion custom-accordion">
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <ul className="accordion-list" aria-label="Legal accordion list">
+          <li>
           <div class="accordion-item rounded-2">
             <h2 class="accordion-header">
               <button
-                class="accordion-button rounded-2 collapsed"
+                class="accordion-button rounded-2 collapsed "
                 type="button"
                 data-bs-toggle="collapse"
                 data-bs-target="#flush-collapseOne"
@@ -57,6 +59,8 @@ export default function LegalPage() {
               </div>
             </div>
           </div>
+          </li>
+          <li>
           <div class="accordion-item rounded-2">
             <h2 class="accordion-header">
               <button
@@ -88,6 +92,8 @@ export default function LegalPage() {
               </div>
             </div>
           </div>
+          </li>
+          <li>
           <div class="accordion-item rounded-2">
             <h2 class="accordion-header">
               <button
@@ -119,7 +125,10 @@ export default function LegalPage() {
               </div>
             </div>
           </div>
+          </li>
+          </ul>
         </div>
+        
       </div>
     </div>
   );

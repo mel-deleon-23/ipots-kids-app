@@ -16,7 +16,7 @@ import unsaveImg from "../../../public/iAccess/unsave.png";
 import saveImg from "../../../public/iAccess/save.png";
 
 const myMedicalCondits = () => {
-  const host = "http://localhost:8888";
+  const host = "http://localhost";
   const [userId, setUserId] = useState(null);
   const { user } = useContext(AuthContext);
   const locat = useLocation();

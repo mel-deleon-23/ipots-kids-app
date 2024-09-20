@@ -17,7 +17,7 @@ import unsaveImg from "../../../public/iAccess/unsave.png";
 import saveImg from "../../../public/iAccess/save.png";
 
 const MedicalCondits = () => {
-  const host = "http://localhost:8888";
+  const host = "http://localhost";
   const [userId, setUserId] = useState(null);
   const { user } = useContext(AuthContext);
   const locat = useLocation();
@@ -92,6 +92,11 @@ const MedicalCondits = () => {
     fetchBookmarks();
   }, []);
 
+  const handleConditionClick = (condition) => {
+    navigate(
+      `/accessmenu?medicalCondition=${condition.term}&location=${location}`
+    );
+  };
   const handleBookmark = async (conditionId) => {
     const url = host + "/ipots-kids-app/ipots-server/myMedicalCondition.php";
     const params = {
@@ -239,12 +244,12 @@ const MedicalCondits = () => {
           </div>
         </div>
         {searchTerm ? (
-          <div className="medical-conditions-container">
+          <div className="conditions-container">
             {filteredConditions.length > 0 ? (
               filteredConditions.map((condition) => (
-                <div key={condition.id} className="medical-condition-box">
+                <div key={condition.id} className="condition-box">
                   <div
-                    className="medical-condition"
+                    className="condition"
                     onClick={() => handleConditionClick(condition)}
                   >
                     {condition.term}
@@ -272,7 +277,7 @@ const MedicalCondits = () => {
                       <img
                         className="img"
                         src={unsaveImg}
-                        onClick={() => openpopup()}
+                        onClick={openpopup}
                         alt="Not Bookmarked"
                       />
                     )}

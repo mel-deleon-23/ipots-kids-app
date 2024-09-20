@@ -10,10 +10,10 @@ require_once('include/database.php');
 // include('includes/config.php');
 
 
-$method = isset($_GET['method']) ? $_GET['method'] : '';
-$userId = isset($_GET['userId']) ? $_GET['userId'] : '';
+$method = isset($_GET['method']) ? $_GET['method'] : 'AllAccommodation';
+$userId = isset($_GET['userId']) ? $_GET['userId'] : '12';
 $accommodationId = isset($_GET['accommodationId']) ? $_GET['accommodationId'] : '';
-$location = isset($_GET['location']) ? $_GET['location'] : '';
+$location = isset($_GET['location']) ? $_GET['location'] : 'Work';
 $medicalCondition = isset($_GET['medicalCondition']) ? $_GET['medicalCondition'] : NULL;
 $category = isset($_GET['category']) ? $_GET['category'] : '';
 
@@ -35,6 +35,7 @@ if ($location == "School") {
 $temp_cat = "a." . $category;
 $temp_locat = "a." . $location;
 
+// all accommodation for a user and it returns just accommodation id
 
 if ($method == 'All') {
     $stmt = $connect->prepare("SELECT * FROM my_accessibilties WHERE user_id = ?");
@@ -48,7 +49,9 @@ if ($method == 'All') {
     }
 
     echo json_encode($bookmarks);
-} elseif ($method == 'showAll') {
+} 
+// for showing the saved accommodation
+elseif ($method == 'showAll') {
     $response = [];
 
     // Check if the location is "All"
@@ -399,6 +402,101 @@ if ($method == 'All') {
         }
     }
       echo json_encode($response);
+}
+// to send all accommodation under a location
+elseif ($method == 'AllAccommodation') {
+    $response = [];
+    // Check if medicalCondition is set
+    if ($location == "All") {
+        // Check if medicalCondition is set
+        if (isset($medicalCondition)) {
+            $stmt = $connect->prepare("
+                SELECT a.* 
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND a.medical_condition = ?
+                
+            ");
+    
+            if ($stmt) {
+                $stmt->bind_param("is", $userId, $medicalCondition);
+                $stmt->execute();
+                $result = $stmt->get_result();
+    
+                while ($row = $result->fetch_assoc()) {
+                    $response[] = $row;
+                }
+                $stmt->close();
+            }
+        } else {
+            $stmt = $connect->prepare("
+                SELECT a.* 
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ?
+                
+            ");
+    
+            if ($stmt) {
+                $stmt->bind_param("i", $userId);
+                $stmt->execute();
+                $result = $stmt->get_result();
+    
+                while ($row = $result->fetch_assoc()) {
+                    $response[] = $row;
+                }
+                $stmt->close();
+            }
+        }
+    } else {
+       
+    
+        // Check if medicalCondition is set
+        if (isset($medicalCondition)) {
+            $stmt = $connect->prepare("
+                SELECT a.* 
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1'
+                AND a.medical_condition = ?
+                
+            ");
+    
+            if ($stmt) {
+                $stmt->bind_param("is", $userId, $medicalCondition);
+                $stmt->execute();
+                $result = $stmt->get_result();
+    
+                while ($row = $result->fetch_assoc()) {
+                    $response[] = $row;
+                }
+                $stmt->close();
+            }
+        } else {
+            $stmt = $connect->prepare("
+                SELECT a.* 
+                FROM accommodations a 
+                JOIN my_accessibilties ma ON a.id = ma.accommodation_id 
+                WHERE ma.user_id = ? 
+                AND $temp_locat = '1'
+            
+            ");
+    
+            if ($stmt) {
+                $stmt->bind_param("i", $userId);
+                $stmt->execute();
+                $result = $stmt->get_result();
+    
+                while ($row = $result->fetch_assoc()) {
+                    $response[] = $row;
+                }
+                $stmt->close();
+            }
+        }
+    }
+    echo json_encode($response);
 }
 
 

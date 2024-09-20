@@ -7,7 +7,7 @@ import dictionaryImg from "../../../public/iAccess/Dictionary.png";
 import "../../styles/iAccess/dictionaryreview.css";
 
 const DictionaryReview = () => {
-  const host = "http://localhost:8888";
+  const host = "http://localhost";
   const [dictionary, setdictionary] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const locat = useLocation();

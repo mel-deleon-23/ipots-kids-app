@@ -115,16 +115,31 @@
   color: #706C6C;
   cursor: default;
   transition: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; 
+  width: 10.5rem;
+  height: 10.5rem;
+  padding: 1.25rem;
+  margin: 1rem;
+  border-radius: 0.625rem;
+  font-size: 2.188rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold; 
+  text-decoration: none;
 }
 
 .category-access-menu:hover {
   background-color: #0fc0fc;
+  color: black;
   transform: scale(1.02);
 }
 /* for disabled categories */
 .category-access-gray-menu:hover
 {
   background-color: #C0C0C0;
+  /* color: inherit ; */
   transform: none;
 }
 
@@ -207,4 +222,21 @@
     line-height: 0.9rem;
     padding-top: 0.5rem;
   }
+}
+
+.accessibility-button-container {
+  text-align: center; 
+  margin-top: 10px;   
+}
+
+.accessibility-button {
+  width: calc(100% - 20px);  
+  padding: 8px 12px;        
+  font-size: 24px;
+  background-color: #0fc0fc; 
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 0.625rem;
+  cursor: pointer;
 }

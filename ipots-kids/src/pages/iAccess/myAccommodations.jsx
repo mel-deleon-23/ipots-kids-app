@@ -30,7 +30,7 @@ import mentalImg from "../../../public/iAccess/11-mental health.png";
 import medicationImg from "../../../public/iAccess/12-medication.png";
 
 const myAccommodations = () => {
-  const host = "http://localhost:8888";
+  const host = "http://localhost";
   const [userId, setUserId] = useState(null);
   const { user } = useContext(AuthContext);
   const [accommodations, setAccommodations] = useState([]);
@@ -40,6 +40,7 @@ const myAccommodations = () => {
   const location = queryParams.get("location");
   const category = queryParams.get("category");
   const medicalCondition = queryParams.get("medicalCondition");
+  const method = queryParams.get("method");
   const [selectedLocation, setSelectedLocation] = useState(location);
   const [selectedItem, setSelectedItem] = useState(null);
   const [bookmarks, setBookmarks] = useState([]);
@@ -86,7 +87,7 @@ const myAccommodations = () => {
     const fetchData = async () => {
       try {
         const params = {
-          method: "showAll",
+          method: method,
           userId: user.data.user_id,
           location: location,
           category: category,
@@ -147,7 +148,7 @@ const myAccommodations = () => {
       const url = host + "/ipots-kids-app/ipots-server/myAccessibility.php";
       const response = await axios.get(url, {
         params: {
-          method: "showAll",
+          method: method,
           userId: user.data.user_id,
           location: location,
           category: category,
@@ -207,8 +208,16 @@ const myAccommodations = () => {
   return (
     <div className="accommodations-page">
       <div className="header-container2">
-        <img src={iconImg} alt="Vision" className="vision-image" />
-        <h1 className="accommodation-title">{category} </h1>
+        {category === 'all' ? (
+          <h1 className="accommodation-title">
+            All accessibility categories for {location}
+          </h1>
+        ) : (
+          <>
+            <img src={iconImg} alt={category} className="category-image" />
+            <h1 className="accommodation-title">{category}</h1>
+          </>
+        )}
         {medicalCondition && (
           <h2 className="accommodation-title"> ({medicalCondition})</h2>
         )}

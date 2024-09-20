@@ -11,7 +11,7 @@ import Popup from "reactjs-popup";
 import { AuthContext } from "../Auth";
 
 const MedicalConditsReview = () => {
-  const host = "http://localhost:8888";
+  const host = "http://localhost";
   const [userId, setUserId] = useState(null);
   const { user } = useContext(AuthContext);
   const [conditions, setConditions] = useState([]);
@@ -222,7 +222,7 @@ const MedicalConditsReview = () => {
                         href="#"
                         onClick={(e) => {
                           e.preventDefault();
-                          () => openpopup();
+                          openpopup();
                         }}
                         aria-label="Click to bookmark this item"
                       >

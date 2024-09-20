@@ -30,7 +30,7 @@ import mentalImg from "../../../public/iAccess/11-mental health.png";
 import medicationImg from "../../../public/iAccess/12-medication.png";
 
 const Accommodation2 = () => {
-  const host = "http://localhost:8888";
+  const host = "http://localhost";
   const [userId, setUserId] = useState(null); // set initial userId as null
   const { user } = useContext(AuthContext);
   const [accommodations, setAccommodations] = useState([]);
@@ -55,6 +55,7 @@ const Accommodation2 = () => {
 
   const openpopup = () => {
     setSignInOpen(true);
+    console.log("open");
   };
 
   useEffect(() => {
@@ -318,7 +319,7 @@ const Accommodation2 = () => {
                       href="#"
                       onClick={(e) => {
                         e.preventDefault();
-                        () => openpopup();
+                        openpopup();
                       }}
                       aria-label="Click to bookmark this item"
                     >

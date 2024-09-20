@@ -68,6 +68,7 @@
 
 .dictionary-letter:hover {
   background-color: #0fc0fc;
+  color: black;
   transform: scale(1.02);
 }
 

@@ -57,6 +57,7 @@
 
 .location-condits:hover {
   background-color: #b0b0b0;
+  color: black;
   transform: scale(1.05);
 }
 
@@ -124,6 +125,7 @@
 
 .medical-letter:hover {
   background-color: #0fc0fc;
+  color: black;
   transform: scale(1.02);
 }
 
